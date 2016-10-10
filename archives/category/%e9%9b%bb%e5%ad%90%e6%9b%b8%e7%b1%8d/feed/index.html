@@ -58,24 +58,24 @@
 <p><kbd>$ find /path/to/Books -type f -not -name '*.bz2' -print0 | xargs -0 -L 1 -P 2 bzip2</kbd></p>
 <p>別に圧縮しなくてもいいのですがAWSは使用容量と通信量の両方に利用料が発生する料金体系なのでできるだけ圧縮はしたほうがいいでしょう。</p>
 <p>※ちなみに自炊本はファイルサイズが巨大なので圧縮なしでアップロードしようとするとタイムアウトエラーで失敗しまくりました。</p>
-<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X9RcOjqb1-U/UxsH5udL2UI/AAAAAAAAR-w/147o10762Ko/s1600/Screenshot_2014-03-08_21_05_44.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X9RcOjqb1-U/UxsH5udL2UI/AAAAAAAAR-w/147o10762Ko/s640/Screenshot_2014-03-08_21_05_44.png" width="580" /></a></p>
+<p><a href="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X9RcOjqb1-U/UxsH5udL2UI/AAAAAAAAR-w/147o10762Ko/s1600/Screenshot_2014-03-08_21_05_44.png"><img border="0" src="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X9RcOjqb1-U/UxsH5udL2UI/AAAAAAAAR-w/147o10762Ko/s640/Screenshot_2014-03-08_21_05_44.png" width="580" /></a></p>
 <p>圧縮実行中のプロセスの様子。意図した通り並列処理できている模様。これでマルチコアも活かせているはず。</p>
 <p>ちなみに今回親フォルダごと tar で固めなかったのは書籍ごとにダウンロードできるようにしたかったためです。</p>
 <p>さて、ジョブが終了するまでしばらく待って、いよいよS3へアップロードしていきます。</p>
 <p><a href="https://console.aws.amazon.com/s3/home">https://console.aws.amazon.com/s3/home</a> で Bucket を作成しましょう。僕は技術書系とそれ以外2つの Bucket を作成しました。</p>
 <p>アップロードには Cyberduck を使ってもよかったのですが今回はS3専用のクライアント <a href="http://www.3hubapp.com/">3Hub</a> を使ってみました。</p>
-<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5aSAbYaM2ps/UxsekXq9ZbI/AAAAAAAAR_Y/EHXvMqDlG4M/s1600/Screenshot%2B2014-03-08%2B22.43.29.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5aSAbYaM2ps/UxsekXq9ZbI/AAAAAAAAR_Y/EHXvMqDlG4M/s640/Screenshot%2B2014-03-08%2B22.43.29.png" /></a></p>
+<p><a href="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5aSAbYaM2ps/UxsekXq9ZbI/AAAAAAAAR_Y/EHXvMqDlG4M/s1600/Screenshot%2B2014-03-08%2B22.43.29.png"><img border="0" src="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5aSAbYaM2ps/UxsekXq9ZbI/AAAAAAAAR_Y/EHXvMqDlG4M/s640/Screenshot%2B2014-03-08%2B22.43.29.png" /></a></p>
 <p>concurrency を設定できるので2にあげてみたところ特に詰まることもなくアップロードできました。</p>
-<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jNuPKJu2H_s/UxseSknmrlI/AAAAAAAAR_Q/I-m13AQ4vas/s1600/Screenshot%2B2014-03-08%2B22.41.04.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jNuPKJu2H_s/UxseSknmrlI/AAAAAAAAR_Q/I-m13AQ4vas/s640/Screenshot%2B2014-03-08%2B22.41.04.png" width="580" /></a></p>
+<p><a href="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jNuPKJu2H_s/UxseSknmrlI/AAAAAAAAR_Q/I-m13AQ4vas/s1600/Screenshot%2B2014-03-08%2B22.41.04.png"><img border="0" src="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jNuPKJu2H_s/UxseSknmrlI/AAAAAAAAR_Q/I-m13AQ4vas/s640/Screenshot%2B2014-03-08%2B22.41.04.png" width="580" /></a></p>
 <p>設定通りに並列アップロードできている様子。</p>
-<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z0BlFyIZFE4/UxsgLcEIP1I/AAAAAAAAR_k/DzRpOJ5XONY/s1600/%10books.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z0BlFyIZFE4/UxsgLcEIP1I/AAAAAAAAR_k/DzRpOJ5XONY/s640/%10books.png" width="580" /></a></p>
+<p><a href="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z0BlFyIZFE4/UxsgLcEIP1I/AAAAAAAAR_k/DzRpOJ5XONY/s1600/%10books.png"><img border="0" src="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z0BlFyIZFE4/UxsgLcEIP1I/AAAAAAAAR_k/DzRpOJ5XONY/s640/%10books.png" width="580" /></a></p>
 <p>そして最後に <a href="https://console.aws.amazon.com/s3/home">https://console.aws.amazon.com/s3/home</a> からファイルがアップロードできていることを確認します。</p>
 <p>はい、作業完了です！</p>
 <p>自炊本のファイルサイズはとにかく巨大で、数百冊の量になると MacBook に置こうものならすぐに容量を使いきってしまっていてしかたなく外付けHDDに置いていて不便だったのですが、それがやっと解決しました。</p>
 <p>うぉおおおおおおおん！<br />やっと外出先からでも自由に本を取り出せるよー！</p>
 <p>Dropbox や Google Drive の有料枠よりも格安で利用できるのが嬉しい。</p>
 <p>最後に 3Hub だとURL一覧を簡単に取得できるので、今回を機に冊数を測ってみました。</p>
-<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-68Yuj8y5kok/Uxs9_h2mymI/AAAAAAAASAg/9QM6t7fz8Gg/s1600/Screenshot%2B2014-03-09%2B00.57.33.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-68Yuj8y5kok/Uxs9_h2mymI/AAAAAAAASAg/9QM6t7fz8Gg/s320/Screenshot%2B2014-03-09%2B00.57.33.png" /></a></p>
+<p><a href="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-68Yuj8y5kok/Uxs9_h2mymI/AAAAAAAASAg/9QM6t7fz8Gg/s1600/Screenshot%2B2014-03-09%2B00.57.33.png"><img border="0" src="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-68Yuj8y5kok/Uxs9_h2mymI/AAAAAAAASAg/9QM6t7fz8Gg/s320/Screenshot%2B2014-03-09%2B00.57.33.png" /></a></p>
 <p>これで 2つの Backet の URLs をファイルにおいて <kbd>$ cat *.dat | wc -l</kbd> してみたところ213冊ありました。</p>
 <p>
 <hr />
@@ -113,7 +113,7 @@
 		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/01/25/amazon%e3%81%8c%e6%89%8b%e3%81%ab%e3%81%97%e3%81%9f%e3%80%8c%e8%aa%ad%e4%ba%86%e7%8e%87%e3%80%8d%e3%81%a8%e3%81%84%e3%81%86%e6%96%b0%e3%81%97%e3%81%84%e6%ad%a6%e5%99%a8/</guid>
 		<description><![CDATA[Amazon が新しい武器を手に入れたという話。 「読了率」という指標 上掲の画像からも分かるのですが Kindle では書籍の「読了率」が N% という形で分かるようになっていて、そしてこれは複数の端末間で共有することができます。 ということは、ユーザーの読了率のデータは Amazon がサーバ側で保持しているっぽいということがわかります。 つまり Amazon は Kindle ストアで取り扱われている本についてそれぞれ、平均 N% 読み進められたという分析が技術的には可能であるっぽくて、これは売り切り形態をとっていた従来の出版社であれば把握できない指標ですよねという話になってきます。 よく聞く話として「ベストセラーほど読まれない本はない」(話題になっているだけで「買ったけど読んでないんだよねぇ」という人が多い) という話がありますが、その感覚を Amazon であれば Kindle で販売された分についてはほぼ正確に把握できるということになります。 「読了率」の有用性 さて、この「読了率」という指標ですが、悪く言えば「売れさえすればいい」と考える出版社や著者にとってはこの指標はさほど有用ではなさそうですが、ユーザが購入時にそれを知ることができれば大いに参考になります。 むろんリファレンスとして使われることが多い本など読了率にそぐわない例外はあるとはいえ、その指標を参考にするかどうかは読者に委ねられます。 あるいはユーザーに公開されなくても、「読了率」が出版社や著者にフィードバックされ、それが次の本づくりに活かされるのであれば、それもまたユーザの利益にかなうに違いないです (そして Amazon はこのフィードバックを武器に出版社を獲得していくでしょう)。 この他、「読了率ランキング」が公表されればそれは書評などの人力にたよらずに隠れた良作を発見できるなど、活用方法はいろいろ思いつきます。 とりあえず、少なくとも「読了率」が Kindle によって利用可能なものになりつつあるということに間違いはなさそうです。 追記: レビューのリクエストが送られてきた！ なるほど、そういう手がありましたか。 先日ぼくが Kindle で読み終わった本のレビューを書いてみてよというメールが Amazon から来ました。 このメールによって、多くの「読了済みユーザー」がレビューを書くようになると思います。 現状、Amazonでは「購入済みユーザー」によるレビューがありますが、それより価値の高いレビューになりますね。 @ymkjp]]></description>
 				<content:encoded><![CDATA[<p>Amazon が新しい武器を手に入れたという話。</p>
-<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-QeaFXOSrc9I/UQL6x8N5JwI/AAAAAAAAPQM/g3u1Ig4qYwY/s1600/screenshot_2013_01_25T21_28_09%252B0000.png" style=""><img border="0" height="320" width="520" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-QeaFXOSrc9I/UQL6x8N5JwI/AAAAAAAAPQM/g3u1Ig4qYwY/s320/screenshot_2013_01_25T21_28_09%252B0000.png" /></a></p>
+<p><a href="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-QeaFXOSrc9I/UQL6x8N5JwI/AAAAAAAAPQM/g3u1Ig4qYwY/s1600/screenshot_2013_01_25T21_28_09%252B0000.png" style=""><img border="0" height="320" width="520" src="https://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-QeaFXOSrc9I/UQL6x8N5JwI/AAAAAAAAPQM/g3u1Ig4qYwY/s320/screenshot_2013_01_25T21_28_09%252B0000.png" /></a></p>
 <h4><b>「読了率」という指標</b></h4>
 <p>上掲の画像からも分かるのですが Kindle では書籍の「読了率」が N% という形で分かるようになっていて、そしてこれは複数の端末間で共有することができます。</p>
 <p>ということは、ユーザーの読了率のデータは Amazon がサーバ側で保持しているっぽいということがわかります。</p>
