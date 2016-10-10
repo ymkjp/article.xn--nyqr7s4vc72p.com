@@ -9,26 +9,6 @@ aws s3 sync ~/Dropbox/xn--nyqr7s4vc72p.com s3://xn--nyqr7s4vc72p.com --exclude '
 ```
 
 
-## Static Website Hosting
-
-* **Index Document:** `index.html`
-* **Error Document:** `404.html`
-
-#### Edit Redirection Rules:
-
-```xml
-  <RoutingRules>
-    <RoutingRule>
-    <Condition>
-       <KeyPrefixEquals>feed/</KeyPrefixEquals>
-    </Condition>
-    <Redirect>
-      <ReplaceKeyWith>feed/index.xml</ReplaceKeyWith>
-    </Redirect>
-    </RoutingRule>
-  </RoutingRules>
-```
-
 ## Permissions
 
 #### Edit bucket policy
@@ -63,4 +43,25 @@ aws s3 sync ~/Dropbox/xn--nyqr7s4vc72p.com s3://xn--nyqr7s4vc72p.com --exclude '
         <MaxAgeSeconds>3000</MaxAgeSeconds>
     </CORSRule>
 </CORSConfiguration>
+```
+
+
+## Static Website Hosting
+
+* **Index Document:** `index.html`
+* **Error Document:** `404.html`
+
+#### Edit Redirection Rules:
+
+```xml
+  <RoutingRules>
+    <RoutingRule>
+    <Condition>
+       <KeyPrefixEquals>feed/</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <ReplaceKeyWith>feed/index.xml</ReplaceKeyWith>
+    </Redirect>
+    </RoutingRule>
+  </RoutingRules>
 ```
