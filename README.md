@@ -1,7 +1,11 @@
 # article.xn--nyqr7s4vc72p.com
 
+## How to upload files
 ```bash
-aws s3 sync article.xn--nyqr7s4vc72p.com s3://article.xn--nyqr7s4vc72p.com --exclude '.git/*'  --delete --dryrun
+cd ~/Dropbox/article.xn--nyqr7s4vc72p.com
+rsync -avn ~/Downloads/simply-static-1-*/ ~/Dropbox/article.xn--nyqr7s4vc72p.com/
+rake
+aws s3 sync ~/Dropbox/article.xn--nyqr7s4vc72p.com s3://article.xn--nyqr7s4vc72p.com --exclude '.git/*'  --delete --dryrun
 ```
 
 
