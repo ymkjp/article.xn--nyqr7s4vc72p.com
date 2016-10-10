@@ -1,11 +1,11 @@
-# article.xn--nyqr7s4vc72p.com
+# xn--nyqr7s4vc72p.com
 
 ## How to upload files
 ```bash
-cd ~/Dropbox/article.xn--nyqr7s4vc72p.com
-rsync -avn ~/Downloads/simply-static-1-*/ ~/Dropbox/article.xn--nyqr7s4vc72p.com/
+cd ~/Dropbox/xn--nyqr7s4vc72p.com
+rsync -avn ~/Downloads/simply-static-1-*/ ~/Dropbox/xn--nyqr7s4vc72p.com/
 rake
-aws s3 sync ~/Dropbox/article.xn--nyqr7s4vc72p.com s3://article.xn--nyqr7s4vc72p.com --exclude '.git/*'  --delete --dryrun
+aws s3 sync ~/Dropbox/xn--nyqr7s4vc72p.com s3://xn--nyqr7s4vc72p.com --exclude '.git/*'  --delete --dryrun
 ```
 
 
@@ -42,7 +42,7 @@ aws s3 sync ~/Dropbox/article.xn--nyqr7s4vc72p.com s3://article.xn--nyqr7s4vc72p
 			"Effect": "Allow",
 			"Principal": "*",
 			"Action": "s3:GetObject",
-			"Resource": "arn:aws:s3:::article.xn--nyqr7s4vc72p.com/*"
+			"Resource": "arn:aws:s3:::xn--nyqr7s4vc72p.com/*"
 		}
 	]
 }
