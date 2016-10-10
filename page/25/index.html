@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>It works! | A techie blog - Part 25</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,463] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="google-site-verification" content="_WbViALvGIP70e8bStl6bmcL7ZbTMO8QnyoXJKDc9s4" />
+<link rel='prev' href='https://article.xn--nyqr7s4vc72p.com/page/24' />
+<link rel='next' href='https://article.xn--nyqr7s4vc72p.com/page/26' />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/page/25" />
+<meta property="og:title" content="It works! | A techie blog - Part 25" />
+<meta property="og:url" content="https://article.xn--nyqr7s4vc72p.com/page/25" />
+<meta property="og:image" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/09/226546_116651205083093_100002146431496_137147_46399_n.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="It works!" />
+<meta property="fb:admins" content="1740535458" />
+<meta property="fb:app_id" content="253362208055003" />
+<meta property="og:description" content="つまるところ私達が選択できるのは時間とお金の2つを何に費やすかということだけである。そこで逆に考えてみよう。この2つしか選択できないのであれば、ある人間が可処分所得と可処分時間を何にどれくらい費やしているかを聞いてみれば、それをきっかけとして驚くほど本質的にその人間のことを知ることができるのではないか。@ymkjp" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@ymkjp" />
+<meta name="twitter:title" content="It works! | A techie blog - Part 25" />
+<meta name="twitter:description" content="つまるところ私達が選択できるのは時間とお金の2つを何に費やすかということだけである。そこで逆に考えてみよう。この2つしか選択できないのであれば、ある人間が可処分所得と可処分時間を何にどれくらい費やしているかを聞いてみれば、それをきっかけとして驚くほど本質的にその人間のことを知ることができるのではないか。@ymkjp" />
+<meta name="twitter:image" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/09/226546_116651205083093_100002146431496_137147_46399_n.jpg" />
+<meta itemprop="image" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/09/226546_116651205083093_100002146431496_137147_46399_n.jpg" />
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Person",
+  "name" : "",
+  "url" : "https://article.xn--nyqr7s4vc72p.com",
+  "sameAs" : ["https://plus.google.com/u/0/+KentaYAMAMOTOymkjp","https://twitter.com/ymkjp"] 
+}
+</script>
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel='shortlink' href='https://wp.me/7kkrD' />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="home blog paged paged-25 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<h1 class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></h1>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+			
+<article id="post-227" class="post-227 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/227" rel="bookmark">他人を理解したいときに使える質問「時間とお金をなにに使ってる？」</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div dir="ltr" style="text-align: left;">
+<div style="clear: both; text-align: center;"><a href="https://lh4.googleusercontent.com/-1Si-NxTVET8/UJ0MaJZNHRI/AAAAAAAAOkY/nr3dtkVSgaw/s625/photo.jpg" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="185" src="https://lh4.googleusercontent.com/-1Si-NxTVET8/UJ0MaJZNHRI/AAAAAAAAOkY/nr3dtkVSgaw/s200/photo.jpg" width="200" /></a></div>
+<p>つまるところ私達が選択できるのは時間とお金の2つを何に費やすかということだけである。<br />そこで逆に考えてみよう。この2つしか選択できないのであれば、ある人間が可処分所得と可処分時間を何にどれくらい費やしているかを聞いてみれば、それをきっかけとして驚くほど本質的にその人間のことを知ることができるのではないか。</p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+<p><a name='more'></a></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/227" rel="bookmark"><time class="entry-date published updated" datetime="2012-11-09T14:04:00+00:00">2012-11-09</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/227#respond"><span class="dsq-postid" data-dsqidentifier="227 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/09/%e4%bb%96%e4%ba%ba%e3%82%92%e7%90%86%e8%a7%a3%e3%81%97%e3%81%9f%e3%81%84%e3%81%a8%e3%81%8d%e3%81%ab%e4%bd%bf%e3%81%88%e3%82%8b%e8%b3%aa%e5%95%8f%e3%80%8c%e6%99%82%e9%96%93%e3%81%a8%e3%81%8a%e9%87%91/">Leave a comment<span class="screen-reader-text"> on 他人を理解したいときに使える質問「時間とお金をなにに使ってる？」</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-228" class="post-228 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/228" rel="bookmark">アニメとは? 日本とは? スタジオジブリが復刊した3冊の書籍</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>インターネットビジネスの独特な捉え方に（僕の中で）定評のあるドワンゴ川上会長が最近読んでいる本に今村太平や加藤周一といった名前をあげて絶賛していたので、買ってみようとAmazonで購入したのですがこれがジブリから復刊されているもので、ちょうど川上会長がジブリへ丁稚に行っているのと符合することもあり、おそらくこれらの本のことを指していたのだろうということでまとめてみました。</p>
+<p>
+<h1>アニメを知る</h1>
+<p><a href="http://www.amazon.co.jp/%E6%BC%AB%E7%94%BB%E6%98%A0%E7%94%BB%E8%AB%96-%E3%82%B8%E3%83%96%E3%83%AALibrary-%E4%BB%8A%E6%9D%91-%E5%A4%AA%E5%B9%B3/dp/4198621004%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4198621004" target="_blank" title="漫画映画論 (ジブリLibrary)"><img src="http://ecx.images-amazon.com/images/I/41XEXNA4W0L._SL160_.jpg" width="105" height="150" alt="漫画映画論 (ジブリLibrary)" class="books" /></a><br /><a href="http://www.amazon.co.jp/%E6%BC%AB%E7%94%BB%E6%98%A0%E7%94%BB%E8%AB%96-%E3%82%B8%E3%83%96%E3%83%AALibrary-%E4%BB%8A%E6%9D%91-%E5%A4%AA%E5%B9%B3/dp/4198621004%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4198621004" target="_blank">漫画映画論 (ジブリLibrary)</a></p>
+<p>
+<h1>日本を知る</h1>
+<p><a href="http://www.amazon.co.jp/%E6%97%A5%E6%9C%AC%E3%81%9D%E3%81%AE%E5%BF%83%E3%81%A8%E3%81%8B%E3%81%9F%E3%81%A1-%E3%82%B8%E3%83%96%E3%83%AALibrary-%E5%8A%A0%E8%97%A4-%E5%91%A8%E4%B8%80/dp/4198620180%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4198620180" target="_blank" title="日本その心とかたち (ジブリLibrary)"><img src="http://ecx.images-amazon.com/images/I/41BAW4RX3JL._SL160_.jpg" width="110" height="150" alt="日本その心とかたち (ジブリLibrary)" class="books" /></a><br /><a href="http://www.amazon.co.jp/%E6%97%A5%E6%9C%AC%E3%81%9D%E3%81%AE%E5%BF%83%E3%81%A8%E3%81%8B%E3%81%9F%E3%81%A1-%E3%82%B8%E3%83%96%E3%83%AALibrary-%E5%8A%A0%E8%97%A4-%E5%91%A8%E4%B8%80/dp/4198620180%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4198620180" target="_blank">日本その心とかたち (ジブリLibrary)</a></p>
+<p>
+<h1>映画を知る</h1>
+<p><a href="http://www.amazon.co.jp/%E6%98%A0%E7%94%BB%E3%81%AE%E3%81%A9%E3%81%93%E3%82%92%E3%81%A9%E3%81%86%E8%AA%AD%E3%82%80%E3%81%8B-%E3%82%B8%E3%83%96%E3%83%AALibrary%E2%80%95%E6%98%A0%E7%94%BB%E7%90%86%E8%A7%A3%E5%AD%A6%E5%85%A5%E9%96%80-%E3%83%89%E3%83%8A%E3%83%AB%E3%83%89-%E3%83%AA%E3%83%81%E3%83%BC/dp/419862125X%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D419862125X" target="_blank" title="映画のどこをどう読むか (ジブリLibrary―映画理解学入門)"><img src="http://ecx.images-amazon.com/images/I/216NSMFZ89L._SL160_.jpg" width="100" height="150" alt="映画のどこをどう読むか (ジブリLibrary―映画理解学入門)" class="books" /></a><br /><a href="http://www.amazon.co.jp/%E6%98%A0%E7%94%BB%E3%81%AE%E3%81%A9%E3%81%93%E3%82%92%E3%81%A9%E3%81%86%E8%AA%AD%E3%82%80%E3%81%8B-%E3%82%B8%E3%83%96%E3%83%AALibrary%E2%80%95%E6%98%A0%E7%94%BB%E7%90%86%E8%A7%A3%E5%AD%A6%E5%85%A5%E9%96%80-%E3%83%89%E3%83%8A%E3%83%AB%E3%83%89-%E3%83%AA%E3%83%81%E3%83%BC/dp/419862125X%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D419862125X" target="_blank">映画のどこをどう読むか (ジブリLibrary―映画理解学入門)</a></p>
+<p>ひとつ僕が購入した『漫画映画論』を読むにあたっての注意点がある。本書はエヴァンゲリオンシリーズで著名なアニメーション映画監督高畑勲が「今村太平から得たもの」として文章を寄せている（高畑はスタジオジブリ出身で、テレビ版エヴァンゲリオンにはスタジオジブリ制作の話もある）のだが、こちら、ぜひ本書の本文を読み進める前に一度目を通しておいたほうがよいだろう。今村が明らかに誤っている点、しかしそれでも今村がこんにちにおいても廃れない点（それはそのまま「なぜジブリは『漫画映画論』を復刊したのか」と言い換えることができる）に触れられており、なぜ私たちがいまこの本を読むべきかについての現場からの、それもとびきりの最前線からの示唆が得られるようになっている。</p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+<p><a name='more'></a></p>
+<p>参考: <a href="http://blogos.com/article/49089/">【特集　本格化する電子出版】座談会　いま電子出版に 必要なものはなにか【前編】 (1/2)（スタジオジブリ） &#8211; BLOGOS（ブロゴス）</a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/228" rel="bookmark"><time class="entry-date published updated" datetime="2012-11-08T10:21:00+00:00">2012-11-08</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/228#respond"><span class="dsq-postid" data-dsqidentifier="228 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/08/%e3%82%a2%e3%83%8b%e3%83%a1%e3%81%a8%e3%81%af-%e6%97%a5%e6%9c%ac%e3%81%a8%e3%81%af-%e3%82%b9%e3%82%bf%e3%82%b8%e3%82%aa%e3%82%b8%e3%83%96%e3%83%aa%e3%81%8c%e5%be%a9%e5%88%8a%e3%81%97%e3%81%9f3/">Leave a comment<span class="screen-reader-text"> on アニメとは? 日本とは? スタジオジブリが復刊した3冊の書籍</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-229" class="post-229 post type-post status-publish format-standard hentry category-hello_world category-14">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/229" rel="bookmark">The definition of programmer</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div style="clear: both; text-align: center;"><a href="http://www.4to40.com/images/coloring_book/programmer.gif" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="319" src="http://www.4to40.com/images/coloring_book/programmer.gif" width="320" /></a></div>
+<p>
+<h4>Programmer: the people having dirty bottoms</h4>
+<p>A skilled craftsman has specific body, especially hands. Their hands are always atypical. For example, a master turner&#8217;s finger has gone, a patisseries hand is smooth by oils and fats, and an indigo dyeing craftsman have hands with dyed blue.</p>
+<p>Then, how about a programmer? They sit in their chairs and never walk around, so their buttocks have bad blood circulations, discolored skins, and blotches. Programmer&#8217;s craftsmanship shows up in their buttocks.</p>
+<p><a href="http://twitter.com/i05">@i05</a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/229" rel="bookmark"><time class="entry-date published updated" datetime="2012-10-29T15:29:00+00:00">2012-10-29</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/hello_world" rel="category tag">hello_world</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8d%e3%82%bf" rel="category tag">ネタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/229#respond"><span class="dsq-postid" data-dsqidentifier="229 http://tk2-249-34500.vs.sakura.ne.jp/2012/10/29/the-definition-of-programmer/">Leave a comment<span class="screen-reader-text"> on The definition of programmer</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-230" class="post-230 post type-post status-publish format-standard hentry category-70 category-68 category-73">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/230" rel="bookmark">弟に教えたいMacのおすすめアプリ10本</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div dir="ltr" style="text-align: left;">
+<div style="clear: both; text-align: center;"></div>
+<div style="clear: both; text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-u15cziJosXI/UIt-lJYnE5I/AAAAAAAAOBI/EWw0M5Bgl9E/s1600/Untitled.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="293" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-u15cziJosXI/UIt-lJYnE5I/AAAAAAAAOBI/EWw0M5Bgl9E/s320/Untitled.png" width="320" /></a></div>
+<p>こんにちは、弟が MBAir 買って gcc 使えないんだけどって質問してきて嬉しいお兄ちゃんです。<br />冒頭のLineの会話の通りですので、早速 Mac OS X のおすすめアプリを書いて行きたいと思います。</p>
+<p>
+<h4>■ 初級編</h4>
+<p>まずはここから。別に開発者じゃなくても便利なソフトたち。特に★マークは絶対入れて損しないからお兄ちゃんを信用しな。</p>
+<ul>
+<li><a href="http://www.google.com/chrome/intl/ja/landing.html"><b>★ Google Chrome</b></a> &#8211; ウェブブラウザ</li>
+<li><a href="http://www.google.co.jp/ime/index-mac.html"><b>★ Google 日本語入力</b></a> &#8211; IME（文字入力ソフト）</li>
+<li><a href="http://www.skype.com/intl/ja/get-skype/on-your-computer/macosx/"><b>★ Skype</b></a> &#8211; 課金すれば電話の代わりとしても使える</li>
+<li><a href="http://db.tt/5WxeCBv"><b>★ Dropbox</b></a> &#8211; 自分の Mac のファイルを自動で同期してくれて大学の PC とかからアクセスできる</li>
+<li><a href="http://paintbrush.sourceforge.net/"><b>Paintbrush</b></a> &#8211; Windows では定番のがあるけど、それに似たお絵かきソフト</li>
+<li><a href="http://ja.libreoffice.org/"><b>LibreOffice</b></a> &#8211; Word とか Excel のフリー版（<a href="http://d.hatena.ne.jp/makeyan/20110510/1305025556">でも Excel をガッツリ使うなら買うのもありだと思う</a>）（そんなに使わなければ <a href="https://www.google.com/intl/ja/drive/start/index.html?authuser=0"><b>Google ドライブ</b></a> で十分）</li>
+</ul>
+<h4>■ 中級編</h4>
+<p>別に開発者じゃなくても便利なもののうち、キーボードショートカットとかを使うようになれば便利なソフトたち。</p>
+<ul>
+<li><b><a href="http://pqrs.org/macosx/keyremap4macbook/index.html.ja">KeyRemap4MacBook</a></b> &#8211; キーの配置を変えるソフト（インストールして「あれ、ない！」ってなるかもしれないけど, 「システム環境設定 (System Preferences)」の「その他 (Other)」）にあるよ）</li>
+<li><b><a href="http://www.alfredapp.com/">Alfred App</a></b> &#8211; 素早くソフトウェアを起動</li>
+<li><b><a href="http://www.clipmenu.com/ja/">ClipMenu</a></b> &#8211; 定型文の入力やクリップボードが便利になる</li>
+</ul>
+<h4>■ dev初級編</h4>
+<p>開発向けの「まずはここから」。</p>
+<ul>
+<li><a href="https://itunes.apple.com/jp/app/textwrangler/id404010395?mt=12"><b>TextWrangler</b></a> &#8211; 「テキストエディタでうまくいかないんだけど」という質問にこれ</li>
+<li><a href="https://developer.apple.com/xcode/"><b>Xcode 4 &#8211; Apple Developer</b></a> ※ Xcode を起動し、Preferences -&gt; Downloads に進み &#8220;Command Line Tools&#8221; をインストールすることも忘れずに</li>
+<li><a href="https://discussionsjapan.apple.com/docs/DOC-1061"><b>Terminal</b></a> &#8211; 買った時から入っているので Macintosh HD -&gt; Applications -&gt; Utilities から &#8220;ターミナル (Terminal)&#8221; で使えるよ</li>
+</ul>
+<h4>■ dev中級編</h4>
+<p>これ以降は分野ごとに（ウェブサービスを作るのか、大学で研究をするのか、など）何をするかによるので自分で探してみて下さい。</p>
+<p>
+<p>ちなみに参考になりそうなページはこれ: <a href="http://qiita.com/items/f570f057a0ff927b47dc">【まとめ】これ知らないプログラマって損してんなって思う汎用的なツール 100超 #PHP #JavaScript #Python #Ruby #HTML &#8211; Qiita</a></p>
+<h4>■ 10本って少ないね</h4>
+<p>なぜかというと、今はウェブブラウザ上でなんでもできちゃう時代だから。 <a href="https://www.google.com/intl/ja/drive/start/index.html?authuser=0">Google Drive</a> とかね。</p>
+<p>
+<div style="clear: both; text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-R9e348HNdMU/UIt-IfUxrJI/AAAAAAAAOBA/q6e64pw7Mnk/s1600/Screen%2BShot%2B2012-10-27%2Bat%2B1.54.53%2BPM.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-R9e348HNdMU/UIt-IfUxrJI/AAAAAAAAOBA/q6e64pw7Mnk/s1600/Screen%2BShot%2B2012-10-27%2Bat%2B1.54.53%2BPM.png" /></a></div>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+<p><a name='more'></a>
+<p>やっぱりコンピュータサイエンス系の学科って最初にC言語やるんですね。</p>
+</div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/230" rel="bookmark"><time class="entry-date published" datetime="2012-10-27T06:27:00+00:00">2012-10-27</time><time class="updated" datetime="2016-03-11T15:04:39+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%84%e3%83%bc%e3%83%ab" rel="category tag">ツール</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%bc%9f" rel="category tag">弟</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e9%96%8b%e7%99%ba" rel="category tag">開発</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/230#respond"><span class="dsq-postid" data-dsqidentifier="230 http://tk2-249-34500.vs.sakura.ne.jp/2012/10/27/%e5%bc%9f%e3%81%ab%e6%95%99%e3%81%88%e3%81%9f%e3%81%84mac%e3%81%ae%e3%81%8a%e3%81%99%e3%81%99%e3%82%81%e3%82%a2%e3%83%97%e3%83%aa10%e6%9c%ac/">Leave a comment<span class="screen-reader-text"> on 弟に教えたいMacのおすすめアプリ10本</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-231" class="post-231 post type-post status-publish format-standard hentry category-hello_world category-it">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/231" rel="bookmark">The reason PSY&#8217;s &#8220;Gangnam Style&#8221; can&#8217;t be sold well in Japan</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div dir="ltr" style="text-align: left;">
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-eZ2Q1O4Vmw8/UIgNpPrE8II/AAAAAAAAN4g/QiCRqCcvwks/s1600/gangnam_style.png" style="margin-left: auto; margin-right: auto;"><img border="0" height="223" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-eZ2Q1O4Vmw8/UIgNpPrE8II/AAAAAAAAN4g/QiCRqCcvwks/s400/gangnam_style.png" width="400" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span style="font-size: small; text-align: left;">This is the screenshot of &#8220;Gangnam style&#8221;&#8216;s PV w/ Japanese subtitles on YouTube.</span></td>
+</tr>
+</tbody>
+</table>
+<p>First of all, I want to say I like PSY and his &#8220;Gangnam Style&#8221; very much. Besides, I like South Korea and have a lot of South Korean friends, too.</p>
+<p>I read this article <a href="http://translate.google.com/translate?hl=ja&amp;sl=ja&amp;tl=en&amp;u=http%3A%2F%2Fwww.afpbb.com%2Farticle%2Flife-culture%2Flife%2F2908865%2F9699385">Japan&#8217;s indifference to the &#8220;Jiangnan style&#8221;, the voice of &#8220;anger&#8221; in Korea</a> in Japanese (and now translated in English via Google), and I want to tell the South Koreans about the music marketplace in Japan.</p>
+<p>Anyway, let me get to the main point. Do you know, in Japan, music from foreign countries never be all the go. I mean, almost Japanese listen only to J-Pop. Here&#8217;s an example. I think you have ever listened to <a href="http://www.youtube.com/results?search_query=lmfao+sext+and+i+know+it+live+lyrics+pv&amp;oq=LMFAO+s&amp;gs_l=youtube-reduced.3.2.0l3j0i4.8583.13681.0.16369.8.6.0.2.2.0.329.1110.0j4j1j1.6.0...0.0...1ac.1j2.OQVsRxMnomM">LMFAO&#8217;s &#8220;Sexy and I Know It&#8221;</a> which is the song <a href="http://en.wikipedia.org/wiki/Sexy_and_I_Know_It">went to number one on the Billboard Hot 100 on January 7, 2012 and remained there for two weeks (quoted from Wikipedia)</a>, though it couldn&#8217;t be in fashion among Japanese excepting the minorities who went to dance clubs.</p>
+<p>However the song is heard all over the world, the Japanese never mind it, by right, don&#8217;t know it.</p>
+<p>But meanwhile, actually it&#8217;s Korean boom in Japan, so why &#8220;Gangnam Style&#8221; can&#8217;t be boom, too? The reason is, I think, PSY wasn&#8217;t promoted in Japan. I know he wasn&#8217;t being promoted in other countries, but in Japan the song sold well is one in fully prepared such as Girls Generation, KARA, TVXQ. </p>
+<p>Then, let oppa enjoy it.</p>
+<p><iframe width="580" src="http://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://twitter.com/i05">@i05</a></p>
+<p><a name='more'></a></p>
+<p><!-- X:S ZenBackWidget --><!-- X:E ZenBackWidget --></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/231" rel="bookmark"><time class="entry-date published" datetime="2012-10-24T17:00:00+00:00">2012-10-24</time><time class="updated" datetime="2016-03-11T15:04:42+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/hello_world" rel="category tag">hello_world</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/it%e8%a6%8b%e8%81%9e%e9%8c%b2" rel="category tag">IT見聞録</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/231#respond"><span class="dsq-postid" data-dsqidentifier="231 http://tk2-249-34500.vs.sakura.ne.jp/2012/10/24/the-reason-psys-gangnam-style-cant-be-sold-well-in-japan/">Leave a comment<span class="screen-reader-text"> on The reason PSY&#8217;s &#8220;Gangnam Style&#8221; can&#8217;t be sold well in Japan</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-232" class="post-232 post type-post status-publish format-standard hentry category-73">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/232" rel="bookmark">より良いbashスクリプトのための8つのTips</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div dir="ltr" style="text-align: left;"><iframe src="http://www.slideshare.net/slideshow/embed_code/14836807" width="342" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+<div style="margin-bottom:5px"><strong> <a href="http://www.slideshare.net/ykenta/tips-for-bash-script" title="Tips for bash script" target="_blank">Tips for bash script</a> </strong> from <strong><a href="http://www.slideshare.net/ykenta" target="_blank">Yamamoto Kenta</a></strong> </div>
+<p>他にも if文の代わりに &amp;&amp; や || が使えるとか。<br />一行で書けちゃいます。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-MPIds12fbrY/UIV36iz0iQI/AAAAAAAANz4/szZPmEFMSzI/s1600/Screen%2BShot%2B2012-10-23%2Bat%2B1.43.57%2BAM.png"><img border="0" height="216" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-MPIds12fbrY/UIV36iz0iQI/AAAAAAAANz4/szZPmEFMSzI/s640/Screen%2BShot%2B2012-10-23%2Bat%2B1.43.57%2BAM.png" width="640" /></a></p>
+<p>※7行目で <b># 同じ</b> とコメントしてありますが、厳密には終了ステータスが違う場合があったりします。if文は then または else 直後のリストが実行されなかった場合「0」が返るという仕様だからです。例で言えば [ &#8220;$#&#8221; != 0 ] の場合が該当します（実装時に気にする必要性は低そうではありますが）。</p>
+<h2>■ LINUXの系譜</h2>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-NdzvXN3IGA8/UIV5SVXfrTI/AAAAAAAAN0E/c9HntaMdz_g/s1600/Screen%2BShot%2B2012-10-23%2Bat%2B1.50.08%2BAM.png"><img border="0" height="337" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-NdzvXN3IGA8/UIV5SVXfrTI/AAAAAAAAN0E/c9HntaMdz_g/s640/Screen%2BShot%2B2012-10-23%2Bat%2B1.50.08%2BAM.png" width="640" /></a><br />「なぜshellでは true が 0 で, false が 1 なの?」という疑問。これ、僕も気になっていた！<br />コマンドで言うと、<br /><b>false; echo $?    # 解説: false は 1 を返すコマンド。それを ; で繋いで, $? で終了ステータスをechoしている。当然結果は「1」</b><br /><a href="http://stackoverflow.com/questions/2933843/why-0-is-true-but-false-is-1-in-the-shell">それに対する答え</a>が「成功した時には何も返さないのがLINUX流だから」。成功時には何も出力せず、エラー時にのみエラー出力するという思想。これがbashスクリプトの bool型にも現れていたのですね！</p>
+<p>
+<h2>■ 参考文献</h2>
+<p><a href="http://www.amazon.co.jp/gp/product/4774146439/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4774146439&amp;linkCode=as2&amp;tag=m0b55-22"><img border="0" src="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&amp;ASIN=4774146439&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=m0b55-22" /></a><img alt="" border="0" height="1" src="http://www.assoc-amazon.jp/e/ir?t=m0b55-22&amp;l=as2&amp;o=9&amp;a=4774146439" style="border: none !important; margin: 0px !important;" width="1" /><br />『シェルスクリプト 基本リファレンス』、良本。bash以外のsh（FreeBSD, Solaris）との互換性にも気を配って書かれているのがすごく嬉しい。そしてbashってそんなに進化しなさそうなのに改訂新版になっているのにも細やかな愛を感じる（僕が参考にしたのは旧版）。</p>
+<p><a href="http://stackoverflow.com/questions/2933843/why-0-is-true-but-false-is-1-in-the-shell">boolean &#8211; Why 0 is true but false is 1 in the shell? &#8211; Stack Overflow</a></p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+<p><a name='more'></a></p>
+<p><!-- X:S ZenBackWidget --><!-- X:E ZenBackWidget --></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/232" rel="bookmark"><time class="entry-date published" datetime="2012-10-22T17:11:00+00:00">2012-10-22</time><time class="updated" datetime="2016-03-11T15:04:44+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e9%96%8b%e7%99%ba" rel="category tag">開発</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/232#respond"><span class="dsq-postid" data-dsqidentifier="232 http://tk2-249-34500.vs.sakura.ne.jp/2012/10/22/%e3%82%88%e3%82%8a%e8%89%af%e3%81%84bash%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88%e3%81%ae%e3%81%9f%e3%82%81%e3%81%ae8%e3%81%a4%e3%81%aetips/">Leave a comment<span class="screen-reader-text"> on より良いbashスクリプトのための8つのTips</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-233" class="post-233 post type-post status-publish format-standard hentry category-uncategorized">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/233" rel="bookmark">豊島区史『通史編2』（目次）</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div dir="ltr" style="text-align: left;">
+<h2>目次</h2>
+<p>第4編 明治前期の豊島<br />第1章 江戸から明治へ<br />第1節 近代化と民衆生活<br />第2章 政治の動きと地方行政<br />第1節 東京府の成立<br />第2節 廃藩置県と大区小区<br />第3節 三新法体制と北豊島郡の成立<br />第4節 明治地方自治制と町村合併<br />第3章 東京近郊町村としての様相<br />第1節 住民の構成<br />第2節 土地の利用と所有<br />第3節 物産と民業<br />第4章 園芸農業の展開<br />第1節 染井・巣鴨の植木<br />第2節 農業生産<br />第3節 千川上水と水車業<br />第4節 竹本焼<br />第5章 教育と宗教<br />第1節 私塾と公立学校<br />第2節 神仏分離<br />第3節 墓地の設定<br />第5編 資本主義の発達と豊島<br />第1章 日露戦争前後の町村行政<br />第1節 町村制下の町村行政<br />第2節 選挙と住民の政治参加<br />第3節 日露戦争下の町村<br />第4節 戦争終結と社会の動き<br />第5節 日露戦後の町村再編成<br />第6節 住民の教化と組織化<br />第2章 都市化の開始<br />第1節 交通網の発達<br />第2節 産業の変化<br />第3節 人口の急増と職業構成の変化<br />第4節 寺院・監獄の移転<br />第3章 家庭学校と滝野川学園<br />第1節 社会事業施設の集中<br />第2節 家庭学校<br />第3節 滝野川学園<br />第4節 杉山鍼按学校、至誠学舎<br />第5節 東京市養育院巣鴨分院<br />第4章 教育豊島の形成と文化<br />第1節 文京地域の形成<br />第2節 明治女学校<br />第3節 豊島師範学校の創立<br />第4節 初期新学校<br />第5節 高等教育機関の豊島進出<br />第6節 宗教活動<br />第7節 文化活動<br />第5章 初期社会主義<br />第1節 巣鴨平民社<br />第6編 大正デモクラシー期の豊島<br />第1章 都市化の進展<br />第1節 村から町へ<br />第2節 関東大震災と豊島<br />第2章 町時代の政治行政<br />第1節 町制施行と町制期の行・財政<br />第2節 普通選挙の実施<br />第3章 都市化の中での経済<br />第1節 商工業の発達<br />第2節 耕地整理と農業の衰退<br />第3節 道路交通網と通信機関の整備<br />第4章 社会運動と社会事業<br />第1節 労働運動の展開<br />第2節 消費組合運動と借家人運動<br />第3節 豊島区地域の学生運動<br />第4節 社会事業の成立<br />第5章 大正デモクラシーと文化<br />第1節 自由主義教育運動の展開<br />第2節 児童の村小学校と城西学園<br />第3節 自由学園<br />第4節 私立中等学校<br />第5節 公立学校教育の推移<br />第6節 文化運動<br />第7節 宗教<br />第8節 都会の娯楽<br />第7編 戦争下の豊島区<br />第1章 豊島区の成立<br />第1節 東京市域拡張<br />第2節 豊島区の成立<br />第2章 戦時下の政治行政<br />第1節 区行政の進展<br />第2節 戦争への国民動員<br />第3節 町会整備と諸団体の動向<br />第4節 選挙と政治運動<br />第5節 翼賛体制と区権限の縮小<br />第3章 経済統制<br />第1節 中商工業者の意識と行動<br />第2節 経済統制と中小企業<br />第3節 交通規制<br />第4章 戦時下の区民生活<br />第1節 町内会・隣組制下の民衆<br />第2節 社会事業の戦時色化<br />第3節 労働運動の後退<br />第4節 太平洋戦争下の労働現場<br />第5章 戦時下の教育・文化<br />第1節 戦時下公教育の展開<br />第2節 学校教育の軍国主義化と国民学校体制の確立<br />第3節 戦時下の市立学校教育<br />第4節 戦時下中等教育の展開<br />第5節 池袋モンパルナスとアトリエ村<br />第6章 敗戦と豊島区<br />第1節 建物疎開と学童疎開<br />第2節 空襲・戦火</p>
+<p><a href="http://books.google.co.jp/books/about/%E8%B1%8A%E5%B3%B6%E5%8C%BA%E5%8F%B2.html?id=NnU1AQAAIAAJ&amp;redir_esc=y">豊島区史: 資料編 &#8211; 豊島区史編纂委員会 &#8211; Google ブックス</a></p>
+<p>卒論の関係で上記の古書を扱ったのですがWWW上で目次など見れないことが分かったので<a href="https://docs.google.com/document/d/1b3HYY166XmuPtGmPTNOIUlMVYAwGe0w1rUFPprQ2YXM/edit">Googleドライブで文章化しました</a></p>
+<p>買うには<a href="http://www.amazon.co.jp/gp/product/B000J77598/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B000J77598&amp;linkCode=as2&amp;tag=m0b55-22">『豊島区史〈通史編 2〉』 (1983年)</a><img src="http://www.assoc-amazon.jp/e/ir?t=m0b55-22&amp;l=as2&amp;o=9&amp;a=B000J77598" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+<p><a name='more'></a></p>
+<p><!-- X:S ZenBackWidget --><!-- X:E ZenBackWidget --></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/233" rel="bookmark"><time class="entry-date published updated" datetime="2012-10-18T13:41:00+00:00">2012-10-18</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/uncategorized" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/233#respond"><span class="dsq-postid" data-dsqidentifier="233 http://tk2-249-34500.vs.sakura.ne.jp/2012/10/18/%e8%b1%8a%e5%b3%b6%e5%8c%ba%e5%8f%b2%e3%80%8e%e9%80%9a%e5%8f%b2%e7%b7%a82%e3%80%8f%ef%bc%88%e7%9b%ae%e6%ac%a1%ef%bc%89/">Leave a comment<span class="screen-reader-text"> on 豊島区史『通史編2』（目次）</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-234" class="post-234 post type-post status-publish format-standard hentry category-12">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/234" rel="bookmark">海外旅行に行くならモベルを検討しよう</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5rtxULDgHS8/UFJa3IU5afI/AAAAAAAAMRk/jbZV67xIt0w/s1600/27-8.jpg"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5rtxULDgHS8/UFJa3IU5afI/AAAAAAAAMRk/jbZV67xIt0w/s400/27-8.jpg" /></a></p>
+<p>
+<h4><b>行く先々でSIMカードを買うのも安上がりでいいのですが</b></h4>
+<p>
+<ul>
+<li>空港に到着したときにすぐ使うことができない (空港にSIMが売られていても限られたキャリアしかない場合も)</li>
+<li>旅行中の限られた時間の中でSIMカードを販売しているショッピングモールなどまで出向く必要がある</li>
+<li>対象国を出ると使えなくなる</li>
+<li>プリペイド式なので余らせることがある</li>
+</ul>
+<p>という問題があります。</p>
+<p>
+<h4><b>その点モベルであれば、</b></h4>
+<p>
+<ul>
+<li>だいたい世界中で使える（ので空港についてすぐ使用可）</li>
+<li>充電したモベルの端末を持っていくだけで特別な準備は必要ない</li>
+<li>支払うのは端末代金と使った分の通話料金だけ（なのでプリペイドの余りも、月額料金も必要ない）</li>
+<li>同じ番号を使い続けられるので国や地域をまたいで移動しても連絡先が変わらない</li>
+</ul>
+<p>という優れ物。とは言っても英国の +44 を割り当てられた国際電話ではあるので通話料金もバカになりません。ということでガンガン日常で使うというよりは、持ち運んでおいて着信を受けたり、非常時の連絡手段として使ったりすべきだと思います。それ以外の場合はWifi探しだしてメールやFacebookで連絡するなり、Skypeするなり、といった使い方ができます。月額使用料のかからないモベルならではの使い方でしょう。</p>
+<p>以下は、モベルの使用体験記を書けば2000円分の無料通話分を貰えるとのことだったので書いたものので、せっかくなので転載しておきます。</p>
+<p>
+<h4><b>●モベル携帯を利用してみての感想・体験談（100文字以上）</b></h4>
+<p>今年の夏に6か国くらいを自由に巡って来ましたが、複数か国を周っても同じ番号を使えるのが便利でした。<br />トルコのゲストハウスで出会ったエジプト青年に触発されて急遽格安航空券を入手してエジプトに行ったときにエジプト青年の友人にわざわざ迎えに来てもらったのですが彼らと連絡が取れたのもモベルのおかげでした。<br />連絡手段にはFacebookもありますが、日本と違いネットが使えないところも多いので緊急時の連絡手段として重宝しました。</p>
+<p>
+<h4><b>●モベル携帯を利用した国や都市名</b></h4>
+<p>・インド（ムンバイ、デリー、アグラ、バラナシ、コルカタ、など）<br />・トルコ（イスタンブル）<br />・イスラエル（テルアビブ、エルサレム）<br />・エジプト（カイロ）<br />・タイ（バンコク）<br />・フィリピン（セブ）</p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/234" rel="bookmark"><time class="entry-date published" datetime="2012-10-14T09:41:00+00:00">2012-10-14</time><time class="updated" datetime="2016-03-11T15:04:46+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%93%81%e8%a9%95" rel="category tag">品評</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/234#respond"><span class="dsq-postid" data-dsqidentifier="234 http://tk2-249-34500.vs.sakura.ne.jp/2012/10/14/%e6%b5%b7%e5%a4%96%e6%97%85%e8%a1%8c%e3%81%ab%e8%a1%8c%e3%81%8f%e3%81%aa%e3%82%89%e3%83%a2%e3%83%99%e3%83%ab%e3%82%92%e6%a4%9c%e8%a8%8e%e3%81%97%e3%82%88%e3%81%86/">Leave a comment<span class="screen-reader-text"> on 海外旅行に行くならモベルを検討しよう</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-235" class="post-235 post type-post status-publish format-standard hentry category-7 category-12 category-13 category-18">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/235" rel="bookmark">冷蔵庫と洗濯機は買ってはいけない 家電レンタルを活用すべきこれだけの理由</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div dir="ltr" style="text-align: left;">
+<p>新社会人や単身赴任することになった社会人は刮目してほしい。一人暮らしをはじめるのであれば、冷蔵庫と洗濯機は買ってはいけない。レンタル、特に大手引越し業者が扱っている家電レンタルサービスを活用すべきだ。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-RA2w9-nYYLY/UGJMj36luHI/AAAAAAAAMws/ZfVdPrRkwM8/s1600/photo.jpg"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-RA2w9-nYYLY/UGJMj36luHI/AAAAAAAAMws/ZfVdPrRkwM8/s640/photo.jpg" width="480" /></a></p>
+<hr />冷蔵庫と洗濯機を買わずにレンタルすべき理由は3つある。</p>
+<div>
+<ol>
+<li>トータルコストを抑えられる</li>
+<li>引っ越してきたその日にすぐに使える</li>
+<li>機能性やデザインに不満がでにくい</li>
+</ol>
+</div>
+<p>
+<hr />
+<p>では順を追って家電レンタルサービスを活用する利点を説明していこう。</p>
+<p>
+<h4>1. トータルコストを抑えられる</h4>
+<p>
+<p>冷蔵庫と洗濯機を買わずにレンタルする最大の利点はコストである。レンタルのほうがトータルコストが安くつく場合が多いので、ライフプランと照らしあわせて検討してみるといいだろう。その際には、購入費以外にもかかってくる「隠れコスト」を忘れないようにしよう。</p>
+<div>
+<ul>
+<li><b>購入費</b>: 一般にレンタルのほうが安い。例えば筆者が利用したクロネコヤマトのレンタルの場合は「冷蔵庫 15,960円、洗濯機 13,860円」（2年プラン）で同等機を購入するよりも安く済ませることができる。特に結婚などライフステージの変化が激しい若者世代の場合は買い替えが不要になるためお得感が強くなる。</li>
+<li><b>次回の引越し料金</b>: 隠れコスト。冷蔵庫や洗濯機など大きな家電の場合は次回の引越しのことも考えなければいけない。冷蔵庫・洗濯機のあるなしで引越しのプランは1ランクから2ランクほど変わってくるので、だいたい1回の引越しで2〜3万円ほど余計に費用がかかることになる。レンタルの場合はそれが不要になる。</li>
+<li><b>廃棄費</b>: 隠れコスト。家電を廃棄する際には引き取りの配送料が掛かる。レンタルであれば不要。ただ、購入した家電は型式が新しければリサイクルショップが引き取ってくれるので家電レンタルの圧倒的利点というほどではないだろう。</li>
+</ul>
+</div>
+<p>
+<h4>2. 引っ越してきたその日にすぐに使える</h4>
+<p>
+<p>これは意外かもしれないが大事なポイントだ。</p>
+<p>「引越し直後なので冷蔵庫や洗濯機がなくて不便だ」という話はあるあるなので、そんな経験を自分自身でしたことがあったり、周りの人がそういう話をしているのを聞いたりしたことがある人も多いかと思うが、大手引越し業者が扱っている家電レンタルの場合はそれが解決される。</p>
+<p>大手引越し業者では、引越しとあわせて家電のレンタルを申し込むと引越しと同時に家電の設置も行ってもらえる。入居と同時に家電一式が搬入・設置ができ、その日からすぐに利用できるというのは嬉しい限りだ。</p>
+<p>これが仮に引っ越してから注文した場合、引越直後の忙しい時期に1週間は冷蔵庫・洗濯機なしの生活を強いられることになる。</p>
+<p>
+<h4>3. 機能性やデザインに不満がでにくい</h4>
+<p>
+<p>冷蔵庫と洗濯機はどの商品もだいたい同じ機能、同じ見た目。テレビやパソコン、テーブルやカーテンなどのインテリアに比べて「こだわりが少ない」というのが冷蔵庫と洗濯機の特徴だ。</p>
+<p>変わってくるのは容量くらいだろうが、しかし容量についても賃貸住宅に一人住まいをするような世帯が必要とする冷蔵庫・洗濯機というのはだいたい一定のサイズになってくるため、こだわりがないのであればレンタルしても特段不便ということにもならないだろう。</p>
+<p>
+<hr />
+<h4>おまけコラム: 3年が損益の分かれ目</h4>
+<p>
+<p>冷蔵庫・洗濯機の場合はレンタルと購入で比較するとだいたい2〜3年くらいが損益の分かれ目だ。つまり3年以上引越しがないと決まっている場合は購入してしまったほうがお得ということになる。</p>
+<p>しかし正直なところ、2年や3年以内に自分が引っ越すかどうかなんて分かっている人の方が少ないのではないだろうか。そういう場合、筆者としては不確実なのであればレンタルを選び、常日頃から「身軽」になっておくのがいいと考える。変化に対応できる柔軟な状態に自らを置いておき、チャンスが到来したときにいち早く動くという考え方だ。</p>
+<p>いずれにせよ、たかだか家電ひとつの選び方であるが、その人の生き方・考え方が反映されるのが面白いところだ。</p>
+<p>
+<p>【FOLLOW-UP: 2015-04-01】家電レンタルを初めてかれこれ2年と5か月くらいが経ったのだが、3年目の更新のときに驚くべきことを知った。なんと、筆者が利用しているヤマトの家電レンタルの場合、3年目丸々使用すると、その後家電は無償でいただけるのだそうだ (その時点での返却もできる)。何ともお得な制度である。</p>
+<p>
+<hr />
+<h4>おまけコラム: 冷蔵庫・洗濯機以外のお得レンタル商品</h4>
+<p>
+<p>冷蔵庫・洗濯機よりは個人の趣味趣向がでてきてしまう商品であるため一概にはおすすめしづらいが、レンタルするのがお得な商品は他にもある。</p>
+<p>
+<ul>
+<li><b>ベッド</b>: 冷蔵庫・洗濯機をレンタルすべき理由と同じで、ベッドも重くかさ張るため引越し料金が高くなる。かつ、引っ越したその日に使いたい家具でもある。</li>
+<li><b>照明・カーテン</b>: 実は忘れがちだが大事な商品。照明がなければ夜になると生活できない。カーテンは特に一階に引っ越した場合にはすぐにでも取り付けたくなるだろう。そして次回の引越し先の物件の窓の大きさが同じとは限らないため、引越しごとに買い換えなければならない可能性が高い商品でもある。</li>
+<li><b>自転車</b>: 自転車は事故の保険や修理メンテナンスが面倒くさい。自転車が好きでなく、できるだけ手間は掛けたくないという人にこそおすすめできるレンタル商品だ。引越しの際もかさ張ってしまう。特に長距離の引越しの場合は自転車に乗って引越し先まで行くということができなくなるため検討したい。</li>
+</ul>
+<hr />
+<h4><b>後日談</b>: 実際使ってみてどうだったのか</h4>
+<p>
+<p>【FOLLOW-UP: 2012-11-30】冷蔵庫と洗濯機をヤマトでレンタルしてみたところ、すこぶる好調だった。特に冷蔵庫はなんの不満もない。洗濯機のほうは、黒いカスのような物が衣服に付着したのが気になった。これは黒カビだと思われるが、<a target="_blank" href="http://www.amazon.co.jp/s/?_encoding=UTF8&amp;camp=247&amp;creative=7399&amp;field-keywords=%E9%85%B8%E7%B4%A0%E7%B3%BB%E6%BC%82%E7%99%BD%E5%89%A4&amp;linkCode=ur2&amp;tag=m0b55-22&amp;url=search-alias%3Dhpc">酸素系漂白剤</a>で一度掃除するとゴミがでなくなったので、黒カビをすくうようの水槽網のようなものを用意して、一度使用前に掃除しておくことをおすすめする。</p>
+<h4>蛇足</h4>
+<p>
+<p>賃貸契約やら引越しやら、ライフイベントで触れられるビジネスを見つめなおしてみるのはとても楽しいですな。</p>
+<hr />
+<h4>参考</h4>
+<div>
+<ul>
+<li><small><cite title="お引越し《クロネコヤマト公式HP》：引越しサービス：レンタルサービス"><a href="http://www.008008.jp/option/rental.html"><b>クロネコヤマト</b></a></cite></small>: 引越し業者でレンタルすると引越しと連動できるので手間が省けるうえ、値段もレンタル専売の会社と変わらない。筆者もクロネコヤマトを利用した。</li>
+</ul>
+</div>
+<div><adress><a href="https://twitter.com/ymkjp">@ymkjp</a></adress></div>
+</div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/235" rel="bookmark"><time class="entry-date published" datetime="2012-09-26T01:55:00+00:00">2012-09-26</time><time class="updated" datetime="2016-03-11T15:04:48+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%93%81%e8%a9%95" rel="category tag">品評</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e8%aa%ad%e3%81%bf%e8%bf%94%e3%81%97%e3%81%9f%e3%81%84" rel="category tag">読み返したい</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e8%b3%83%e8%b2%b8" rel="category tag">賃貸</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/235#respond"><span class="dsq-postid" data-dsqidentifier="235 http://tk2-249-34500.vs.sakura.ne.jp/2012/09/26/%e5%86%b7%e8%94%b5%e5%ba%ab%e3%81%a8%e6%b4%97%e6%bf%af%e6%a9%9f%e3%81%af%e8%b2%b7%e3%81%a3%e3%81%a6%e3%81%af%e3%81%84%e3%81%91%e3%81%aa%e3%81%84-%e5%ae%b6%e9%9b%bb%e3%83%ac%e3%83%b3%e3%82%bf%e3%83%ab/">Leave a comment<span class="screen-reader-text"> on 冷蔵庫と洗濯機は買ってはいけない 家電レンタルを活用すべきこれだけの理由</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-236" class="post-236 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/236" rel="bookmark">抜け毛が気になる人へのアドバイス</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-pRdQLQlvJTM/UF-Un-mpOYI/AAAAAAAAMt0/qqap_Za5Sq8/s1600/Screen%2BShot%2B2012-09-24%2Bat%2B7.58.32%2BAM.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-pRdQLQlvJTM/UF-Un-mpOYI/AAAAAAAAMt0/qqap_Za5Sq8/s400/Screen%2BShot%2B2012-09-24%2Bat%2B7.58.32%2BAM.png" width="286" /></a></p>
+<p>よくある間違えは、
+<ol>
+<li>縦方向に洗えていないこと</li>
+<li>爪で洗ってしまうこと（指の腹が正しい）</li>
+<li>すすぎが圧倒的に足りない</li>
+</ol>
+<p>とにかくすすぎは念入りに</p>
+<p>トニックはすっきりしてしまうのでむしろ危険</p>
+<p>石鹸でもいいのでしっかり洗ってすすぐのが基本</p>
+<p>あとドライヤーで乾かすときは近づけ過ぎない</p>
+<p>タバコは吸わないだろうから関係ないね</p>
+<p>食生活では油分を避けるとか</p>
+<p>肉を避けるという意味じゃないよ</p>
+<p>むしろ肉は食べないとダメ</p>
+<ol>
+<li>大豆食品（豆腐は手軽で良い）</li>
+<li>魚料理は面倒臭いので外出した時に選ぶようにするといいかも（青魚）</li>
+<li>緑黄色野菜</li>
+</ol>
+<p>髪といえばワカメ（乾燥ワカメ）だけど、あれはもちろんいいんだけど地肌というよりは髪のコーティングとかの話なので注意</p>
+<p>そうだ、リンスインシャンプーは避けた方がいいよ</p>
+<p>【まとめ】</p>
+<p>分かったと思うけどバランスのとれた食生活とか健康的な生活が大事（睡眠とかね）</p>
+<p>抜け毛は遺伝とかもあるかもしれないけど、むしろ不健康な生活のシグナルだと思って</p>
+<p>以上</p>
+<p>※弟にLine上でアドバイスしてたら意外とあったので転載しました。</p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+<p><a name='more'></a></p>
+<p><!-- X:S ZenBackWidget --><!-- X:E ZenBackWidget --></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/236" rel="bookmark"><time class="entry-date published" datetime="2012-09-23T22:50:00+00:00">2012-09-23</time><time class="updated" datetime="2016-03-11T15:04:49+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/236#respond"><span class="dsq-postid" data-dsqidentifier="236 http://tk2-249-34500.vs.sakura.ne.jp/2012/09/23/%e6%8a%9c%e3%81%91%e6%af%9b%e3%81%8c%e6%b0%97%e3%81%ab%e3%81%aa%e3%82%8b%e4%ba%ba%e3%81%b8%e3%81%ae%e3%82%a2%e3%83%89%e3%83%90%e3%82%a4%e3%82%b9/">Leave a comment<span class="screen-reader-text"> on 抜け毛が気になる人へのアドバイス</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://article.xn--nyqr7s4vc72p.com/page/24">Previous page</a>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/'><span class="meta-nav screen-reader-text">Page </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/page/24'><span class="meta-nav screen-reader-text">Page </span>24</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">Page </span>25</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/page/26'><span class="meta-nav screen-reader-text">Page </span>26</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/page/31'><span class="meta-nav screen-reader-text">Page </span>31</a>
+<a class="next page-numbers" href="https://article.xn--nyqr7s4vc72p.com/page/26">Next page</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2016/09">&laquo; Sep</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td id="today">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1oMAlFO","queueTime":0,"applicationTime":225,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

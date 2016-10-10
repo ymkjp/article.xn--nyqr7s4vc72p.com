@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>linux &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/linux/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>linux &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>Linux ディレクトリの使い分け</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/134</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/134#respond</comments>
+		<pubDate>Sun, 11 Aug 2013 17:29:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[linux]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/08/11/linux-%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%81%ae%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91/</guid>
+		<description><![CDATA[FHS 規格の Linux でディレクトリを使い分けるときの判断の基準。 視点 ○ × 複数ホストで共有するか /usr /var 読み込み専用で運用するか /usr /var アーキテクチャ依存か /usr/lib /usr/share ディストリビュータが管理するか /usr /usr/local リブートしても保存するか /var/tmp /tmp 『ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道』 ちなみに著者の青木さんによればファイルはあまり几帳面に整理しないほうがいいそうだ。なぜならコンピュータはそんなことをしなくても find や grep で探してきてくれるからである。むしろ階層化されたディレクトリなどはプログラムを煩雑で低速度なものにしてしまうので害悪ですらあると指摘している。 @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>FHS 規格の Linux でディレクトリを使い分けるときの判断の基準。</p>
+<blockquote><table>
+<thead>
+<tr>
+<th>視点</th>
+<th>○</th>
+<th>×</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>複数ホストで共有するか</td>
+<td>/usr</td>
+<td>/var</td>
+</tr>
+<tr>
+<td>読み込み専用で運用するか</td>
+<td>/usr</td>
+<td>/var</td>
+</tr>
+<tr>
+<td>アーキテクチャ依存か</td>
+<td>/usr/lib</td>
+<td>/usr/share</td>
+</tr>
+<tr>
+<td>ディストリビュータが管理するか</td>
+<td>/usr</td>
+<td>/usr/local</td>
+</tr>
+<tr>
+<td>リブートしても保存するか</td>
+<td>/var/tmp</td>
+<td>/tmp</td>
+</tr>
+</tbody>
+</table>
+<p><small><cite title="ふつうのLinuxプログラミング">『<a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=m0b55-22">ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道</a>』</cite></small></p></blockquote>
+<p>
+<p>ちなみに著者の青木さんによればファイルはあまり几帳面に整理しないほうがいいそうだ。なぜならコンピュータはそんなことをしなくても find や grep で探してきてくれるからである。むしろ階層化されたディレクトリなどはプログラムを煩雑で低速度なものにしてしまうので害悪ですらあると指摘している。</p>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> <br /><a name='more'></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/134/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">134</post-id>	</item>
+	</channel>
+</rss>

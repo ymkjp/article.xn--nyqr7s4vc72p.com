@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>mysql &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/mysql/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>mysql &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>MySQLのソケットのパスの確認の方法</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/159</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/159#respond</comments>
+		<pubDate>Thu, 13 Jun 2013 22:26:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[mysql]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/06/13/mysql%e3%81%ae%e3%82%bd%e3%82%b1%e3%83%83%e3%83%88%e3%81%ae%e3%83%91%e3%82%b9%e3%81%ae%e7%a2%ba%e8%aa%8d%e3%81%ae%e6%96%b9%e6%b3%95/</guid>
+		<description><![CDATA[次の方法で調べられます。 よく使うのですがよく忘れますね。 @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>次の方法で調べられます。</p>
+<p>よく使うのですがよく忘れますね。</p>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> <br /><a name='more'></a><br /><!-- Share with Google -->         <!-- Place this tag where you want the +1 button to render. -->
+<div></div>
+<p><!-- Place this tag after the last +1 button tag. --></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/159/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">159</post-id>	</item>
+		<item>
+		<title>MySQLのプロセスとメモリの構造</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/162</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/162#respond</comments>
+		<pubDate>Sat, 25 May 2013 00:46:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[mysql]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/05/25/mysql%e3%81%ae%e3%83%97%e3%83%ad%e3%82%bb%e3%82%b9%e3%81%a8%e3%83%a1%e3%83%a2%e3%83%aa%e3%81%ae%e6%a7%8b%e9%80%a0/</guid>
+		<description><![CDATA[MySQLのプロセスとメモリの構造について簡単にまとめてみました。 01 プロセス構造 サーバ本体: &#8216;mysqld&#8217;というデーモンプロセス クライアントからの接続要求で内部にスレッドを生成して（スレッドキャッシュがない場合）、そのスレッドがクライアントのSQL文を処理する MySQLサーバ・クライアント間プロトコル MySQL独自のプロトコルでデータ送受信する セッション クライアントがバックエンドプロセスに接続してから切断するまでを1つと数える、通信の単位 対話型インターフェース mysql を起動してから（様々な処理をして）切断するまでが１つのセッション 02 メモリ構造 問い合わせ処理に関するバッファ群 配置 バッファ 説明 全スレッド共有 key_buffer インデックスデータを読み込んでスキャンするためのバッファ (MyISAM型テーブル専用) read_buffer インデックスが参照しているテーブルデータを読み込んでスキャンするためのバッファ スレッド毎 read_md_buffer テーブルデータを直接読み込んでランダムスキャンするためのバッファ sort_buffer &#8216;ORDER BY&#8217;の処理など、結果の並べ替えに使うバッファ join_buffer 複数のテーブルの完全結合を行うバッファ テーブルキャッシュ (table_open_cache) 多数のファイルに即座にアクセスするために、システムコール fopen() ではなく、&#8217;テーブルキャッシュ&#8217;に一度オープンしたファイルディスクリプタをキャッシュすることで、ファイルオープンのオーバーヘッドを削減する 通信バッファ (net_buffer) クライアントから受信するSQL文や、クライアントへ送信するデータの一時保管場所として使われる スレッド毎に確保される サイズは可変で、初期状態でシステム変数 net_buffer_length の値が確保され、データのサイズに応じてシステム変数 max_allowed_packet の値まで拡大される (送信後は初期値に戻る) クエリキャッシュ (query_cache) 実行されたSELECT文の結果をキャッシュに保存しておき、同じSELECT文が要求された場合は検索を行わずにキャッシュに保存した結果を返す機能 スレッドキャッシュ 前節の通り InnoDB型テーブル関連 MySQLはInnoDB型テーブルの処理に関し、バッファプール &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/162" class="more-link">Continue reading<span class="screen-reader-text"> "MySQLのプロセスとメモリの構造"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>MySQLのプロセスとメモリの構造について簡単にまとめてみました。</p>
+<h4>01 プロセス構造</h4>
+<h5>サーバ本体: &#8216;mysqld&#8217;というデーモンプロセス</h5>
+<ul>
+<li>クライアントからの接続要求で内部にスレッドを生成して（スレッドキャッシュがない場合）、そのスレッドがクライアントのSQL文を処理する</li>
+</ul>
+<p>
+<h5>MySQLサーバ・クライアント間プロトコル</h5>
+<ul>
+<li>MySQL独自のプロトコルでデータ送受信する</li>
+</ul>
+<p>
+<h5>セッション</h5>
+<ul>
+<li>クライアントがバックエンドプロセスに接続してから切断するまでを1つと数える、通信の単位</li>
+<li>対話型インターフェース mysql を起動してから（様々な処理をして）切断するまでが１つのセッション</li>
+</ul>
+<h4>02 メモリ構造</h4>
+<p>
+<h5>問い合わせ処理に関するバッファ群</h5>
+<table>
+<tr>
+<th>配置</th>
+<th>バッファ</th>
+<th>説明</th>
+</tr>
+<tr>
+<td rowspan="2">全スレッド共有</td>
+<td>key_buffer</td>
+<td>インデックスデータを読み込んでスキャンするためのバッファ (MyISAM型テーブル専用)</td>
+</tr>
+<tr>
+<td>read_buffer</td>
+<td>インデックスが参照しているテーブルデータを読み込んでスキャンするためのバッファ</td>
+</tr>
+<tr>
+<td rowspan="3">スレッド毎</td>
+<td>read_md_buffer</td>
+<td>テーブルデータを直接読み込んでランダムスキャンするためのバッファ</td>
+</tr>
+<tr>
+<td>sort_buffer</td>
+<td>&#8216;ORDER BY&#8217;の処理など、結果の並べ替えに使うバッファ</td>
+</tr>
+<tr>
+<td>join_buffer</td>
+<td>複数のテーブルの完全結合を行うバッファ</td>
+</tr>
+</table>
+<p>
+<h5>テーブルキャッシュ (table_open_cache)</h5>
+<ul>
+<li>多数のファイルに即座にアクセスするために、システムコール fopen() ではなく、&#8217;テーブルキャッシュ&#8217;に一度オープンしたファイルディスクリプタをキャッシュすることで、ファイルオープンのオーバーヘッドを削減する</li>
+</ul>
+<p>
+<h5>通信バッファ (net_buffer)</h5>
+<ul>
+<li>クライアントから受信するSQL文や、クライアントへ送信するデータの一時保管場所として使われる</li>
+<li>スレッド毎に確保される</li>
+<li>サイズは可変で、初期状態でシステム変数 net_buffer_length の値が確保され、データのサイズに応じてシステム変数 max_allowed_packet の値まで拡大される (送信後は初期値に戻る)</li>
+</ul>
+<p>
+<h5>クエリキャッシュ (query_cache)</h5>
+<ul>
+<li>実行されたSELECT文の結果をキャッシュに保存しておき、同じSELECT文が要求された場合は検索を行わずにキャッシュに保存した結果を返す機能</li>
+</ul>
+<p>
+<h5>スレッドキャッシュ</h5>
+<ul>
+<li>前節の通り</li>
+</ul>
+<p>
+<h5>InnoDB型テーブル関連</h5>
+<ul>
+<li>MySQLはInnoDB型テーブルの処理に関し、バッファプール (buffer_pool) を介してテーブルデータに読み書きする</li>
+</ul>
+<h4>参考文献</h4>
+<blockquote><p><a href="http://www.amazon.co.jp/gp/product/4774139750/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4774139750&amp;linkCode=as2&amp;tag=m0b55-22">MySQL全機能バイブル ~現場で役立つAtoZ~</a></p>
+</blockquote>
+<p>以前MySQLを「キャッシュのお化け」とする例え話を聞いたことがあるのですがなるほど今回の内容からだけでもその理由が分かりました。</p>
+<div><a href="http://twitter.com/ymkjp">@ymkjp</a></div>
+<p><a name='more'></a><br /><!-- Share with Google -->         <!-- Place this tag where you want the +1 button to render. -->
+<div></div>
+<p><!-- Place this tag after the last +1 button tag. --></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/162/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">162</post-id>	</item>
+	</channel>
+</rss>

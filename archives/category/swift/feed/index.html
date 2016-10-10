@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Swift &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/swift/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>Swift &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>Swift iOSアプリ開発の知見</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/10</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/10#respond</comments>
+		<pubDate>Thu, 26 Nov 2015 04:45:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[ios]]></category>
+		<category><![CDATA[Swift]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[SwiftといってもOpenStackのほうではない。 iOS開発の経験はは大学生のころに Titanium Studio を使ったことがある程度しかなかったが、仕事帰りの時間と休日をつかってミニアプリを2週間弱で実装できた。 やったこと &#160; 「こんなアプリほしいなぁ」から始動 Apple関連公式ドキュメントをざっと流し読み 「アプリ作るプラットフォームなので、アプリを作ろう」と心を固める 概要をつかんだら書き始める。iosはインターフェースの設計の筋がいいのか混乱せずにさくさく書ける印象 実装したい機能をググッて実装。ネット情報は玉石混交なのでSwiftやiOSのよさを潰さないように注意 Apple Store サブミット &#160; 雑感 &#160; apple本家の流儀はくみとったほうがよい 趣味レベルだとapple本家の流儀はくみとったほうが後々の対応コストも低くてよさそう 例えば、できるだけuiはコードで組み立てずにinterface builderに仕事させるとか。Auto Layoutは唯一ハマった箇所だけど使ってよかった今は思ってる &#160; リファレンス &#160; SwiftとiOSのドキュメントはDashを他の言語と同じように使った &#160; はまりどころ &#160; Auto Layout 半日費やした 「概念の理解→InterfaceBuilderの操作を覚える」という2ステップが必要 身近にメンターがいるならAuto Layoutだけでも教えてもらうとよさげ DataSource テーブルを操作するときに「?」となった TableViewの前段にレイヤーがあると理解する &#160; サーバ側 今回のアプリはYouTube APIを直接叩くのがメインで、自前で用意したのは画像くらい。 iOSアプリからの通信はhttps推奨なので ASW S3 → CloudFlareのSSLオプションを使った &#160; 次やること 本当はCI環境整備とリファクタリングまでやってから知見まとめを書きたかったが授業が始まってしまい時間があまりとれずTBD状態。 設計 1回アプリをリリースしてViewControllerが肥大化しがちなことを身をもって知った リリースした後くらいに Hatena-Textbook/swift-development-apps.md &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/10" class="more-link">Continue reading<span class="screen-reader-text"> "Swift iOSアプリ開発の知見"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>SwiftといってもOpenStackのほうではない。<br />
+iOS開発の経験はは大学生のころに Titanium Studio を使ったことがある程度しかなかったが、仕事帰りの時間と休日をつかってミニアプリを2週間弱で実装できた。</p>
+<h4><b>やったこと</b></h4>
+<p>&nbsp;</p>
+<ol>
+<li>「こんなアプリほしいなぁ」から始動</li>
+<li>Apple関連公式ドキュメントをざっと流し読み</li>
+<li>「アプリ作るプラットフォームなので、アプリを作ろう」と心を固める</li>
+<li>概要をつかんだら書き始める。iosはインターフェースの設計の筋がいいのか混乱せずにさくさく書ける印象</li>
+<li>実装したい機能をググッて実装。ネット情報は玉石混交なのでSwiftやiOSのよさを潰さないように注意</li>
+<li>Apple Store サブミット</li>
+</ol>
+<p>&nbsp;</p>
+<h4><b>雑感</b></h4>
+<p>&nbsp;</p>
+<ol>
+<li><b>apple本家の流儀はくみとったほうがよい</b>
+<ul>
+<li>趣味レベルだとapple本家の流儀はくみとったほうが後々の対応コストも低くてよさそう</li>
+<li>例えば、できるだけuiはコードで組み立てずにinterface builderに仕事させるとか。Auto Layoutは唯一ハマった箇所だけど使ってよかった今は思ってる</li>
+</ul>
+</li>
+</ol>
+<p>&nbsp;</p>
+<h4><b>リファレンス</b></h4>
+<p>&nbsp;</p>
+<ul>
+<li>SwiftとiOSのドキュメントは<a href="https://kapeli.com/dash">Dash</a>を他の言語と同じように使った</li>
+</ul>
+<p>&nbsp;</p>
+<h4><b>はまりどころ</b></h4>
+<p>&nbsp;</p>
+<ol>
+<li><b>Auto Layout</b>
+<ul>
+<li>半日費やした</li>
+<li>「概念の理解→InterfaceBuilderの操作を覚える」という2ステップが必要</li>
+<li>身近にメンターがいるならAuto Layoutだけでも教えてもらうとよさげ</li>
+</ul>
+</li>
+<li><b>DataSource</b>
+<ul>
+<li>テーブルを操作するときに「?」となった</li>
+<li>TableViewの前段にレイヤーがあると理解する</li>
+</ul>
+</li>
+</ol>
+<p>&nbsp;</p>
+<h4><b>サーバ側</b></h4>
+<p>今回のアプリはYouTube APIを直接叩くのがメインで、自前で用意したのは画像くらい。</p>
+<ul>
+<li>iOSアプリからの通信はhttps推奨なので ASW S3 → <a href="https://www.cloudflare.com/">CloudFlare</a>のSSLオプションを使った</li>
+</ul>
+<p>&nbsp;</p>
+<h4><b>次やること</b></h4>
+<p>本当はCI環境整備とリファクタリングまでやってから知見まとめを書きたかったが授業が始まってしまい時間があまりとれずTBD状態。</p>
+<ol>
+<li><b>設計</b>
+<ul>
+<li>1回アプリをリリースしてViewControllerが肥大化しがちなことを身をもって知った</li>
+<li>リリースした後くらいに <a href="https://github.com/hatena/Hatena-Textbook/blob/master/swift-development-apps.md">Hatena-Textbook/swift-development-apps.md</a> が公開されたので読んでみた</li>
+<li>Hatena-Textbookレベルの実コードとアーキテクチャ両面を解説してくれている記事は見かけなかったので非常に助かる</li>
+</ul>
+</li>
+<li><b>CI環境</b>
+<ul>
+<li>設計のリファクタリングと併行して進めたい</li>
+<li>『<a href="http://amzn.to/1Q05fKf">iOSアプリテスト自動化入門</a>』を読んだ</li>
+<li>北海道旅行の帰りの飛行機で新千歳→成田の間で読みきれた</li>
+<li>Objective-C時代の書籍だけど知りたいことは知れた</li>
+<li>どのあたりまでユニットテストの対象にするかは模索することになりそう。DataSourceは入れるのか、入れないのか。</li>
+</ul>
+</li>
+</ol>
+<p><i>Author: <a href="http://twitter.com/ymkjp">@ymkjp</a></i><a name="more"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/10/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">10</post-id>	</item>
+	</channel>
+</rss>

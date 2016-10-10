@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>dev &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/dev/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>dev &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>A cron job to (re-)issue server certificate of Let&#8217;s Encrypt and update ELB&#8217;s certificate on Amazon Linux</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/6</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/6#respond</comments>
+		<pubDate>Fri, 22 Jan 2016 06:42:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[AWS]]></category>
+		<category><![CDATA[dev]]></category>
+		<category><![CDATA[hello_world]]></category>
+		<category><![CDATA[Let's Encrypt]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[See ymkjp/elb_update_cert if you prefer source code but not messy human document :p Updated at 2016-01-23: Amazon launched AWS Certificate Manager. It should be the easiest way to use certificate on ELB. See more detail at New – AWS Certificate Manager – Deploy SSL/TLS-Based Apps on AWS &#124; AWS Official Blog. Step 0: Create AWS &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/6" class="more-link">Continue reading<span class="screen-reader-text"> "A cron job to (re-)issue server certificate of Let&#8217;s Encrypt and update ELB&#8217;s certificate on Amazon Linux"</span></a>]]></description>
+				<content:encoded><![CDATA[<div>See <a href="https://github.com/ymkjp/elb_update_cert"><b>ymkjp/elb_update_cert</b></a> if you prefer source code but not messy human document :p</p>
+<p><b><i>Updated at 2016-01-23</i></b>: Amazon launched AWS Certificate Manager. It should be the easiest way to use certificate on ELB. See more detail at <a href="https://aws.amazon.com/jp/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/">New – AWS Certificate Manager – Deploy SSL/TLS-Based Apps on AWS | AWS Official Blog</a>.</div>
+<p>
+<h4><b>Step 0: Create AWS environment</b></h4>
+<p>Omitting description to set up VPC, EC2, ELB&#8230;</p>
+<p>
+<h4><b>Step 1: Create new policy for the batch script</b></h4>
+<p>Firstly, go to <a href="https://console.aws.amazon.com/iam/home"><b>https://console.aws.amazon.com/iam/home</b></a>.</p>
+<p>Select <b>Policies > Create Policy > Create Your Own Policy > Set Permissions</b>.</p>
+<p>Let&#8217;s name the policy whatever you want, for example <code>letsencrypt-aws</code>, and fill following JSON to <b>&#8220;Policy Document&#8221;</b>:</p>
+<pre>{<br />    "Version": "2016-01-20",<br />    "Statement": [<br />        {<br />            "Sid": "",<br />            "Effect": "Allow",<br />            "Action": [<br />                "elasticloadbalancing:DescribeLoadBalancers",<br />                "elasticloadbalancing:SetLoadBalancerListenerSSLCertificate"<br />            ],<br />            "Resource": [<br />                "*"<br />            ]<br />        },<br />        {<br />            "Sid": "",<br />            "Effect": "Allow",<br />            "Action": [<br />                "iam:ListServerCertificates",<br />                "iam:UploadServerCertificate",<br />                "iam:DeleteServerCertificate"<br />            ],<br />            "Resource": [<br />                "*"<br />            ]<br />        }<br />    ]<br />}<br /></pre>
+<h4><b>Step 2: Create new user to execute script</b></h4>
+<p>Create new user at <b>Users > Create New Users</b>.</p>
+<p>Do not forget to download the user&#8217;s credentials.</p>
+<p>Then attach the policy <code>letsencrypt-aws</code> which you just created at step #1 to the user.</p>
+<p>Can&#8217;t find the policy? Try filtering policies by &#8220;<b>Filter: Customer Managed Policies</b>&#8220;.</p>
+<p><img src="" alt="IAM Users letsencrypt-aws" /></p>
+<p>
+<h4><b>Step 3: Install packages</b></h4>
+<p>Login to the host, and install required packages.</p>
+<pre>sudo yum update<br />sudo yum install -y git nginx libffi-devel puppet libffi-devel puppet httpd24 jq<br />sudo /etc/init.d/nginx start<br />sudo chkconfig nginx on<br /></pre>
+<h4><b>Step 4: Set up Nginx</b></h4>
+<p>Edit nginx.conf to add a location directive for Let&#8217;s Encrypt.</p>
+<p><kbd>vi /etc/nginx/nginx.conf</kbd></p>
+<pre>server {<br />    listen       80;<br />    server_name  localhost;<br />    root         /usr/share/nginx/html;<br /><br />    # ...<br /><br />    # For Let's Encrypt<br />    location ^~ /.well-known/acme-challenge {<br />        root /var/www/letsencrypt;<br />        access_log /var/log/nginx/access_letsencrypt.log;<br />        error_log /var/log/nginx/error_letsencrypt.log;<br />    }<br />}<br /></pre>
+<p>Restart Nginx proceess to apply the new configuration.</p>
+<p><kbd>sudo service nginx restart</kbd></p>
+<p>
+<h4><b>Step 5: Let&#8217;s try executing</b></h4>
+<p>Execute commands below:</p>
+<pre>cd /home/ec2-user/<br />git clone https://github.com/ymkjp/elb_update_cert.git<br />git clone https://github.com/letsencrypt/letsencrypt<br />vi /home/ec2-user/elb_update_cert/elb_update_cert.sh  # Edit as yours<br />sudo aws configure --profile elb_update_cert  # Add the user you set up<br />sudo bash elb_update_cert.sh<br /></pre>
+<p>Working well?<br />Move on to the next step.</p>
+<p>
+<h4><b>Step 6: Add cron job</b></h4>
+<p>Congrats. This is the final step!</p>
+<p><kbd>sudo cp /home/ec2-user/elb_update_cert/etc/cron.d/elb_update_cert /etc/cron.d</kbd></p>
+<p>All done!<br />This cron job is going to refresh your domain&#8217;s certificate on ELB every month.</p>
+<p>High five!</p>
+<p>
+<h4><b>Any questions?</b></h4>
+<p>Comment to this article, or create <b>&#8220;New issue&#8221;</b> at <a href="https://github.com/ymkjp/elb_update_cert/issues"><b>https://github.com/ymkjp/elb_update_cert/issues</b></a>.</p>
+<p>
+<h4><b>Further work</b></h4>
+<p>
+<ul>
+<li>Create Docker image for step #3 to #6</li>
+<li>Create template by AWS CloudFormation</li>
+</ul>
+<p>Hope this helps you.</p>
+<p>Cheers!</p>
+<p><i>Author: <adress><a href="http://twitter.com/ymkjp/">@ymkjp</a></adress></i></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/6/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">6</post-id>	</item>
+		<item>
+		<title>Swift iOSアプリ開発の知見</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/10</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/10#respond</comments>
+		<pubDate>Thu, 26 Nov 2015 04:45:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[ios]]></category>
+		<category><![CDATA[Swift]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[SwiftといってもOpenStackのほうではない。 iOS開発の経験はは大学生のころに Titanium Studio を使ったことがある程度しかなかったが、仕事帰りの時間と休日をつかってミニアプリを2週間弱で実装できた。 やったこと &#160; 「こんなアプリほしいなぁ」から始動 Apple関連公式ドキュメントをざっと流し読み 「アプリ作るプラットフォームなので、アプリを作ろう」と心を固める 概要をつかんだら書き始める。iosはインターフェースの設計の筋がいいのか混乱せずにさくさく書ける印象 実装したい機能をググッて実装。ネット情報は玉石混交なのでSwiftやiOSのよさを潰さないように注意 Apple Store サブミット &#160; 雑感 &#160; apple本家の流儀はくみとったほうがよい 趣味レベルだとapple本家の流儀はくみとったほうが後々の対応コストも低くてよさそう 例えば、できるだけuiはコードで組み立てずにinterface builderに仕事させるとか。Auto Layoutは唯一ハマった箇所だけど使ってよかった今は思ってる &#160; リファレンス &#160; SwiftとiOSのドキュメントはDashを他の言語と同じように使った &#160; はまりどころ &#160; Auto Layout 半日費やした 「概念の理解→InterfaceBuilderの操作を覚える」という2ステップが必要 身近にメンターがいるならAuto Layoutだけでも教えてもらうとよさげ DataSource テーブルを操作するときに「?」となった TableViewの前段にレイヤーがあると理解する &#160; サーバ側 今回のアプリはYouTube APIを直接叩くのがメインで、自前で用意したのは画像くらい。 iOSアプリからの通信はhttps推奨なので ASW S3 → CloudFlareのSSLオプションを使った &#160; 次やること 本当はCI環境整備とリファクタリングまでやってから知見まとめを書きたかったが授業が始まってしまい時間があまりとれずTBD状態。 設計 1回アプリをリリースしてViewControllerが肥大化しがちなことを身をもって知った リリースした後くらいに Hatena-Textbook/swift-development-apps.md &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/10" class="more-link">Continue reading<span class="screen-reader-text"> "Swift iOSアプリ開発の知見"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>SwiftといってもOpenStackのほうではない。<br />
+iOS開発の経験はは大学生のころに Titanium Studio を使ったことがある程度しかなかったが、仕事帰りの時間と休日をつかってミニアプリを2週間弱で実装できた。</p>
+<h4><b>やったこと</b></h4>
+<p>&nbsp;</p>
+<ol>
+<li>「こんなアプリほしいなぁ」から始動</li>
+<li>Apple関連公式ドキュメントをざっと流し読み</li>
+<li>「アプリ作るプラットフォームなので、アプリを作ろう」と心を固める</li>
+<li>概要をつかんだら書き始める。iosはインターフェースの設計の筋がいいのか混乱せずにさくさく書ける印象</li>
+<li>実装したい機能をググッて実装。ネット情報は玉石混交なのでSwiftやiOSのよさを潰さないように注意</li>
+<li>Apple Store サブミット</li>
+</ol>
+<p>&nbsp;</p>
+<h4><b>雑感</b></h4>
+<p>&nbsp;</p>
+<ol>
+<li><b>apple本家の流儀はくみとったほうがよい</b>
+<ul>
+<li>趣味レベルだとapple本家の流儀はくみとったほうが後々の対応コストも低くてよさそう</li>
+<li>例えば、できるだけuiはコードで組み立てずにinterface builderに仕事させるとか。Auto Layoutは唯一ハマった箇所だけど使ってよかった今は思ってる</li>
+</ul>
+</li>
+</ol>
+<p>&nbsp;</p>
+<h4><b>リファレンス</b></h4>
+<p>&nbsp;</p>
+<ul>
+<li>SwiftとiOSのドキュメントは<a href="https://kapeli.com/dash">Dash</a>を他の言語と同じように使った</li>
+</ul>
+<p>&nbsp;</p>
+<h4><b>はまりどころ</b></h4>
+<p>&nbsp;</p>
+<ol>
+<li><b>Auto Layout</b>
+<ul>
+<li>半日費やした</li>
+<li>「概念の理解→InterfaceBuilderの操作を覚える」という2ステップが必要</li>
+<li>身近にメンターがいるならAuto Layoutだけでも教えてもらうとよさげ</li>
+</ul>
+</li>
+<li><b>DataSource</b>
+<ul>
+<li>テーブルを操作するときに「?」となった</li>
+<li>TableViewの前段にレイヤーがあると理解する</li>
+</ul>
+</li>
+</ol>
+<p>&nbsp;</p>
+<h4><b>サーバ側</b></h4>
+<p>今回のアプリはYouTube APIを直接叩くのがメインで、自前で用意したのは画像くらい。</p>
+<ul>
+<li>iOSアプリからの通信はhttps推奨なので ASW S3 → <a href="https://www.cloudflare.com/">CloudFlare</a>のSSLオプションを使った</li>
+</ul>
+<p>&nbsp;</p>
+<h4><b>次やること</b></h4>
+<p>本当はCI環境整備とリファクタリングまでやってから知見まとめを書きたかったが授業が始まってしまい時間があまりとれずTBD状態。</p>
+<ol>
+<li><b>設計</b>
+<ul>
+<li>1回アプリをリリースしてViewControllerが肥大化しがちなことを身をもって知った</li>
+<li>リリースした後くらいに <a href="https://github.com/hatena/Hatena-Textbook/blob/master/swift-development-apps.md">Hatena-Textbook/swift-development-apps.md</a> が公開されたので読んでみた</li>
+<li>Hatena-Textbookレベルの実コードとアーキテクチャ両面を解説してくれている記事は見かけなかったので非常に助かる</li>
+</ul>
+</li>
+<li><b>CI環境</b>
+<ul>
+<li>設計のリファクタリングと併行して進めたい</li>
+<li>『<a href="http://amzn.to/1Q05fKf">iOSアプリテスト自動化入門</a>』を読んだ</li>
+<li>北海道旅行の帰りの飛行機で新千歳→成田の間で読みきれた</li>
+<li>Objective-C時代の書籍だけど知りたいことは知れた</li>
+<li>どのあたりまでユニットテストの対象にするかは模索することになりそう。DataSourceは入れるのか、入れないのか。</li>
+</ul>
+</li>
+</ol>
+<p><i>Author: <a href="http://twitter.com/ymkjp">@ymkjp</a></i><a name="more"></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/10/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">10</post-id>	</item>
+		<item>
+		<title>「&#8221;キャッシュ不可な&#8221; コンテンツをCDNでキャッシュする方法」の記事がおもしろかったので紹介</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/13</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/13#respond</comments>
+		<pubDate>Thu, 05 Nov 2015 01:15:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[Leveraging your CDN to cache &#8220;uncacheable&#8221; content &#124; Fastly 先月くらいに読んだ記事が面白かったので対話形式で紹介してみる (実はチャットの内容をブログに起こしただけ) 簡単にまとめると…？ 従来「動的だからCDNに載せられない」って思われていたファイルも実は多くが event-driven にキャッシュ可能だよねという話。 ほうほう。event-drivenにキャッシュ可能とは？ ↓が event-driven にキャッシュ可能なコンテンツの例で、 &#8211; Wikiページ&#8211; スポーツスコア&#8211; ニュース記事&#8211; コメント&#8211; 在庫情報&#8211; 株価 ref. The rise of event-driven content (or how to cache more at the edge) &#124; Fastly 例えばスポーツスコアの場合、 # 従来* キャッシュされる → アクセスをCDN経由で配信 → 点数が入る → キャッシュexpireするまで待たなきゃいけない＼(^o^)／ # Event-driven* キャッシュされる &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/13" class="more-link">Continue reading<span class="screen-reader-text"> "「&#8221;キャッシュ不可な&#8221; コンテンツをCDNでキャッシュする方法」の記事がおもしろかったので紹介"</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="https://www.fastly.com/blog/caching-dynamic-content">Leveraging your CDN to cache &#8220;uncacheable&#8221; content | Fastly</a> 先月くらいに読んだ記事が面白かったので対話形式で紹介してみる (実はチャットの内容をブログに起こしただけ)</p>
+<p><b>簡単にまとめると…？</b></p>
+<p>従来「動的だからCDNに載せられない」って思われていたファイルも実は多くが event-driven にキャッシュ可能だよねという話。</p>
+<p><b>ほうほう。event-drivenにキャッシュ可能とは？</b></p>
+<p>↓が event-driven にキャッシュ可能なコンテンツの例で、</p>
+<p>&#8211; Wikiページ<br />&#8211; スポーツスコア<br />&#8211; ニュース記事<br />&#8211; コメント<br />&#8211; 在庫情報<br />&#8211; 株価</p>
+<p><i>ref. <a href="https://www.fastly.com/blog/caching-event-driven-content">The rise of event-driven content (or how to cache more at the edge) | Fastly</a></i></p>
+<p>例えばスポーツスコアの場合、</p>
+<p># 従来<br />* キャッシュされる → アクセスをCDN経由で配信 → 点数が入る → キャッシュexpireするまで待たなきゃいけない＼(^o^)／</p>
+<p># Event-driven<br />* キャッシュされる → アクセスをCDN経由で配信 → 点数が入る → オリジンのコンテンツを更新 → キャッシュをパージするAPIを叩く → キャッシュが更新される</p>
+<p>RFC含めていままではあんまりキャッシュをいつ無効にするかっていうのにあまり目が向けられてこなかったけど、俺らはそこまでコントロールするぜ (ﾄﾞﾔ っていう。</p>
+<p><b>なるほど。akamaiではevent-drivenにできないか。使ったことないから全くわからんのだけどｗ</b></p>
+<p>akamaiもいまは提供されてるかな。少なくともダッシュボードでは結構前からできてたはず。</p>
+<p>ハッシュ値をファイル名の末尾につけるのはパージができないからこそのワークアラウンドだったんだろうね。</p>
+<p>やってることは今となっては普通だろうけど、その問題を数年前には発見できていたのが強み。</p>
+<p>今のフェーズではいかに簡単に早くパージできるかの競争に入ってるんだと思う。</p>
+<p>APIでパージするリクエストを受けた後、どうやって世界各地のノードに全台行き渡らせるかっていうのはgossipプロトコルが使われてるんだってさ。</p>
+<p><b>確かにパージが150msで出来ると注釈がついてる！</b></p>
+<p><a href="http://www.cdnplanet.com/compare/akamai/fastly/">Akamai versus Fastly &#8211; CDN Planet</a></p>
+<p>以上</p>
+<p><i>Author: <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i><a name='more'></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/13/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">13</post-id>	</item>
+		<item>
+		<title>Decrement data source&#8217;s row numbers before deleteRowsAtIndexPaths call.</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/14</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/14#respond</comments>
+		<pubDate>Wed, 23 Sep 2015 14:29:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[hello_world]]></category>
+		<category><![CDATA[ios]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[I got an interesting error message about NSInternalInconsistencyException. The number of rows contained in an existing section after the update (746) must be equal to the number of rows contained in that section before the update (746) Let me brief this sentence, it says &#8220;The number 746 must be equal to the number 746&#8220;. Wow, &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/14" class="more-link">Continue reading<span class="screen-reader-text"> "Decrement data source&#8217;s row numbers before deleteRowsAtIndexPaths call."</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href=""><img border="0" src="" /></a></p>
+<p>I got an interesting error message about <code>NSInternalInconsistencyException</code>.</p>
+<blockquote><p>The number of rows contained in an existing section after the update (<b>746</b>) must be equal to the number of rows contained in that section before the update (<b>746</b>)</p></blockquote>
+<p>Let me brief this sentence, it says &#8220;<b>The number 746 must be equal to the number 746</b>&#8220;.</p>
+<p>Wow, I didn&#8217;t know 767 and 767 are not same number.</p>
+<p>&#8230;</p>
+<p>Yes, I know I should inspect my code closely AS THEY SAID.</p>
+<p>In my case, of course it was my fault. The reason for this Exception is that I didn&#8217;t refresh data source&#8217;s row numbers before <code>deleteRowsAtIndexPaths</code> call.</p>
+<p>P/S Here&#8217;s the whole error log from my app.</p>
+<pre>2015-09-23 23:13:57.320 NewsPlayer[80774:8236299] *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Invalid update: invalid number of rows in section 0.  The number of rows contained in an existing section after the update (746) must be equal to the number of rows contained in that section before the update (746), plus or minus the number of rows inserted or deleted from that section (0 inserted, 1 deleted) and plus or minus the number of rows moved into or out of that section (0 moved in, 0 moved out).'</pre>
+<p><i>Author: <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i><a name='more'></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/14/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">14</post-id>	</item>
+		<item>
+		<title>Change IntelliJ Idea14&#8217;s memory settings</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/18</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/18#respond</comments>
+		<pubDate>Mon, 07 Sep 2015 08:16:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[IntelliJ]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[$ cp /Applications/IntelliJ IDEA 14.app/Contents/bin/idea.vmoptions ~/Library/Preferences/IntelliJIdea14$ vim ~/Library/Preferences/IntelliJIdea14/idea.vmoptions$ diff -u /Applications/IntelliJ IDEA 14.app/Contents/bin/idea.vmoptions ~/Library/Preferences/IntelliJIdea14/idea.vmoptions Author: @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>
+<pre>$ cp /Applications/IntelliJ IDEA 14.app/Contents/bin/idea.vmoptions  ~/Library/Preferences/IntelliJIdea14<br />$ vim ~/Library/Preferences/IntelliJIdea14/idea.vmoptions<br />$ diff -u /Applications/IntelliJ IDEA 14.app/Contents/bin/idea.vmoptions  ~/Library/Preferences/IntelliJIdea14/idea.vmoptions</pre>
+<p><i>Author: <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i><a name='more'></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/18/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">18</post-id>	</item>
+		<item>
+		<title>Multiline editing instead of painful sed or awk</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/22</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/22#respond</comments>
+		<pubDate>Thu, 28 May 2015 08:09:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[Note that this is just a memo for my friend. Author: @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>Note that this is just a memo for my friend.</p>
+<p><i>Author: <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/22/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">22</post-id>	</item>
+		<item>
+		<title>Google Apps Script で Gmail と Chatwork を連携させると便利</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/23</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/23#respond</comments>
+		<pubDate>Thu, 21 May 2015 08:19:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[GAS (Google Apps Script) で Gmail と Chatwork を連携させると便利だったので備忘録を残しておきます。 ここでは Jenkinsビルド結果を Chatwork に通知する例を取り上げます。 前提として、あらかじめ Jenkins のビルド結果を Gmail に通知するフロー は整えておく必要があります。 大まかな手順 Google Apps Script からプロジェクトを新規作成 Resources > Libraries&#8230; に ChatWorkClient を追加 (プロダクトキー &#8220;M6TcEyniCs1xb3sdXFF_FhI-MNonZQ_sT&#8221; で検索 ref. チャットワークAPI を Google Apps Script で使ってみた) Gist のスニペットを貼り付け Gmail のラベルおよびフィルタを設定する (上掲 Gist のコメントを参考に) 通知させたいメールにラベルを付与したあと、再生ボタンを押して Chatwork に投稿があればOK 時計マークのボタンを押して Timer Trigger として Gmail_Label_Chatwork_Notifier &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/23" class="more-link">Continue reading<span class="screen-reader-text"> "Google Apps Script で Gmail と Chatwork を連携させると便利"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>GAS (Google Apps Script) で Gmail と Chatwork を連携させると便利だったので備忘録を残しておきます。</p>
+<p>ここでは Jenkinsビルド結果を Chatwork に通知する例を取り上げます。</p>
+<p>前提として、あらかじめ <a href="http://kakakikikeke.blogspot.jp/2014/04/jenkinsgmail.html">Jenkins のビルド結果を Gmail に通知するフロー</a> は整えておく必要があります。</p>
+<p></p>
+<h4><b>大まかな手順</b></h4>
+<p></p>
+<ol>
+<li><a href="http://www.google.co.jp/script/start/">Google Apps Script</a> からプロジェクトを新規作成</li>
+<li>Resources > Libraries&#8230; に ChatWorkClient を追加 (プロダクトキー &#8220;<code>M6TcEyniCs1xb3sdXFF_FhI-MNonZQ_sT</code>&#8221; で検索 ref. <a href="http://c-note.chatwork.com/post/69590585422/chatworkapi-gas-library"><em>チャットワークAPI を Google Apps Script で使ってみた</em></a>)</li>
+<li><a href="https://gist.github.com/ymkjp/04d6a100948d85d617e3">Gist</a> のスニペットを貼り付け</li>
+<li>Gmail のラベルおよびフィルタを設定する (上掲 Gist のコメントを参考に)</li>
+<li>通知させたいメールにラベルを付与したあと、再生ボタンを押して Chatwork に投稿があればOK</li>
+<li>時計マークのボタンを押して Timer Trigger として <code>Gmail_Label_Chatwork_Notifier</code> を1分間隔で登録 (下記画像参考)<br /></a></li>
+</ol>
+<p><img src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/2015/05/Screenshot-2015-05-21-16.52.35.png" alt="Google Apps Script" width="781" height="203" class="alignnone size-full wp-image-789" /><br /><i>Timer Trigger 設定例</i></p>
+<p>上記手順を踏んだ上で Jenkins のビルドをしてみると、結果が Chatwork へ投稿されていることを確認できます。</p>
+<p></p>
+<h4><b>なぜGASなのか</b></h4>
+<p>自前でやろうとすると複雑になることをシンプルに実現できるためです。</p>
+<ul>
+<li>Gmail の優秀なフィルタ機能を活用できる</li>
+<li>JavaScript で投稿内容を加工できる (Max行など)</li>
+<li>Jenkins メール配信は配信条件が妥当 (失敗ビルド、不安定ビルド、back to normal 通知)  # back to normal 通知便利ですよね</li>
+<li>Jenkins メール配信内容も妥当 (ビルドURL, 失敗時の出力結果)</li>
+</ul>
+<p>しかし、back to normal 通知や投稿内容の加工など、そもそも多くを求めない場合は <a href="https://wiki.jenkins-ci.org/display/JENKINS/ChatWork+Plugin">ChatWork Plugin</a> を使うのが手っ取り早いはずです。</p>
+<p>また、この方法のデメリットとしてビルド完了から最大1分ほどの遅延が発生しうることがあります。</p>
+<h4><b>GAS使ってみた所感</b></h4>
+<p>GAS初めて使ってみましたが、自動化への貢献度が高そうで気に入りました。<br /><del datetime="2016-05-25T03:03:47+00:00">Google Calendar の日時からイベント発火できれば便利そうなのでリファレンスを探してみましたが、残念ながら見つかりませんでした。</del></p>
+<h4>
+<b>2016-05-24 追記</b></h4>
+<p>リファレンスを見てみたところカレンダー関連のAPIを発見しました！</p>
+<p><a href="https://developers.google.com/apps-script/reference/calendar/"><b>Calendar Service  |  Apps Script  |  Google Developers</b></a></p>
+<p>GAS、着実に進化していますね。</p>
+<p><i>Author: <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> </i></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/23/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">23</post-id>	</item>
+		<item>
+		<title>What&#8217;s your most frequent git subcommand?</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/25</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/25#respond</comments>
+		<pubDate>Thu, 26 Feb 2015 15:06:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[hello_world]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2015/02/26/whats-your-most-frequent-git-subcommand/</guid>
+		<description><![CDATA[history &#124; awk '{ $1="";print }' &#124; awk '$1=="g" &#124;&#124; $1=="git" { print $2 }' &#124; sort &#124; uniq -c &#124; awk '$1>1' &#124; sort -r It will show a standard output like the one below: 724 s 424 d 299 ci 169 l 139 add 131 push 71 stash 58 co 45 pull 45 &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/25" class="more-link">Continue reading<span class="screen-reader-text"> "What&#8217;s your most frequent git subcommand?"</span></a>]]></description>
+				<content:encoded><![CDATA[<pre>history | awk '{ $1="";print }' | awk '$1=="g" || $1=="git" { print $2 }' | sort | uniq -c | awk '$1>1' | sort -r</pre>
+<p>It will show a standard output like the one below:</p>
+<pre>724 s<br /> 424 d<br /> 299 ci<br /> 169 l<br /> 139 add<br /> 131 push<br />  71 stash<br />  58 co<br />  45 pull<br />  45 dc<br />  34 rebase<br />  29 clone<br />  27 remote<br />  25 reset<br />  21 b<br />  15 rm<br />  15 commit<br />  10 init<br />   9 --no-pager<br />   8 submodule<br />   8 checkout<br />   7 branch<br />   6 --version<br />   4 tag<br />   4 status<br />   3 reflog<br />   3 diff<br />   3 config<br />   3<br />   2 st<br />   2 merge<br />   2 cherry-pick</pre>
+<p>Have fun!</p>
+<p><i>Feel free to contact me <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i> <a name='more'></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/25/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">25</post-id>	</item>
+		<item>
+		<title>How to query against Global Brand Database&#8217;s internal API</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/26</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/26#respond</comments>
+		<pubDate>Mon, 26 Jan 2015 23:17:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[hello_world]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2015/01/26/how-to-query-against-global-brand-databases-internal-api/</guid>
+		<description><![CDATA[I found a interesting question on Quora and tried to answer it. require 'net/http'require 'uri'require 'json'require 'pp' url = URI.parse('http://www.wipo.int/branddb/jsp/select.jsp')req = Net::HTTP::Post.new(url.path)req.body = URI.encode_www_form [ ['q' , 'BRAND:sushi'], ['fl' , 'BRAND,SOURCE,STATUS,score,OO,HOL,ID,AD,VCS,USC,NC,IMG,ID'], ['hl' , 'true'], ['hl.requireFieldMatch' , 'true'], ['hl.fragsize' , '5000'], ['type' , 'brand'], ['facet' , 'true'], ['qi' , '2285-1422386635681'], ['json.nl' , 'map'], ['wt' , 'json'], &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/26" class="more-link">Continue reading<span class="screen-reader-text"> "How to query against Global Brand Database&#8217;s internal API"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I found a interesting question on Quora and <a href="http://www.quora.com/Intellectual-Property-1/Is-there-an-API-to-the-WIPO-Trademark-database/answer/Yamamoto-Kenta#comment8267990">tried to answer it</a>.</p>
+<p><a name='more'></a>
+<pre>require 'net/http'<br />require 'uri'<br />require 'json'<br />require 'pp'<br /> <br />url = URI.parse('http://www.wipo.int/branddb/jsp/select.jsp')<br />req = Net::HTTP::Post.new(url.path)<br />req.body = URI.encode_www_form [<br /> ['q' , 'BRAND:sushi'],<br /> ['fl' , 'BRAND,SOURCE,STATUS,score,OO,HOL,ID,AD,VCS,USC,NC,IMG,ID'],<br /> ['hl' , 'true'],<br /> ['hl.requireFieldMatch' , 'true'],<br /> ['hl.fragsize' , '5000'],<br /> ['type' , 'brand'],<br /> ['facet' , 'true'],<br /> ['qi' , '2285-1422386635681'],<br /> ['json.nl' , 'map'],<br /> ['wt' , 'json'],<br /> ['sort' , 'score desc,AD desc'],<br /> ['rows' , '30'],<br /> ['start' , '0'],<br /> ['f.SOURCE.facet.limit' , '50'],<br /> ['f.SOURCE.facet.mincount' , '1'],<br /> ['f.STATUS.facet.limit' , '20'],<br /> ['f.STATUS.facet.mincount' , '1'],<br /> ['f.OO.facet.mincount' , '1'],<br /> ['facet.field' , 'SOURCE'],<br /> ['facet.field' , 'STATUS'],<br /> ['facet.field' , 'OO'],<br /> ['facet.query' , 'ITY:VERBAL'],<br /> ['facet.query'  , 'ITY:NONVERBAL'],<br /> ['facet.query' , 'ITY:COMBINED'],<br /> ['facet.query' , 'ITY:UNKNOWN'],<br /> ['facet.query' , 'ED:[* TO NOW/DAY]'],<br /> ['facet.query' , 'ED:[NOW/DAY-1MONTH TO NOW/DAY]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO *]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO NOW/DAY+1MONTH]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO NOW/DAY+6MONTHS]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO NOW/DAY+1YEAR]'],<br />]<br />res = Net::HTTP.new(url.host, url.port).start {|http| http.request(req) }<br />case res<br />when Net::HTTPSuccess, Net::HTTPRedirection<br />  # OK<br />  pp JSON.parse(res.body)<br />else<br />  pp res.value<br />end</pre>
+<p><a href="https://gist.github.com/ymkjp/55aff114ef7c63cb14f3#file-wipo-rb">https://gist.github.com/ymkjp/55aff114ef7c63cb14f3#file-wipo-rb</a></p>
+<p><i>Feel free to ask about this article: <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/26/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">26</post-id>	</item>
+		<item>
+		<title>ssh がサーバと接続できなくなったときに素早く諦めさせる</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/27</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/27#respond</comments>
+		<pubDate>Fri, 12 Sep 2014 09:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2014/09/12/ssh-%e3%81%8c%e3%82%b5%e3%83%bc%e3%83%90%e3%81%a8%e6%8e%a5%e7%b6%9a%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%8f%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ab%e7%b4%a0%e6%97%a9%e3%81%8f%e8%ab%a6/</guid>
+		<description><![CDATA[$ tail -n4 ~/.ssh/configHost example.com HostName example.com ServerAliveInterval 1 ServerAliveCountMax 1 これで物理LANケーブルを抜いて Wifi 接続に切り替わったときなどに &#8220;Timeout, server example.com not responding.&#8221; というメッセージと共に接続を切ってくれる。 デフォルトだとTCPセッションが生きている限り接続を切れないので職場のように安定しているネットワーク環境でPCと共に離席することが多めだと便利。 もし場面によって使い分けたければ ssh の -o オプションを利用するとよさそう。 $ ssh -o 'ServerAliveInterval 1' -o 'ServerAliveCountMax 1' user@example.com ちなみに ServerAliveInterval はデフォルト無効で ServerAliveCountMax のデフォルト値は3です。 この記事へのご意見・ご質問は @ymkjp へどうぞ！]]></description>
+				<content:encoded><![CDATA[<pre>$ tail -n4 ~/.ssh/config<br />Host example.com<br />  HostName example.com<br />  ServerAliveInterval 1<br />  ServerAliveCountMax 1<br /></pre>
+<p>これで物理LANケーブルを抜いて Wifi 接続に切り替わったときなどに &#8220;Timeout, server example.com not responding.&#8221; というメッセージと共に接続を切ってくれる。</p>
+<p>デフォルトだとTCPセッションが生きている限り接続を切れないので職場のように安定しているネットワーク環境でPCと共に離席することが多めだと便利。</p>
+<p>もし場面によって使い分けたければ ssh の -o オプションを利用するとよさそう。</p>
+<p><kbd>$ ssh -o 'ServerAliveInterval 1' -o 'ServerAliveCountMax 1' user@example.com</kbd></p>
+<p>ちなみに ServerAliveInterval はデフォルト無効で ServerAliveCountMax のデフォルト値は3です。</p>
+<p><i>この記事へのご意見・ご質問は <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> へどうぞ！</i> <a name='more'></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/27/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">27</post-id>	</item>
+	</channel>
+</rss>

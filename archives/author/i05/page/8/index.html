@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>@i05 | It works! - Part 8</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,453] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="description"  content="A Tokyo based software developer, a grad student belongs to a security lab at JAIST, and a husband of my mrs." />
+<meta name="robots" content="noindex,follow" />
+<link rel='prev' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/7' />
+<link rel='next' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/9' />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/8" />
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Posts by @i05 Feed" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="archive paged author author-i05 author-1 paged-8 author-paged-8 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></p>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">Author: <span class="vcard">@i05</span></h1>			</header><!-- .page-header -->
+
+			
+<article id="post-56" class="post-56 post type-post status-publish format-standard hentry category-32 category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/56" rel="bookmark">【ゲーム企画】無操作ズボラゲー「最強少女キマイラ」</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="http://dic.pixiv.net/a/%E3%82%AD%E3%83%A1%E3%81%93%E3%81%AA"><img border="0" src="http://26.media.tumblr.com/tumblr_lkhk3kYAmb1qzslpwo1_500.jpg" /></a></p>
+<p>ぼくのかんがえたさいきょうのスマホゲーム</p>
+<pre><a href="https://gist.github.com/ymkjp/b2d8ef530cff2dcc2e6f"><b>無操作ズボラゲー「最強少女キマイラ」</b></a></pre>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/56" rel="bookmark"><time class="entry-date published updated" datetime="2014-06-14T05:29:00+00:00">2014-06-14</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%82%b2%e3%83%bc%e3%83%a0" rel="category tag">ゲーム</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/56#respond"><span class="dsq-postid" data-dsqidentifier="56 http://tk2-249-34500.vs.sakura.ne.jp/2014/06/14/%e3%80%90%e3%82%b2%e3%83%bc%e3%83%a0%e4%bc%81%e7%94%bb%e3%80%91%e7%84%a1%e6%93%8d%e4%bd%9c%e3%82%ba%e3%83%9c%e3%83%a9%e3%82%b2%e3%83%bc%e3%80%8c%e6%9c%80%e5%bc%b7%e5%b0%91%e5%a5%b3%e3%82%ad%e3%83%9e/">Leave a comment<span class="screen-reader-text"> on 【ゲーム企画】無操作ズボラゲー「最強少女キマイラ」</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-57" class="post-57 post type-post status-publish format-standard hentry category-it category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/57" rel="bookmark">オンライン語学学習サービスは受講者から金をとるべきではない！</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>講師から取るべき。</p>
+<p>受講者は授業料を講師に直接払う。</p>
+<p>講師の仕事のインセンティブはあがるので、より評判の高い授業が生まれるだろう！</p>
+<p>語学学習サービスは、プラットフォーム利用料 (予約, 教材, 宣伝, &#8230;etc) として講師からお金をもらう。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/57" rel="bookmark"><time class="entry-date published updated" datetime="2014-06-14T03:22:00+00:00">2014-06-14</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/it%e8%a6%8b%e8%81%9e%e9%8c%b2" rel="category tag">IT見聞録</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/57#respond"><span class="dsq-postid" data-dsqidentifier="57 http://tk2-249-34500.vs.sakura.ne.jp/2014/06/14/%e3%82%aa%e3%83%b3%e3%83%a9%e3%82%a4%e3%83%b3%e8%aa%9e%e5%ad%a6%e5%ad%a6%e7%bf%92%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9%e3%81%af%e5%8f%97%e8%ac%9b%e8%80%85%e3%81%8b%e3%82%89%e9%87%91%e3%82%92%e3%81%a8/">Leave a comment<span class="screen-reader-text"> on オンライン語学学習サービスは受講者から金をとるべきではない！</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-58" class="post-58 post type-post status-publish format-standard hentry category-7 category-9">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/58" rel="bookmark">「死亡消費税」は世代間の格差の再生産が少なくなるので社会的弱者にとって有利な話なのでは</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="http://b.hatena.ne.jp/entry/news.livedoor.com/article/detail/8819496/"><img border="0" src="http://1.bp.blogspot.com/-NGcHaXCOMbY/U2-pCXCm0fI/AAAAAAAASOs/y2nT_uvUeVo/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-05-12+01.44.34.png" /></a></p>
+<p>はてブのコメントが好評だったのでブログにしておきます。</p>
+<div>
+<blockquote>
+<div>政府内では社会保障精算税、いわゆる「死亡消費税」の導入が検討されているのだ。<br />これは死亡時に残した財産から一定の税率で税金を徴収するというもので、膨らみ続ける高齢者医療費の対策として提案された。要するに生きている間に医療費を負担させては不満がつのる。でも死んでからなら不満もないでしょ、という理屈だ。</div>
+<div><small><cite title="生きて税金、死んでも税金!?　政府が「死亡消費税導入」を検討"><a href="http://news.livedoor.com/article/detail/8819496/">ライブドアニュース</a></cite></small></div>
+</blockquote>
+</div>
+<p>相続税に別名をつけて、増税しようというのが政府の魂胆だと僕は判断しましたが、数ある増税のなかでもこの「死亡消費税」は筋がいいのではないかと思います。</p>
+<p>なぜなら世代間の格差の再生産が緩和されるから。</p>
+<p>むろん課税から逃れる方法はあるだろうし、裕福層ほどそのインセンティブも大きく、実際にそれをやってのけるのも裕福層が多いのは間違いないでしょう。</p>
+<p>ただ、明らかなザル法でもないかぎり抜け駆けの余地があるからといって有望な徴税選択肢を捨ててしまうのはもったいない気がします。</p>
+<p>この「死亡消費税」、「死んだら召し上げる」というシンプルなものなので、政治思想的にはリベラルな人からも支持はありそうです。</p>
+<p>ある意味SF的なシンプルさなので、リバタリアンからも「最悪の譲歩」くらいならば引き出せそうな気すらします。</p>
+<p>SFといえば社会制度のリーサルウエポン、ベーシックインカムですね。</p>
+<div>
+<ul>
+<li><a href="http://synodos.jp/economy/8096">なぜベーシックインカムは賛否両論を巻き起こすのか――「転換X」にのっとる政策その1</a></li>
+</ul>
+</div>
+<p>突如富豪にでもなったら、非営利でベーシックインカムの実現に打ち込みたいなと願う今日このごろです。</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/58" rel="bookmark"><time class="entry-date published updated" datetime="2014-05-11T16:43:00+00:00">2014-05-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%83%bc%e3%82%b7%e3%83%83%e3%82%af%e3%82%a4%e3%83%b3%e3%82%ab%e3%83%a0" rel="category tag">ベーシックインカム</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/58#respond"><span class="dsq-postid" data-dsqidentifier="58 http://tk2-249-34500.vs.sakura.ne.jp/2014/05/11/%e3%80%8c%e6%ad%bb%e4%ba%a1%e6%b6%88%e8%b2%bb%e7%a8%8e%e3%80%8d%e3%81%af%e4%b8%96%e4%bb%a3%e9%96%93%e3%81%ae%e6%a0%bc%e5%b7%ae%e3%81%ae%e5%86%8d%e7%94%9f%e7%94%a3%e3%81%8c%e5%b0%91%e3%81%aa%e3%81%8f/">Leave a comment<span class="screen-reader-text"> on 「死亡消費税」は世代間の格差の再生産が少なくなるので社会的弱者にとって有利な話なのでは</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-59" class="post-59 post type-post status-publish format-standard hentry category-7 category-12 category-33">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/59" rel="bookmark">麻布十番おすすめランチ No.1 認定 喃喃のミートパイ</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-dAL4AAxa44k/U2qJRKFXBnI/AAAAAAAASNg/s_y21aTroDM/s1600/10154348_4138863526817_4432495843109273907_n.jpg"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-dAL4AAxa44k/U2qJRKFXBnI/AAAAAAAASNg/s_y21aTroDM/s400/10154348_4138863526817_4432495843109273907_n.jpg" /></a></p>
+<p>このミートパイがめちゃんこうますぎました。</p>
+<p>中身の具の牛頬肉の赤ワイン煮込みと、外側のパイのサクサクさ、そこにかかった肉のうまみが活かされたソースがあわさっていて、思わず店員の顔の濃いお兄さんに「おいしいです〜」と話しかけてしまいました。</p>
+<p>ランチにサラダとスープがついて1,500円ですがまちがいなく価値はあります。</p>
+<p>スープは日替わりですが、僕が食べたはマッシュルームの冷製スープで、僕の知らなかったうまみの領域が開拓できました。</p>
+<p>麻布十番に住んで1年半になりますが、なぜもっと早くこの店をみつけなかったのかと反省しています (笑)</p>
+<h4><b>お店リンク</b></h4>
+<div>
+<ul>
+<li><a href="http://tabelog.com/tokyo/A1307/A130702/13154028/">喃喃 麻布十番Store （ナンナン） &#8211; 麻布十番/ビストロ</a></li>
+</ul>
+</div>
+<h4><b>麻布十番ランチ ベスト3 (2014年5月現在)</b></h4>
+<div>
+<ol>
+<li><a href="http://tabelog.com/tokyo/A1307/A130702/13154028/">喃喃 麻布十番Store （ナンナン） &#8211; 麻布十番/ビストロ</a></li>
+<li><a href="http://tabelog.com/tokyo/A1307/A130702/13001194/">魚可津 （うおかつ） &#8211; 麻布十番/魚介料理・海鮮料理</a></li>
+<li><a href="http://tabelog.com/tokyo/A1307/A130702/13021903/">あん梅 ぎん香 （あんばい ぎんか） &#8211; 麻布十番/魚介料理・海鮮料理</a></li>
+</ol>
+</div>
+<p>麻布十番は焼き魚料理屋が充実しまくっていて、有名どころだと他にも<a href="http://tabelog.com/tokyo/A1307/A130702/13004451/">たき下</a>があります。</p>
+<p>魚料理好きには天国です。</p>
+<p>他にはそば屋も多くて、ラーメン屋よりそば屋が多いのは都内でも麻布十番だけじゃないかと勝手に思っています。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/59" rel="bookmark"><time class="entry-date published" datetime="2014-05-07T19:34:00+00:00">2014-05-07</time><time class="updated" datetime="2016-03-11T14:59:59+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%93%81%e8%a9%95" rel="category tag">品評</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e9%a3%9f%e3%81%84%e5%80%92%e3%82%8c" rel="category tag">食い倒れ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/59#respond"><span class="dsq-postid" data-dsqidentifier="59 http://tk2-249-34500.vs.sakura.ne.jp/2014/05/07/%e9%ba%bb%e5%b8%83%e5%8d%81%e7%95%aa%e3%81%8a%e3%81%99%e3%81%99%e3%82%81%e3%83%a9%e3%83%b3%e3%83%81-no-1-%e8%aa%8d%e5%ae%9a-%e5%96%83%e5%96%83%e3%81%ae%e3%83%9f%e3%83%bc%e3%83%88%e3%83%91%e3%82%a4/">Leave a comment<span class="screen-reader-text"> on 麻布十番おすすめランチ No.1 認定 喃喃のミートパイ</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-60" class="post-60 post type-post status-publish format-standard hentry category-7 category-12 category-34">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/60" rel="bookmark">Brooks Brothers の紺ブレ購入 Milano モデルいいですね</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="http://shop.brooksbrothers.co.jp/top/detail/asp/detail.asp?scode=2561811061"><img border="0" src="http://3.bp.blogspot.com/--piVve850Sc/U24HidAPE1I/AAAAAAAASOQ/2IhrFtHBMvY/s400/25618110.jpg" /></a></p>
+<p>ゴールデンウイーク最終日、青山の Brooks Brothers に行ってネイビーブレザー (いわゆる紺ブレ) を買ってきました。</p>
+<p>僕は服や靴を買うときには「男のマジメ服」というブログをよく参考にしているのですが、この「男のマジメ服」には Brooks Brothers の紺ブレ関連記事が多く、いつも以上に助かりました。</p>
+<p>特に参考にした記事のリンクを載せておきます。</p>
+<div>
+<ol>
+<li><a href="http://blackwatch.seesaa.net/article/29913154.html">紺ブレ・ネイビージャケット全般の記事</a> &#8212; 紺ブレの出自や特徴・素材・こだわりポイント・着こなし例など</li>
+<li><a href="http://blackwatch.seesaa.net/article/162565044.html">ブルックス・ブラザーズのネイビーブレザーの記事</a> &#8212; モデルごとの説明など</li>
+</ol>
+</div>
+<p>ブログを参考にさせてもらって Brooks Brothers オンラインショップで欲しいモデル <a href="http://shop.brooksbrothers.co.jp/top/detail/asp/detail.asp?scode=2561810060">Milano</a> を選んでおいて、お店に行きました。</p>
+<p><a href="http://shop.brooksbrothers.co.jp/top/detail/asp/detail.asp?scode=2561811061"><img border="0" src="http://4.bp.blogspot.com/-K4Yo9QOIpDI/U24HoAbsjiI/AAAAAAAASOY/ej57cHWKNcA/s400/25618110_03.jpg" /></a></p>
+<p>お店にあったのはコットン生地でなく同じ Red Fleece というコレクションのウールのものでした。ウールのほうがコットンよりややフォーマルよりなようです。</p>
+<p>試着してみてすっきりしたデザインで気に入って買いました。その日着ていたオレンジのショーツにも違和感なく馴染む汎用性の高さにはおどろきました。</p>
+<p>僕はインターネットでの物の売り買いに全く抵抗感はないですが、服のサイズはストレッチ素材かどうかなども関係してきて素人には数値だけで判断するのが難しいので実際の店舗に行って買うのがいいですね。</p>
+<p><a href="http://shop.brooksbrothers.co.jp/top/detail/asp/detail.asp?scode=3760355329"><img border="0" src="http://4.bp.blogspot.com/-6XYYyWglth8/U2kD0BNNluI/AAAAAAAASM8/HosqUmGy-Co/s320/img.jpeg" /></a></p>
+<p>ライトウエイトの Milano モデルシルエットが細身で気に入ったので、黄色のカラーチノパンも一緒に買いました。</p>
+<p><a href="http://mistermort.com/2010/05/young-dapper-fella-on-bleecker-street/"><img border="0" src="http://3.bp.blogspot.com/-KP8nTvhPHhM/U2TbEU45DzI/AAAAAAAASKw/SwNqinTQw7E/s320/6a010535d07789970c0133ed4c950a970b-800wi.jpg" /></a></p>
+<p>そのとき脳内にあったイメージはこのお兄さん (笑)</p>
+<p><a href="http://shop.brooksbrothers.co.jp/top/detail/asp/detail.asp?scode=3761516329"><img border="0" src="http://2.bp.blogspot.com/-Wb1PC7FL2dQ/U2kEG1azmYI/AAAAAAAASNE/ECjyfryekxw/s320/37615163_02.jpg" /></a></p>
+<p>で、会計を済ませたところ、お誕生日月ということもあり10%のポイントがついてきたのでポイントを使ってショーツも購入しました。</p>
+<p><a href="http://www.thesartorialist.com/photos/on-the-street-high-top-cons-and-jackets-florence/"><img border="0" src="http://1.bp.blogspot.com/-5ItHp17SfYE/U2TbEVmsr_I/AAAAAAAASKs/x2H30OrA1Tg/s320/7019Consjkt1Web.jpg" /></a><a href="http://www.houyhnhnm.jp/blog/moriyama/2010/05/day-of-district-blazer.html"><img border="0" src="http://1.bp.blogspot.com/-wo4PbUjY6dU/U2TbFM5qRWI/AAAAAAAASLA/ayPmJOOqNCA/s320/_MG_2380-thumb-360x541-20732.jpg" /></a></p>
+<p>ショーツを選んでいるときの脳内イメージはこのお兄さんたちで、ほんとは白がよかったんだけど店員さんに探してもらっても白ショーツは取り扱いがないそうなので、薄紫のにしました。</p>
+<p>今から着るのが楽しみです。それではおそまつさまでした。</p>
+<p>
+<h4><b>購入した商品</b></h4>
+<div>
+<ul>
+<li><a href="http://shop.brooksbrothers.co.jp/top/detail/asp/detail.asp?scode=2561811061">Red Fleece ウール シングル２釦 ブレザー　</a></li>
+<li><a href="http://shop.brooksbrothers.co.jp/top/detail/asp/detail.asp?scode=3760355329">ライトウエイト アドバンテージチノ プレーンフロントパンツ MILANO</a></li>
+<li><a href="http://shop.brooksbrothers.co.jp/top/detail/asp/detail.asp?scode=3761516329">Red Fleece コットン オックスフォード プレーンフロント 9inショーツ</a></li>
+</ul>
+</div>
+<h4><b>購入したお店</b></h4>
+<div>
+<ul>
+<li><a href="http://shop.brooksbrothers.co.jp/search/shop.asp?area_id=3&amp;shop_id=6">Brooks Brothers 青山本店</a></li>
+</ul>
+</div>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/60" rel="bookmark"><time class="entry-date published updated" datetime="2014-05-06T15:51:00+00:00">2014-05-06</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%93%81%e8%a9%95" rel="category tag">品評</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e7%9d%80%e5%80%92%e3%82%8c" rel="category tag">着倒れ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/60#respond"><span class="dsq-postid" data-dsqidentifier="60 http://tk2-249-34500.vs.sakura.ne.jp/2014/05/06/brooks-brothers-%e3%81%ae%e7%b4%ba%e3%83%96%e3%83%ac%e8%b3%bc%e5%85%a5-milano-%e3%83%a2%e3%83%87%e3%83%ab%e3%81%84%e3%81%84%e3%81%a7%e3%81%99%e3%81%ad/">Leave a comment<span class="screen-reader-text"> on Brooks Brothers の紺ブレ購入 Milano モデルいいですね</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-61" class="post-61 post type-post status-publish format-standard hentry category-32 category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/61" rel="bookmark">にわか名人が教える MiniMetro 攻略法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-b4w4-k3veoE/U2eIVap4nMI/AAAAAAAASLc/nqGGJm6Fb90/s1600/MiniMetro.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-b4w4-k3veoE/U2eIVap4nMI/AAAAAAAASLc/nqGGJm6Fb90/s640/MiniMetro.png" width="580" /></a></p>
+<p>Mini Metro (ミニメトロ) というUnityブラウザゲームの攻略法を紹介する。</p>
+<p>ゲームへのリンクはこちら↓</p>
+<div>
+<ul>
+<li><a href="http://dinopoloclub.com/minimetro/"><b>Mini Metro</b></a> </li>
+</ul>
+</div>
+<p>
+<h4><b>ミニメトロ攻略 基本3パターン</b></h4>
+<p>
+<div>
+<ol>
+<li>珍しい記号を接続点にする</li>
+<li>環状線をつくる</li>
+<li>基本3図形は1つの路線内で乗客を降ろせるようにする</li>
+</ol>
+</div>
+<p>さっそく攻略法の話だが、まずはとにもかくにも乗客の分散だ。</p>
+<p>1つの路線に負担が集中するのはいけない。</p>
+<p>このゲームは<b>スペースボタンで一時停止できる</b>ので、負担を分散させるべくどんどん路線を組み替えていこう。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-dp-rRlcz3JY/U2eJU7GrgvI/AAAAAAAASLk/rpMjvYxceds/s1600/MiniMetro_special.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-dp-rRlcz3JY/U2eJU7GrgvI/AAAAAAAASLk/rpMjvYxceds/s400/MiniMetro_special.png" /></a></p>
+<p>
+<h4><b>珍しい記号で路線をクロスさせる</b></h4>
+<p>おすすめの戦略はこの例のように<b>ゲーム中1種類しか出現しない珍しい記号 (特殊記号) を接点として、独立した環状線を作っていく</b>方法だ。</p>
+<p>複数路線の接点となる駅はどうしても乗り換えで人が集中してしまうが、特殊記号であれば乗降客数が少ないため人があふれてしまう危険性が少ない。</p>
+<p>さらに他から運ばれてきた特殊記号に行きたい乗客も分担してさばくことができる。まさに一挙両得の戦略なのだ。</p>
+<p>正直に言ってこの特殊記号の出現する位置さえよければ、このゲームはもう勝ったも同然なのである。</p>
+<h4><b>基本の3図形は □ > △ > ◯ で繋ぐ</b></h4>
+<p>◯△□の基本の3つの図形の特性を覚えておこう。</p>
+<p>基本の3図形の乗降客数を多い順に並べると ◯ > △ > □ だ。</p>
+<p>だから、<b>他路線とはできるかぎりその逆の □ > △ > ◯ の優先度で接続しよう</b> (詳しい理由はあとで述べる)。</p>
+<h4><b>独立しあった環状線で役割分担</b></h4>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-PgF-Acx36UA/U2ePHRQAjqI/AAAAAAAASL0/36WlQu291wg/s1600/MiniMetro_figures.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-PgF-Acx36UA/U2ePHRQAjqI/AAAAAAAASL0/36WlQu291wg/s400/MiniMetro_figures.png" /></a></p>
+<p>環状線は、その名の通り円を描くように路線を走らせる。</p>
+<p>この画像の緑、水色、黄色の各路線が形作っているを例にとってみよう。</p>
+<p>ここで大事なのが、<b>それぞれの環状線には自前で ◯△□ の基本の3つの図形を自分の路線内に持たせる</b>ことだ。</p>
+<p>この、各路線ごとに ◯△□ の基本の3つの図形は内側に持つようにする「自前主義」はとても大切なので覚えておこう。これが自前でまかなえていないと、その路線の ◯△□ 行きの乗客を他の路線との接続点で受け渡すはめになりそこが飽和してしまう。</p>
+<p>だから環状線は ◯△□ の基本3パターンを組み込みつつ、特殊記号か □ で他路線と接続するようにしよう。むしろ「<b>◯△□ の自前主義を貫こうとしたらいつのまにか特殊記号が接続点になっていた</b>」というくらいの意識が望ましい。</p>
+<p>※例の図では赤とピンクの路線は1つ ◯ を共有しているが、これは接続というよりも路線を交差させるために生じたと考えていただきたい</p>
+<p>また、赤の路線のような<b>大きな環状線で気をつけたいのが、路線の ◯ の数を少なくすること</b>である。</p>
+<p>巨大な路線は走る距離が長くなるので、駅への停車数が多いといくらアイテムで補強しようが乗客の回収が間に合わなくなってしまうのだ。</p>
+<p>それに気づいていない憐れなプレイヤーが何を隠そう過去の私自身のことである。</p>
+<p>下のつぶやきをご覧いただきたい。</p>
+<blockquote lang="en"><p><a href="https://twitter.com/search?q=%23MiniMetro&amp;src=hash">#MiniMetro</a> 2611人までいった。NEW LINE でてくれなくて一時停止しまくって黄色をなんとか延命させてたんだけど操作ミスでゲームオーバーだった。 <a href="http://t.co/ZJ9Q3fspB9">pic.twitter.com/ZJ9Q3fspB9</a></p>
+<p>&mdash; Kenta YAMAMOTO (@ymkjp) <a href="https://twitter.com/ymkjp/statuses/462658599437606914">May 3, 2014</a></p></blockquote>
+<p>黄色の路線に負担が集中しすぎて乗客の回収が間に合わなくなっていることがみてとれる。</p>
+<p>※このとき私は路線が7本までしか出ないことを知らなかった (笑)</p>
+<h4><b>アイテムの優先順位は Carriage >= Double Track >= New Line</b></h4>
+<p>ゲーム内の1週間ごとに新しいアイテムを導入できる。</p>
+<p>アイテムの優先順位は <b>Carriage >= Double Track >= New Line</b> > Interchange >>> Tunnel  だ。</p>
+<p>このマップである限り、間違っても役立たずの Tunnel を取ってはいけない。</p>
+<h4><b>環状線を平べったくするとトンネルが少なくても問題なし</b></h4>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-1zHAJTrAzQE/U2eTMvOXytI/AAAAAAAASMA/GiT6ZBOUP4U/s1600/MiniMetro_tunnel.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-1zHAJTrAzQE/U2eTMvOXytI/AAAAAAAASMA/GiT6ZBOUP4U/s400/MiniMetro_tunnel.png" /></a></p>
+<p>この例のように、トンネルは工夫すればもともとの3本のままで十分やりくりできる。</p>
+<p>そのため<b>環状線は平べったくつぶれた形にする</b>。</p>
+<p>川が横方向なので縦長にするとトンネルが足りなくなるし、そもそもゲーム画面全体が横長で駅の数が横方向に多いからだ。</p>
+<h4><b>イレギュラーな路線運用でも自前主義は貫く</b></h4>
+<p>最後に注目して欲しいのが茶色の路線だ。</p>
+<p>この路線はゲーム後半戦に投入した渋い役割をもった路線で、やっていることは特殊記号の接続と、離れた位置にある ◯ の回収である。</p>
+<p>環状線ではなくとも ◯△□ の自前主義が貫かれていることには要注目だ。</p>
+<h4><b>スコア5000を目指そう</b></h4>
+<p>そうこうしているうちに、乗降人数 5000 人が見えてくる。</p>
+<p>そうなれば破綻寸前の ◯ やわずらわしい路線の組み換え作業とはおさらばだ。</p>
+<p><b>Mini Metro は5000を境として見守りゲーと化す</b>。</p>
+<p>やることといえばアイテムの選択だけとなる。</p>
+<p>以上、これで Mini Metro の攻略法の話は終わり。</p>
+<p>Happy Networking !</p>
+<h4><b>あとがき 僕と Mni Metro</b></h4>
+<p>
+<blockquote lang="en">
+<p>震度5弱か <a href="http://t.co/m9TtB5BSFe">pic.twitter.com/m9TtB5BSFe</a></p>
+<p>&mdash; Kenta YAMAMOTO (@ymkjp) <a href="https://twitter.com/ymkjp/statuses/463050962244874240">May 4, 2014</a></p></blockquote>
+<p>
+<blockquote lang="en">
+<p>地震による鉄道運行業務への影響はございません。&#10;<a href="https://twitter.com/search?q=%23minimetro&amp;src=hash">#minimetro</a> <a href="http://t.co/67KqGx5THW">pic.twitter.com/67KqGx5THW</a></p>
+<p>&mdash; Kenta YAMAMOTO (@ymkjp) <a href="https://twitter.com/ymkjp/statuses/463051879300071424">May 4, 2014</a></p></blockquote>
+<p>
+<blockquote lang="en">
+<p><a href="https://twitter.com/search?q=%23MiniMetro&amp;src=hash">#MiniMetro</a> 何も手をつけずにうまく周るようになったときは、このためにこのゲームやってきたんだなという感動があった。</p>
+<p>&mdash; Kenta YAMAMOTO (@ymkjp) <a href="https://twitter.com/ymkjp/statuses/463053409218605056">May 4, 2014</a></p></blockquote>
+<p>
+<blockquote lang="en">
+<p><a href="https://twitter.com/search?q=%23MiniMetro&amp;src=hash">#MiniMetro</a> 全駅巨大化を達成したので油断してBTTで画面半分にしたらゲームがリセットされたｗ</p>
+<p>&mdash; Kenta YAMAMOTO (@ymkjp) <a href="https://twitter.com/ymkjp/statuses/463075347760562176">May 4, 2014</a></p></blockquote>
+<p>あっけない最後であった。</p>
+<p>※BTT: <a href="http://www.boastr.de/">BetterTouchTool</a>のこと</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/61" rel="bookmark"><time class="entry-date published" datetime="2014-05-05T13:34:00+00:00">2014-05-05</time><time class="updated" datetime="2016-03-11T15:00:03+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%82%b2%e3%83%bc%e3%83%a0" rel="category tag">ゲーム</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/61#respond"><span class="dsq-postid" data-dsqidentifier="61 http://tk2-249-34500.vs.sakura.ne.jp/2014/05/05/%e3%81%ab%e3%82%8f%e3%81%8b%e5%90%8d%e4%ba%ba%e3%81%8c%e6%95%99%e3%81%88%e3%82%8b-minimetro-%e6%94%bb%e7%95%a5%e6%b3%95/">Leave a comment<span class="screen-reader-text"> on にわか名人が教える MiniMetro 攻略法</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-62" class="post-62 post type-post status-publish format-standard hentry category-7 category-12 category-34">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/62" rel="bookmark">突発 STUDIOUS! 夏モノ購入録とアイビー着こなし集</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<h4><b>紺色がビッグウェーブだと僕の中で話題に</b></h4>
+<p>夏モノ買ったのでブログしてみます。</p>
+<p>ZOZO を巡回していたらいつのまにか STUDIOUS の商品がカートに詰め込まれていました。</p>
+<h4><b>カモフラ柄ショーツ</b></h4>
+<p><a href="http://zozo.jp/shop/studious/goods/3467534/"><img border="0" src="http://4.bp.blogspot.com/-6A1HNhrnbrE/U2TPauDwY9I/AAAAAAAASJQ/26Z-GgAPH4o/s320/4467534_34_D_500.jpg" /></a></p>
+<p>か、カッケー！ ってことで5月下旬の入荷待ち予約しました。</p>
+<h4><b>テーラードジャケット</b></h4>
+<p><a href="http://zozo.jp/shop/studious/goods/1562289/"><img border="0" src="http://1.bp.blogspot.com/-afu6ZJifjYU/U2TPZzIMbhI/AAAAAAAASJM/rBOZPJhRqW0/s320/2562289_16_D_500.jpg" /></a></p>
+<p><strike>紺のジャケットを購入</strike>。サイズがあわずに返品。</p>
+<p>※後日、<a href="http://ymkjp.blogspot.jp/2014/05/brooks-brothers-milano.html">Brooks Brothers に紺ブレを買いに行きました</a>。</p>
+<p>
+<h4><b>スキニーデニム</b></h4>
+<p><a href="http://zozo.jp/shop/studious/goods/2616223/"><img border="0" src="http://2.bp.blogspot.com/-oS2pXPHBI54/U2TPZ4Xt2wI/AAAAAAAASJI/xtMrozeXQ6Y/s320/3616223_8_D_500.jpg" /></a></p>
+<p>海外にこれを履いて行くとゲイに間違われるので注意 (自戒)。</p>
+<h4><b>長袖シャツ</b></h4>
+<p><a href="http://zozo.jp/shop/studious/goods-sale/3212490/"><img border="0" src="http://3.bp.blogspot.com/-QmsupRhEbss/U2TRwp2yHlI/AAAAAAAASJo/klb7A3d5daI/s320/4226618_16_D_500.jpg" /></a></p>
+<p>光沢とまではいかなくてもハリのある生地が気に入って取り寄せ購入 (店舗の在庫があれば手に入るシステム)。</p>
+<h4><b>ウールのサルエル</b></h4>
+<p><a href="http://zozo.jp/shop/studious/goods-sale/3212490/"><img border="0" src="http://2.bp.blogspot.com/-aEAYugWNlC0/U2TPZ_tPOQI/AAAAAAAASJE/ElkUyLsuUnA/s320/4212490_8_D_500.jpg" /></a></p>
+<p>セール品だったので買いました。ここまでが STUDIOUS の夏モノたち。</p>
+<h4><b>GHバスのローガン</b></h4>
+<p><a href="http://www.javari.jp/dp/B005D5TG2A"><img border="0" src="http://ecx.images-amazon.com/images/I/81VfczcnvXL._SL1500_.jpg" width="380" /></a></p>
+<p>定番ローファー。実は2回くらい Javari で買っては返品して (そのときは 27.5 cm がなかった) やっと手に入れたサイズ。</p>
+<p>28.0 cm だとかかとがういて擦れていたのですが、27.5 cm だとフィットしました。妥協しなくてよかったー。</p>
+<h4><b>クラークスのワラビー</b></h4>
+<p><a href="http://www.javari.jp/dp/B0094YNGUO/"><img border="0" src="http://i.gyazo.com/6f1b8e8d8eb0b4238e23af38e3f983ba.png" width="580" /></a></p>
+<p>イタリアンな色合い。ちょうどのサイズのものが1足だけ残っていたのを買いました。</p>
+<p>履いてみると結構サイズに余裕があって失敗したかと思いましたが、靴底が柔らかいのでかかとの部分が足についてきてくれるので意外に気になりませんでした。</p>
+<p>ちょっと紺色欲が暴走していますね。</p>
+<h4><b>27cm〜29cm 大きめフットカバー</b></h4>
+<p>Tabio にて購入。ちゃんとすべり止めがついています。</p>
+<p><a href="https://tabio.com/jp/detail/062116007/"><img border="0" src="https://d2gep38gq8eb9f.cloudfront.net/img/pc/main/062116007_01.jpg" /></a></p>
+<p><a href="https://tabio.com/jp/detail/062110025/"><img border="0" src="https://d2gep38gq8eb9f.cloudfront.net/img/pc/main/062110025_02.jpg" /></a></p>
+<p>ユニクロ、グンゼのはサイズが小さいのしかないけど、Tabio だと27cm以上のを買えました。</p>
+<p>2つ違う種類のを買ったので履き比べてみるつもりです。</p>
+<h4><b>無印のポロシャツ</b></h4>
+<p><a href="http://www.muji.net/store/cmdty/detail/4549337170230"><img border="0" src="http://3.bp.blogspot.com/-r3pU9YkNrmk/U2TWl-8hzxI/AAAAAAAASJ0/PMtrLcAAmyY/s320/4549337170230_400.jpg" /></a></p>
+<p>普通の黒を1着。</p>
+<p><a href="http://www.muji.net/store/cmdty/detail/4549337169159"><img border="0" src="http://4.bp.blogspot.com/-zievOxNBCGE/U2TWlx34oyI/AAAAAAAASJ8/xcwHnmvR6tw/s320/4549337169159_400.jpg" /></a></p>
+<p><a href="http://www.muji.net/store/cmdty/detail/4934761979892"><img border="0" src="http://1.bp.blogspot.com/-L1OVqUJoumo/U2TWl_s6EKI/AAAAAAAASJ4/XdZ7V1vZAhs/s320/4934761979892_400.jpg" /></a></p>
+<p>と、ボタンダウンを白と黒で1着ずつ。</p>
+<h4><b>ファッションECサイトの使い心地</b></h4>
+<p>職業柄、サイトのできは自然と気になるので使い心地をさらっと書いておきます。</p>
+<p>まず、ZOZOはクレジットカード2回払いに対応しているのは嬉しいんだけど、通常の購入と予約購入・取り寄せ購入などで一緒にカートに入れられないのは不便なので改善してほしいです。</p>
+<p>Javari の返品無料はすごく便利。これビジネスとして成り立ってるのかなーと心配になるレベル。</p>
+<p>Tabio はSSLにも対応していて (今どき当たり前か) 大手じゃない独自サイトでもクレジットカード情報を入力する最低基準はクリアしてくれています。そして会員登録をすれば送料が無料なので好感度アップ。</p>
+<p>サイトのできは二の次で、やはりいい商品があれば、そのECを利用しようと思えますね。</p>
+<h4><b>紺のジャッケット着こなし集</b></h4>
+<p>では最後にアイビースタイルにかかせない紺のジャケットのファッションスナップをどうぞ。</p>
+<p><a href="http://mistermort.com/2010/05/young-dapper-fella-on-bleecker-street/"><img border="0" src="http://1.bp.blogspot.com/-KP8nTvhPHhM/U2TbEU45DzI/AAAAAAAASKk/EtjDGvkM0uE/s320/6a010535d07789970c0133ed4c950a970b-800wi.jpg" /></a><a href="http://www.thesartorialist.com/photos/on-the-street-high-top-cons-and-jackets-florence/"><img border="0" src="http://3.bp.blogspot.com/-5ItHp17SfYE/U2TbEVmsr_I/AAAAAAAASKg/2lUhYCGfhZc/s320/7019Consjkt1Web.jpg" /></a><a href="http://www.thesartorialist.com/photos/on-the-street-high-top-cons-and-jackets-florence/"><img border="0" src="http://1.bp.blogspot.com/-N8OruUgPDMQ/U2TbETrINvI/AAAAAAAASKc/4g1Deux58GQ/s320/7019Consjkt2Web.jpg" /></a><a href="http://www.houyhnhnm.jp/blog/moriyama/2010/05/day-of-district-blazer.html"><img border="0" src="http://3.bp.blogspot.com/-wo4PbUjY6dU/U2TbFM5qRWI/AAAAAAAASK4/UyDldWLg9vQ/s320/_MG_2380-thumb-360x541-20732.jpg" /></a><a href="http://www.ivy-style.com/everything-you-always-wanted-to-know-about-prep.html"><img border="0" src="http://3.bp.blogspot.com/-OYC9ExKoRIY/U2TbFUvGDlI/AAAAAAAASKo/LG1Fj48YJN4/s320/takeivy82_145.jpg" /></a></p>
+<p>ふむ、白ショーツかっけーな (持ってない)。</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/62" rel="bookmark"><time class="entry-date published updated" datetime="2014-05-03T11:27:00+00:00">2014-05-03</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%93%81%e8%a9%95" rel="category tag">品評</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e7%9d%80%e5%80%92%e3%82%8c" rel="category tag">着倒れ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/62#respond"><span class="dsq-postid" data-dsqidentifier="62 http://tk2-249-34500.vs.sakura.ne.jp/2014/05/03/%e7%aa%81%e7%99%ba-studious-%e5%a4%8f%e3%83%a2%e3%83%8e%e8%b3%bc%e5%85%a5%e9%8c%b2%e3%81%a8%e3%82%a2%e3%82%a4%e3%83%93%e3%83%bc%e7%9d%80%e3%81%93%e3%81%aa%e3%81%97%e9%9b%86/">Leave a comment<span class="screen-reader-text"> on 突発 STUDIOUS! 夏モノ購入録とアイビー着こなし集</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-63" class="post-63 post type-post status-publish format-standard hentry category-mac category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/63" rel="bookmark">Mac を買うとき・売るとき 誰も教えてくれなかった Apple 製品の買い方・売り方ガイド</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>Mac を新しく買ったり買い換えたりしたいと思っている人向けの記事。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5kF25AE0oA4/UzZTWBylPMI/AAAAAAAASHs/sMffxC-H_r0/s1600/2014-03-15%2B17.22.20.jpg"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5kF25AE0oA4/UzZTWBylPMI/AAAAAAAASHs/sMffxC-H_r0/s320/2014-03-15%2B17.22.20.jpg" width="580" /></a></p>
+<h4><b>Mac を買うときに最初にチェックすべき整備済製品</b></h4>
+<p>Mac を買うならまず最初に公式 Apple Store の<a href="http://store.apple.com/jp/browse/home/specialdeals/mac">整備済製品</a>はチェックすべきでしょう。</p>
+<p>「知らなかった！」っていう人が案外多いですが、公式の保証付きで格安で買えるのでとってもお得感があります。個人的には iPad なんかはオプションがそんなにないので買うなら整備済製品一択でしょと思っています。</p>
+<p>たまにUSキーボードも売られているときがあるのでUSキーボード派も要チェック。</p>
+<p>あと学生なら学割がきくので忘れないようにしましょう。</p>
+<h4><b>次にチェックすべきはカカクコム</b></h4>
+<p><a href="http://kakaku.com/pc/mac-note-pc/">カカクコム</a>は新品が公式より安く買えます。理由は知りませんが詳しい友人によるとまとめて入荷しているので安くなっているそうです。</p>
+<p>ただメモリを増やすなどのBTOはできません。個人的に僕は MacBook Air をBTOして買う派ですが、もし MacBook Pro を買うならカカクコムで買ってもいいなと思っています。MacBook Pro はラインナップが多いので自分に適したモデルを探しやすいからです。</p>
+<h4><b>買い替えサイクルを早めて高値で売り抜けるのもあり</b></h4>
+<p>Apple 製品は中古での売値がいいので Mac の買い替えの際には前のものを売っちゃうのはありだと思います。</p>
+<p>例えば僕の場合、今回 MacBook Air 11インチを143,900円 (Intel Core i7, メモリ8GB, USキーボード) で買って、3年前に買った 2010 Late の MacBook Air 13インチ (メモリ4GB, USキーボード) をヤフオクで45,000円で売ったので差し引き98,900円で買い替えができたことになります。</p>
+<p>3年も待たずに早く買い替えていればもっと高く売れたのかなぁと考えています。</p>
+<h4><b>付属品を捨てることは現金を捨てることと心得よ</b></h4>
+<p>もし売りたい場合は大切なポイントがあります。付属品を捨てずにとっておくことです。</p>
+<p>これはお店に持ち込むときが特にそうなのですが、箱や説明書がそろっているかどうかで買取価格が大きく違ってくるので付属品は捨てずに保管しておきましょう。</p>
+<h4><b>ヤフオク出品には「なぜ出品したのか」を書こう</b></h4>
+<p>そしてヤフオクに出品する場合のコツですが、「なぜ出品したのか」を一言でいいのでそえるのをおすすめします。</p>
+<p>例えば僕が MacBook Air 13インチを出品したときは、「まだ問題なく使えていたのですが、新しい MacBook Air 11インチに買い換えて不要になったため出品しました」という理由をつけました。</p>
+<p>きちんと商品の説明を書くのはもちろんなのですが、一見どうでもいい「なぜ出品したのか」という理由があるだけで買い手の人が安心してくれるんじゃないかと思います。</p>
+<p>ちょっとしたエピソードを武器にできるのは僕たち個人出品者ならではですね。</p>
+<p></p>
+<p>それではよい Mac ライフを！</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/63" rel="bookmark"><time class="entry-date published" datetime="2014-03-29T05:22:00+00:00">2014-03-29</time><time class="updated" datetime="2016-03-11T15:02:13+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/mac" rel="category tag">mac</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/63#respond"><span class="dsq-postid" data-dsqidentifier="63 http://tk2-249-34500.vs.sakura.ne.jp/2014/03/29/mac-%e3%82%92%e8%b2%b7%e3%81%86%e3%81%a8%e3%81%8d%e3%83%bb%e5%a3%b2%e3%82%8b%e3%81%a8%e3%81%8d-%e8%aa%b0%e3%82%82%e6%95%99%e3%81%88%e3%81%a6%e3%81%8f%e3%82%8c%e3%81%aa%e3%81%8b%e3%81%a3%e3%81%9f-apple/">Leave a comment<span class="screen-reader-text"> on Mac を買うとき・売るとき 誰も教えてくれなかった Apple 製品の買い方・売り方ガイド</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-64" class="post-64 post type-post status-publish format-standard hentry category-dev category-haskell category-8">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/64" rel="bookmark">【順次追記中】すごいH本 珠玉の名言集</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>Lipovaca, Miran 著『<a href="http://www.amazon.co.jp/gp/product/B009RO80XY/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B009RO80XY&amp;linkCode=as2&amp;tag=m0b55-22">すごいHaskellたのしく学ぼう！</a>』を読んでいます。</p>
+<p>いわゆる『すごいH本』というやつですね。</p>
+<p><a href="http://www.amazon.co.jp/gp/product/B009RO80XY/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B009RO80XY&amp;linkCode=as2&amp;tag=m0b55-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B009RO80XY&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=m0b55-22" /></a></p>
+<p>この本を読んでいるあいだはおもしろすぎで脳汁プッシャーヘブン状態なわけですが、気に入った一文をメモしているうちに珠玉の名言集ができていることに気がついたので紹介していきます。</p>
+<p>ではまず1番「すごい」と思った名言から。</p>
+<h4><b>Best Word of Wisdom</b></h4>
+<p>
+<blockquote>Haskellでは再帰が重要です。なぜなら、 Haskellでは命令型言語のように計算をどうやってするかを指定するのではなく、 求めるものが何であるかを宣言して計算を行うからです。Haskellの目的は、 計算を実行するステップをコンピュータに示すことではなく、 欲しい結果が何であるかを直接定義することであり、 そのために再帰的な方法をよく使うのです。</p></blockquote>
+<p>これぞ珠玉。</p>
+<p>「計算を実行するステップをコンピュータに示すことではなく、 欲しい結果が何であるかを直接定義する」。僕がプログラミングを初める前にもっていたプログラミングのイメージってそんな感じでした。</p>
+<p>後日、小島寛之さんのエッセイ『<a href="http://www.amazon.co.jp/gp/product/B00FSAHLTK/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00FSAHLTK&amp;linkCode=as2&amp;tag=m0b55-22">世界を読みとく数学入門</a>』を読んでいて気づいたのですが、この「ほしい結果が何であるかを直接定義する」という恩恵は非常に強力で、数式を眺めるていると「ふむ、Haskellに落としこむならこうかな」という類推が簡単にできちゃうのです。</p>
+<p>「巨人の肩に乗る」ことにかけて数式をコードに翻訳してしまうことほど手っ取り早いことはないでしょう。ただそれを使いこなせるかどうかは別ですけどね ;)</p>
+<h4><b><br />Favorite way of programming</b></h4>
+<p>
+<blockquote>「基本的で、 明らかに正しい関数を組み合わせて、 より大きな関数を組み立てる」</p></blockquote>
+<p>これはうなずいてしまう人も多いのではないでしょうか。</p>
+<p>僕は他の手続き型言語を書いている時もできるだけ細かな処理ごとに関数に切り分けていくほうが「好き」なので、この文化はかなりしっくりきました。</p>
+<p>余談ですが初心者向けに「同じ処理を2回書いたら関数にまとめましょう」と言われることもありますが、あの言い方はよくないと思うんですよねー (方便だとはわかりつつも)。</p>
+<h4><b><br />Not statement, it&#8217;s expression</b></h4>
+<p>
+<blockquote>Haskellのifは必ず値を返す式であって、 文ではないのです。</p></blockquote>
+<p>これは Haskell の if 式がかならず else をつけなければならない理由として述べられていました。</p>
+<p>手続き型で書いている時もできるだけ if else で書き分けたほうがいいよなぁと漠然と思っていたのですが、言語仕様にまで落とし込まれているのを知って驚きと嬉しさがありました。</p>
+<h4><b><br />Well-polished naming</b></h4>
+<p>
+<blockquote>Stringは、 [Char]の単なる別名です。</p></blockquote>
+<p>型クラス周りのエレガントさ。この命名にも萌えました。</p>
+<p><code>ghci&gt; :t 'a'<br />'a' :: Char<br />ghci&gt; :t "a"<br />"a" :: [Char]</code></p>
+<h4><b><br />Amazing infinite list</b></h4>
+<p>
+<blockquote>次のように無限リストを使うほうが良い方法です</p></blockquote>
+<p>無限リストは、もうあれですね。「うおー、遅延評価強えぇ！」感。</p>
+<p>感動のあまり <a href="http://ymkjp.blogspot.jp/2014/03/fizzbuzz-in-haskell.html">気づいたら FizzBuzz 書いてた</a>。入門書読んでてこんなに FizzBuzz が書きたくなったのははじめて。</p>
+<h4><b><br />Feels safe without effort</b></h4>
+<p>
+<blockquote>「ヘイ、 分からないなら教えてあげるけど、 この式はこの型なんだよ！ 」</p></blockquote>
+<p>型注釈について。</p>
+<p>基本は Haskell に任せて、必要なときにだけ教えてあげるっていう設計思想は静的型付の堅牢さとのバランスがすばらしい。</p>
+<p><code>ghci&gt; (read "5" :: Float) * 4<br />20.0</code></p>
+<h4><b><br />What a beautiful expression</b></h4>
+<p><code>fn x = ceiling (negate (tan (cos (max 50 x))))</code> が <code>fn = ceiling . negate . tan . cos . max 50</code> と書けることについて。</p>
+<p>
+<blockquote>素ん晴らしい！ ポイントフリースタイルにすると読みやすく簡潔になることが多々あります。 データよりも関数に目がいくようになり、 どのようにデータが移り変わっていくかではなく、 どんな関数を合成して何になっているかを考えやすくなるからです。 <br />単純な関数から始め、 関数合成を糊として使うことにより、 より複雑な関数を作り出せばよいのです。</p></blockquote>
+<p>確かにすんばらしい！ こういうプログラミングの書きたさ、読みやすさ、楽しさみたいなのを提供してくれるのはとてもよいです。</p>
+<p>ラムダを簡潔に書けたり、カッコを減らせたり、そういう部分がサポートされているのはすんばらしい  (関数合成と関数適用演算子)。</p>
+<p>関数合成はいじくっているうちに、だんだんメソッドチェーンに見えてきました。適用の向きが逆ですが、楽しさはいっしょです :)</p>
+<h4><b><br />Good joke</b></h4>
+<p>
+<blockquote>再帰が何なのかまだよく分からないなら、 この段落をもう一度読んでください。<br />（冗談ですよ！ ）</p></blockquote>
+<p>再帰的ジョーク。笑ったのはもう1個次のやつも。</p>
+<p>
+<blockquote>は思いっきり目を細めるとギリシャ文字のラムダλに見えますよね。</p></blockquote>
+<p>無理矢理感ｗ</p>
+<p>無理矢理感といえばこちらも。</p>
+<p>
+<blockquote>あなたが通りを歩いていると、 老婦人が近づいてきて言いました。 「すみません。 各桁の数の合計が40になる最初の自然数は何でしょうか？ 」</p></blockquote>
+<p>老婦人ｗ</p>
+<h4><b>Tips: How to write <code>where</code>&#8216;s Indent</b></h4>
+<p>最後に名言とは関係ないのですが、すごいH本を読んでいてハマったところが1箇所だけあったのでその回避方法を。</p>
+<p><code>where</code> はインデントをそろえないとコンパイルエラーを起こすのですが、その規則が分かりにくいので次の例のように改行して定義してしまったほうがよさそうです。</p>
+<p>※ サンプルのインデントが大きくなっちゃってるのは space 2 にしてもなぜか gist が勝手に tab 8 にしてくれるから&#8230;orz</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/64" rel="bookmark"><time class="entry-date published updated" datetime="2014-03-23T07:28:00+00:00">2014-03-23</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/haskell" rel="category tag">Haskell</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e6%9b%b8%e8%a9%95" rel="category tag">書評</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/64#respond"><span class="dsq-postid" data-dsqidentifier="64 http://tk2-249-34500.vs.sakura.ne.jp/2014/03/23/%e3%80%90%e9%a0%86%e6%ac%a1%e8%bf%bd%e8%a8%98%e4%b8%ad%e3%80%91%e3%81%99%e3%81%94%e3%81%84h%e6%9c%ac-%e7%8f%a0%e7%8e%89%e3%81%ae%e5%90%8d%e8%a8%80%e9%9b%86/">Leave a comment<span class="screen-reader-text"> on 【順次追記中】すごいH本 珠玉の名言集</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-65" class="post-65 post type-post status-publish format-standard hentry category-dev category-haskell category-8">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/65" rel="bookmark">無限リストを使った FizzBuzz in Haskell</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>こんなに FizzBuzz 書きたくなった入門書ははじめてだよ！</p>
+<p><a href="http://www.amazon.co.jp/gp/product/B009RO80XY/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B009RO80XY&amp;linkCode=as2&amp;tag=m0b55-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B009RO80XY&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=m0b55-22" /></a></p>
+<p><code>take 100 [<br />    if x `mod` 15 == 0 then "FizzBuzz"<br />    else if x `mod` 5 == 0 then "Buzz"<br />    else if x `mod` 3 == 0 then "Fizz"<br />    else show x | x <- [1..] ]</code></p>
+<p>ということで100までの FizzBuzz を書いてみた。</p>
+<p><a href="https://gist.github.com/ymkjp/9686839">https://gist.github.com/ymkjp/9686839</a></p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/65" rel="bookmark"><time class="entry-date published updated" datetime="2014-03-23T07:04:00+00:00">2014-03-23</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/haskell" rel="category tag">Haskell</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e6%9b%b8%e8%a9%95" rel="category tag">書評</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/65#respond"><span class="dsq-postid" data-dsqidentifier="65 http://tk2-249-34500.vs.sakura.ne.jp/2014/03/23/%e7%84%a1%e9%99%90%e3%83%aa%e3%82%b9%e3%83%88%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f-fizzbuzz-in-haskell/">Leave a comment<span class="screen-reader-text"> on 無限リストを使った FizzBuzz in Haskell</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/7">Previous page</a>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/'><span class="meta-nav screen-reader-text">Page </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/7'><span class="meta-nav screen-reader-text">Page </span>7</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">Page </span>8</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/9'><span class="meta-nav screen-reader-text">Page </span>9</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/31'><span class="meta-nav screen-reader-text">Page </span>31</a>
+<a class="next page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/9">Next page</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2016/09">&laquo; Sep</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td id="today">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1IQBVxfQlw=","queueTime":0,"applicationTime":239,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

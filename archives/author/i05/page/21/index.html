@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>@i05 | It works! - Part 21</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,454] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="description"  content="A Tokyo based software developer, a grad student belongs to a security lab at JAIST, and a husband of my mrs." />
+<meta name="robots" content="noindex,follow" />
+<link rel='prev' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/20' />
+<link rel='next' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/22' />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/21" />
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Posts by @i05 Feed" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="archive paged author author-i05 author-1 paged-21 author-paged-21 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></p>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">Author: <span class="vcard">@i05</span></h1>			</header><!-- .page-header -->
+
+			
+<article id="post-187" class="post-187 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/187" rel="bookmark">人狼所感</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a target="_blank" href="http://www.nicovideo.jp/mylist/32048630"><i>【出演】川上量生 ひろゆき ​人狼ゲーム生放送</i></a> を見た。人狼はやったことがないが今後やるかもしれないし、感じたことを残しておかないともったいないのでメモ。</p>
+<p>
+<h1>人狼側の戦略</h1>
+<ul>
+<li>序盤は市民と称するのがいい</li>
+<li>人狼の場合は、暴こうとしてはいけない（怪しまれる）→市民のミスに付けこむ（人狼かどうか探る体で）</li>
+<li>中盤から「語り」（誰々を占ってどうだったかなどを偽る）</li>
+</ul>
+<h1>市民側の戦略</h1>
+<ul>
+<li>市民側は正直に告白する（役職は守ってもらえそうなとき以外は「市民」でOK）</li>
+<li>寡黙は吊れ</li>
+</ul>
+<h1>メタ戦略</h1>
+<p>僕には「語り」とかは到底無理だと思ったので、「あらゆる場面で市民語り一辺倒」でもいいかもしれないと思った。人狼から学べるのは、こんなゲーム内ですら嘘を突き通すのが難しいので、もっと複雑な現実世界ではできるだけ嘘をつかないようにしましょうということだと思った（まあ周囲の人にとってもカオスなので嘘の突き通しやすさはむしろイージーモードになるのかもしれないけれど）。</p>
+<p>あと、ニコ動にSkype人狼というのもあって観てみたが非常にハイレベル。リアルでやるのとはまた違う趣がある。「Xの状態に信をおくなら」というような話法は非常に洗練されていると感じたし、思考フレームとして現実世界にも応用できるかもしれない。</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/187" rel="bookmark"><time class="entry-date published updated" datetime="2013-02-14T08:11:00+00:00">2013-02-14</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/187#respond"><span class="dsq-postid" data-dsqidentifier="187 http://tk2-249-34500.vs.sakura.ne.jp/2013/02/14/%e4%ba%ba%e7%8b%bc%e6%89%80%e6%84%9f/">Leave a comment<span class="screen-reader-text"> on 人狼所感</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-188" class="post-188 post type-post status-publish format-standard hentry category-it">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/188" rel="bookmark">MacKeeperのAdsenseブロック方法を改善しよう</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>Macユーザにはおなじみ「Macの動作が遅いですか？」というキャッチフレーズの広告があって、広告自体を重くしているので一部サイト管理者からは嫌われています。そこで下記のようなブログ記事が書かれているわけです。</p>
+<blockquote style="font-size: small;"><p>Google Adsenseの管理画面にログインし、「広告の許可とブロック」…<br />URLの入力欄に、「http://mackeeper.zeobit.com/」「http://mackeeperapp.zeobit.com/」と入力し、「URLをブロック」ボタンをクリック。
+<div><small><cite title="鬱陶しい広告「Macの動作が遅いですか？」を表示させない方法【ブログ・サイト管理者向け】"><a href="http://ushigyu.net/2012/04/02/how_to_block_bothering_ad/">鬱陶しい広告「Macの動作が遅いですか？」を表示させない方法【ブログ・サイト管理者向け】</a></cite></small></div>
+</blockquote>
+<h4><b>ドメインごとブロックしよう</b></h4>
+<p>
+<p>実は前掲の方法では不十分です。というのも、「<a href="http://mackeeperapp2.zeobit.com/landings/17.84/index.php">http://mackeeperapp2.zeobit.com</a>」なんていうサブドメインでの広告出稿がされているからです。これだと先述のブロック方法じゃ対応できていませんね。</p>
+<p>ということで、解決策としては、もういたちごっこをなくすためにドメインごとブロックしてしまえばいいのではないでしょうか。具体的には「<b>http://zeobit.com/</b>」と指定します。</p>
+<h4><b>Google公式サポートページ</b></h4>
+<p>
+<p>Google公式のサポートページにもこの方法は記載されています。今回紹介した解決方法は下記リンクの「広告のブロックで指定する URL のフォーマット」という節の表で紹介されている「最も広範囲 example.com」に該当します。</p>
+<p><i><a href="https://support.google.com/adsense/bin/answer.py?hl=ja&amp;utm_medium=link&amp;utm_campaign=ww-ww-et-asfe_&amp;utm_source=aso&amp;answer=164657">特定のウェブサイトの広告をブロックする &#8211; AdSense ヘルプ</a></p>
+<p></i></p>
+<p>
+<h4><b>副作用</b></h4>
+<p>この方法を採用することでデメリットも生じます。MacKeeperを含む zeobit.com のドメインで配信されている広告が全てAdsenseとして表示されなくなり、その分、そこから得られるはずだった広告費を損ないます。</p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/188" rel="bookmark"><time class="entry-date published updated" datetime="2013-02-13T08:28:00+00:00">2013-02-13</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/it%e8%a6%8b%e8%81%9e%e9%8c%b2" rel="category tag">IT見聞録</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/188#respond"><span class="dsq-postid" data-dsqidentifier="188 http://tk2-249-34500.vs.sakura.ne.jp/2013/02/13/mackeeper%e3%81%aeadsense%e3%83%96%e3%83%ad%e3%83%83%e3%82%af%e6%96%b9%e6%b3%95%e3%82%92%e6%94%b9%e5%96%84%e3%81%97%e3%82%88%e3%81%86/">Leave a comment<span class="screen-reader-text"> on MacKeeperのAdsenseブロック方法を改善しよう</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-189" class="post-189 post type-post status-publish format-standard hentry category-it">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/189" rel="bookmark">PC版LINEは角括弧を認識しない</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>OSX版LINEだと角括弧がURLとして認識されない。IPv6のIPアドレスも認識されないということでは。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-mPbEESDX8rc/URoFlVbcr2I/AAAAAAAAPTI/i7Qp2SLuI7A/s1600/line_url.png" style=""><img border="0" height="372" width="400" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-mPbEESDX8rc/URoFlVbcr2I/AAAAAAAAPTI/i7Qp2SLuI7A/s400/line_url.png" /></a></p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/189" rel="bookmark"><time class="entry-date published" datetime="2013-02-12T09:08:00+00:00">2013-02-12</time><time class="updated" datetime="2016-03-11T15:03:37+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/it%e8%a6%8b%e8%81%9e%e9%8c%b2" rel="category tag">IT見聞録</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/189#respond"><span class="dsq-postid" data-dsqidentifier="189 http://tk2-249-34500.vs.sakura.ne.jp/2013/02/12/pc%e7%89%88line%e3%81%af%e8%a7%92%e6%8b%ac%e5%bc%a7%e3%82%92%e8%aa%8d%e8%ad%98%e3%81%97%e3%81%aa%e3%81%84/">Leave a comment<span class="screen-reader-text"> on PC版LINEは角括弧を認識しない</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-190" class="post-190 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/190" rel="bookmark">渋谷ヒカリエと若者の衰退</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>2012年開業の渋谷ヒカリエのターゲットがマダムであるということはテナントの構成から明らかであり、実際それが功を奏しているのは平日の昼間にヒカリエを訪れたことがある者ならば如実に感じることができる。そこに若者は、いない。</p>
+<p>歴史的に渋谷は西武がパルコをつくることでその「渋谷っぽさ」を形成していったことはそういった類の読書が好きな人ならば目にしたことがあるかもしれない。僕もその一人だった。そして実際に渋谷をそういう街だと捉えていた。それがすでに、東急の手によってすでにアップデートされつつあることに気づくまでは。</p>
+<p>今、渋谷は、東急は、その対象年齢を引き上げつつある。月刊女性ファッション雑誌が対象年齢層を引き上げていくように。</p>
+<p>なぜか。なぜ「若者の街」は大きく姿勢を変えようとし始めているのか。少子高齢化？ いいえ、理由は、若者がいないからというだけではない。若者市場が存在しないからである。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Oqxi-kZ50Zk/URCDO8Eg30I/AAAAAAAAPSo/NkmPAdGyQAY/s1600/%25E8%25B2%25AF%25E8%2593%2584%25E3%2581%25A8%25E8%25B2%25A0%25E5%2582%25B5%25EF%25BC%2588%25E5%25B9%25B4%25E9%25BD%25A2%25E5%2588%25A5%25EF%25BC%2589.jpeg" style=""><img border="0" height="248" width="400" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Oqxi-kZ50Zk/URCDO8Eg30I/AAAAAAAAPSo/NkmPAdGyQAY/s400/%25E8%25B2%25AF%25E8%2593%2584%25E3%2581%25A8%25E8%25B2%25A0%25E5%2582%25B5%25EF%25BC%2588%25E5%25B9%25B4%25E9%25BD%25A2%25E5%2588%25A5%25EF%25BC%2589.jpeg" /></a></p>
+<p>上掲の図で、20代〜30代の貯蓄額を足しあわせても40代の貯蓄額には届かない。50代以上に至っては20代〜30代を足しあわせて2倍しても届かない富豪っぷりである。ここには需要と供給未満の問題が転がっている。どんなに demand があったって、無い袖は振れないのだ。</p>
+<p>どんなにきゃりーぱみゅぱみゅがぱみゅぱみゅしても超えようのない「現ナマの壁」が立ちふさがっている。アダム・スミスもびっくりなこの状況。そこで安倍政権にできたのが所得移転を促進する政策であり、東急にできたのが渋谷ヒカリエだった。そんだけ。</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/190" rel="bookmark"><time class="entry-date published" datetime="2013-02-05T04:16:00+00:00">2013-02-05</time><time class="updated" datetime="2016-03-11T15:03:38+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/190#respond"><span class="dsq-postid" data-dsqidentifier="190 http://tk2-249-34500.vs.sakura.ne.jp/2013/02/05/%e6%b8%8b%e8%b0%b7%e3%83%92%e3%82%ab%e3%83%aa%e3%82%a8%e3%81%a8%e8%8b%a5%e8%80%85%e3%81%ae%e8%a1%b0%e9%80%80/">Leave a comment<span class="screen-reader-text"> on 渋谷ヒカリエと若者の衰退</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-191" class="post-191 post type-post status-publish format-standard hentry category-dev category-hello_world category-php">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/191" rel="bookmark">n-Step Fibonacci numbers</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>I coded &#8220;n-Step Fibonacci numbers&#8221; in PHP.<br />It can show 3 numbers (tribonacci numbers), 4 numbers (tetranacci numbers), or more.<br />Now here&#8217;s the script:</p>
+<p>
+<p>Lately I&#8217;ve been coding in Rails and Chrome Extension, but today I coded PHP after a long interval &#8211; half a month.<br />It&#8217;s not clear program but I hope this helps.</p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/191" rel="bookmark"><time class="entry-date published updated" datetime="2013-02-02T14:05:00+00:00">2013-02-02</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/hello_world" rel="category tag">hello_world</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/php" rel="category tag">php</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/191#respond"><span class="dsq-postid" data-dsqidentifier="191 http://tk2-249-34500.vs.sakura.ne.jp/2013/02/02/n-step-fibonacci-numbers/">Leave a comment<span class="screen-reader-text"> on n-Step Fibonacci numbers</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-192" class="post-192 post type-post status-publish format-standard hentry category-uncategorized">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/192" rel="bookmark">【レポート】ヨーグルトにブレンディスティック入れたらどうなると思う？</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>マリアージュ研究家の山本です。</p>
+<p>赤ワインにスモークチーズ、牡蠣にボウモア、シーチキンにマヨネーズ。世界には「マリアージュ」と呼ばれる「食べ合わせすることによって単品で食べるよりもおいしくなる食品や調味料」は数多くあります。しかし、まだ発見されるに至っていないマリアージュが、ここ食の大国日本にも眠っているのではないだろうか。そんな動機を胸に、日々研鑽に励んでおります。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-qrL3ioTWhsI/UQggANrxCwI/AAAAAAAAPQo/S8h8KPYTCYY/s1600/Untitled.png" style=""><img border="0" height="392" width="400" title="図表1" alt="材料であるヨーグルトとブレンディスティックの写真" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-qrL3ioTWhsI/UQggANrxCwI/AAAAAAAAPQo/S8h8KPYTCYY/s400/Untitled.png" /></a></p>
+<p>
+<p>本日は「ヨーグルト×ブレンディスティック」。レポートの後には米国の発明王の格言も引用しておきました。それではご笑覧下さい。</p>
+<p>
+<h1>仮説</h1>
+<p>ヨーグルトの酸味とまろやかな舌触り、ブレンディのほろ苦さと乳製品らしい濃厚さとほどよい甘さ。この2つがあわさることによりマリアージュが生まれる。</p>
+<h1>材料</h1>
+<ul>
+<li>①生乳100%プレーンヨーグルト x1</li>
+<li>②<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000V2EWVU/m0b55-22/ref=nosim/" name="amazletlink" target="_blank">ブレンディ スティック カフェオレ</a> x2</li>
+</ul>
+<h1>工程</h1>
+<ol>
+<li>①プレーンヨーグルト に ②ブレンディスティック を注ぎ、よく混ぜる。ポイントは ②ブレンディスティック の粒子が完全に溶けきるまで撹拌すること（図表2参照）</li>
+<li>味が薄いと感じた場合、 ②ブレンディスティック をもう一本混ぜる。撹拌の方法は工程1に同じ。</li>
+</ol>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-VnQlXT7ZzLY/UQgkD8sKNZI/AAAAAAAAPQ0/vF3ihBrX4jg/s1600/2013-01-30%2B03.56.43.jpg" style=""><img border="0" height="300" width="400" title="図表2" alt="①ヨーグルト に ②ブレンディスティック に溶かした写真" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-VnQlXT7ZzLY/UQgkD8sKNZI/AAAAAAAAPQ0/vF3ihBrX4jg/s400/2013-01-30%2B03.56.43.jpg" /></a></p>
+<p>
+<h1>結果</h1>
+<p>ヨーグルトの風味が予想以上に強いことにより酸味と苦味が勝り、甘みが際立たず、まずいと感じる。マリアージュには至らなかった。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-4RqbuhJ00W0/UQgont_YAvI/AAAAAAAAPRA/VlUj2PZk2nU/s1600/2013-01-30%2B03.54.47.jpg" style=""><img border="0" height="400" width="300" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-4RqbuhJ00W0/UQgont_YAvI/AAAAAAAAPRA/VlUj2PZk2nU/s400/2013-01-30%2B03.54.47.jpg" /></a></p>
+<p>
+<h1>反省</h1>
+<p>甘みが足りなかったため、手元にあったあずき抹茶プリンを追加する。あずきの甘さとブレンディスティックのほろ苦さがアクセントとなり好感。完食できるレベルにまで調整ができた。特筆すべき点は、この抹茶プリンが抹茶好きの筆者にすら単体ではおいしいと感じることができない商品であったということである。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-1nFdRqERqxY/UQgootWGYoI/AAAAAAAAPRM/952b_zwyBMQ/s1600/Untitled2.png" style=""><img border="0" height="322" width="400" title="図表2" alt="あずき抹茶プリンの写真" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-1nFdRqERqxY/UQgootWGYoI/AAAAAAAAPRM/952b_zwyBMQ/s400/Untitled2.png" /></a></p>
+<p>
+<h1>あとがき</h1>
+<p>ブレンディスティックはAmazonで購入する場合、30本入りのほうが100本入りよりも一本あたりが割安であることがあるため注意を要する。</p>
+<blockquote><p>I have not failed. I&#8217;ve just found 10,000 ways that won&#8217;t work. </p>
+<p>私は失敗したことがない。たんに、うまくいかない1万の方法を見つけただけだ。</p>
+<p>Tomas A. Edison</p>
+</blockquote>
+<p>A mystique of mariage is based on millions of sacrifices.</p>
+<p>結婚が帯びる神秘性は、おびただしい生贄に基づいたものである。</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">One of the sacrifices @ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/192" rel="bookmark"><time class="entry-date published" datetime="2013-01-29T20:13:00+00:00">2013-01-29</time><time class="updated" datetime="2016-03-11T15:04:08+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/uncategorized" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/192#respond"><span class="dsq-postid" data-dsqidentifier="192 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/29/%e3%80%90%e3%83%ac%e3%83%9d%e3%83%bc%e3%83%88%e3%80%91%e3%83%a8%e3%83%bc%e3%82%b0%e3%83%ab%e3%83%88%e3%81%ab%e3%83%96%e3%83%ac%e3%83%b3%e3%83%87%e3%82%a3%e3%82%b9%e3%83%86%e3%82%a3%e3%83%83%e3%82%af/">Leave a comment<span class="screen-reader-text"> on 【レポート】ヨーグルトにブレンディスティック入れたらどうなると思う？</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-193" class="post-193 post type-post status-publish format-standard hentry category-it category-38">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/193" rel="bookmark">Amazonが手にした「読了率」という新しい武器</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>Amazon が新しい武器を手に入れたという話。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-QeaFXOSrc9I/UQL6x8N5JwI/AAAAAAAAPQM/g3u1Ig4qYwY/s1600/screenshot_2013_01_25T21_28_09%252B0000.png" style=""><img border="0" height="320" width="520" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-QeaFXOSrc9I/UQL6x8N5JwI/AAAAAAAAPQM/g3u1Ig4qYwY/s320/screenshot_2013_01_25T21_28_09%252B0000.png" /></a></p>
+<h4><b>「読了率」という指標</b></h4>
+<p>上掲の画像からも分かるのですが Kindle では書籍の「読了率」が N% という形で分かるようになっていて、そしてこれは複数の端末間で共有することができます。</p>
+<p>ということは、ユーザーの読了率のデータは Amazon がサーバ側で保持しているっぽいということがわかります。</p>
+<p>つまり Amazon は Kindle ストアで取り扱われている本についてそれぞれ、平均 N% 読み進められたという分析が技術的には可能であるっぽくて、これは売り切り形態をとっていた従来の出版社であれば把握できない指標ですよねという話になってきます。</p>
+<p>よく聞く話として「ベストセラーほど読まれない本はない」(話題になっているだけで「買ったけど読んでないんだよねぇ」という人が多い) という話がありますが、その感覚を Amazon であれば Kindle で販売された分についてはほぼ正確に把握できるということになります。</p>
+<h4><b>「読了率」の有用性</b></h4>
+<p>さて、この「読了率」という指標ですが、悪く言えば「売れさえすればいい」と考える出版社や著者にとってはこの指標はさほど有用ではなさそうですが、ユーザが購入時にそれを知ることができれば大いに参考になります。</p>
+<p>むろんリファレンスとして使われることが多い本など読了率にそぐわない例外はあるとはいえ、その指標を参考にするかどうかは読者に委ねられます。</p>
+<p>あるいはユーザーに公開されなくても、「読了率」が出版社や著者にフィードバックされ、それが次の本づくりに活かされるのであれば、それもまたユーザの利益にかなうに違いないです (そして Amazon はこのフィードバックを武器に出版社を獲得していくでしょう)。</p>
+<p>この他、「読了率ランキング」が公表されればそれは書評などの人力にたよらずに隠れた良作を発見できるなど、活用方法はいろいろ思いつきます。</p>
+<p>とりあえず、少なくとも「読了率」が Kindle によって利用可能なものになりつつあるということに間違いはなさそうです。</p>
+<h4><b>追記: レビューのリクエストが送られてきた！</b></h4>
+<p><a href="http://gyazo.com/103e527cb85d09b8ad2a165710d5a702.png"><img border="0" src="http://gyazo.com/103e527cb85d09b8ad2a165710d5a702.png" /></a></p>
+<p>なるほど、そういう手がありましたか。</p>
+<p>先日ぼくが Kindle で読み終わった本のレビューを書いてみてよというメールが Amazon から来ました。</p>
+<p>このメールによって、多くの「読了済みユーザー」がレビューを書くようになると思います。</p>
+<p>現状、Amazonでは「購入済みユーザー」によるレビューがありますが、それより価値の高いレビューになりますね。</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/193" rel="bookmark"><time class="entry-date published" datetime="2013-01-25T21:39:00+00:00">2013-01-25</time><time class="updated" datetime="2016-03-11T15:04:09+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/it%e8%a6%8b%e8%81%9e%e9%8c%b2" rel="category tag">IT見聞録</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e9%9b%bb%e5%ad%90%e6%9b%b8%e7%b1%8d" rel="category tag">電子書籍</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/193#respond"><span class="dsq-postid" data-dsqidentifier="193 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/25/amazon%e3%81%8c%e6%89%8b%e3%81%ab%e3%81%97%e3%81%9f%e3%80%8c%e8%aa%ad%e4%ba%86%e7%8e%87%e3%80%8d%e3%81%a8%e3%81%84%e3%81%86%e6%96%b0%e3%81%97%e3%81%84%e6%ad%a6%e5%99%a8/">Leave a comment<span class="screen-reader-text"> on Amazonが手にした「読了率」という新しい武器</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-194" class="post-194 post type-post status-publish format-standard hentry category-14">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/194" rel="bookmark">思わず吹き出すワロタ画像 ベスト 15</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="http://bokete.jp/boke/1776135"><img src="http://ss.bokete.jp/1776135.jpg" title="ヤバイ！！キジと桃太郎が一撃でやられた！！！" /></a></p>
+<p><a href="http://bokete.jp/boke/2860012"><img src="http://ss.bokete.jp/2860012.jpg" title="はい、UNOって言ってないー！" /></a></p>
+<p><a href="http://bokete.jp/boke/1800356"><img src="http://ss.bokete.jp/1800356.jpg" title="二次会行くって！" /></a></p>
+<p><a href="http://bokete.jp/boke/3118160"><img src="http://ss.bokete.jp/3118160.jpg" title="あ、あんた…オイラが見えるのかい…？" /></a></p>
+<p><a href="http://bokete.jp/boke/2266677"><img src="http://ss.bokete.jp/2266677.jpg" title="無課金ユーザーが来た" /></a></p>
+<p><a href="http://bokete.jp/boke/2823471"><img src="http://ss.bokete.jp/2823471.jpg" title="（今だ、殺れ。）" /></a></p>
+<p><a href="http://bokete.jp/boke/1932352"><img src="http://ss.bokete.jp/1932352.jpg" title="金属アレルギー" /></a></p>
+<p><a href="http://bokete.jp/boke/3451192"><img src="http://ss.bokete.jp/3451192.jpg" title="主人公を選択してください" /></a></p>
+<p><a href="http://bokete.jp/boke/4565988"><img src="http://ss.bokete.jp/4565988.jpg" title="あ、手拍子とか必要ないです" /></a></p>
+<p><a href="http://bokete.jp/boke/4979093"><img src="http://ss.bokete.jp/4979093.jpg" title="何か言い残す事はありますか？" /></a></p>
+<p><a href="http://bokete.jp/boke/4932435"><img src="http://ss.bokete.jp/4932435.jpg" title="えっ？今からでも入れる保険があるんですか！？" /></a></p>
+<p><a href="http://bokete.jp/boke/4981054"><img src="http://ss.bokete.jp/4981054.jpg" title="さてはあいつら付き合ってんな？" /></a></p>
+<p><a href="http://bokete.jp/boke/4980803"><img src="http://ss.bokete.jp/4980803.jpg" title="新しい顔が飛んでくる可能性があります。" /></a></p>
+<p><a href="http://bokete.jp/boke/4975943"><img src="http://ss.bokete.jp/4975943.jpg" title="なんでパパのだけそのお薬入れるの？" /></a></p>
+<p><a href="http://bokete.jp/boke/4978920"><img src="http://ss.bokete.jp/4978920.jpg" title="ここを押すとファの音出ますね" /></a></p>
+<blockquote><p><a href="http://bokete.jp/boke/legend">殿堂入りボケ一覧 : ボケて（bokete）</a></p>
+</blockquote>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/194" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-24T22:28:00+00:00">2013-01-24</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8d%e3%82%bf" rel="category tag">ネタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/194#respond"><span class="dsq-postid" data-dsqidentifier="194 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/24/%e6%80%9d%e3%82%8f%e3%81%9a%e5%90%b9%e3%81%8d%e5%87%ba%e3%81%99%e3%83%af%e3%83%ad%e3%82%bf%e7%94%bb%e5%83%8f-%e3%83%99%e3%82%b9%e3%83%88-15/">Leave a comment<span class="screen-reader-text"> on 思わず吹き出すワロタ画像 ベスト 15</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-195" class="post-195 post type-post status-publish format-standard hentry category-38">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/195" rel="bookmark">たとえDRMフリーでなくとも技術書は電子版を買うメリットが上回る</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>技術書は通常の本に比べて電子書籍で買うことのメリットが大きいジャンルですので、DRMフリーでなくとも電子書籍で販売されているのであればぜひ購入を検討したいところです。ここでは Google Paly と Kindle を想定して話を進めたいと思います。</p>
+<p>まずその1つ目の理由は、 （Google Play や Kindle は母体の企業の規模が大きく世界的に見ても事実上のプラットフォームであり、「読めなくなってしまう」という可能性が比較的低いというのは最低限クリアしつつ）そもそも技術書は内容自体の「消費期限」が短い傾向にあり、「ずっと読める」ことにそこまで神経質になる必要もないというものです。そういう意味でDRMフリー以外のプラットフォームの利用も割とハードル低くさくっと買っちゃうのも悪くはないでしょう。</p>
+<p>2つ目の理由は、技術書は分厚くて重いことが多いので、重さ0グラムの電子版は魅力が大きいという点です。特に技術書はリファレンスとして利用されることも多いため、「持ち歩きたい」という動機が強いジャンルです。そういう意味で例えDRMフリーでなくとも持ち運びが用意である電子書籍を選択するのも悪くはないでしょう。</p>
+<p>3つめの理由は、デスクトップでも閲覧できるという点です。「読む」より「試す」という側面が強い技術書においては「デスクトップに表示しつつ作業することができる」という点は重要な条件です。その意味では Google Play と Kindle がマルチデバイスに対応しているというのは大きな利点です。</p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp the bookish</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/195" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-17T12:58:00+00:00">2013-01-17</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e9%9b%bb%e5%ad%90%e6%9b%b8%e7%b1%8d" rel="category tag">電子書籍</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/195#respond"><span class="dsq-postid" data-dsqidentifier="195 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/17/%e3%81%9f%e3%81%a8%e3%81%88drm%e3%83%95%e3%83%aa%e3%83%bc%e3%81%a7%e3%81%aa%e3%81%8f%e3%81%a8%e3%82%82%e6%8a%80%e8%a1%93%e6%9b%b8%e3%81%af%e9%9b%bb%e5%ad%90%e7%89%88%e3%82%92%e8%b2%b7%e3%81%86/">Leave a comment<span class="screen-reader-text"> on たとえDRMフリーでなくとも技術書は電子版を買うメリットが上回る</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-196" class="post-196 post type-post status-publish format-standard hentry category-38">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/196" rel="bookmark">DRMフリーの技術書を扱っている出版社 ＋その他大手（2013年前期）</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>早い話が「書名 pdf」や「書名 電子書籍」で検索してチェックを済ませてからポチればいいだけなのですが、一度どういった出版社が電子版の技術書を扱っているのかのインデックスを脳内に貼っておいもよいでしょう。</p>
+<h1>DRMフリー</h1>
+<p>PDF/EPUBなどDRMフリーなデータ形式で技術書を販売している主な出版社。仮に出版社が倒産しても買った書籍が読めなくなるという心配はない。</p>
+<ul>
+<li><a href="http://www.oreilly.co.jp/ebook/">O&apos;Reilly Japan Ebook Store</a></li>
+<li><a href="http://estore.ohmsha.co.jp/titles">オーム社eStore(β)</a></li>
+<li><a href="https://gihyo.jp/dp">Gihyo Digital Publishing</a></li>
+<li><a href="http://tatsu-zine.com/">達人出版会</a></li>
+<li><a href="http://bookpub.jp/books/category/9">ブックパブ（ソフトバンククリエイティブなど）</a>
+<li><a href="http://direct.ips.co.jp/book/kindai.cfm">近代科学社ブックストア</a></li>
+<p></ul>
+<h1>その他大手</h1>
+<p>シェアが大きな企業が提供している電子書籍サービス。 </p>
+<ul>
+<li><a href="http://www.amazon.co.jp/s/ref=sr_nr_n_0?rh=n%3A2250738051%2Cn%3A%212250739051%2Cn%3A2275256051&amp;bbn=2250739051&amp;ie=UTF8&amp;qid=1358422691&amp;rnid=2250739051">Amazon.co.jp: Kindleストア › Kindle本</a></li>
+<li><a href="https://play.google.com/store/books">Google Play の書籍</a></li>
+</ul>
+<p>技術書は電子版を買うことのメリットが比較的大きいジャンルです。その理由を「<a href="http://ymkjp.blogspot.jp/2013/01/drm3.html">たとえDRMフリーでなくとも技術書は電子版を買うメリットが大きいことを示す3つの理由</a>」にまとめたので気になる方は読んでみて下さい。</p>
+<p>それでは、『<a href="http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=978-4-274-06866-9">RailsによるアジャイルWebアプリケーション開発 第4版</a>』と『<a href="http://bookpub.jp/books/bp/198">Rails3レシピブック 190の技</a>』が実はPDFでも入手可能だったということを知った時の僕と同じ落胆を味わう人が少しでも少なくなりますように。</p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp the bookish</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/196" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-17T12:51:00+00:00">2013-01-17</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e9%9b%bb%e5%ad%90%e6%9b%b8%e7%b1%8d" rel="category tag">電子書籍</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/196#respond"><span class="dsq-postid" data-dsqidentifier="196 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/17/drm%e3%83%95%e3%83%aa%e3%83%bc%e3%81%ae%e6%8a%80%e8%a1%93%e6%9b%b8%e3%82%92%e6%89%b1%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e5%87%ba%e7%89%88%e7%a4%be-%ef%bc%8b%e3%81%9d%e3%81%ae%e4%bb%96%e5%a4%a7/">Leave a comment<span class="screen-reader-text"> on DRMフリーの技術書を扱っている出版社 ＋その他大手（2013年前期）</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/20">Previous page</a>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/'><span class="meta-nav screen-reader-text">Page </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/20'><span class="meta-nav screen-reader-text">Page </span>20</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">Page </span>21</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/22'><span class="meta-nav screen-reader-text">Page </span>22</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/31'><span class="meta-nav screen-reader-text">Page </span>31</a>
+<a class="next page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/22">Next page</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2016/09">&laquo; Sep</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td id="today">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1IQBVxfQlw=","queueTime":0,"applicationTime":194,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

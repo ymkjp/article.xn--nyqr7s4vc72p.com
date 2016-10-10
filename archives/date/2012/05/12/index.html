@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>2012-05-12 | It works!</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,444] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="robots" content="noindex,follow" />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/archives/date/2012/05/12" />
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="archive date hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></p>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">Day: May 12, 2012</h1>			</header><!-- .page-header -->
+
+			
+<article id="post-249" class="post-249 post type-post status-publish format-standard hentry category-2">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/249" rel="bookmark">香港旅行に行ってきた（写真多数）</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="http://g.co/maps/2egr8">香港</a>だよ、<a href="http://g.co/maps/wknkz">上海</a>じゃないよ！</p>
+<p>はじめての海外一人旅だったわけだけど、とりあえず写真貼っていくね！</p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://lh4.googleusercontent.com/-ccyyu4jYKr0/T6awlwUra8I/AAAAAAAAEQQ/dYqC0AxfKTw/s865/IMG_20120427_141809.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://lh4.googleusercontent.com/-ccyyu4jYKr0/T6awlwUra8I/AAAAAAAAEQQ/dYqC0AxfKTw/s640/IMG_20120427_141809.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="http://www.hongkongartfair.com/" target="_blank">香港国際芸術展</a>のラッピングトラム。このエキシヒビジョンは期間がずれていて行けなかったのが残念。</td>
+</tr>
+</tbody>
+</table>
+<p><a name='more'></a></p>
+<div style="clear: both; text-align: center;"></div>
+<div style="text-align: -webkit-auto;"></div>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-_VfQ501psWw/T6awlyjRUfI/AAAAAAAAEQQ/W5g9SuEe4eg/s1600/IMG_20120428_111241.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-_VfQ501psWw/T6awlyjRUfI/AAAAAAAAEQQ/W5g9SuEe4eg/s640/IMG_20120428_111241.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">よくある平凡なビル。湿度が高いので、基本的にビルの外観は汚くなりがち。味があって悪くない。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ayg0Cw16ny4/T6awl_d4IqI/AAAAAAAAEQQ/7h_0AmCtD4s/s1600/IMG_20120428_111250.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ayg0Cw16ny4/T6awl_d4IqI/AAAAAAAAEQQ/7h_0AmCtD4s/s640/IMG_20120428_111250.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">街に人が多く、バスも2階建てが多い。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-sX0Yd3wusn8/T6awly0E_uI/AAAAAAAAEQQ/3U3nsq4FFU8/s1600/IMG_20120428_111255.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-sX0Yd3wusn8/T6awly0E_uI/AAAAAAAAEQQ/3U3nsq4FFU8/s640/IMG_20120428_111255.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">こっち見んな。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-C9i3EuxtuAQ/T6awl2cJx2I/AAAAAAAAEQQ/s1gQbcmCkJI/s1600/IMG_20120427_120010.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-C9i3EuxtuAQ/T6awl2cJx2I/AAAAAAAAEQQ/s1gQbcmCkJI/s640/IMG_20120427_120010.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">餃子は安くてうまい。中国茶と点心（小籠包とか餃子とか）の2つは、「安くて旨い」バックパッカーにはありがたい存在。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-C4N5w4-4umo/T6awl9RGMvI/AAAAAAAAEQQ/lv4Zx3YOxNE/s1600/IMG_20120427_123256.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-C4N5w4-4umo/T6awl9RGMvI/AAAAAAAAEQQ/lv4Zx3YOxNE/s640/IMG_20120427_123256.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ちょｗ&nbsp;これが典型的な日本のイメージでしょう。スモーレスラーです。笑えます。やはり髪結いは難しいんでしょうね。上手く結えていません。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-quKwyLXUQZ8/T6awl3kIdyI/AAAAAAAAEQQ/2_4VPH16sR8/s1600/IMG_20120427_141955.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-quKwyLXUQZ8/T6awl3kIdyI/AAAAAAAAEQQ/2_4VPH16sR8/s640/IMG_20120427_141955.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">PCCWは香港最大の通信会社です。都心部ではPCCWのWifiアクセスポイントは例外なくありました。あと、香港のWifi事情は優れていて、「Gov-Wifi」などの政府が提供している公共アクセスポイントが提供されている場所もいくつかありました。国際ローミングを契約していないときの心強い見方です。今日日、通信手段はインフラと言ってもいいでしょうから、それが整備されているのは素晴らしいことです。</td>
+</tr>
+</tbody>
+</table>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-B1kL9_4lg4E/T6awl6Z4TtI/AAAAAAAAEQQ/7LgSoYThd8k/s1600/IMG_20120427_142038.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-B1kL9_4lg4E/T6awl6Z4TtI/AAAAAAAAEQQ/7LgSoYThd8k/s640/IMG_20120427_142038.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">中華圏全般に言えるそうですが、北海道人気です。干物屋さんとかでも北海道産の貝類が店前に置かれているのを見ました。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-h0Q6ETxNnZc/T6awl7fq7PI/AAAAAAAAEQQ/F_n4PZNPskA/s1600/IMG_20120428_185723.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-h0Q6ETxNnZc/T6awl7fq7PI/AAAAAAAAEQQ/F_n4PZNPskA/s640/IMG_20120428_185723.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ビクトリア・パークという公園。ご覧のとおり都会のど真ん中に広い運動スペースがあります。香港はここに限らず、こういう広いスペースがまちづくりに取り入れられていて都市計画が優れているという印象。住宅は狭くとも、街のなかにこういうスペースがあるので、都市全体で見た時の住みやすさが全然違ってきていると思います。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-SVLp3ieuxLY/T6awl_dhJuI/AAAAAAAAEQQ/732qQA4Rzco/s1600/IMG_20120428_190346.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-SVLp3ieuxLY/T6awl_dhJuI/AAAAAAAAEQQ/732qQA4Rzco/s640/IMG_20120428_190346.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ポカリスエットです。よく売れている。テレビCMもよくやっていました。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-38lKxfL2Hsk/T6awl7djesI/AAAAAAAAEQQ/XcPv-b7oSWo/s1600/IMG_20120428_190543.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-38lKxfL2Hsk/T6awl7djesI/AAAAAAAAEQQ/XcPv-b7oSWo/s640/IMG_20120428_190543.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">不動産が他の物価に比べて高いです。あれだけの高層密集住宅がありながら、なおもこの値段とは、やはり、土地が手狭なのでしょう。ちなみに香港人の友人によると、香港の有効な土地利用は12%程度だそうです。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ydc_uQbw8Xw/T6awl_9QrBI/AAAAAAAAEQQ/6YIbetBCEBI/s1600/IMG_20120428_193401.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ydc_uQbw8Xw/T6awl_9QrBI/AAAAAAAAEQQ/6YIbetBCEBI/s400/IMG_20120428_193401.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">はい、世界のマクドナルドです。これは90円くらい。円高の恩恵で安いです。海外に行くと食べないようにしていますが（特に東南アジアとかだとファーストフードが少しお洒落で高級な位置づけだったりするので）、香港の場合は「日本より安いから食べておこう」と思える気軽な感じでした。若干味がうすいかな。あと、店員の若い男性に英語が通じなかったのが意外だった＠香港島（天后）。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-K7ql5YEFJyQ/T6awl737GBI/AAAAAAAAEQQ/f9KyoWSoRKM/s1600/IMG_20120428_200243.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-K7ql5YEFJyQ/T6awl737GBI/AAAAAAAAEQQ/f9KyoWSoRKM/s640/IMG_20120428_200243.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="http://www.airbnb.com/" target="_blank">AirBnB</a>で探して2晩宿泊させてもらった家庭の子供が描いた絵。彼（10歳）は英語で教育を受けているっぽく、英語が上手でした。</td>
+</tr>
+</tbody>
+</table>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fXwe7SsFkeA/T6awlxwMCII/AAAAAAAAEQQ/oGRcuC2SdNU/s1600/IMG_20120427_180614.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fXwe7SsFkeA/T6awlxwMCII/AAAAAAAAEQQ/oGRcuC2SdNU/s640/IMG_20120427_180614.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">絵を描いたのは彼です。広東語と英語を自由に操ります。ベイブレード大好きでした。日本語を習っているそうで、「こんにちは」と言ってくれました。僕が香港に着いた時にはまだ大型連休が始まっていなかったことから日本人と出会っていなかったため、香港初の日本語を聞いたのは彼のその挨拶でした。嬉しいことに日本が大好きなようで、おそらくベイブレードの漫画のキャラクターでしょうが、「足立老師（先生という意味）知ってる？」「タカラトミーの人と働いてる？」って聞かれました。かわいいですね。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-9TBjiLIBecs/T6awl5hvK2I/AAAAAAAAEQQ/Ab7dAE2Dbp0/s1600/IMG_20120428_200253.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-9TBjiLIBecs/T6awl5hvK2I/AAAAAAAAEQQ/Ab7dAE2Dbp0/s640/IMG_20120428_200253.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">宿泊させてもらった家の様子。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-FzdvTpu6a5Q/T6awlymB72I/AAAAAAAAEQQ/At9e8jvFqAE/s1600/IMG_20120428_200306.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-FzdvTpu6a5Q/T6awlymB72I/AAAAAAAAEQQ/At9e8jvFqAE/s640/IMG_20120428_200306.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">家具とかが中国っぽい。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-CQVLE574sJY/T6awl6hRwlI/AAAAAAAAEQQ/f5AbkJag6Uo/s1600/IMG_20120427_194301.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-CQVLE574sJY/T6awl6hRwlI/AAAAAAAAEQQ/f5AbkJag6Uo/s640/IMG_20120427_194301.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">寿司の人気に嫉妬。雨なのにこんなに並んでます。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-pydUyLGyfKk/T6awl5J1MaI/AAAAAAAAEQQ/C8drgNhRvZI/s1600/IMG_20120427_191754.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-pydUyLGyfKk/T6awl5J1MaI/AAAAAAAAEQQ/C8drgNhRvZI/s640/IMG_20120427_191754.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">SOGOです。最も人通りの多い場所に建っていて、盛況です。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-pZ6Qc45J9Es/T6awlyi8iFI/AAAAAAAAEQQ/qcYF6nixSK0/s1600/IMG_20120427_191021.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-pZ6Qc45J9Es/T6awlyi8iFI/AAAAAAAAEQQ/qcYF6nixSK0/s640/IMG_20120427_191021.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">そごうの日本特産市のお酒コーナー。すごく愛されてますね。こんなに愛されてることを日本人である僕自身が知らなかったのはもったいないというか、恥ずかしいというか。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<div style="clear: both; text-align: center;"></div>
+<p></p>
+<div style="clear: both; text-align: center;"></div>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="http://1.bp.blogspot.com/-bpQXMjTgkBQ/T6awlzR03LI/AAAAAAAAEQQ/kj2F0jSMPPc/s1600/IMG_20120427_194754.jpg" style="margin-left: auto; margin-right: auto;"><span style="font-size: x-small;"><img border="0" src="http://1.bp.blogspot.com/-bpQXMjTgkBQ/T6awlzR03LI/AAAAAAAAEQQ/kj2F0jSMPPc/s640/IMG_20120427_194754.jpg" width="580" /></span></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ちょっと関係なくプログラミング言語ネタですが。というか、アメコミが元ネタですね。ところでRubyistの方の間ではアメコミの方のRubyTuesdayは有名なのでしょうか？&nbsp;写真はファッションブランドのテナント案内板です。&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-9e6q7aBb-wM/T6awl4xVztI/AAAAAAAAEQQ/PGK86-DCZIY/s1600/IMG_20120427_200135.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-9e6q7aBb-wM/T6awl4xVztI/AAAAAAAAEQQ/PGK86-DCZIY/s640/IMG_20120427_200135.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">WTC（ワールドトレードセンター）。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<div style="clear: both; text-align: center;"></div>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-PnEqGLkTiEg/T6awl7xFLII/AAAAAAAAEQQ/4c--GRdZcjs/s1600/PANO_20120426_123928.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-PnEqGLkTiEg/T6awl7xFLII/AAAAAAAAEQQ/4c--GRdZcjs/s640/PANO_20120426_123928.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ゲストハウスの室内写真です。香港はホテルが高くて、バックパッカー向けの最安値で100hkドル〜（約1000円）くらいです。この写真の部屋は330hkドルで（約3300円）、2人部屋です。ハイシーズンであるため、そこしか借りられませんでした。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-3T3QpS0V5jM/T6awl4Arz_I/AAAAAAAAEQQ/EieYN12VJDc/s1600/IMG_20120426_135459.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-3T3QpS0V5jM/T6awl4Arz_I/AAAAAAAAEQQ/EieYN12VJDc/s640/IMG_20120426_135459.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">安い料理屋さんです。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-_wbCG_3Uvbw/T6awl8Ab1PI/AAAAAAAAEQQ/24469BBmjr8/s1600/IMG_20120426_141858.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-_wbCG_3Uvbw/T6awl8Ab1PI/AAAAAAAAEQQ/24469BBmjr8/s400/IMG_20120426_141858.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">デザート。少しお高めで、確か400円とか。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Ohg_rN32sHU/T6awl4rgr9I/AAAAAAAAEQQ/qJnPT-TErsU/s1600/IMG_20120426_144151.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Ohg_rN32sHU/T6awl4rgr9I/AAAAAAAAEQQ/qJnPT-TErsU/s640/IMG_20120426_144151.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港でよく見る看板シリーズ①「痰を吐くな」</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-GR9b_EYso5c/T6awl0CGEYI/AAAAAAAAEQQ/Afhf7mvcYzk/s1600/IMG_20120426_144310.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-GR9b_EYso5c/T6awl0CGEYI/AAAAAAAAEQQ/Afhf7mvcYzk/s640/IMG_20120426_144310.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">やはり東京とかとは気候が違うので、植物も違います。これは九龍公園。よく整備されています。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-9VBQRTvGYXc/T6awl891MvI/AAAAAAAAEQQ/Wo8oAZ4RnUg/s1600/IMG_20120426_144523.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-9VBQRTvGYXc/T6awl891MvI/AAAAAAAAEQQ/Wo8oAZ4RnUg/s640/IMG_20120426_144523.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">熱帯的！</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-MJs_lCWb6Hs/T6awl6RWU3I/AAAAAAAAEQQ/lNVAflQnU1s/s1600/IMG_20120426_145202.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-MJs_lCWb6Hs/T6awl6RWU3I/AAAAAAAAEQQ/lNVAflQnU1s/s640/IMG_20120426_145202.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">東京じゃお目にかかれないですね</td>
+</tr>
+</tbody>
+</table>
+<div style="clear: both; text-align: center;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-y9jP4ubgPA0/T6awl4lGRvI/AAAAAAAAEQQ/nWpI0fpG-z0/s1600/PANO_20120426_150807.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-y9jP4ubgPA0/T6awl4lGRvI/AAAAAAAAEQQ/nWpI0fpG-z0/s640/PANO_20120426_150807.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ガンガン開発が進んでいます（右）。左側は香港島。写真は九龍半島の西側から。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-05fS7EAmFJ4/T6awl5nc4VI/AAAAAAAAEQQ/YMZ6rFq-Hzg/s1600/IMG_20120426_155959.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-05fS7EAmFJ4/T6awl5nc4VI/AAAAAAAAEQQ/YMZ6rFq-Hzg/s640/IMG_20120426_155959.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">レディ・ガガのライブがあるということで盛り上がっていました。意外と小さいんだね、レディ・ガガ。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-nBwju9rkmks/T6awl20SgPI/AAAAAAAAEQQ/Vlq1NolPXyY/s1600/IMG_20120426_171333.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-nBwju9rkmks/T6awl20SgPI/AAAAAAAAEQQ/Vlq1NolPXyY/s400/IMG_20120426_171333.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">九龍城の最寄りのバス停。『地球の歩き方』にはこの駅名が載っていなかったので一駅通りすぎてしまいました。香港のバスは遅くまで走っているので便利。路線も看板のようになっていて分かりやすい。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-n_RH3Tq9Acg/T6awl5PmCVI/AAAAAAAAEQQ/v8g_FJknsWk/s1600/IMG_20120426_163920.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-n_RH3Tq9Acg/T6awl5PmCVI/AAAAAAAAEQQ/v8g_FJknsWk/s640/IMG_20120426_163920.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small; line-height: 17px; text-align: -webkit-auto;">尖沙咀（</span>Tsim Sha Tsui）から九龍城（Kawloon city）へバスで行く途中。建築現場の足場が竹でできているのが印象的。アジア圏ではよく見るけど、香港の場合は高層建築でも使われているので印象が強い。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Jbi_Yebutfs/T6awlwpWZ4I/AAAAAAAAEQQ/JbAEUKanoZw/s1600/IMG_20120426_174819.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Jbi_Yebutfs/T6awlwpWZ4I/AAAAAAAAEQQ/JbAEUKanoZw/s640/IMG_20120426_174819.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">中国からもイギリスからも干渉を受けなかったという「無法地帯」の九龍城。廃墟ファンに人気。僕も写真集は見たことがあるが、現存はしておらず現在は小奇麗な庭園になっている。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-HXRBF3x45UI/T6awl__BWqI/AAAAAAAAEQQ/-L-zjfVqEe8/s1600/IMG_20120426_175454.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-HXRBF3x45UI/T6awl__BWqI/AAAAAAAAEQQ/-L-zjfVqEe8/s640/IMG_20120426_175454.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">九龍城ができる前。小高い丘だったことが分かる（写真左）。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ISW2X2n59N0/T6awl_bmMbI/AAAAAAAAEQQ/fISNhrRBIgQ/s1600/IMG_20120426_190100.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ISW2X2n59N0/T6awl_bmMbI/AAAAAAAAEQQ/fISNhrRBIgQ/s640/IMG_20120426_190100.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">九龍シティの老舗に行ってみた。高い割に美味くない。九龍シティは「旧市街」という感じ。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-LMxVSoxSWs4/T6awl8WZUYI/AAAAAAAAEQQ/pZytoUtVyl8/s1600/IMG_20120426_193840.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-LMxVSoxSWs4/T6awl8WZUYI/AAAAAAAAEQQ/pZytoUtVyl8/s640/IMG_20120426_193840.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="http://ja.wikipedia.org/wiki/%E6%97%BA%E8%A7%92" target="_blank">Mongkok</a>&nbsp;個人的にかなり好きな街。結局一回しか行けなかったのが心残り。オタクの街でもあるらしい。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-mXO7Dd5Gk8I/T6awlw3mCNI/AAAAAAAAEQQ/qpr6LEjNNms/s1600/IMG_20120426_194604.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-mXO7Dd5Gk8I/T6awlw3mCNI/AAAAAAAAEQQ/qpr6LEjNNms/s640/IMG_20120426_194604.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ネオンいいですね。アジアの混沌の象徴のようで好きです。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-CbN7tqXj7iY/T6awlwZk5xI/AAAAAAAAEQQ/UXdnV7iQYm4/s1600/IMG_20120425_080426.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-CbN7tqXj7iY/T6awlwZk5xI/AAAAAAAAEQQ/UXdnV7iQYm4/s640/IMG_20120425_080426.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">時系列めちゃくちゃですが、到着した日に空港から市街へ行くまでの途中にエアポートエクスプレスから撮った写真。エアポートエクスプレスは90HKドル（約900円）で、速い。10分に一回くらいの間隔で走っている。エアポートエクスプレスは行きだけ乗った。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<div style="clear: both; text-align: center;"></div>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-8poOzb2T_WA/T6awl1FfpsI/AAAAAAAAEQQ/PAcO5QJyIiQ/s1600/IMG_20120425_085813.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-8poOzb2T_WA/T6awl1FfpsI/AAAAAAAAEQQ/PAcO5QJyIiQ/s640/IMG_20120425_085813.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港島。滞在中は基本的にこういう曇り空だった。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ogodRMMFDqc/T6awlx1MjtI/AAAAAAAAEQQ/RZvyFZwU--Q/s1600/PANO_20120425_090912.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ogodRMMFDqc/T6awlx1MjtI/AAAAAAAAEQQ/RZvyFZwU--Q/s640/PANO_20120425_090912.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">きれいに整備されている。こういう場所に政府の無料Wifiが飛んでいる。東京も見習うべきだなぁ。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-zMa4MqFWNxU/T6awl-j38PI/AAAAAAAAEQQ/apJuIbKIOA4/s1600/PANO_20120425_091016.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-zMa4MqFWNxU/T6awl-j38PI/AAAAAAAAEQQ/apJuIbKIOA4/s640/PANO_20120425_091016.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">カメラのパノラマ撮影で撮ったが、よくできている。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-eDxNQbD5FEE/T6awl5eD4iI/AAAAAAAAEQQ/nk9RDLpmKE8/s1600/PANO_20120425_092238.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-eDxNQbD5FEE/T6awl5eD4iI/AAAAAAAAEQQ/nk9RDLpmKE8/s640/PANO_20120425_092238.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">到着した夜に空港（a.k.a Free Hotel）で寝て、早朝にここに来たので人影は少ない。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z9baCs_Ad88/T6awl0vQirI/AAAAAAAAEQQ/DPt77Fr5f0c/s1600/IMG_20120425_093318.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z9baCs_Ad88/T6awl0vQirI/AAAAAAAAEQQ/DPt77Fr5f0c/s640/IMG_20120425_093318.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">こういうふうに色々なアートが飾られている。Mt. Fuji!</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fDG_YSuvKxk/T6awl_n2KDI/AAAAAAAAEQQ/DJvtCFSW4Sw/s1600/PANO_20120425_093653.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fDG_YSuvKxk/T6awl_n2KDI/AAAAAAAAEQQ/DJvtCFSW4Sw/s640/PANO_20120425_093653.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">映画でよく見るような角度から。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-gba39NJAeaA/T6awl8VSNqI/AAAAAAAAEQQ/YOxb9SP5vT8/s1600/IMG_20120425_094014.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-gba39NJAeaA/T6awl8VSNqI/AAAAAAAAEQQ/YOxb9SP5vT8/s640/IMG_20120425_094014.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ブルース・リー大人気。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-DlMnwqe9dfM/T6awlzlt8hI/AAAAAAAAEQQ/9I_fv3i89c0/s1600/IMG_20120425_094024.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-DlMnwqe9dfM/T6awlzlt8hI/AAAAAAAAEQQ/9I_fv3i89c0/s640/IMG_20120425_094024.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">こういう大人気な様子を撮るのが楽しいですね。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-xGChv_e-Gjk/T6awl7YfK8I/AAAAAAAAEQQ/o3dH_z-t8AI/s1600/IMG_20120425_104423.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-xGChv_e-Gjk/T6awl7YfK8I/AAAAAAAAEQQ/o3dH_z-t8AI/s640/IMG_20120425_104423.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">吉高様！ &#8220;HongkongWalker&#8221;?!（今気づいた）</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-bjKaWTmXVik/T6awl5Hsq_I/AAAAAAAAEQQ/5-vxNdR5Niw/s1600/IMG_20120425_114159.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-bjKaWTmXVik/T6awl5Hsq_I/AAAAAAAAEQQ/5-vxNdR5Niw/s640/IMG_20120425_114159.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港理工大学。エンジ色にWだったので早稲田っぽいと思い撮影した（Wはただの建物の名前）。初日は位置関係がよく分からず、この辺りをグルグル周ったりしていたのも今となっては良き思い出。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-f5uinnK3Tt8/T6awl--2guI/AAAAAAAAEQQ/to5653X0BvM/s1600/IMG_20120425_111636.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-f5uinnK3Tt8/T6awl--2guI/AAAAAAAAEQQ/to5653X0BvM/s640/IMG_20120425_111636.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">看板に日本語が入っているから撮影しているわけではなく、普通にこれくらいの割合で日本語を見かける。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-52QDV0IMnKc/T6awl_S3S4I/AAAAAAAAEQQ/vXr_FWIFlIs/s1600/IMG_20120425_174608.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-52QDV0IMnKc/T6awl_S3S4I/AAAAAAAAEQQ/vXr_FWIFlIs/s640/IMG_20120425_174608.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">写真撮影（しました）</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-i3VpxrpBVAM/T6awl4Gpg1I/AAAAAAAAEQQ/T9agvcZtu4E/s1600/IMG_20120425_175203.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-i3VpxrpBVAM/T6awl4Gpg1I/AAAAAAAAEQQ/T9agvcZtu4E/s640/IMG_20120425_175203.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">地震のない国だなぁ、と。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-lPHSedmfH30/T6awl6wGJAI/AAAAAAAAEQQ/DRgCV1N2lSY/s1600/IMG_20120425_193048.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-lPHSedmfH30/T6awl6wGJAI/AAAAAAAAEQQ/DRgCV1N2lSY/s640/IMG_20120425_193048.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">食べ物は豊富。キモイ貝とか。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-IiyZ5ljbJqY/T6awl3_QfrI/AAAAAAAAEQQ/g1i5DHAr8M8/s1600/IMG_20120425_202519.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-IiyZ5ljbJqY/T6awl3_QfrI/AAAAAAAAEQQ/g1i5DHAr8M8/s640/IMG_20120425_202519.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">分かるようで分からない日本語。日本食レストラン（日式<span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small; line-height: 17px; text-align: -webkit-auto;">餐館</span>）<a class="__cf_email__" href="https://article.xn--nyqr7s4vc72p.com/cdn-cgi/l/email-protection" data-cfemail="a84b29064f34234e3517e8e5c7c6cfc3c7c386">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-cVaalh3u_yU/T6awl9CYnTI/AAAAAAAAEQQ/v6kW5b5t8E4/s1600/IMG_20120425_205343.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-cVaalh3u_yU/T6awl9CYnTI/AAAAAAAAEQQ/v6kW5b5t8E4/s640/IMG_20120425_205343.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a class="__cf_email__" href="https://article.xn--nyqr7s4vc72p.com/cdn-cgi/l/email-protection" data-cfemail="773a1819101c181c94f6d994f5ce94f4ff94f4dd94f4cb94f4ff90fede92d4c594f5fd92cfdc94f6fb94f5ce94f4e994f4cb94f4ff94f4e294f5de94f4c494f6d994">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>��<a class="__cf_email__" href="https://article.xn--nyqr7s4vc72p.com/cdn-cgi/l/email-protection" data-cfemail="1ffc9c8ffc9ca3fc9eb4fc9da6fc9c88fc9cb3fc9ca3fc9eb8f8aaaafc9d8df99090fc9e9bfc9eb9fc9e9bfc9d94fc9f9dfc9e82fc9d8cfc9eb5fc9eb4fba795f996">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>�くはない。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<div style="clear: both; text-align: center;"></div>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-51l5WUYW44M/T6awlwQPUXI/AAAAAAAAEQQ/0FzQX58GBpI/s1600/IMG_20120425_210630.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-51l5WUYW44M/T6awlwQPUXI/AAAAAAAAEQQ/0FzQX58GBpI/s640/IMG_20120425_210630.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">Mongkokの歩行者天国。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-UdBmypbvwcQ/T6awlzjsTLI/AAAAAAAAEQQ/BdfvVL83Kw0/s1600/IMG_20120425_210633.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-UdBmypbvwcQ/T6awlzjsTLI/AAAAAAAAEQQ/BdfvVL83Kw0/s640/IMG_20120425_210633.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">デートスポットでもあるらしい。ペアルック着たり、エスカレーターでキスしたりしていて羨ましかった。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-2gA2LRgiQj8/T6awlx7zIaI/AAAAAAAAEQQ/4wnKPpoY7h4/s1600/IMG_20120425_214333.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-2gA2LRgiQj8/T6awlx7zIaI/AAAAAAAAEQQ/4wnKPpoY7h4/s640/IMG_20120425_214333.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">地下鉄の表示。おしゃれ。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-e7p6AnQtGVg/T6awlzaGrhI/AAAAAAAAEQQ/cxY-juS5_F4/s1600/IMG_20120425_213159.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-e7p6AnQtGVg/T6awlzaGrhI/AAAAAAAAEQQ/cxY-juS5_F4/s640/IMG_20120425_213159.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">フードコートに入っている吉野家。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-7mTzzS7Beec/T6awl49NL-I/AAAAAAAAEQQ/sOkzSig2elM/s1600/IMG_20120425_215552.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-7mTzzS7Beec/T6awl49NL-I/AAAAAAAAEQQ/sOkzSig2elM/s640/IMG_20120425_215552.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">日本人バックパッカーが大好きな重慶大厦（Chungking Mansion）。立地が抜群。安いゲストハウスが数多くテナントに入っている。ホテルが軒並み高価な香港では貴重な場所で、インドや中東やアフリカンな人たちが多く心地よいカオス感が漂っている。両替のレートが街中よりはいい（1階よりは2階のほうが良いらしい）。エレベーターは常に満員なので、3〜4階のゲストハウスの場合は裏の階段を使うべし。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-8KQAEREJjio/T6awlwNyUCI/AAAAAAAAEQQ/qXVb1cCBrn4/s1600/IMG_20120425_220336.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-8KQAEREJjio/T6awlwNyUCI/AAAAAAAAEQQ/qXVb1cCBrn4/s640/IMG_20120425_220336.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">Heritageか何とかいうショッピング施設（あんま興味ない）。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-N6PPbP2xI_w/T6awl0wKO_I/AAAAAAAAEQQ/q08RGv_dwN8/s1600/PANO_20120425_220856.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-N6PPbP2xI_w/T6awl0wKO_I/AAAAAAAAEQQ/q08RGv_dwN8/s640/PANO_20120425_220856.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">これぞって感じの香港島の夜景。20-21時くらいが見ごろらしい（写真は22時過ぎ）。香港の人は結構夜遅くまで出歩いている印象。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-VZUtQSyIp6k/T6awl1R6h0I/AAAAAAAAEQQ/nPt4F-FuB98/s1600/IMG_20120424_114200.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-VZUtQSyIp6k/T6awl1R6h0I/AAAAAAAAEQQ/nPt4F-FuB98/s400/IMG_20120424_114200.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">出発前の荷物。今回は極軽量。</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-DgFzki2GjiI/T6awl4hmznI/AAAAAAAAEQQ/C4m6SkDFkcE/s1600/IMG_20120424_154734.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-DgFzki2GjiI/T6awl4hmznI/AAAAAAAAEQQ/C4m6SkDFkcE/s400/IMG_20120424_154734.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">あまり縁起のいい便名ではなかった。航空券はコミコミで32,895円。5月に入ってから買ったので出発を大型連休から外した割には少し割高。格安航空券なのにANAのマイルが貯まったのは嬉しい。</td>
+</tr>
+</tbody>
+</table>
+<div style="clear: both; text-align: center;"></div>
+<div style="clear: both; text-align: center;"></div>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-W7iKty1rboQ/T6bJER-19tI/AAAAAAAAESk/-3-F6EuayQ4/s1600/IMG_20120503_124201.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-W7iKty1rboQ/T6bJER-19tI/AAAAAAAAESk/-3-F6EuayQ4/s640/IMG_20120503_124201.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港歴史博物館に行ってきた。最初期の硬貨。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-awsa4W54eHY/T6bJEXnLhsI/AAAAAAAAESk/XmiJp9cEPYM/s1600/IMG_20120503_144126.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-awsa4W54eHY/T6bJEXnLhsI/AAAAAAAAESk/XmiJp9cEPYM/s640/IMG_20120503_144126.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港の埋め立ての歴史。水色が現在の土地。青は現在の海。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-EvN9IZg9pac/T6bJEWa8JUI/AAAAAAAAESk/edS6tCbKqYo/s1600/IMG_20120503_150413.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-EvN9IZg9pac/T6bJEWa8JUI/AAAAAAAAESk/edS6tCbKqYo/s640/IMG_20120503_150413.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">纏足。博物館に限った話ではないが、英語と中国語で解説があるので嬉しい。東京に帰ってくると空港ですら「フレンドリーじゃねぇな」と思える。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-PGUlagARYWI/T6bJEflNpZI/AAAAAAAAESk/qEmA4Xm9BuY/s1600/IMG_20120503_153713.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-PGUlagARYWI/T6bJEflNpZI/AAAAAAAAESk/qEmA4Xm9BuY/s640/IMG_20120503_153713.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">再現されたちょっと昔の住宅。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-F-mHKW3eYYI/T6bJEWVkJsI/AAAAAAAAESk/NCq0lRI3zBo/s1600/IMG_20120503_184333.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-F-mHKW3eYYI/T6bJEWVkJsI/AAAAAAAAESk/NCq0lRI3zBo/s640/IMG_20120503_184333.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">郊外の住宅。存外アングロサクソンも多い。この日本ではありえない住宅構造に驚き。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-nb1JebXxT6I/T6bJERdjy9I/AAAAAAAAESk/rR3awIzR7vE/s1600/IMG_20120503_184345.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-nb1JebXxT6I/T6bJERdjy9I/AAAAAAAAESk/rR3awIzR7vE/s640/IMG_20120503_184345.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">Hong Kong the no earthquake country&#8230;（とFacebookで言ったらマレーシア出身の後輩から「マレーシアもこんなもんっすよ」とコメントが。日本の常識は世界の非常識っと）</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-SZOz9EbvcTk/T6bJES2EdgI/AAAAAAAAESk/OlrFCcvitMM/s1600/IMG_20120503_184505.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-SZOz9EbvcTk/T6bJES2EdgI/AAAAAAAAESk/OlrFCcvitMM/s640/IMG_20120503_184505.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">すでに述べた通り、香港の公共交通機関は夜遅くまで利用できる。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-msd3BGlEEGw/T6bJEfZQl3I/AAAAAAAAESk/AbtgENLi2_o/s1600/IMG_20120503_185010.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-msd3BGlEEGw/T6bJEfZQl3I/AAAAAAAAESk/AbtgENLi2_o/s640/IMG_20120503_185010.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">Tai O という水上住宅が見れる地域（島の端っこ）からでもこの通りの運行表。バスも広い。個人的にはOctopus（香港版Suica）が残高不足で100円程度のところを500円ほど払うハメになったのが思い出。まあ、40分ほど走ってこの値段なのだから安いものだが。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-7iaQ711WeXI/T6bJERxlK3I/AAAAAAAAESk/q3bMFAHcnb8/s1600/IMG_20120503_195301.jpg"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-7iaQ711WeXI/T6bJERxlK3I/AAAAAAAAESk/q3bMFAHcnb8/s640/IMG_20120503_195301.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">水上住宅。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-lZyDFT8bJS0/T6bJEYpDUmI/AAAAAAAAESk/6EaAo02ETPM/s1600/IMG_20120503_195321.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-lZyDFT8bJS0/T6bJEYpDUmI/AAAAAAAAESk/6EaAo02ETPM/s640/IMG_20120503_195321.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港ではこの Tai O 地域くらいでしか見ることができないらしい（ソースは『地球の歩き方』）。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X5jG9lvZyDo/T6bJEZfhECI/AAAAAAAAESk/o3fDfwY7nrI/s1600/IMG_20120503_195415.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X5jG9lvZyDo/T6bJEZfhECI/AAAAAAAAESk/o3fDfwY7nrI/s640/IMG_20120503_195415.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">写真では暗くて汚く見えるが、実際はそうでもない。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-AZZQ97jHuhw/T6bJETL-vMI/AAAAAAAAESk/lJmbTNAv_9A/s1600/IMG_20120503_195616.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-AZZQ97jHuhw/T6bJETL-vMI/AAAAAAAAESk/lJmbTNAv_9A/s640/IMG_20120503_195616.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">このように外灯が点灯している。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ci6S2CYe3oA/T6bJEX8mXHI/AAAAAAAAESk/8HnSyvfJh8w/s1600/IMG_20120502_160814.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ci6S2CYe3oA/T6bJEX8mXHI/AAAAAAAAESk/8HnSyvfJh8w/s640/IMG_20120502_160814.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">寺院。こういう針金状の線香が特徴的。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-7rAJqjY_3UI/T6bJEYknB7I/AAAAAAAAESk/wIPGEP2LI7I/s1600/IMG_20120502_160822.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-7rAJqjY_3UI/T6bJEYknB7I/AAAAAAAAESk/wIPGEP2LI7I/s640/IMG_20120502_160822.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港人は拝金主義なイメージだが、若者でも熱心に祈っている人も多かった。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Kndyl7w2W60/T6bJEdZNlpI/AAAAAAAAESk/akyfP_guIYU/s1600/IMG_20120502_160848.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Kndyl7w2W60/T6bJEdZNlpI/AAAAAAAAESk/akyfP_guIYU/s640/IMG_20120502_160848.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">針金くんアップ。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Jq3cnbCwpP0/T6bJETpc_3I/AAAAAAAAESk/VR2_xrzNCUs/s1600/IMG_20120502_161134.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Jq3cnbCwpP0/T6bJETpc_3I/AAAAAAAAESk/VR2_xrzNCUs/s640/IMG_20120502_161134.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">いっぱい吊り下げてある。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-RBQ-9dDzhxA/T6bJETWmdgI/AAAAAAAAESk/ch6F8a-qoVo/s1600/IMG_20120502_161219.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-RBQ-9dDzhxA/T6bJETWmdgI/AAAAAAAAESk/ch6F8a-qoVo/s640/IMG_20120502_161219.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">天后とか関羽とかが祀られていた。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-bTRWFoBnDmM/T6bJEc6ws7I/AAAAAAAAESk/ba6AhXM1gMc/s1600/IMG_20120502_165340.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-bTRWFoBnDmM/T6bJEc6ws7I/AAAAAAAAESk/ba6AhXM1gMc/s640/IMG_20120502_165340.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">共産主義を揶揄するグッズ。意味は「お金は重要じゃない。重要なのはお金を全然持たないことだ」。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-9HNqyGi-hlg/T6bJEbxjRDI/AAAAAAAAESk/K6VQ4a8meNE/s1600/IMG_20120502_170736.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-9HNqyGi-hlg/T6bJEbxjRDI/AAAAAAAAESk/K6VQ4a8meNE/s640/IMG_20120502_170736.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">油麻地のマーケット。Mongkokの女人街のような観光客向けの露天が並ぶ。準備中に訪れたが、店主は警察に免許を見せたりしていた。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-KtMrH_Gom_w/T6bJEcqRrmI/AAAAAAAAESk/ZgcHUBi2nQE/s1600/IMG_20120501_132912.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-KtMrH_Gom_w/T6bJEcqRrmI/AAAAAAAAESk/ZgcHUBi2nQE/s640/IMG_20120501_132912.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">僕が何泊かした重慶招待所の部屋。重慶マンションの中では部屋数が多いゲストハウス。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-JItiy5Auty0/T6bJEWJvBcI/AAAAAAAAESk/WNfbxh-OGqM/s1600/IMG_20120501_133242.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-JItiy5Auty0/T6bJEWJvBcI/AAAAAAAAESk/WNfbxh-OGqM/s640/IMG_20120501_133242.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">また見かけた相撲レスラー。相変わらず髪結いは不十分だ。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-yCvHx29hezg/T6bJEdNOBZI/AAAAAAAAESk/zigvC075Rfg/s1600/IMG_20120501_135754.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-yCvHx29hezg/T6bJEdNOBZI/AAAAAAAAESk/zigvC075Rfg/s640/IMG_20120501_135754.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">消防署。おしゃれだろぅ？</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-288yj34oCUI/T6bJEds0cSI/AAAAAAAAESk/HCbxPDxShDg/s1600/IMG_20120501_140403.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="480" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-288yj34oCUI/T6bJEds0cSI/AAAAAAAAESk/HCbxPDxShDg/s640/IMG_20120501_140403.jpg" width="640" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">チェーン店にて。香港で初の写真詐欺にあった。shrimpが干からびている！</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-KfdEmcPWN4A/T6bJEbAgKdI/AAAAAAAAESk/KGrvHjmIlts/s1600/IMG_20120501_151939.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-KfdEmcPWN4A/T6bJEbAgKdI/AAAAAAAAESk/KGrvHjmIlts/s640/IMG_20120501_151939.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">芸術センターに行ったが、正直いまいちだった。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-msNupR7VFqg/T6bJEasHIuI/AAAAAAAAESk/HfzVmsaV--Y/s1600/IMG_20120501_152810.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-msNupR7VFqg/T6bJEasHIuI/AAAAAAAAESk/HfzVmsaV--Y/s640/IMG_20120501_152810.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">メーデーの日の警察のバイク。HONDAだぜ。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fTI_2FZFhXk/T6bJETG-ZUI/AAAAAAAAESk/FqEaB2v1fJ0/s1600/IMG_20120501_155754.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fTI_2FZFhXk/T6bJETG-ZUI/AAAAAAAAESk/FqEaB2v1fJ0/s640/IMG_20120501_155754.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">メーデーの行進の様子。いろんな人種ごとのグループになっていた。インドネシアの女性たちの音楽と歌声を聞いていると少しうるっと来て自分に驚いた。一人旅が寂しいというのもあっただろうが、異国の地における生きる力というのに感動。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-3nDlZV21YgU/T6bJEd_vo1I/AAAAAAAAESk/VKyxwQ0VhVQ/s1600/IMG_20120501_175356.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-3nDlZV21YgU/T6bJEd_vo1I/AAAAAAAAESk/VKyxwQ0VhVQ/s640/IMG_20120501_175356.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港で最も人通りが多い場所のひとつSOGO前。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-30jOn3Tn0z8/T6bJEeckFaI/AAAAAAAAESk/J8zjpbXyJhE/s1600/IMG_20120501_172418.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-30jOn3Tn0z8/T6bJEeckFaI/AAAAAAAAESk/J8zjpbXyJhE/s640/IMG_20120501_172418.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">あまりによく見る落書き。配管関係の業者の広告らしい。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-nsA0HUKnOoA/T6bJEWEH5wI/AAAAAAAAESk/ytfWNQ7umcQ/s1600/IMG_20120501_155851.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-nsA0HUKnOoA/T6bJEWEH5wI/AAAAAAAAESk/ytfWNQ7umcQ/s640/IMG_20120501_155851.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">メーデーの行列でトラムが立ち往生。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;">
+<div style="text-align: -webkit-auto;"></div>
+</div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-8C4clji3_kM/T6bJEX-D3ZI/AAAAAAAAESk/Tlsj5aEO7Mo/s1600/IMG_20120501_175407.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-8C4clji3_kM/T6bJEX-D3ZI/AAAAAAAAESk/Tlsj5aEO7Mo/s640/IMG_20120501_175407.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">中共（中国共産党）に反対する横断幕とか、H&amp;Mの49.90HKドルの看板とか、Sasa（ちょっと高給な化粧品チェーン店）とか、香港っぽい。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-quQESn0GIzc/T6bJEab_usI/AAAAAAAAESk/gR4cKX0x5G8/s1600/IMG_20120502_011911.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="400" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-quQESn0GIzc/T6bJEab_usI/AAAAAAAAESk/gR4cKX0x5G8/s400/IMG_20120502_011911.jpg" width="300" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港で買った歯磨き粉。航空機には100g以上は持ち込めないので注意ね。香港から帰国するときは大丈夫かなと来たいしたが、これも捨てさせられた。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-61D5N-wyOEY/T6bJESZm6YI/AAAAAAAAESk/Zwhqd7yaREg/s1600/IMG_20120502_012010.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="400" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-61D5N-wyOEY/T6bJESZm6YI/AAAAAAAAESk/Zwhqd7yaREg/s400/IMG_20120502_012010.jpg" width="300" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">「黒人は歯が綺麗」的なイメージかな。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-klSRr57qZt0/T6bJEWFP6FI/AAAAAAAAESk/fE0r7ilTXes/s1600/IMG_20120430_220139.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-klSRr57qZt0/T6bJEWFP6FI/AAAAAAAAESk/fE0r7ilTXes/s640/IMG_20120430_220139.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ゲストハウスのベッド。壁に天板が貼り付けられているのが斬新。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-lj1g5vxl0zQ/T6bJEdodn5I/AAAAAAAAESk/aWL0hJOsN7E/s1600/IMG_20120430_140601.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-lj1g5vxl0zQ/T6bJEdodn5I/AAAAAAAAESk/aWL0hJOsN7E/s640/IMG_20120430_140601.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">日本では買えなさそうだと思い購入したTシャツ。「賤」はbitchという意味だそう。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-28D9IJsSaxQ/T6bJEfN19oI/AAAAAAAAESk/K46DZpH3ck8/s1600/IMG_20120430_133126.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-28D9IJsSaxQ/T6bJEfN19oI/AAAAAAAAESk/K46DZpH3ck8/s640/IMG_20120430_133126.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">アングリーバードの躍進。フィリピンほどではないが、香港でも浸透していた。おそらく日本はキャラクタービジネスが高度すぎて逆に置いてけぼりだね。この看板はMTRのもの（日本で言う東京メトロ）。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-t4VEgjgU6Rc/T6bJESPEzWI/AAAAAAAAESk/6Hf_DFzVp4k/s1600/IMG_20120430_131349.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-t4VEgjgU6Rc/T6bJESPEzWI/AAAAAAAAESk/6Hf_DFzVp4k/s640/IMG_20120430_131349.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">地下鉄は非常に便利。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-dND9cfymUWE/T6bJEV1CcRI/AAAAAAAAESk/_J2_onDrVF8/s1600/IMG_20120430_221236.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-dND9cfymUWE/T6bJEV1CcRI/AAAAAAAAESk/_J2_onDrVF8/s640/IMG_20120430_221236.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">繁体字かっこいい。抱かれたい文字No.1!</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-NoI3vUF5xOQ/T6bJEUM5BUI/AAAAAAAAESk/H3xYC617Atw/s1600/IMG_20120430_221251.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-NoI3vUF5xOQ/T6bJEUM5BUI/AAAAAAAAESk/H3xYC617Atw/s640/IMG_20120430_221251.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">爽やかイケメン繁体字。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-d8BcQR5IhjM/T6bJEdGX9yI/AAAAAAAAESk/4IV5Q0xUfUQ/s1600/IMG_20120430_221304.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-d8BcQR5IhjM/T6bJEdGX9yI/AAAAAAAAESk/4IV5Q0xUfUQ/s640/IMG_20120430_221304.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">裏道なので汚いっす。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5jBYmRTALEc/T6bJEaZZ8SI/AAAAAAAAESk/OAJT8THLBQA/s1600/IMG_20120430_222831.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5jBYmRTALEc/T6bJEaZZ8SI/AAAAAAAAESk/OAJT8THLBQA/s640/IMG_20120430_222831.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">春巻きうまいっす。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-B8Fm2p-0vYA/T6bJEcu7swI/AAAAAAAAESk/0XNmzABPsFw/s1600/IMG_20120430_225922.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-B8Fm2p-0vYA/T6bJEcu7swI/AAAAAAAAESk/0XNmzABPsFw/s640/IMG_20120430_225922.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港でよく見かける看板②「滑るよ、危険」</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-p27RUpHQSCY/T6bJEZ4uN7I/AAAAAAAAESk/pRO5pdjLK8I/s1600/IMG_20120430_225955.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-p27RUpHQSCY/T6bJEZ4uN7I/AAAAAAAAESk/pRO5pdjLK8I/s640/IMG_20120430_225955.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">犯罪は見てるんだぜ？</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-yFHI-z7Efss/T6bJEb4f_gI/AAAAAAAAESk/XpMXqpYuy6w/s1600/IMG_20120429_122148.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-yFHI-z7Efss/T6bJEb4f_gI/AAAAAAAAESk/XpMXqpYuy6w/s640/IMG_20120429_122148.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">国会議員の選挙の公約っぽいのが公道脇に掲げられているのはよく目にした。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-d7HMNOkVSdg/T6bJEY2l3_I/AAAAAAAAESk/9NjbS-H7XdY/s1600/IMG_20120429_114751.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-d7HMNOkVSdg/T6bJEY2l3_I/AAAAAAAAESk/9NjbS-H7XdY/s640/IMG_20120429_114751.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港のドアは大概堅牢。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-yALGbetnS6w/T6bJEUZTdEI/AAAAAAAAESk/1ac2adKrwew/s1600/IMG_20120429_103515.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-yALGbetnS6w/T6bJEUZTdEI/AAAAAAAAESk/1ac2adKrwew/s640/IMG_20120429_103515.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">安い水。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-4lFCZwkwQSM/T6bJEVeBS8I/AAAAAAAAESk/PqxDoY17g9g/s1600/IMG_20120430_230148.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-4lFCZwkwQSM/T6bJEVeBS8I/AAAAAAAAESk/PqxDoY17g9g/s640/IMG_20120430_230148.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">青島ビール。コンビニで2本120円くらい。ちなみにコンビニで多いのは圧倒的にセブンイレブン。ファミリーマートはほとんどなかった。ローソンは見かけない。※タイはファミリーマートが多かった。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-2Nwz6PzneEY/T6bJEQQeB5I/AAAAAAAAESk/H2nIGybBY-s/s1600/IMG_20120429_123253.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-2Nwz6PzneEY/T6bJEQQeB5I/AAAAAAAAESk/H2nIGybBY-s/s640/IMG_20120429_123253.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">「健康」を売りにした中国茶の店。やはり中国人は健康好き。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-iTszAatxL2Y/T6bJERm8gSI/AAAAAAAAESk/zwzj7U77LX4/s1600/IMG_20120429_123858.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-iTszAatxL2Y/T6bJERm8gSI/AAAAAAAAESk/zwzj7U77LX4/s640/IMG_20120429_123858.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">競馬場のある Happy Valley イギリスの影響を感じる。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-a-MZ-aiZHUM/T6bJEftX2zI/AAAAAAAAESk/_gK1onHglVw/s1600/IMG_20120429_124146.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-a-MZ-aiZHUM/T6bJEftX2zI/AAAAAAAAESk/_gK1onHglVw/s640/IMG_20120429_124146.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">トラム全景。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-etmQoLuqeUw/T6bJEWCoeyI/AAAAAAAAESk/rSfVp4P6b6g/s1600/IMG_20120429_124758.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-etmQoLuqeUw/T6bJEWCoeyI/AAAAAAAAESk/rSfVp4P6b6g/s640/IMG_20120429_124758.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">現地の議員がどういう利点を示しているかを見るのは面白いですね。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-C6RlM3wiH5M/T6bJEUKVOGI/AAAAAAAAESk/Dz5Im147q4k/s1600/IMG_20120429_130406.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-C6RlM3wiH5M/T6bJEUKVOGI/AAAAAAAAESk/Dz5Im147q4k/s640/IMG_20120429_130406.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">日本のメーカーの看板もありますが、テレビはSamsungやLGばかりです。デジタル一眼レフカメラは日本製が多かったですかね。</td>
+</tr>
+</tbody>
+</table>
+<div style="clear: both;"></div>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-0Dm0m5ygVkk/T6bJEd1lJEI/AAAAAAAAESk/hWgJKOp48y0/s1600/IMG_20120428_120159.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-0Dm0m5ygVkk/T6bJEd1lJEI/AAAAAAAAESk/hWgJKOp48y0/s640/IMG_20120428_120159.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">アヘンで儲けていたイギリス系商会が自社の船を港で迎える際に空砲を撃っていたそうですが、イギリス領事当局に「一介の民間企業が（海軍の真似をして）けしからん」ということで、以後、正午に撃たせるよう罰をくだしたのが起源とのこと。香港の友人も知らなかったので、そんなに有名じゃないのかもしれないですが、見る価値はあります。僕はここで初めて日本人旅行者と遭遇しました。話していないので、中国の大陸からの旅行者と思われているでしょうが。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ypJo405ZBvo/T6bJEU9XWcI/AAAAAAAAESk/KUutB7WyjEM/s1600/IMG_20120428_152352.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-ypJo405ZBvo/T6bJEU9XWcI/AAAAAAAAESk/KUutB7WyjEM/s640/IMG_20120428_152352.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">香港とマカオなどを結ぶ高速船。船底に空洞があるのがかっこいい。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-DiAxmrtjowo/T6bJEaiiHZI/AAAAAAAAESk/7ITzYY--CPg/s1600/IMG_20120428_152339.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-DiAxmrtjowo/T6bJEaiiHZI/AAAAAAAAESk/7ITzYY--CPg/s640/IMG_20120428_152339.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">僕も1日だけですが、このターボジェット社の高速艇でマカオに行って来ました。マカオはバックパッカーバックパッカーが行く街じゃなかったです(^_^;)</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jTSbV_5u7AE/T6bJEZI7IFI/AAAAAAAAESk/KLwLl1w-nZ0/s1600/IMG_20120428_154849.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jTSbV_5u7AE/T6bJEZI7IFI/AAAAAAAAESk/KLwLl1w-nZ0/s640/IMG_20120428_154849.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ショッピングモールのジャズ演奏を聴いて休憩。たくさんの子供が音楽にあわせて踊っていた。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-iuAq--wDv4w/T6bJETBLJdI/AAAAAAAAESk/yrovZdvkwb8/s1600/IMG_20120428_155536.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-iuAq--wDv4w/T6bJETBLJdI/AAAAAAAAESk/yrovZdvkwb8/s640/IMG_20120428_155536.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">冷凍保存されたマンモスの子供が展示されていたようで、大人気でした。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-wNACu4EAQME/T6bJEXqZVuI/AAAAAAAAESk/wxdcOs3ps0g/s1600/IMG_20120428_170831.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-wNACu4EAQME/T6bJEXqZVuI/AAAAAAAAESk/wxdcOs3ps0g/s640/IMG_20120428_170831.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">きちんとお金を出して食べたお粥。めちゃ美味い。中国各地や台湾、ベトナム料理など、周辺地域の食のジャンルが香港にはあるが、どれもお金を出せば美味い。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-W0FYvR4JwOw/T6bJEV9C7kI/AAAAAAAAESk/jmKg6Eeremc/s1600/IMG_20120428_182944.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-W0FYvR4JwOw/T6bJEV9C7kI/AAAAAAAAESk/jmKg6Eeremc/s640/IMG_20120428_182944.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">トラムから撮った写真。ゴールデンウィークとはいえ、人通り多いよね。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-mrfAWNnN3WI/T6bJEUBhDQI/AAAAAAAAESk/_n9GbawuGgY/s1600/IMG_20120428_183013.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" height="640" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-mrfAWNnN3WI/T6bJEUBhDQI/AAAAAAAAESk/_n9GbawuGgY/s640/IMG_20120428_183013.jpg" width="480" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">行き交う人々。良い感じに撮れた(๑´ڡ｀๑)</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-wA--w8UPmfU/T6bJEXFm1aI/AAAAAAAAESk/gImwDjWwvs4/s1600/IMG_20120428_183133.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-wA--w8UPmfU/T6bJEXFm1aI/AAAAAAAAESk/gImwDjWwvs4/s640/IMG_20120428_183133.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">自動車はタクシーやバスなどの公共交通機関を除くと、ドイツ車などが多い。あと、自転車はほとんど見かけない。たまに、クロスバイクが走っている。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jrAU8KVYRk8/T6bJEV4GL6I/AAAAAAAAESk/NZ9flTOmpjs/s1600/IMG_20120428_184500.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jrAU8KVYRk8/T6bJEV4GL6I/AAAAAAAAESk/NZ9flTOmpjs/s640/IMG_20120428_184500.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">こういう歩道橋にシートを敷いて談笑するメイドたち。力強い。</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-auto;"></div>
+<table align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-32ecAaH5iQQ/T6bJEb0CaxI/AAAAAAAAESk/cB13vGqc9gY/s1600/IMG_20120505_122959.jpg" style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-32ecAaH5iQQ/T6bJEb0CaxI/AAAAAAAAESk/cB13vGqc9gY/s640/IMG_20120505_122959.jpg" width="580" /></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">帰ってきたなぁと実感するのは、MacBookを触ったとき。</td>
+</tr>
+</tbody>
+</table>
+<h2>■ 反省点</h2>
+<ul>
+<li>うまい飯が食いたいなら、お金を惜しむな。軍資金を用意せよ。安くて美味いのは中国茶と点心のみ。当初の目的が広東料理をはじめ、食い倒れのつもりだったので反省。</li>
+<li>ハイシーズンはゲストハウスが満室。100HKドル〜の宿があるそうだが、僕は3倍くらい払うはめになった。重慶大厦にもインターネット予約可能な宿泊所はある（Dragon Innなど）ので予約していくといいかも。</li>
+<li>現地の友達と飯が食えてよかった。</li>
+<li>歯磨き粉は100g以上は機内持ち込み不可。</li>
+</ul>
+<h2>■ 発見</h2>
+<ul>
+<li>Airbnbいいよ。現地の生活に入れるのはいい。ただ、香港は1monthからとかが多い。</li>
+<li>異国の地で力強く生きるメイドが印象に残った。</li>
+<li>香港いい。東京に似てる。気候はいまいちだが、住みたい。基本的に中国人に見られるので、現地人ステルスができるのは新鮮だった。</li>
+</ul>
+<p>これを見て「香港行きてぇ」ってなる人がいれば嬉しいです。 Hava nice trip!</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/249" rel="bookmark"><time class="entry-date published" datetime="2012-05-12T14:38:00+00:00">2012-05-12</time><time class="updated" datetime="2016-03-26T04:44:01+00:00">2016-03-26</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e6%97%85%e8%a1%8c" rel="category tag">旅行</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/249#respond"><span class="dsq-postid" data-dsqidentifier="249 http://tk2-249-34500.vs.sakura.ne.jp/2012/05/12/%e9%a6%99%e6%b8%af%e6%97%85%e8%a1%8c%e3%81%ab%e8%a1%8c%e3%81%a3%e3%81%a6%e3%81%8d%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ae%e5%86%99%e7%9c%9f/">Leave a comment<span class="screen-reader-text"> on 香港旅行に行ってきた（写真多数）</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>May 2012</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2012/04">&laquo; Apr</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2012/06">Jun &raquo;</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="1" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+	</tr>
+	<tr>
+		<td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2012/05/12" aria-label="Posts published on May 12, 2012">12</a></td><td>13</td>
+	</tr>
+	<tr>
+		<td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+	</tr>
+	<tr>
+		<td>21</td><td>22</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2012/05/23" aria-label="Posts published on May 23, 2012">23</a></td><td>24</td><td>25</td><td>26</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2012/05/27" aria-label="Posts published on May 27, 2012">27</a></td>
+	</tr>
+	<tr>
+		<td>28</td><td>29</td><td>30</td><td>31</td>
+		<td class="pad" colspan="3">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1IQBVxfQlw=","queueTime":0,"applicationTime":165,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

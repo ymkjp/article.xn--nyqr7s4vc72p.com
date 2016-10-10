@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>git &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/git/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>git &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>What&#8217;s your most frequent git subcommand?</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/25</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/25#respond</comments>
+		<pubDate>Thu, 26 Feb 2015 15:06:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[hello_world]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2015/02/26/whats-your-most-frequent-git-subcommand/</guid>
+		<description><![CDATA[history &#124; awk '{ $1="";print }' &#124; awk '$1=="g" &#124;&#124; $1=="git" { print $2 }' &#124; sort &#124; uniq -c &#124; awk '$1>1' &#124; sort -r It will show a standard output like the one below: 724 s 424 d 299 ci 169 l 139 add 131 push 71 stash 58 co 45 pull 45 &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/25" class="more-link">Continue reading<span class="screen-reader-text"> "What&#8217;s your most frequent git subcommand?"</span></a>]]></description>
+				<content:encoded><![CDATA[<pre>history | awk '{ $1="";print }' | awk '$1=="g" || $1=="git" { print $2 }' | sort | uniq -c | awk '$1>1' | sort -r</pre>
+<p>It will show a standard output like the one below:</p>
+<pre>724 s<br /> 424 d<br /> 299 ci<br /> 169 l<br /> 139 add<br /> 131 push<br />  71 stash<br />  58 co<br />  45 pull<br />  45 dc<br />  34 rebase<br />  29 clone<br />  27 remote<br />  25 reset<br />  21 b<br />  15 rm<br />  15 commit<br />  10 init<br />   9 --no-pager<br />   8 submodule<br />   8 checkout<br />   7 branch<br />   6 --version<br />   4 tag<br />   4 status<br />   3 reflog<br />   3 diff<br />   3 config<br />   3<br />   2 st<br />   2 merge<br />   2 cherry-pick</pre>
+<p>Have fun!</p>
+<p><i>Feel free to contact me <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i> <a name='more'></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/25/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">25</post-id>	</item>
+		<item>
+		<title>homebrew で git を入れている場合に contrib 以下のコマンドを使いたくなったときはどうするのがいいのだろうかという話</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/108</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/108#respond</comments>
+		<pubDate>Wed, 04 Dec 2013 20:36:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[osx]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/12/04/homebrew-%e3%81%a7-git-%e3%82%92%e5%85%a5%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e5%a0%b4%e5%90%88%e3%81%ab-contrib-%e4%bb%a5%e4%b8%8b%e3%81%ae%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%82%92%e4%bd%bf/</guid>
+		<description><![CDATA[環境構築系のことはメモを残しておくとしあわせになれるので、書いてみます。 とりあえず今回はパスの通った箇所に symlink を貼りました。 ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin/ 他にも gitconfig の [alias] に書くという手もあるそうですな。 [alias] subtree = !/path/to/git-subtree.sh How do I correctly install the tools in git&#8217;s contrib directory? @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>環境構築系のことはメモを残しておくとしあわせになれるので、書いてみます。</p>
+<p>とりあえず今回はパスの通った箇所に symlink を貼りました。</p>
+<pre>ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin/<br /></pre>
+</p>
+<p>
+<p>他にも gitconfig の [alias] に書くという手もあるそうですな。</p>
+<div>
+<blockquote>
+<p style="font-size: small;">
+<pre>[alias]<br />    subtree = !/path/to/git-subtree.sh<br /></p></pre>
+<div><small><cite title="stackoverflow"><a href="http://stackoverflow.com/questions/11603510/how-do-i-correctly-install-the-tools-in-gits-contrib-directory">How do I correctly install the tools in git&#8217;s contrib directory?</a></cite></small></p></blockquote>
+</div>
+</div>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/108/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">108</post-id>	</item>
+		<item>
+		<title>bash_history から自分の手癖を発見する (git 編)</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/127</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/127#respond</comments>
+		<pubDate>Sat, 05 Oct 2013 05:06:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[git]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/10/05/bash_history-%e3%81%8b%e3%82%89%e8%87%aa%e5%88%86%e3%81%ae%e6%89%8b%e7%99%96%e3%82%92%e7%99%ba%e8%a6%8b%e3%81%99%e3%82%8b-git-%e7%b7%a8/</guid>
+		<description><![CDATA[cat ~/.bash_history &#124; awk '$1=="git" { print $0 }' &#124; awk '{ print $1, $2 }' &#124; sort -k2 &#124; uniq -c &#124; awk '$1>1 {print $0}' &#124; sort -r 前回の記事で bash_history から自分の手癖を発見した が、そこで一番多いコマンドが git だった。そこで追調査ということで git のなかでもさらにどんな git 内コマンドを使っているのかを上記コマンドで調べてみた。 321 git s 187 git d 133 git l 132 git co 119 git ci &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/127" class="more-link">Continue reading<span class="screen-reader-text"> "bash_history から自分の手癖を発見する (git 編)"</span></a>]]></description>
+				<content:encoded><![CDATA[<pre>cat ~/.bash_history | awk '$1=="git" { print $0 }' | awk '{ print $1, $2 }' | sort -k2 | uniq -c | awk '$1>1 {print $0}' | sort -r<br /></pre>
+<p><a href="http://ymkjp.blogspot.jp/2013/10/bashhistory.html">前回の記事で bash_history から自分の手癖を発見した</a> が、そこで一番多いコマンドが git だった。そこで追調査ということで git のなかでもさらにどんな git 内コマンドを使っているのかを上記コマンドで調べてみた。</p>
+<pre>321 git s<br />    187 git d<br />    133 git l<br />    132 git co<br />    119 git ci<br />    100 git push<br />     89 git b<br /></pre>
+<p>結果は上記の通りだが、案の定 .gitconfig の [alias] で設定しているコマンドが多くなった。それぞれ以下のように設定している。</p>
+<pre>s = status --short --branch<br />    d = diff<br />    l = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'<br />    co = checkout<br />    ci = commit<br />    b = branch -a<br /></pre>
+<p>こうして結果を見てみると、status > diff > log > checkout > commit > push > branch となっている。まあ status, diff, log の現状確認系は多いだろうなという感じで (diff &#8211;cached は別集計, branch が少ないのはシェル上に表示しているから), ci より co のほうが多いのは意外 (これはもしかすると集計ロジックミスかもとすら思える)。</p>
+<p>
+<div>
+<h4>参照</h4>
+<ul>
+<li><small><cite title="ymkjp"><a href="http://ymkjp.blogspot.jp/2013/10/bashhistory.html">bash_history から自分の手癖を発見する</a></cite></small></li>
+</ul>
+</div>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/127/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">127</post-id>	</item>
+		<item>
+		<title>CentOS 6.4 に Gitolite で git リモートリポジトリを立てた</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/147</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/147#respond</comments>
+		<pubDate>Fri, 02 Aug 2013 21:09:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[git]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/08/02/centos-6-4-%e3%81%ab-gitolite-%e3%81%a7-git-%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%82%92%e7%ab%8b%e3%81%a6%e3%81%9f/</guid>
+		<description><![CDATA[概要 さくらの VPS に git リモートリポジトリを立てたので作業ログを残しておく。 手順 サーバ側で必要なライブラリのインストール $ sudo yum update$ sudo yum install perl-Time-HiRes -y ユーザー追加 $ sudo useradd --shell /bin/bash --home /home/git git# パスフレーズはなし 手元の Mac で ssh-keygen する $ cd ~/.ssh &#038;& ssh-keygen -t rsa -f git-admin 生成した公開鍵をサーバに転送する $ scp -P [ポート番号] ~/.ssh/git-admin.pub [ユーザー名]@[ホスト名]:~/ サーバで公開鍵を /home/git に移動して所有権を git ユーザーに変更する $ sudo &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/147" class="more-link">Continue reading<span class="screen-reader-text"> "CentOS 6.4 に Gitolite で git リモートリポジトリを立てた"</span></a>]]></description>
+				<content:encoded><![CDATA[<h4>概要</h4>
+<p>さくらの VPS に git リモートリポジトリを立てたので作業ログを残しておく。</p>
+<p>
+<h4>手順</h4>
+<p>
+<ol>
+<li>サーバ側で必要なライブラリのインストール</li>
+<pre>$ sudo yum update<br />$ sudo yum install perl-Time-HiRes -y<br /></pre>
+<li>ユーザー追加</li>
+<pre>$ sudo useradd --shell /bin/bash --home /home/git git<br /># パスフレーズはなし<br /></pre>
+<li>手元の Mac で ssh-keygen する</li>
+<pre>$ cd ~/.ssh && ssh-keygen -t rsa -f git-admin<br /></pre>
+<li>生成した公開鍵をサーバに転送する</li>
+<pre>$ scp -P [ポート番号] ~/.ssh/git-admin.pub [ユーザー名]@[ホスト名]:~/<br /></pre>
+<li>サーバで公開鍵を /home/git に移動して所有権を git ユーザーに変更する</li>
+<pre>$ sudo mv ~/git-admin.pub /home/git/git-admin.pub<br />$ sudo chown git:git /home/git/git-admin.pub<br /></pre>
+<li>git ユーザーになる</li>
+<pre>$ sudo su - git<br /></pre>
+<li>Gitlite をインストールする</li>
+<pre>$ mkdir ~/tmp && cd ~/tmp<br />$ git clone git://github.com/sitaramc/gitolite<br />$ mkdir -p $HOME/bin<br />$ gitolite/install -to $HOME/bin<br />$ $HOME/bin/gitolite setup -pk ~/git-admin.pub<br /><br />$ rm -rf ~/tmp<br />$ rm -f ~/git-admin.pub<br /></pre>
+<li>手元の Mac から Gitolite 経由でアクセスできるように設定する</li>
+<pre>$ vim ~/.ssh/config<br /><pre>Host git-admin<br />     HostName [ホスト名]<br />     User git<br />     Port [ポート番号]<br />     IdentityFile ~/.ssh/git-admin<br /></pre>
+<li>使ってみる</li>
+<pre># ローカルPCでファイルをクローンしてみる<br />$ cd ~ && git clone git-admin:gitolite-admin<br /><br /># Gitoliteにユーザーを追加する<br />$ cd ~/gitolite-admin && cp ~/.ssh/id_rsa.pub ./keydir/[追加するユーザー名].pub<br /><br />$ vim conf/gitolite.conf<br /><pre>repo testing<br />    RW+     =   [追加するユーザー名]<br /></pre>
+<p>$ git add . $ git commit -m "add user: [追加するユーザー名]" $ git push  # リポジトリを作成する $ vim ~/gitolite-admin/conf/gitolite.conf
+<pre>repo     my-project<br />     RW+     =     git-admin<br /></pre>
+<p># 変更したファイルをサーバーへ送る $ git commit -am "add repo: my-project" $ git push </ol>
+</p>
+<p>
+<p>これでプライベートリポジトリが完成。結構お手軽だった。</p>
+<p>Gitolite は Gitosis よりも高機能で、リポジトリ・ブランチ・ファイルのアクセス権やグループの設定などができるため管理がしやすそう。</p>
+<h4>参照文献</h4>
+<ul>
+<li><small><cite title="【Linux】 CentOSにGitolite を導入する - kzy52&apos;s diary"><a href="http://kzy52.com/entry/2013/05/03/024455">【Linux】 CentOSにGitolite を導入する &#8211; kzy52&apos;s diary</a></cite></small></li>
+<li><small><cite title="Git管理の神ツール「Gitolite」なら、ここまでできる！ (2/2) - ＠IT"><a href="http://www.atmarkit.co.jp/ait/articles/1110/03/news112_2.html">ユカイ、ツーカイ、カイハツ環境！（26）：Git管理の神ツール「Gitolite」なら、ここまでできる！ (2/2) &#8211; ＠IT</a></cite></small></li>
+</ul>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/147/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">147</post-id>	</item>
+		<item>
+		<title>git submodule を再帰的に init &#038;&#038; update</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/148</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/148#respond</comments>
+		<pubDate>Wed, 24 Jul 2013 02:34:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[git]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/07/24/git-submodule-%e3%82%92%e5%86%8d%e5%b8%b0%e7%9a%84%e3%81%ab-init-update/</guid>
+		<description><![CDATA[git submodule update --init --recursive git submodule は git init しないと update できないので、しょっぱなはこのコマンド一撃でいいと思う。友人に教えると喜ばれる。 @ymkjp]]></description>
+				<content:encoded><![CDATA[<pre>git submodule update --init --recursive</pre>
+<p>
+<p>git submodule は git init しないと update できないので、しょっぱなはこのコマンド一撃でいいと思う。友人に教えると喜ばれる。</p>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> </p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/148/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">148</post-id>	</item>
+	</channel>
+</rss>

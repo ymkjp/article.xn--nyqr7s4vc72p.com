@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>December, 2013 | It works! - Part 2</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,462] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="robots" content="noindex,follow" />
+<link rel='prev' href='https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/' />
+<link rel='next' href='https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/page/3' />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/page/2" />
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="archive date paged paged-2 date-paged-2 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></p>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">Month: December 2013</h1>			</header><!-- .page-header -->
+
+			
+<article id="post-91" class="post-91 post type-post status-publish format-standard hentry category-50 category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/91" rel="bookmark">プログラマがプレゼンテーションを成功させるための5つのプラクティス</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>こんにちは、みなさんプレゼンしてますか？</p>
+<p>僕は会社で月に1度くらいの頻度でLT (Lightning Talk: 5分ほどで完結する短い時間のプレゼン) をやっているのですが、繰り返しやっているとだんだんとコツがつかめてきました。</p>
+<p>そこで、せっかくなので僕が体得したベストプラクティスを書いてみます。</p>
+<p><a href="http://www.flickr.com/photos/imaginecup/7534287902/" title="Imagine Cup 2012 - Day 4 Finalist Presentations by ImagineCup, on Flickr"><img src="https://farm9.staticflickr.com/8294/7534287902_a3ba8bf589_z.jpg" width="580" alt="Imagine Cup 2012 - Day 4 Finalist Presentations" /></a></p>
+<h4>プログラマ向け5つのベストプラクティス</h4>
+<p>今回は、プレゼンする人がプログラマ、そして聴衆もプログラマであることを想定して、プレゼンを行う場合の5つのベストプラクティスを紹介します。</p>
+<p>
+<div>
+<ol>
+<li><b>コードを説明に入れる</b></li>
+<li><b>失敗したことを話す</b></li>
+<li><b>アジェンダを入れる</b></li>
+<li><b>1スライドには1トピック</b></li>
+<li><b>練習する</b></li>
+</ol>
+</div>
+<p>
+<h4>1. コードを説明に入れる</h4>
+<p>プレゼンをするときの心構えというほどでもないですが、基本的な姿勢として、僕は何かしら聴衆の役に立てるような内容にするようにしています。</p>
+<p>たとえそのプレゼンの目的が新人の教育のために設定されていて、目的が自分の成長であったとしても、です。</p>
+<p>そしてそのための最初の引き出しが「コードを説明に入れる」です。</p>
+<p>聴衆の役に立つことを話すためにはコードが一番です。</p>
+<p>なぜなら、動くコードからはとても多くのことが分かるからです。そして聴衆はそのコードを自分が使った場合のことを想像できるので、コードは聴衆に喜んでもらいやすいわけです。</p>
+<h4>2. 失敗したことを話す</h4>
+<p>失敗の共有はコードと同じくらい有意義になりやすいです。</p>
+<p>失敗したことを話すのは躊躇してしまうかもしれませんが、慣れてしまえば平気になるので過分な自尊心はゴミ箱にシュートしましょう。</p>
+<h4>3. アジェンダを入れる</h4>
+<p>聴衆にプレゼンの内容を役に立ててもらうには、聴衆が分かるように簡潔に話さなければいけません。</p>
+<p>「アジェンダを入れる」は、そのための第一歩です。構造化された全体像を最初に見せておくことで、格段に聴衆が発表内容を理解しやすくなります。</p>
+<h4>4. 1スライドには1トピック</h4>
+<p>UNIX哲学の &#8220;Write programs that do one thing and do it well&#8221; (一つのことをうまくやるプログラムを書け) と同じく、一つのことをうまく伝えるスライドを作るべきです。</p>
+<p>複数のトピックが1枚のスライドに入っている場合はスライドを分割して1枚のスライドで1つのことだけ話すようにすると、聴衆が要点を理解しやすくなります。</p>
+<h4>5. 練習 練習 練習</h4>
+<p>プレゼンテーションの名手といえば故スティーブジョブズですが、彼が念入りな練習を行っていたことは有名ですね。</p>
+<p>今回紹介したベストプラクティスのなかではこの「練習する」が一番時間と労力が必要ですが、プレゼンの成功には一番効果があります。</p>
+<p>特にプレゼンが不慣れだという自覚がある人は一度でも練習しておきましょう。本番での心の余裕が驚くほど違ってきます。</p>
+<h4>★ 一番のおすすめは「コードを説明に入れる」</h4>
+<p>今回紹介したベストプラクティスの中で一番のおすすめは「コードを説明に入れる」です。</p>
+<p>コードを組み込むだけなのでハードルも低いですし、効果も大きいです。</p>
+<p>僕はコードを貼ったスライドに切り替えた時に「ふむ」という声が聞こえてくると嬉しくなります。</p>
+<p>以上です。プレゼンの準備をするときに参考にしてください。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/91" rel="bookmark"><time class="entry-date published" datetime="2013-12-22T15:58:00+00:00">2013-12-22</time><time class="updated" datetime="2016-05-18T16:27:23+00:00">2016-05-18</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%97%e3%83%ac%e3%82%bc%e3%83%b3" rel="category tag">プレゼン</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/91#respond"><span class="dsq-postid" data-dsqidentifier="91 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/22/%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9e%e3%81%8c%e3%83%97%e3%83%ac%e3%82%bc%e3%83%b3%e3%83%86%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%92%e6%88%90%e5%8a%9f%e3%81%95%e3%81%9b%e3%82%8b%e3%81%9f/">Leave a comment<span class="screen-reader-text"> on プログラマがプレゼンテーションを成功させるための5つのプラクティス</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-92" class="post-92 post type-post status-publish format-standard hentry category-41 category-51">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/92" rel="bookmark">不動産取引の重要事項説明や契約書のやりとりがネット上で可能になる見通し</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="http://www.flickr.com/photos/mdsimages/5162584441/" title="House for sale (somewhere in Maine) by Photomike07 / MDSimages.com, on Flickr"><img src="http://farm5.staticflickr.com/4001/5162584441_72d74d841e.jpg" alt="House for sale (somewhere in Maine)" /></a></p>
+<p>これは良いニュース。</p>
+<p>
+<div>
+<blockquote>
+<p style="font-size: small;">現在不動産取引の契約に際して、宅地建物取引主任者が行う重要事項説明は対面で行うこととされているが、これを見直し、インターネットなどを利用した「対面以外の方法」による重要事項説明も行えるよう、《政府が》国交省に提言した。併せて、37条書面(契約内容記載書面)の電磁的方法による交付の可能性についても検討する。</p>
+<div><small><cite title="重要事項説明、対面原則を見直し検討　ネット利用を視野に - 住宅新報web | 政策"><a href="http://www.jutaku-s.com/news/id/0000019417">住宅新報web</a></cite> 《かっこ》内は引用者</small></div>
+</blockquote>
+</div>
+<p>現在、宅建の資格をもったひとが「重要事項説明」を対面でやらなければならないというルールがあるのですが、これをインターネット上でも可能にするように国交省が検討をはじめるとのこと。</p>
+<p>そして契約書もメールに PDF の添付で OK とかになりそうだとかで、こうなってくるといよいよインターネット上でだけで住居を借りることが完結させられるようになります。</p>
+<p>規制さえなくなればどんどん便利なサービスが生まれてくるでしょうなぁ、わくわく。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/92" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-22T07:22:00+00:00">2013-12-22</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%b9" rel="category tag">ニュース</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e4%b8%8d%e5%8b%95%e7%94%a3" rel="category tag">不動産</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/92#respond"><span class="dsq-postid" data-dsqidentifier="92 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/22/%e4%b8%8d%e5%8b%95%e7%94%a3%e5%8f%96%e5%bc%95%e3%81%ae%e9%87%8d%e8%a6%81%e4%ba%8b%e9%a0%85%e8%aa%ac%e6%98%8e%e3%82%84%e5%a5%91%e7%b4%84%e6%9b%b8%e3%81%ae%e3%82%84%e3%82%8a%e3%81%a8%e3%82%8a%e3%81%8c/">Leave a comment<span class="screen-reader-text"> on 不動産取引の重要事項説明や契約書のやりとりがネット上で可能になる見通し</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-93" class="post-93 post type-post status-publish format-standard hentry category-dev">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/93" rel="bookmark">プログラマの仕事はコーディングとデバッグだけじゃない 何をやるべきか、何をやらないべきか</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>年末ということもあり、この一年で学んだことをアウトプットしてみます。</p>
+<p>プログラマがやるべきことは実はコーディングやデバッグだけではないよという話で、この辺りの話題はコーディングそのもののテクニカルな知見よりも忘れられがちなためか情報の流通も少ないですが、実はとっても大切なことです。</p>
+<p>なお、ソフトウェア開発にもいろいろな種類があると思いますが、ここでは一般消費者向けのサービスを細かな開発サイクルを回しながら提供していくような開発体制を想定しています。</p>
+<p><a href="http://gyazo.com/90ed4bb61c650908208115da59bfdfe8.png"><img border="0" src="http://gyazo.com/90ed4bb61c650908208115da59bfdfe8.png" width="580" /></a></p>
+<p>
+<div>
+<table>
+<thead>
+<tr>
+<th>工程</th>
+<th>ポイント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>課題定義</th>
+<td>利用者の「これがしたい」「これがいまいち」などの要求を定義する。<br />データに基づいた定量的な課題であれば達成度を計測できるので、なおよい。</td>
+</tr>
+<tr>
+<th>要件定義</th>
+<td>定義した課題を具体的な要件に落としこんでいく。<br />「これはやりません」と決めておくのも大事。追加要件に振り回されないためにもやらないことも確定させておく。<br />この段階だと頭だけで考えていることが多いので意外と要件自体がないことに気づかずにあとで「なんか設計しにくいなぁ」という状態に陥ることもある。<br />例えば、ある機能を実現するために「どうせなら汎用化させようぜ」みたいな話になったときはその汎用化部分の要件などが抜け落ちていることがあるので注意。<br />経験がものを言う工程だが、できるだけメタな視点に立つよう努める。<br />次回の「課題定義」からはじまるイテレーションを意識しよう。「このログは集計できるようにしておきたいね」など。</td>
+</tr>
+<tr>
+<th>詳細設計</th>
+<td>どうやって要件を満たしていくかを考えていくフェーズ。<br />既存資産に手を入れる際は既存のソフトウェアアーキテクチャがどうなっているか、ソースコードがどうなっているかなどをみながら設計を進める。<br />どういったクラスがあるか、どういった例外がありうるか。<br />よいインターフェースを提供しようという強い意志を持ちたい。<br />設計では引き出しとしてデザインパターンが役立つ。<br />ただ、ある程度決めた時点でとにかく手を動かすというのも有効。特に経験が少ない場合。</td>
+</tr>
+<tr>
+<th>ソフトウェアアーキテクチャ</th>
+<td>負荷の見積もりを行う。サーバのスペックや台数を決める。</td>
+</tr>
+<tr>
+<th>コンストラクション計画</th>
+<td>作業全体のスケジューリングとその自己管理ができるようになると一人前。<br />ボトルネックとなる工程を事前に把握して手元のタスクに優先順位をつけていく。<br />例えば他チームへ Pull request を出す場合はチーム内レビューも含めて時間がかかったり、チームごとにリリーススケジュールが異なったりする。サーバの調達期間も考慮すべし。</td>
+</tr>
+<tr>
+<th>コーディングとデバッグ</th>
+<td>実装。前準備がうまくいっていれば楽しい作業時間となるはず。</td>
+</tr>
+<tr>
+<th>単体テスト</th>
+<td>品質と開発効率の両立には欠かせない工程。<br />テストコードがあれば自信を持ってリファクタリングできるようになる。そして他の人が自分のコードに改修を加えやすくなる。<br />テストコードの無いコードは生まれた瞬間からレガシーである。<br />代表的なツールは xUnit 系。<br />実装に対するテストはもちろんだが、要件を満たせているかという観点のテストまで書けるとよい。</td>
+</tr>
+<tr>
+<th>統合テスト</th>
+<td>自分の変更と関係のない部分とも協調してテストを通す。<br />Pull request を投げた時点で Jenkins が自動でテストを走らせて、コーディングスタイルのチェックやテストカバレッジなども計測してくれるとレビュアーの負担も軽減できてよい。</td>
+</tr>
+<tr>
+<th>受け入れテスト</th>
+<td>利用者に使ってもらってフィードバックを得る。<br />段階的に一部のユーザーに機能を開放することで施策の効果を計測したり、予想できなかった不具合などを発見したりできる。</td>
+</tr>
+<tr>
+<th>保守</th>
+<td>最初にマージされてデプロイされた瞬間から保守ははじまっている。<br />一概には言えないこともあるがここの手間がないほどよい設計ができたといえる。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>メモ</h4>
+<p>おおむね時系列順になるように工程ごとのポイントをまとめてみました。<br />自分用のメモを転載したので雑記的に大事だなと思っていることが書き連ねてあってコメントの粒度がバラバラになっていますがその点はご了承くださいませ。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/93" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-22T06:51:00+00:00">2013-12-22</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/93#respond"><span class="dsq-postid" data-dsqidentifier="93 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/22/%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9e%e3%81%ae%e4%bb%95%e4%ba%8b%e3%81%af%e3%82%b3%e3%83%bc%e3%83%87%e3%82%a3%e3%83%b3%e3%82%b0%e3%81%a8%e3%83%87%e3%83%90%e3%83%83%e3%82%b0%e3%81%a0%e3%81%91/">Leave a comment<span class="screen-reader-text"> on プログラマの仕事はコーディングとデバッグだけじゃない 何をやるべきか、何をやらないべきか</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-94" class="post-94 post type-post status-publish format-standard hentry category-41 category-51">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/94" rel="bookmark">周辺相場や資産価値指標まで分かる中古マンションのデータサイトが東京カンテイと大和ホームズオンラインのタッグでオープン</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>不動産取引の成約価格データ関連のニュース。</p>
+<p>
+<div>
+<blockquote>
+<p style="font-size: small;">大和ハウスグループの大和ホームズオンライン(東京都千代田区)はこのほど、東京カンテイ(東京都品川区)と連携して、中古マンションストックの情報を集約した情報サイト「中古マンSHOW」を始動させた。中古物件購入の窓口として、購入の仲介につなげる狙いだ。</p>
+<div><small><cite title="中古マンションのデータサイトが誕生　相場や資産価値指標も掲載 - 住宅新報web | 営業・データ,売買仲介"><a href="http://www.jutaku-s.com/news/id/0000019413">住宅新報web</a></cite></small></div>
+</blockquote>
+</div>
+<p>こちら、僕は大和ホームズが東京カンテイのデータを購入して使わせてもらうことで、中古物件の販売を伸ばすビジネスモデルだと理解しました。</p>
+<p>さっそくそのサイトで渋谷駅周辺の情報を表示してみました。</p>
+<p><a href="http://gyazo.com/7ed2e6a417d3a4bbeca131e998ddf203.png"><img border="0" src="http://gyazo.com/7ed2e6a417d3a4bbeca131e998ddf203.png" width="580" /></a><br /><a href="http://gyazo.com/30ac81734c06f1be0a30a72764feb76b.png"><img border="0" src="http://gyazo.com/30ac81734c06f1be0a30a72764feb76b.png" width="580" /></a></p>
+<p>おお、既存の不動産関連の相場サイトとユーザーインターフェースは似通っていますね。</p>
+<p>データとしてはマンションの収益力指標(マンションPER)や資産価値の指標(同PBR)が載っているのが特徴的です。</p>
+<p>この辺りの指標を気にしてマンションを購入する一般人は多くなさそうなのでかなりのマニア向けの情報だなぁという印象を受けるのですが、投資物件を探している人には訴求しそうなデータです。</p>
+<p>大和ホームズの目的が「中古物件の販売を伸ばしたい」ということであれば購入者は居住用の住戸を探している人でなく、投資家でもよいので、これはこれでよさそうです。</p>
+<p>不動産投資は実物があるということで心理的な障壁が低くライトな個人投資家には根強い人気があるそうですから、大和ホームズはそういった層をうまく取り込めればデータの対価以上の利益を得ることができるという算段なのかもしれません。</p>
+<p><a href="http://gyazo.com/7b8257b47b7a3dbd0fdd88c2637ad066.png"><img border="0" src="http://gyazo.com/7b8257b47b7a3dbd0fdd88c2637ad066.png" width="580" /></a></p>
+<p>そして上掲のスクリーンショットは個別のマンションのページですが、ここには物件を購入する場合の価格と、これを貸しに出した場合の賃料、さらに表面利回りが掲載されています。</p>
+<p>やはりこのサイトのメインターゲットはライトな個人投資家だと見てよいのではないでしょうか。</p>
+<p>さて、ここまでで新サイトのチェックはおしまいにして、ここからはデータを提供した泣く子も黙る東京カンテイの保有データ数を見ていきます。</p>
+<p>東京カンテイ社のページから引用してみます。</p>
+<p>
+<div>
+<blockquote>
+<div>
+<table>
+<caption>東京カンテイの保有データ数（2013年11月末現在）</caption>
+<tr>
+<th colspan="2"></th>
+<th bgcolor="white" align="center" style="vertical-align: middle">全 国</th>
+<th bgcolor="white" align="center" style="vertical-align: middle">首都圏</p>
+<p>（1都3県）</th>
+<th bgcolor="white" align="center" style="vertical-align: middle">近畿圏</p>
+<p>（2府4県）</th>
+<th bgcolor="white" align="center" style="vertical-align: middle">中部圏</p>
+<p>（4県）</th>
+<th bgcolor="white" align="center" style="vertical-align: middle">九州・沖縄</p>
+<p>（8県）</th>
+</tr>
+<tr>
+<td rowspan="6">マンション</td>
+<td bgcolor="white">登録物件数</td>
+<td bgcolor="white" align="right">119,200件</td>
+<td bgcolor="white" align="right">62,400件</td>
+<td bgcolor="white" align="right">20,300件</td>
+<td bgcolor="white" align="right">10,800件</td>
+<td bgcolor="white" align="right">11,000件</td>
+</tr>
+<tr>
+<td bgcolor="white">登録棟数</td>
+<td bgcolor="white" align="right">146,800棟</td>
+<td bgcolor="white" align="right">81,000棟</td>
+<td bgcolor="white" align="right">25,700棟</td>
+<td bgcolor="white" align="right">12,200棟</td>
+<td bgcolor="white" align="right">12,100棟</td>
+</tr>
+<tr>
+<td bgcolor="white">登録総戸数</td>
+<td bgcolor="white" align="right">6,704,000戸</td>
+<td bgcolor="white" align="right"><b><i>3,499,000戸</i></b></td>
+<td bgcolor="white" align="right">1,439,000戸</td>
+<td bgcolor="white" align="right">470,000戸</td>
+<td bgcolor="white" align="right">516,000戸</td>
+</tr>
+<tr>
+<td bgcolor="white">カタログ画像データ</td>
+<td bgcolor="white" align="right">2,300,000枚</td>
+<td bgcolor="white" align="right">1,267,000枚</td>
+<td bgcolor="white" align="right">466,000枚</td>
+<td bgcolor="white" align="right">203,000枚</td>
+<td bgcolor="white" align="right">154,000枚</td>
+</tr>
+<tr>
+<td bgcolor="white">中古マンション事例</td>
+<td bgcolor="white" align="right">9,854,000件</td>
+<td bgcolor="white" align="right">5,556,000件</td>
+<td bgcolor="white" align="right">2,181,000件</td>
+<td bgcolor="white" align="right">845,000件</td>
+<td bgcolor="white" align="right">480,000件</td>
+</tr>
+<tr>
+<td bgcolor="white">賃料データ</td>
+<td bgcolor="white" align="right">3,525,000件</td>
+<td bgcolor="white" align="right">2,440,000件</td>
+<td bgcolor="white" align="right">676,000件</td>
+<td bgcolor="white" align="right">96,000件</td>
+<td bgcolor="white" align="right">189,000件</td>
+</tr>
+<tr>
+<td>土地</td>
+<td bgcolor="white">土地価格データ</td>
+<td bgcolor="white" align="right">4,684,000件</td>
+<td bgcolor="white" align="right">1,956,000件</td>
+<td bgcolor="white" align="right">1,958,000件</td>
+<td bgcolor="white" align="right">769,000件</td>
+<td bgcolor="white" align="right">
+<p align="center">&#8211;</td>
+</tr>
+</table>
+</div>
+<p>
+<div><small><cite title="東京カンテイ｜分譲マンション価格・住宅地の地価データ、不動産鑑定から土壌汚染調査まで"><a href="http://www.kantei.ne.jp/service/database.html">東京カンテイ</a></cite></small></div>
+</blockquote>
+</div>
+<p>今回のオープンしたサイトは首都圏のみが対象ということでしたので、東京カンテイが保有している首都圏の登録総戸数を太字斜体にしました。</p>
+<p>この表によると賃料データは登録総戸数よりは少ないとのことで、先ほど見たサイトでもマンションのページでは賃料データが空欄になっていたのもこの辺りの事情によるものだと推測されます。</p>
+<p>「賃料データ」の定義が分からないので何とも言えないですが、時系列で蓄積されていっているものをカウントしているにしては少なすぎるような気もするので、登録総戸数のうち賃料の実績を把握している戸数が「賃料データ」であると仮定すると、登録戸数のうちだいたい7割ほどの物件の賃料を把握しているということになるのでしょうか。</p>
+<p>
+<div>
+<blockquote><a href="http://www.kantei.ne.jp/service/service_images/serve_sub03_zu.gif"><img border="0" src="http://www.kantei.ne.jp/service/service_images/serve_sub03_zu.gif" /></a>
+<div><small><cite title="東京カンテイ｜分譲マンション価格・住宅地の地価データ、不動産鑑定から土壌汚染調査まで"><a href="http://www.kantei.ne.jp/service/database.html">東京カンテイ</a></cite></small></div>
+</blockquote>
+</div>
+<p>ちなみに東京カンテイ社のデータの取得経路は上掲のフロー図のようになっているそうです。</p>
+<p>ふむふむ、データを保有していると強いですなぁという話はおいておいて、こういう不動産取引の成約価格の情報は公共性が高いものであるとの解釈が広がっています。</p>
+<p>
+<blockquote lang="en">
+<p>「不動産の成約価格は個人情報ではない」と国土交通省は解釈を変えてます。新データベースを創るため。2015年試験運用開始。当初は業界人のもの。が、やがて公開されるでしょう。するとこんなことができたりします。個別不動産の理論値表示⇒ <a href="http://t.co/nMr0Kd8my4">http://t.co/nMr0Kd8my4</a></p>
+<p>&mdash; 長嶋修 不動産コンサルタント (@nagashimaosamu) <a href="https://twitter.com/nagashimaosamu/statuses/322532515204194305">April 12, 2013</a></p></blockquote>
+<p>この辺りの動向にはぜひ注目していきたいですね。</p>
+<p>
+<h4>参考になるリンク</h4>
+<div>
+<ul>
+<li><a href="https://www.sumainobaton.jp/library/">中古マンSHOW｜住まいのバトン｜大和ホームズオンライン</a></li>
+<li><cite title="土地総合研究 2013年秋号"><a href="http://www.lij.jp/html/jli/jli_2013/2013autumn_p073.pdf">不動産取引価格および その関連情報の公開・開示の促進について (pdf)</a></cite></li>
+</ul>
+</div>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/94" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-22T06:02:00+00:00">2013-12-22</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%b9" rel="category tag">ニュース</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e4%b8%8d%e5%8b%95%e7%94%a3" rel="category tag">不動産</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/94#respond"><span class="dsq-postid" data-dsqidentifier="94 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/22/%e5%91%a8%e8%be%ba%e7%9b%b8%e5%a0%b4%e3%82%84%e8%b3%87%e7%94%a3%e4%be%a1%e5%80%a4%e6%8c%87%e6%a8%99%e3%81%be%e3%81%a7%e5%88%86%e3%81%8b%e3%82%8b%e4%b8%ad%e5%8f%a4%e3%83%9e%e3%83%b3%e3%82%b7%e3%83%a7/">Leave a comment<span class="screen-reader-text"> on 周辺相場や資産価値指標まで分かる中古マンションのデータサイトが東京カンテイと大和ホームズオンラインのタッグでオープン</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-95" class="post-95 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/95" rel="bookmark">2014年版 やりたいなぁと思っていることリスト</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="http://gyazo.com/4f373cdebf7e2e31242c20cc0f8358b4.png"><img border="0" src="http://gyazo.com/4f373cdebf7e2e31242c20cc0f8358b4.png" width="580" />Japanese love eating roasted porgy for New Year Dish</a></p>
+<p>先日は期限を決めて<a href="http://ymkjp.blogspot.jp/2013/12/todo.html">修行TODOリスト</a>を作成しましたが(進捗okです!)、それとは別にぼんやりと2014年にプライベートでやりたいなぁと思っていることもリストにしておきます。</p>
+<div>
+<ul>
+<li>積読本の消化 (『<a href="http://www.amazon.co.jp/gp/product/4798119415/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4798119415&amp;linkCode=as2&amp;tag=m0b55-22">初めての人のためのLisp</a>』, 『<a href="http://www.amazon.co.jp/gp/product/B009RO80XY/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B009RO80XY&amp;linkCode=as2&amp;tag=m0b55-22">すごいH本</a>』, 『<a href="http://www.amazon.co.jp/gp/product/4873116155/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4873116155&amp;linkCode=as2&amp;tag=m0b55-22">R と Ruby のデータ解析本</a>』, 『<a href="http://www.amazon.co.jp/gp/product/B00DIM6330/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00DIM6330&amp;linkCode=as2&amp;tag=m0b55-22">達人に学ぶSQL徹底指南本</a>』)</li>
+<li>Infrastructure as Code の実践</li>
+<li>fluentd を利用したログ基盤を自分で整備してみる</li>
+</ul>
+</div>
+<p style="margin: 0px; font-size: 12px; font-family: Helvetica;">逆にあまりやらないかなぁと思っているのは iOS や JavaScript などクライアントサイドの技術。ただクライアントサイドは何かしら思い立って本格的にサービスを作り出したら必然的に取り組むのことにはなると思っています。</p>
+<p>
+<p style="margin: 0px; font-size: 12px; font-family: Helvetica;">あと2014年に限らず数年単位のレベルだと数学はやっておきたいです。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/95" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-20T05:40:00+00:00">2013-12-20</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/95#respond"><span class="dsq-postid" data-dsqidentifier="95 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/20/2014%e5%b9%b4%e7%89%88-%e3%82%84%e3%82%8a%e3%81%9f%e3%81%84%e3%81%aa%e3%81%81%e3%81%a8%e6%80%9d%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%81%93%e3%81%a8%e3%83%aa%e3%82%b9%e3%83%88/">Leave a comment<span class="screen-reader-text"> on 2014年版 やりたいなぁと思っていることリスト</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-96" class="post-96 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/96" rel="bookmark">『心はプログラムできるか』を読んで人工生命を研究してみたいと思った</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>僕は業務ではプログラムを書きますが、あまり学問的な探究の手段としてプログラミングすることに魅力を感じていませんでした。同僚にはそのようなことを言うひとはいるのですが。</p>
+<p>しかし、そんな僕も『心はプログラムできるか』という新書で人工生命の可能性をかいま見てみて、この分野なら研究してみたいなと思いました。</p>
+<p>自分の定めたモデルでトライアンドエラーを繰り返した結果を得られるというのはとても魅力的だと思いました。</p>
+<p>学習や進化を司るというのは、時間を無駄にせずに仮説を検証することができるのでとても魅力的です。</p>
+<p>もちろんあくまで単純化したモデルの中の実験結果になるため、研究していると虚しくなってくることもありそうですが。</p>
+<p>その点、資本という分かりやすい指標のあるビジネスのほうが「やさしい」のかもしれません。</p>
+<p>ともかく、人工生命が生み出してきた知見はとても興味深かったです。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/96" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-17T19:21:00+00:00">2013-12-17</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/96#respond"><span class="dsq-postid" data-dsqidentifier="96 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/17/%e3%80%8e%e5%bf%83%e3%81%af%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%e3%81%a7%e3%81%8d%e3%82%8b%e3%81%8b%e3%80%8f%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a7%e4%ba%ba%e5%b7%a5%e7%94%9f%e5%91%bd%e3%82%92/">Leave a comment<span class="screen-reader-text"> on 『心はプログラムできるか』を読んで人工生命を研究してみたいと思った</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-97" class="post-97 post type-post status-publish format-standard hentry category-dev category-env category-home-made-os category-osx">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/97" rel="bookmark">MacOSXでOS自作覚え書き 下準備編</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>『<cite title="OS自作入門"><a href="http://www.amazon.co.jp/gp/product/4839919844/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4839919844&amp;linkCode=as2&amp;tag=m0b55-22">30日でできる! OS自作入門</a></cite>』の開発環境を構築する手順を書いていきます。</p>
+<p>前提となる環境は下記の通りです。</p>
+<pre>$ sw_vers<br />ProductName: Mac OS X<br />ProductVersion: 10.9<br />BuildVersion: 13A603</pre>
+<p>まず遠回りをして <a href="http://ktaobo.blogspot.jp/2013/02/helloos.html?m=1">こちらの記事</a> を参考にOSXに付属しているBSD系のアセンブラ <a href="http://www.nasm.us/">nasm</a> を使って VirtualBox で OS をブートして遊んでみます。</p>
+<pre>$ nasm -v<br />NASM version 0.98.40 (Apple Computer, Inc. build 11) compiled on Aug 13 2013<br /></pre>
+<p>フロッピー形式でプログラムを用意して hello, world と言わせてみましょう。アセンブリですよ！</p>
+<p>つぎに VirtualBox にフロッピーとして読み込ませる img ファイルを生成します。</p>
+<pre>$ nasm -o helloos.img helloos.asm && ruby -e 'print " " * (0x168000-0x200)' >> helloos.img</pre>
+<p><a href="http://gyazo.com/6efc0f24ba2d883be8fe4650c2fd9865.png"><img border="0" src="http://gyazo.com/6efc0f24ba2d883be8fe4650c2fd9865.png" width="480" /></a></p>
+<p>難なく動いてくれました。</p>
+<p>仮想マシンを使って開発を進められるので大変手軽です。フロッピードライブも必要ないので助かります。</p>
+<p>それではいよいよ <a href="http://shrimp.marokun.net/osakkie/wiki/tolsetOSX/">tolsetOSX</a> からツールセットを導入します。</p>
+<p>まずは素直にできあいの tolsetOSX の z_tools を使うことにします。</p>
+<p>その前に z_tools とともに同梱されている OSAkkie0.1.04 を走らせてみましょう。</p>
+<p>OSAkkie0.1.04 ディレクトリで make all img するだけで osakkie.img がつくられるのでそれを先ほどの hello, world と同じ手順で VirtualBox 上で動かしてみます。</p>
+<p><a href="http://gyazo.com/9097ee960b89d7e1765398e552ffe6be.png"><img border="0" src="http://gyazo.com/9097ee960b89d7e1765398e552ffe6be.png" width="480" /></a></p>
+<p>うまく動きました。GUIがあってリッチですね。これがOS自作の目標のレベルです。</p>
+<p>この見本に追いつくべく開発を進めたいのですが、問題が生じました。</p>
+<blockquote lang="en"><p>だいたい技術書についてるCDは使わずに自分で手打ちして動かすので、自作OSの本をAmazonマーケットプレイスで買った時もどうせ使わないだろうと思ってCD付属してないやつ買ったんだけど今すごく後悔してる。</p>
+<p>&mdash; ンフトウェアエソジニア (@ymkjp) <a href="https://twitter.com/ymkjp/statuses/412205504710979584">December 15, 2013</a></p></blockquote>
+<p>この記事の底本となっている『<a href="http://www.amazon.co.jp/gp/product/4839919844/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4839919844&amp;linkCode=as2&amp;tag=m0b55-22">30日でできる! OS自作入門</a>』は、本だけで完結しておらずソースコードがないと進めることができなかったのです。</p>
+<p>本文でも Chapter 0 で下記のように書かれています。</p>
+<div>
+<blockquote>
+<p style="font-size: small;">「本と付録のCD-ROM」ではなくて、「CD-ROMと付録のぶ厚い本」なのかもしれません（笑）</p>
+<div><small><cite title="OS自作入門"><a href="http://www.amazon.co.jp/gp/product/4839919844/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4839919844&amp;linkCode=as2&amp;tag=m0b55-22">30日でできる! OS自作入門</a></cite></small></div>
+</blockquote>
+</div>
+<p>ということで、『OS自作入門』を参考にしようというひとはCD-ROMを手に入れるようにしましょう。</p>
+<p>僕はすでにこの本を持っている人に借りてOS自作を進めていますが、この記事で紹介した方法で VirtualBox 上でうまく実行できました。</p>
+<p>下準備編はここまでですが、せっかくなのでソースからのインストールにも挑戦して失敗した経緯も書いておきます。</p>
+<div>
+<blockquote>
+<p style="font-size: small;">・コンパイルのしかた<br />tolsrc内でmake installを実行してください。最後までコンパイルができたら、OKディレクトリにツールがすべて入ります。</p>
+<div><small><cite title="tolsetOSX"><a href="http://shrimp.marokun.net/osakkie/wiki/tolsetOSX/">tolsetOSX &#8211; OSAkkieWiki</a></cite></small></div>
+</blockquote>
+</div>
+<p>しかしその make install が失敗する。エラーは下記の通り。</p>
+<pre>$ make install<br />make all<br />make -C go_0023s<br />make -C gcc<br />make -r gocpp0 gocc1 gocc1plus<br />make -C ../libiberty<br />make -r libiberty.lib<br />make[6]: `libiberty.lib' is up to date.<br />make -C ../intl<br />make -r libintl.lib<br />make[6]: `libintl.lib' is up to date.<br />make -C ../go_lib<br />make -r go_lib.lib stdin.o<br />make[6]: `go_lib.lib' is up to date.<br />make[6]: `stdin.o' is up to date.<br />make -C ../drv_stdc<br />make -r cpp0main.obj cc1main.obj cc1pmain.obj drv_stdc.obj<br />gcc -c -Os -o cpp0main.obj cpp0main.c<br />In file included from cpp0main.c:8:<br />./cc1drv.c:26:5: error: second parameter of 'main' (argument array) must be of type 'char **'<br />int main(int argc, UCHAR **argv)<br />    ^<br />1 error generated.<br />make[6]: *** [cpp0main.obj] Error 1<br />make[5]: *** [all] Error 2<br />make[4]: *** [gocpp0] Error 2<br />make[3]: *** [all] Error 2<br />make[2]: *** [all] Error 2<br />make[1]: *** [all] Error 2<br />make: *** [install] Error 2</pre>
+<p>OSX 付属の clang に原因があるようなので homebrew で最新のものを入れます。</p>
+<pre>$ brew tap homebrew/versions && brew install gcc49</pre>
+<p>make bootstrap に非常に時間がかかるのですが gcc49 の make bootstrap が終わったようなので新しいほうへ symlink を貼り直します。</p>
+<pre>$ ln -s /usr/local/bin/gcc-4.9 /usr/loca<br />l/bin/gcc</pre>
+<pre>$ ln -s /usr/local/bin/g++-4.9 /usr/loca<br />l/bin/g++</pre>
+<p>バージョンを確認してみましょう。</p>
+<pre>$ type -a gcc<br />gcc is /usr/local/bin/gcc<br />gcc is /usr/bin/gcc</pre>
+<pre>$ /usr/local/bin/gcc -v<br />Using built-in specs.<br />COLLECT_GCC=/usr/local/bin/gcc<br />COLLECT_LTO_WRAPPER=/usr/local/Cellar/gcc49/4.9-20131201/libexec/gcc/x86_64-apple-darwin13.0.0/4.9.0/lto-wrapper<br />Target: x86_64-apple-darwin13.0.0<br />Configured with: ../configure --build=x86_64-apple-darwin13.0.0 --prefix=/usr/local/Cellar/gcc49/4.9-20131201 --enable-languages=c,c++,objc,obj-c++ --program-suffix=-4.9 --with-gmp=/usr/local/opt/gmp4 --with-mpfr=/usr/local/opt/mpfr2 --with-mpc=/usr/local/opt/libmpc08 --with-cloog=/usr/local/opt/cloog018 --with-isl=/usr/local/opt/isl011 --with-system-zlib --enable-version-specific-runtime-libs --enable-libstdcxx-time=yes --enable-stage1-checking --enable-checking=release --enable-lto --disable-werror --enable-plugin --disable-nls --disable-multilib<br />Thread model: posix<br />gcc version 4.9.0 20131201 (experimental) (GCC)</pre>
+<pre>$ /usr/bin/gcc -v<br />Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1<br />Apple LLVM version 5.0 (clang-500.2.79) (based on LLVM 3.3svn)<br />Target: x86_64-apple-darwin13.0.0<br />Thread model: posix</pre>
+<p>準備が整ったところで make install に再度挑戦します。</p>
+<p>しかし無念にも下記のエラー。</p>
+<pre>$ make install<br />make all<br />make -C go_0023s<br />make -C gcc<br />make -r gocpp0 gocc1 gocc1plus<br />make -C ../libiberty<br />make -r libiberty.lib<br />make[6]: `libiberty.lib' is up to date.<br />make -C ../intl<br />make -r libintl.lib<br />make[6]: `libintl.lib' is up to date.<br />make -C ../go_lib<br />make -r go_lib.lib stdin.o<br />make[6]: `go_lib.lib' is up to date.<br />make[6]: `stdin.o' is up to date.<br />make -C ../drv_stdc<br />make -r cpp0main.obj cc1main.obj cc1pmain.obj drv_stdc.obj<br />make[6]: `cpp0main.obj' is up to date.<br />make[6]: `cc1main.obj' is up to date.<br />make[6]: `cc1pmain.obj' is up to date.<br />make[6]: `drv_stdc.obj' is up to date.<br />gcc -Wl,-s -o gocpp0  ../drv_stdc/cpp0main.obj cppmain.o intl.o <br />  libcpp.lib hashtable.o version.o ../intl/libintl.lib ../libiberty/libiberty.lib ../go_lib/go_lib.lib ../go_lib/stdin.o ../drv_stdc/drv_stdc.obj<br />ld: warning: option -s is obsolete and being ignored<br />Undefined symbols for architecture x86_64:<br />  "___builtin_stdarg_start", referenced from:<br />      _GO_fprintf in go_lib.lib(fprintf.o)<br />      _cpp_ice in libcpp.lib(cpperror.o)<br />      _cpp_fatal in libcpp.lib(cpperror.o)<br />      _cpp_error in libcpp.lib(cpperror.o)<br />      _cpp_error_with_line in libcpp.lib(cpperror.o)<br />      _cpp_warning in libcpp.lib(cpperror.o)<br />      _cpp_warning_with_line in libcpp.lib(cpperror.o)<br />      ...<br />ld: symbol(s) not found for architecture x86_64<br />collect2: error: ld returned 1 exit status<br />make[4]: *** [gocpp0] Error 1<br />make[3]: *** [all] Error 2<br />make[2]: *** [all] Error 2<br />make[1]: *** [all] Error 2<br />make: *** [install] Error 2<br /></pre>
+<p>くやしいですがソースからインストールするのは諦めました。</p>
+<p>
+<h4>参考</h4>
+<div>
+<ul>
+<li>
+<div><small><cite title="g++ - OS X 10.9 gcc links to clang"><a href="http://stackoverflow.com/questions/19535422/os-x-10-9-gcc-links-to-clang/19535525#19535525">g++ &#8211; OS X 10.9 gcc links to clang &#8211; Stack Overflow</a></cite></small></div>
+</li>
+<li>
+<div><small><cite title="MacOSXでOS自作入門してみる"><a href="http://d.hatena.ne.jp/Oresh/20110522/1306065533">MacOSXでOS自作入門してみる &#8211; Oreshの日記</a></cite></small></div>
+</li>
+<li>
+<div><small><cite title="VirtualBoxやQemuで自作OSの第２章まで"><a href="http://ktaobo.blogspot.jp/2013/02/helloos.html?m=1">ブレ男のブログ: VirtualBoxやQemuで自作OSの第２章まで</a></cite></small></div>
+</li>
+</ul>
+</div>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/97" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-14T14:05:00+00:00">2013-12-14</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/env" rel="category tag">env</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/home-made-os" rel="category tag">home-made-OS</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/osx" rel="category tag">osx</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/97#respond"><span class="dsq-postid" data-dsqidentifier="97 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/14/macosx%e3%81%a7os%e8%87%aa%e4%bd%9c%e8%a6%9a%e3%81%88%e6%9b%b8%e3%81%8d-%e4%b8%8b%e6%ba%96%e5%82%99%e7%b7%a8/">Leave a comment<span class="screen-reader-text"> on MacOSXでOS自作覚え書き 下準備編</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-98" class="post-98 post type-post status-publish format-standard hentry category-dev category-php">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/98" rel="bookmark">レーベンシュタイン距離を使って似ているメソッド名を提案してくれるおせっかいPHPコード、そして Ruby と比較してみた</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>コード自体は MethodSuggestion クラスのマジックメソッド __call を使って宣言されていないメソッドが呼ばれた場合にレーベンシュタイン距離を使って似たような名前のメソッドを探してくるというものです。</p>
+<p>この MethodSuggestion クラスは、ここでは ArrayObject を継承しているため、インスタンスから mount とか japan とか無茶ぶりされた場合に似ている名前のメソッドを ArrayObject から探してきて返しています。</p>
+<p>元ネタにさせてもらったのは <cite title="hivecolor.com"><a href="http://hivecolor.com/id/40">Rubyのmethod_missingを使って、似ているメソッド名を提案するコードを書いてみた &#8211; Hive Color</a></cite> という記事なのですが、そこの Ruby と本記事の PHP の違いとしておもしろいのはやはり PHP が組み込み関数として levenshtein を有しているという点でしょうか (今回の記事はほぼそのために書いたようなものです)。</p>
+<p>そして Ruby の洗練された美しいオブジェクト志向に対比されて鈍く光るいぶし銀の array 志向でしょうか。</p>
+<p>あと PHP で気になるのは asort が破壊的メソッドになっている (「破壊的メソッド」とは Ruby 用語で、元の変数の中身を書き換えてしまうメソッドのこと。安定ソートの概念とは少し似ているが関係ない) のと、array_slice あたりのまどろっこしさがありますね。</p>
+<p>
+<h4>追記</h4>
+<p>例外クラスにしてみた。これでファイルを読み込んで3行足せばデバッグしやすくな&#8230;らないですね、手間の割にそんなに便利でもないので使えないです。</p>
+<p>勝手に似ている名前のメソッドを呼ぼうとする「ビーストモード」も頭をよぎりましたが人類の平和のためにやめておきました。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/98" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-13T16:49:00+00:00">2013-12-13</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/php" rel="category tag">php</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/98#respond"><span class="dsq-postid" data-dsqidentifier="98 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/13/%e3%83%ac%e3%83%bc%e3%83%99%e3%83%b3%e3%82%b7%e3%83%a5%e3%82%bf%e3%82%a4%e3%83%b3%e8%b7%9d%e9%9b%a2%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e4%bc%bc%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a1%e3%82%bd%e3%83%83/">Leave a comment<span class="screen-reader-text"> on レーベンシュタイン距離を使って似ているメソッド名を提案してくれるおせっかいPHPコード、そして Ruby と比較してみた</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-99" class="post-99 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/99" rel="bookmark">声に出して読みたい結婚の心得</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div>
+<blockquote>
+<p style="font-size: small;">こないだの既婚者会議にて：<br />・財布は完全分割が吉、mergeすると死<br />・何かあれば別れられるよう準備<br />・我慢は体によくない<br />・言ってもなおらないので許容するか別れるかのどちらか</p>
+<div><small><cite title="SOURCE">会社の同僚 (女性)</cite></small></div>
+</blockquote>
+</div>
+<p>財布が一番最初の項目になってるのがポイントかと思う。</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/99" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-13T01:11:00+00:00">2013-12-13</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/99#respond"><span class="dsq-postid" data-dsqidentifier="99 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/13/%e5%a3%b0%e3%81%ab%e5%87%ba%e3%81%97%e3%81%a6%e8%aa%ad%e3%81%bf%e3%81%9f%e3%81%84%e7%b5%90%e5%a9%9a%e3%81%ae%e5%bf%83%e5%be%97/">Leave a comment<span class="screen-reader-text"> on 声に出して読みたい結婚の心得</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-100" class="post-100 post type-post status-publish format-standard hentry category-7 category-48">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/100" rel="bookmark">ストックオプションのエンジニア向けガイド (抄訳)</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>ストックオプションは「株を買う権利」なので実際の取得には現金が必要というのは罠だが、それ用の方法はちゃんとあるようだ。</p>
+<p>【拙訳ここから】</p>
+<p>本日の疑問解消コーナー。<br />もしすごいスピードで成長するスタートアップにいるならきちんと事前計画を立てておけば大金をえられるよ。</p>
+<p>1億円ゲットする機会を逃しちゃうなんてことはざらにあるので事前に知見はたくわえておこう。</p>
+<p>ぶっちゃけ被雇用者と雇用者のあいだには情報の不均衡はあるので不利にならないように注意しとこうね。</p>
+<p>Shares 101 (株の入門講座)</p>
+<p>会社がはじめに発行する株はプールされるんだけど、そこから被雇用者が株をもらう権利をゲットできる。</p>
+<p>Stock Options (ストックオプション)</p>
+<p>ちなみにもらうのは株そのものってわけじゃなくて、この株価で買えますよっていう「オプション」をもらえる。つまり会社は「今の会社の価値で買う権利をあげる。会社の価値が将来的にあがったらその差額分もうけられるよね。だからがんばろうぜ！」って言ってるってこと。</p>
+<p>Vesting schedules (利益確定スケジュール)</p>
+<p>典型的なケースの話だけど、このストックオプションは4年に1回ずつもらえる。でも一年未満に会社をやめたりクビになったりしたらもらう権利はない。</p>
+<p>これは従業員に一年間は働こうぜっていうのを奨励している側面と、会社にあわない従業員を雇ってしまって会社のダメージあたえることから<span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;">創業者が株主を</span>保護する手段を提供しているという側面がある。</p>
+<p>で、典型的には、もらえる株は 1/48 に分割されて、1年目の区切りで実際に 12/48 もらえて、そのあとは1か月ごとに 1/48 づつもらえるようになってる。</p>
+<p>Exercising (行使)</p>
+<p>基本的にすごいスピードで成長しているなら早くオプションを行使して株を取得したほうがよい。</p>
+<p>会社が若いうちに雇用された人にありがちなのは、会社は急成長して株価もあがっているがまだ株式公開などをしていないので、売り払えない状況に陥ることだ。黄金の手錠をされた、紙に書かれただけの億万長者と言っていいだろう。</p>
+<p>Questions you should ask going in (会社に尋ねるべき質問)</p>
+<div>
+<ul>
+<li>私の行使できるストックオプションはどれくらいありますか</li>
+<li>発行済み株式はどれくらいありますか</li>
+<li>1株あたりの価格はいくらですか？ (私は総額いくらでオプションを行使して株を買えますか)</li>
+<li>優先株式の価格はどうですか？ (投資家は取得にいくら払いましたか)</li>
+<li>私の利益確定スケジュールを教えて下さい</li>
+</ul>
+</div>
+<p>【拙訳ここまで】</p>
+<p>米国と日本で法律や慣習など異なる点も多そうなので、共通しそうな点のエッセンスだけ抜き出して訳したつもり。だったのだが、元より翻訳に関する素人だし、金融の事前知識もないので誤訳していないという保証はできない。</p>
+<p>そして出典元記事にもある通り、詳しい行動の際には専門家の意見をあおぐようにしよう。</p>
+<p>
+<h4>出典</h4>
+<div><small><cite title="ALEX MACCAW"><a href="http://blog.alexmaccaw.com/an-engineers-guide-to-stock-options">An Engineer’s guide to Stock Options</a></cite></small></div>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/100" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-12T14:39:00+00:00">2013-12-12</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e8%b3%87%e7%94%a3" rel="category tag">資産</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/100#respond"><span class="dsq-postid" data-dsqidentifier="100 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/12/%e3%82%b9%e3%83%88%e3%83%83%e3%82%af%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e5%90%91%e3%81%91%e3%82%ac%e3%82%a4%e3%83%89-%e6%8a%84%e8%a8%b3/">Leave a comment<span class="screen-reader-text"> on ストックオプションのエンジニア向けガイド (抄訳)</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/">Previous page</a>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/'><span class="meta-nav screen-reader-text">Page </span>1</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">Page </span>2</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/page/3'><span class="meta-nav screen-reader-text">Page </span>3</a>
+<a class="next page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/page/3">Next page</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>December 2013</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/11">&laquo; Nov</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2014/01">Jan &raquo;</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="6" class="pad">&nbsp;</td><td>1</td>
+	</tr>
+	<tr>
+		<td>2</td><td>3</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/04" aria-label="Posts published on December 4, 2013">4</a></td><td>5</td><td>6</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/07" aria-label="Posts published on December 7, 2013">7</a></td><td>8</td>
+	</tr>
+	<tr>
+		<td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/09" aria-label="Posts published on December 9, 2013">9</a></td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/10" aria-label="Posts published on December 10, 2013">10</a></td><td>11</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/12" aria-label="Posts published on December 12, 2013">12</a></td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/13" aria-label="Posts published on December 13, 2013">13</a></td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/14" aria-label="Posts published on December 14, 2013">14</a></td><td>15</td>
+	</tr>
+	<tr>
+		<td>16</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/17" aria-label="Posts published on December 17, 2013">17</a></td><td>18</td><td>19</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/20" aria-label="Posts published on December 20, 2013">20</a></td><td>21</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/22" aria-label="Posts published on December 22, 2013">22</a></td>
+	</tr>
+	<tr>
+		<td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/23" aria-label="Posts published on December 23, 2013">23</a></td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/24" aria-label="Posts published on December 24, 2013">24</a></td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/25" aria-label="Posts published on December 25, 2013">25</a></td><td>26</td><td>27</td><td>28</td><td>29</td>
+	</tr>
+	<tr>
+		<td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12/30" aria-label="Posts published on December 30, 2013">30</a></td><td>31</td>
+		<td class="pad" colspan="5">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+</body>
+</html>

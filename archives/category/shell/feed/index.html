@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>shell &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/shell/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>shell &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>OSX移行後にシェルが即死する問題を解決するには /etc/passwd じゃなくてSystem Preferences から</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/70</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/70#respond</comments>
+		<pubDate>Sat, 01 Mar 2014 09:03:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[env]]></category>
+		<category><![CDATA[osx]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2014/03/01/osx%e7%a7%bb%e8%a1%8c%e5%be%8c%e3%81%ab%e3%82%b7%e3%82%a7%e3%83%ab%e3%81%8c%e5%8d%b3%e6%ad%bb%e3%81%99%e3%82%8b%e5%95%8f%e9%a1%8c%e3%82%92%e8%a7%a3%e6%b1%ba%e3%81%99%e3%82%8b%e3%81%ab%e3%81%af-etcpa/</guid>
+		<description><![CDATA[OSXの「移行アシスタント」を使って移行したあとに iTerm でシェルを開こうとしたところ iTerm が即死しました。 解決策は、「システム環境設定」→「ユーザーとグループ」で鍵ボタンをクリックして admin になる→アカウントを右クリック→「詳細オプション」でログインシェルを変更→再起動でした。 設定画面のキャプチャ。うーん、いわれてみれば昔設定した覚えがあるような気がする。 恐らく移行元の Mac で homebrew から入れた zsh などを使っていた人にこの問題が起こると思います。 iTerm は即死する場合こういうプロンプトを出してから死んでくれます。 そのときシェルは「zshが見つからないよぅ」とか弱音をはいていました。 ちなみに当初は Linux からの連想で Finder から Sublime で /etc/passwd を編集して解決しようとしたのですがそれらしき箇所を見つけることができず、困ってユーザごとのログインシェルの設定方法を検索すると今回の解決策にたどり着くことができました。 そして最後に、今回の記事内容の環境は移行元移行先ともに OS X 10.9.2 を元に書きました。 何かの参考になれば幸いです。 参考にしたサイト Macとかの雑記帳 @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>OSXの「移行アシスタント」を使って移行したあとに iTerm でシェルを開こうとしたところ iTerm が即死しました。</p>
+<p>解決策は、「システム環境設定」→「ユーザーとグループ」で鍵ボタンをクリックして admin になる→アカウントを右クリック→「詳細オプション」でログインシェルを変更→再起動でした。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-q-2ccDMnUEg/UxGcv7FSndI/AAAAAAAAR4E/I0fLOdM4Cn8/s1600/Screenshot_2014-03-01_17_31_02.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-q-2ccDMnUEg/UxGcv7FSndI/AAAAAAAAR4E/I0fLOdM4Cn8/s400/Screenshot_2014-03-01_17_31_02.png" width="580" /></a></p>
+<p>設定画面のキャプチャ。うーん、いわれてみれば昔設定した覚えがあるような気がする。</p>
+<p>恐らく移行元の Mac で homebrew から入れた zsh などを使っていた人にこの問題が起こると思います。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-BRK6QPd9hBs/UxGeYeNy72I/AAAAAAAAR4Q/od3iFEuya0Q/s1600/Screenshot%2B2014-02-28%2B09.03.11.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-BRK6QPd9hBs/UxGeYeNy72I/AAAAAAAAR4Q/od3iFEuya0Q/s400/Screenshot%2B2014-02-28%2B09.03.11.png" width="580" /></a></p>
+<p>iTerm は即死する場合こういうプロンプトを出してから死んでくれます。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5vNoZ0iCt3Q/UxGeaff9rII/AAAAAAAAR4Y/zM5NMLueqrU/s1600/Screenshot%2B2014-02-28%2B09.03.53.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5vNoZ0iCt3Q/UxGeaff9rII/AAAAAAAAR4Y/zM5NMLueqrU/s400/Screenshot%2B2014-02-28%2B09.03.53.png" width="580" /></a></p>
+<p>そのときシェルは「zshが見つからないよぅ」とか弱音をはいていました。</p>
+<p>ちなみに当初は Linux からの連想で Finder から Sublime で /etc/passwd を編集して解決しようとしたのですがそれらしき箇所を見つけることができず、困って<span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;">ユーザごとのログインシェルの設定方法を検索すると今回の解決策にたどり着くことができました</span>。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fE7ZJwdBYbQ/UxGk8Ghw1FI/AAAAAAAAR4o/5ei_pRKuTkw/s1600/Screenshot%2B2014-03-01%2B18.13.30.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fE7ZJwdBYbQ/UxGk8Ghw1FI/AAAAAAAAR4o/5ei_pRKuTkw/s320/Screenshot%2B2014-03-01%2B18.13.30.png" /></a></p>
+<p>そして最後に、今回の記事内容の環境は移行元移行先ともに OS X 10.9.2 を元に書きました。</p>
+<p>何かの参考になれば幸いです。</p>
+<p>
+<h4></h4>
+<h4>参考にしたサイト</h4>
+<div>
+<ul>
+<li>
+<div><small><cite title="MacのログインシェルをHomebrew等で入れたzshやbashに変更する方法"><a href="http://tukaikta.blog135.fc2.com/blog-entry-195.html">Macとかの雑記帳</a></cite></small></div>
+</li>
+</ul>
+</div>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/70/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">70</post-id>	</item>
+		<item>
+		<title>メモ: zsh configure のオプション</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/109</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/109#respond</comments>
+		<pubDate>Wed, 04 Dec 2013 19:40:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/12/04/%e3%83%a1%e3%83%a2-zsh-configure-%e3%81%ae%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3/</guid>
+		<description><![CDATA[$ ./configure --prefix=${HOME}/src --bindir=${HOME}/bin --sysconfdir=${HOME}/etc/zsh --enable-etcdir=${HOME}/etc/zsh &#038;& make @ymkjp]]></description>
+				<content:encoded><![CDATA[<pre>$ ./configure --prefix=${HOME}/src         <br />             --bindir=${HOME}/bin         <br />             --sysconfdir=${HOME}/etc/zsh <br />             --enable-etcdir=${HOME}/etc/zsh && make<br /></pre>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/109/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">109</post-id>	</item>
+		<item>
+		<title>zsh に変えて便利になったこと (1) 複数リダイレクト</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/112</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/112#respond</comments>
+		<pubDate>Fri, 01 Nov 2013 05:25:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/11/01/zsh-%e3%81%ab%e5%a4%89%e3%81%88%e3%81%a6%e4%be%bf%e5%88%a9%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8-1-%e8%a4%87%e6%95%b0%e3%83%aa%e3%83%80%e3%82%a4%e3%83%ac%e3%82%af%e3%83%88/</guid>
+		<description><![CDATA[ファイルリダイレクトを連ねられる。 for i in {1..26} ; do ; echo "n" &#62;&#62; /var/log/php.log &#62;&#62; /var/tmp/my_errors.log ; done @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>ファイルリダイレクトを連ねられる。</p>
+<pre>for i in {1..26} ; do ; echo "n" &gt;&gt; /var/log/php.log &gt;&gt; /var/tmp/my_errors.log ; done<br /></pre>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/112/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">112</post-id>	</item>
+		<item>
+		<title>tmux 上だけで zsh を使うことで /etc/passwd を書き換えたくない環境でやっていく</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/113</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/113#respond</comments>
+		<pubDate>Thu, 31 Oct 2013 12:04:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[shell]]></category>
+		<category><![CDATA[tmux]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/10/31/tmux-%e4%b8%8a%e3%81%a0%e3%81%91%e3%81%a7-zsh-%e3%82%92%e4%bd%bf%e3%81%86%e3%81%93%e3%81%a8%e3%81%a7-etcpasswd-%e3%82%92%e6%9b%b8%e3%81%8d%e6%8f%9b%e3%81%88%e3%81%9f%e3%81%8f%e3%81%aa%e3%81%84/</guid>
+		<description><![CDATA[~/.tmux.conf で下記のように設定することで zsh を使っています。 set-option -g default-shell /bin/zsh これなら /etc/passwd を書き換えずに zsh を使えます。 SHELL 変数も書き換えてくれているようだし、そんなに問題は起こらないであろうことを願っています。 echo ${SHELL} # /bin/zsh @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>~/.tmux.conf で下記のように設定することで zsh を使っています。</p>
+<pre>set-option -g default-shell /bin/zsh<br /></pre>
+<p>これなら /etc/passwd を書き換えずに zsh を使えます。</p>
+<p>
+<p>SHELL 変数も書き換えてくれているようだし、そんなに問題は起こらないであろうことを願っています。</p>
+<pre>echo ${SHELL}  # /bin/zsh</pre>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/113/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">113</post-id>	</item>
+		<item>
+		<title>dotfiles setup 用スクリプトも書きました</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/115</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/115#respond</comments>
+		<pubDate>Sun, 27 Oct 2013 19:32:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/10/27/dotfiles-setup-%e7%94%a8%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88%e3%82%82%e6%9b%b8%e3%81%8d%e3%81%be%e3%81%97%e3%81%9f/</guid>
+		<description><![CDATA[zsh の導入にあわせて dotfiles をセットアップしてくれるスクリプトも書きました。 #!/bin/bashDOT_FILES=`cat ${HOME}/dotfiles/.gitignore &#124; awk '$1 ~ /^!/ { print $1 }' &#124; sed -e "s/!///g" &#124; sed -e "/setup.sh/d" &#124; tr 'n' ' '`for FILE in ${DOT_FILES[@]}do ln -Fins ${HOME}/dotfiles/${FILE} ${HOME}done setup.sh やっていることとしては、 .gitignore から dotfiles 以下で管理している対象のファイル名を取得 HOME に dotfiles 以下のファイルたちのシンボリックリンクを貼っていく (ファイルが既に存在すると上書きしていいか尋ねる) という感じで、「まあ便利っすかね」というおもむきのものです。 @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>zsh の導入にあわせて dotfiles をセットアップしてくれるスクリプトも書きました。</p>
+<pre>#!/bin/bash<br /><br />DOT_FILES=`cat ${HOME}/dotfiles/.gitignore | awk '$1 ~ /^!/ { print $1 }' | sed -e "s/!///g" | sed -e "/setup.sh/d" | tr 'n' ' '`<br /><br />for FILE in ${DOT_FILES[@]}<br />do<br />    ln -Fins ${HOME}/dotfiles/${FILE} ${HOME}<br />done<br /></pre>
+<p><a href="https://github.com/ymkjp/dotfiles/blob/master/setup.sh">setup.sh</a></p>
+<p>
+<p>やっていることとしては、</p>
+<div>
+<ul>
+<li>.gitignore から dotfiles 以下で管理している対象のファイル名を取得</li>
+<li>HOME に dotfiles 以下のファイルたちのシンボリックリンクを貼っていく (ファイルが既に存在すると上書きしていいか尋ねる)</li>
+</ul>
+</div>
+<p>という感じで、「まあ便利っすかね」というおもむきのものです。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/115/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">115</post-id>	</item>
+		<item>
+		<title>最強のシェルこと zsh を導入しました</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/116</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/116#respond</comments>
+		<pubDate>Sun, 27 Oct 2013 19:28:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/10/27/%e6%9c%80%e5%bc%b7%e3%81%ae%e3%82%b7%e3%82%a7%e3%83%ab%e3%81%93%e3%81%a8-zsh-%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%97%e3%81%be%e3%81%97%e3%81%9f/</guid>
+		<description><![CDATA[ようやく zsh デビューしましたのでご報告申し上げます。 https://github.com/ymkjp/dotfiles 設定には半日費やしましたが、それほど難しいとは感じませんでしたので迷っている方は導入してみてください。 導入して最も戸惑ったのは Control + r で reverse-i-search (履歴からの検索) ができなくなったことでした。 しかしそれも 「どうやったら zsh 履歴から検索できるようになりますか」というドンピシャな質問に対する回答で解決法を見つけました。 bindkey "^R" history-incremental-search-backward ひとついまだに気になっているのは PATH の読み込みがどうなっているかですが、これは他の環境などにも移植してみて検証したいと思っています。 ちなみに zsh の発音は英語圏だと「ズィーエスエイチ」とそのまんまアルファベットを読み上げる発音をするようです。 追記 2013-10-31 PATH がおかしくなる原因はOSXでした: ログインシェルをzshに換えた: 黄昏てなんかいられない @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>ようやく zsh デビューしましたのでご報告申し上げます。</p>
+<p><a href="https://github.com/ymkjp/dotfiles">https://github.com/ymkjp/dotfiles</a></p>
+<p>設定には半日費やしましたが、それほど難しいとは感じませんでしたので迷っている方は導入してみてください。</p>
+<p>導入して最も戸惑ったのは Control + r で reverse-i-search (履歴からの検索) ができなくなったことでした。</p>
+<p>しかしそれも <a href="http://unix.stackexchange.com/questions/44115/how-do-i-perform-a-reverse-history-search-in-zshs-vi-mode/44118#44118">「どうやったら zsh 履歴から検索できるようになりますか」</a>というドンピシャな質問に対する回答で解決法を見つけました。 </p>
+<pre>bindkey "^R" history-incremental-search-backward</pre>
+<p>
+<p>ひとついまだに気になっているのは PATH の読み込みがどうなっているかですが、これは他の環境などにも移植してみて検証したいと思っています。</p>
+<p>ちなみに zsh の発音は英語圏だと「ズィーエスエイチ」とそのまんまアルファベットを読み上げる発音をするようです。</p>
+<p><b><i>追記 2013-10-31</b></i> PATH がおかしくなる原因はOSXでした: <a href="http://kronus9.sblo.jp/article/70293394.html">ログインシェルをzshに換えた: 黄昏てなんかいられない</a></p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/116/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">116</post-id>	</item>
+		<item>
+		<title>改行 (n) で置換するなら sed じゃなくて tr を使う</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/118</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/118#respond</comments>
+		<pubDate>Sun, 27 Oct 2013 05:38:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/10/27/%e6%94%b9%e8%a1%8c-n-%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e3%81%aa%e3%82%89-sed-%e3%81%98%e3%82%83%e3%81%aa%e3%81%8f%e3%81%a6-tr-%e3%82%92%e4%bd%bf%e3%81%86/</guid>
+		<description><![CDATA[結論としては sed で n (改行) を扱うのはやっかいなので tr を使いましょう。 今日、ついに bash から zsh に乗り換えようとしていて、日曜を .zshrc の整備に費やしていました。 そこで homebrew に brew doctor という PATH などをチェックしてくれるいいコマンドがあるのでそれを基準に整備していたのですが、どうにも PATH が二重三重に読み込まれている模様。 それをスクリプトで確認しようとおもむろに sed でワンライナーを書き始めたのですが、: を n に置換する方法が分からない。 やりたいこととしては、 /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin ↑こういうのを、 /usr/bin/bin/usr/sbin/sbin/usr/local/bin ↑こうしたかった。 そこで初めは挫折して ruby で書きました。もちろんうまく動いてくれます。 echo $PATH &#124; ruby -pe '$_.gsub!(/:/,"n")' しかしやはり気になったのでシェルのコマンドでどうやって書くのか調べてみました。その結果がこちら。 echo $PATH &#124; tr ':' 'n' ちなみに、うまく動いてくれなかったコマンドはこいつです。 echo $PATH &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/118" class="more-link">Continue reading<span class="screen-reader-text"> "改行 (n) で置換するなら sed じゃなくて tr を使う"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>結論としては sed で n (改行) を扱うのはやっかいなので tr を使いましょう。</p>
+<p>今日、ついに bash から zsh に乗り換えようとしていて、日曜を .zshrc の整備に費やしていました。</p>
+<p>そこで homebrew に brew doctor という PATH などをチェックしてくれるいいコマンドがあるのでそれを基準に整備していたのですが、どうにも PATH が二重三重に読み込まれている模様。</p>
+<p>それをスクリプトで確認しようとおもむろに sed でワンライナーを書き始めたのですが、: を n に置換する方法が分からない。</p>
+<p>
+<p>やりたいこととしては、</p>
+<pre>/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin</pre>
+<p>↑こういうのを、</p>
+<pre>/usr/bin<br />/bin<br />/usr/sbin<br />/sbin<br />/usr/local/bin</pre>
+<p>↑こうしたかった。</p>
+<p>
+<p>そこで初めは挫折して ruby で書きました。もちろんうまく動いてくれます。</p>
+<pre>echo $PATH | ruby -pe '$_.gsub!(/:/,"n")'</pre>
+<p>
+<p>しかしやはり気になったのでシェルのコマンドでどうやって書くのか調べてみました。その結果がこちら。</p>
+<pre>echo $PATH | tr ':' 'n'</pre>
+<p>ちなみに、うまく動いてくれなかったコマンドはこいつです。</p>
+<pre>echo $PATH | sed -e "s/:/\n/g"  # Doesn't work as intended</pre>
+<p>
+<p>なるほど tr って使い所よく分からないなぁと思っていたがこうやって使うのか。</p>
+<p>sed でうまく行かなかった原因は、よくわかっていません。改行は GNU バージョンならすんなりいくそうですが手元の Mac デフォルトのやつが BSD バージョンだったのでうまくいかなかったのかもしれません。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/118/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">118</post-id>	</item>
+		<item>
+		<title>bash_history から自分の手癖を発見する</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/128</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/128#respond</comments>
+		<pubDate>Sat, 05 Oct 2013 04:14:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/10/05/bash_history-%e3%81%8b%e3%82%89%e8%87%aa%e5%88%86%e3%81%ae%e6%89%8b%e7%99%96%e3%82%92%e7%99%ba%e8%a6%8b%e3%81%99%e3%82%8b/</guid>
+		<description><![CDATA[cat ~/.bash_history &#124; awk '{ print $1 }' &#124; sort &#124; uniq -c &#124; awk '$1>1 {print $0}' &#124; sort -r これで自分がシェル上でよく使うコマンドのランキングを見られる。 # HistoryHISTSIZE=99999HISTFILESIZE=99999999export HISTCONTROL=ignorebothexport HISTIGNORE=?:??:???:exit なお、 .bash_history に入ってくれる履歴にはデフォルトで上限があるので HISTSIZE や HISTFILESIZE を .bashrc あたりで変更しておくといいだろう。 ついでに HISTCONTROL (例では連続して入力されたコマンドと空白から始まるコマンドを記録しないという設定をしている) や HISTIGNORE (例では 1〜3文字だけで入力されたコマンドと exit コマンドを記録しないという設定をしている) といった設定もしておくといいかもしれない。 ちなみに僕の結果はローカル環境でもリモート環境でも git > vim > cd だった。 git はそれ単体で集計し直してもおもしろいだろうし、 vim &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/128" class="more-link">Continue reading<span class="screen-reader-text"> "bash_history から自分の手癖を発見する"</span></a>]]></description>
+				<content:encoded><![CDATA[<pre>cat ~/.bash_history | awk '{ print $1 }' | sort | uniq -c | awk '$1>1 {print $0}' | sort -r<br /></pre>
+<p>これで自分がシェル上でよく使うコマンドのランキングを見られる。</p>
+<p>
+<pre># History<br />HISTSIZE=99999<br />HISTFILESIZE=99999999<br />export HISTCONTROL=ignoreboth<br />export HISTIGNORE=?:??:???:exit<br /></pre>
+<p>なお、 .bash_history に入ってくれる履歴にはデフォルトで上限があるので HISTSIZE や HISTFILESIZE を .bashrc あたりで変更しておくといいだろう。</p>
+<p>ついでに HISTCONTROL (例では連続して入力されたコマンドと空白から始まるコマンドを記録しないという設定をしている) や HISTIGNORE (例では 1〜3文字だけで入力されたコマンドと exit コマンドを記録しないという設定をしている) といった設定もしておくといいかもしれない。</p>
+<p>
+<p>ちなみに僕の結果はローカル環境でもリモート環境でも git > vim > cd だった。 git はそれ単体で集計し直してもおもしろいだろうし、 vim はまあそうだろうという感じだが、 cd は僕は autojump を使っているのだがそれでもなお多いことに驚いた。</p>
+<p>
+<h4>追記</h4>
+<div>
+<ul>
+<li><small><cite title="ymkjp"><a href="http://ymkjp.blogspot.jp/2013/10/bashhistory-git.html">bash_history で自分の手癖を発見する (git 編) &#8211; Enable</a></cite></small></li>
+</ul>
+</div>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/128/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">128</post-id>	</item>
+		<item>
+		<title>指にやさしい mc (mkdir &#038;&#038; cd) コマンド</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/133</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/133#respond</comments>
+		<pubDate>Mon, 26 Aug 2013 03:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/08/26/%e6%8c%87%e3%81%ab%e3%82%84%e3%81%95%e3%81%97%e3%81%84-mc-mkdir-cd-%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89/</guid>
+		<description><![CDATA[ディレクトリ操作を簡素化すればしあわせになれる（実際、コマンドラインの操作のかなりの割合がディレクトリの移動に費やされているらしい）。 そこでこのコマンドである。使う機会もそれなりに多い。 mc () { mkdir -p $1 &#038;& cd $1} ちなみに、単純なディレクトリ移動は autojump コマンドが圧倒的に便利なので使っていない人はぜひ使うべき。 https://github.com/ymkjp/dotfiles/blob/master/.bash_aliases#L26 @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>ディレクトリ操作を簡素化すればしあわせになれる（実際、コマンドラインの操作のかなりの割合がディレクトリの移動に費やされているらしい）。</p>
+<p>そこでこのコマンドである。使う機会もそれなりに多い。</p>
+<p>
+<pre>mc () {<br />    mkdir -p $1 && cd $1<br />}<br /></pre>
+<p>
+<p>ちなみに、単純なディレクトリ移動は <a href="https://github.com/joelthelion/autojump">autojump</a> コマンドが圧倒的に便利なので使っていない人はぜひ使うべき。</p>
+<p><small><cite title="SOURCE"><a href="https://github.com/ymkjp/dotfiles/blob/master/.bash_aliases#L26">https://github.com/ymkjp/dotfiles/blob/master/.bash_aliases#L26</a><br /></cite></small>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/133/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">133</post-id>	</item>
+		<item>
+		<title>大きなファイルを rsync でリモートに転送するときに</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/157</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/157#respond</comments>
+		<pubDate>Sat, 15 Jun 2013 14:27:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/06/15/%e5%a4%a7%e3%81%8d%e3%81%aa%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92-rsync-%e3%81%a7%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%81%ab%e8%bb%a2%e9%80%81%e3%81%99%e3%82%8b%e3%81%a8%e3%81%8d%e3%81%ab/</guid>
+		<description><![CDATA[大きなファイルを定期的にネットワーク越しに転送する場合には scp ではなく rsync を使いたいところ。そこで付けておくとよさそうなオプションをまとめてみました。特に bwlimit は大事です。 rsync オプションの簡単な解説 オプション 意味 -a, &#8211;archive アーカイブモード。次の7つのオプションをまとめた別名。ディレクトリの再帰的なコピー、シンボリックリンクの作成、パーミッションの同期、ファイル修正時間情報の同期、所有グループの同期 (sudo 時のみ) 、所有者の同期、デバイスファイルの維持。 -v, &#8211;verbose コマンドの実行結果を標準出力する。コピーされたファイル名の羅列に加えて &#8220;sent 396960643 bytes received 25404 bytes 7420299.94 bytes/sec total size is 396806252 speedup is 1.00&#8221; みたいなのも表示される。 -u, &#8211;update 転送先のファイルに転送元のファイルよりも新しいタイムスタンプが付いている場合はスキップする。 &#8211;delete 転送元のファイルが削除されている場合、転送先のファイルも削除される。意図しないファイルが削除されていないか &#8211;dry-run モードで確認したほうがいい。僕はこれを怠って $HOME ディレクトリの dotfiles を消してしまったことがある。どうなるかというと .ssh/ がなくなるのでリモート接続できなくなってしまう。 -n, &#8211;dry-run 試運転モード。実際にはコピーや削除は行わずにコマンドを実行した結果だけを表示する。 &#8211;bwlimit ネットワークの帯域を食いつぶしてしまって他のサービスに影響がでないように帯域制限を設ける。単位がKBPSなので注意が必要。例の場合は 8000KBps &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/157" class="more-link">Continue reading<span class="screen-reader-text"> "大きなファイルを rsync でリモートに転送するときに"</span></a>]]></description>
+				<content:encoded><![CDATA[</p>
+<p>大きなファイルを定期的にネットワーク越しに転送する場合には scp ではなく rsync を使いたいところ。<br />そこで付けておくとよさそうなオプションをまとめてみました。特に bwlimit は大事です。</p>
+<p>
+<table>
+<caption>rsync オプションの簡単な解説</caption>
+<thead>
+<tr>
+<th>オプション</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a, &#8211;archive</td>
+<td>アーカイブモード。次の7つのオプションをまとめた別名。ディレクトリの再帰的なコピー、シンボリックリンクの作成、パーミッションの同期、ファイル修正時間情報の同期、所有グループの同期 (sudo 時のみ) 、所有者の同期、デバイスファイルの維持。</td>
+</tr>
+<tr>
+<td>-v, &#8211;verbose</td>
+<td>コマンドの実行結果を標準出力する。コピーされたファイル名の羅列に加えて &#8220;<i>sent 396960643 bytes  received 25404 bytes  7420299.94 bytes/sec total size is 396806252  speedup is 1.00</i>&#8221; みたいなのも表示される。</td>
+</tr>
+<tr>
+<td>-u, &#8211;update</td>
+<td>転送先のファイルに転送元のファイルよりも新しいタイムスタンプが付いている場合はスキップする。</td>
+</tr>
+<tr>
+<td>&#8211;delete</td>
+<td>転送元のファイルが削除されている場合、転送先のファイルも削除される。意図しないファイルが削除されていないか &#8211;dry-run モードで確認したほうがいい。僕はこれを怠って $HOME ディレクトリの dotfiles を消してしまったことがある。<b>どうなるかというと .ssh/ がなくなるのでリモート接続できなくなってしまう。</b></td>
+</tr>
+<tr>
+<td>-n, &#8211;dry-run</td>
+<td>試運転モード。実際にはコピーや削除は行わずにコマンドを実行した結果だけを表示する。</td>
+</tr>
+<tr>
+<td>&#8211;bwlimit</td>
+<td>ネットワークの帯域を食いつぶしてしまって他のサービスに影響がでないように帯域制限を設ける。単位がKBPSなので注意が必要。例の場合は 8000KBps (約80Mbps) 。</td>
+</tr>
+<tr>
+<td>nice -n 19</td>
+<td>rsync コマンドではないですが転送元のコマンドの相対的な優先度を指定できるコマンドです。重い処理になりがちな rsync とは相性がよさそうです。例の -n 19 は最も優先度が低くなっています。</td>
+</tr>
+<tr>
+<td>ionice -c2 -n7</td>
+<td>こちらも rsync コマンドではないですが転送元の他のプロセスの I/O を邪魔しないようにできるコマンドです。一般ユーザーでは -c2 -n7 を、管理者権限であれば -c3 が最低優先度になります。</td>
+</tr>
+</tbody>
+</table>
+<p>
+<p>普通に使うなら -av くらいしか付けないかと思いますが、今時のサーバはネットワークがボトルネックになっていることもあるかと思いますので &#8211;bwlimit はつけたほうがよさそうです。他のコマンドは用途に応じて。</p>
+<p>あとちなみに from は from/ にすると中身のファイルを転送して、 from だとディレクトリ自体を転送します。</p>
+<p>
+<h4>参考</h4>
+<ul>
+<li><cite title="maruko2 Note."><a href="http://www.maruko2.com/mw/rsync_%E3%81%A7%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%81%AE%E5%90%8C%E6%9C%9F%EF%BC%88%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%EF%BC%89">rsync でディレクトリの同期（バックアップ） &#8211; maruko2 Note.</a></cite></li>
+<li><a href="http://blog.livedoor.jp/sasata299/archives/51079130.html">重い処理はniceコマンドを使って安全に実行すべし。 &#8211; (ﾟ∀ﾟ)o彡 sasata299&apos;s blog</a></li>
+</ul>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/157/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">157</post-id>	</item>
+	</channel>
+</rss>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>@i05 | It works! - Part 9</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,453] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="description"  content="A Tokyo based software developer, a grad student belongs to a security lab at JAIST, and a husband of my mrs." />
+<meta name="robots" content="noindex,follow" />
+<link rel='prev' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/8' />
+<link rel='next' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/10' />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/9" />
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Posts by @i05 Feed" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="archive paged author author-i05 author-1 paged-9 author-paged-9 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></p>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">Author: <span class="vcard">@i05</span></h1>			</header><!-- .page-header -->
+
+			
+<article id="post-66" class="post-66 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/66" rel="bookmark">石油と穀物の1ドルあたりの熱量の比較</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-hTg4-__q5gI/Uy50Wd-yfxI/AAAAAAAASEo/CvYqdxifXIQ/s1600/---_2%2B%281%29.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-hTg4-__q5gI/Uy50Wd-yfxI/AAAAAAAASEo/CvYqdxifXIQ/s400/---_2%2B%281%29.png" width="580" /></a></p>
+<p><a href="http://www.amazon.co.jp/gp/product/B00CBPPBWY/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00CBPPBWY&amp;linkCode=as2&amp;tag=m0b55-22">『「中卒」でもわかる科学入門』</a> に石油って実は安いから普及してるんじゃなくて、べらぼうに安いから普及してるんだよと書いてあったのでどれくらい安いのか検証してみたくて1ドルあたりの熱量 (ジュール/ドル) を算出してみました。</p>
+<p>穀物勢息してない&#8230;のかとおもいきや、意外と善戦。</p>
+<p>同じオーダーに乗っているのが驚きです。</p>
+<p>穀物勢同士の争いでは米はグラムあたり熱量では小麦に勝っていましたが、ドルあたりでは小麦に抜かれています。</p>
+<p>米は栽培に手間がかかるんでしょうなぁ。</p>
+<p>例えば米の場合で成人男性の1日あたり必要基準エネルギーを2円でまかなえる計算です (未調理ベース, 運搬などのコスト抜き)。</p>
+<p>
+<pre>検算お願いします。<br /><br /><a href="https://docs.google.com/spreadsheet/ccc?key=0Agt-HjqkhrHodE5vR19ZNEJWUms2aVppaHpxc0F2V2c&amp;usp=sharing">https://docs.google.com/spreadsheet/ccc?key=0Agt-HjqkhrHodE5vR19ZNEJWUms2aVppaHpxc0F2V2c&usp=sharing</a><br /></pre>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/66" rel="bookmark"><time class="entry-date published" datetime="2014-03-22T23:50:00+00:00">2014-03-22</time><time class="updated" datetime="2016-03-11T15:02:14+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/66#respond"><span class="dsq-postid" data-dsqidentifier="66 http://tk2-249-34500.vs.sakura.ne.jp/2014/03/22/%e7%9f%b3%e6%b2%b9%e3%81%a8%e7%a9%80%e7%89%a9%e3%81%ae1%e3%83%89%e3%83%ab%e3%81%82%e3%81%9f%e3%82%8a%e3%81%ae%e7%86%b1%e9%87%8f%e3%81%ae%e6%af%94%e8%bc%83/">Leave a comment<span class="screen-reader-text"> on 石油と穀物の1ドルあたりの熱量の比較</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-67" class="post-67 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/67" rel="bookmark">プログラマーは他人の職を奪ったことに罪悪感を抱くべきか</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<h4><b>Guilty or Not</b></h4>
+<p>プログラマーの仕事にはさまざまなタスクの自動化があります。<br />そしてその自動化が他人の食いぶちを奪っているのも間違いないでしょう。</p>
+<p>ではプログラマーは他人の職を奪っていることに罪悪感を抱くべきでしょうか？</p>
+<p>僕はプログラマーの仕事が他人の食いぶちを奪っていることに自覚的である必要はあっても、それに罪悪感まで覚える必要はないと考えています。</p>
+<p>プログラマーだけではなく、すべての「他人の食いぶちを奪っているひとたち」がそうです。</p>
+<p>非があるのは、職がない状態が問題になってしまう社会の仕組みそのものです。</p>
+<p>その意味では、プログラマーにもそういう社会を受け入れているという責任はあります。<br />現在の社会の状態を解決すべきであると考えるのであれば、「職がなくても大丈夫な社会にしよう」とメッセージを発信し、アクションを起こしていく責任はあります。<br />ただそれはことさらに「他人の食いぶちを奪っているひとたち」だけが負う責任ではありません。</p>
+<h4><b>Back to the Athens</b></h4>
+<p>僕たちは、18世紀のイギリスで工業化が始まって以来働きづめで、ある種の勤労精神が骨の髄まで染みついています。</p>
+<p>細かな文章は覚えていませんが、『バカの壁』でも「宿の台帳に &#8220;無職&#8221; と書くことは働かなくても食っていける不労所得者であるということであり、社会的な信頼が得られていた」というエピソードが紹介されていました。</p>
+<p>僕たちは、いつしかその &#8220;無職&#8221; へのあこがれや信頼を失っていたのです。</p>
+<p>働かなくても食っていけるようになるためにがんばって働いていたら、いつのまにか働かないことが怖くなっていたということです。<br />なんとも皮肉ですね。</p>
+<p>古代ギリシアの都市アテナイの市民は、いわゆる勤労はしていなかったといいます。<br />もちろんそれは特権であり、市民の倍以上いる奴隷や、それ以外の地域を搾取することで成り立っていたのでしょう。</p>
+<h4><b>Computer as a Servant</b></h4>
+<p>いま、僕たちは、アテナイの市民になる機が熟しつつあります。<br />人類の叡智が生み出した機械やコンピュータがアテナイの奴隷となりつつあるのです。</p>
+<p>さて、ここで冒頭の問題に戻りましょう。僕たちは他人の職を奪っていることに罪悪感を抱くべきでしょうか？</p>
+<p>答えは No です。</p>
+<p>他人の職を奪うすべての仕事に、何ら非はありません。<br />非があるのは、職がない状態が問題になってしまう社会の仕組みそのものなのです。</p>
+<p>職がなくても大丈夫な社会にしていきましょう。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">Master of a Servant @ymkjp</a></adress></div>
+<pre>同僚との飲み会での話題より</pre>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/67" rel="bookmark"><time class="entry-date published updated" datetime="2014-03-22T16:31:00+00:00">2014-03-22</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/67#respond"><span class="dsq-postid" data-dsqidentifier="67 http://tk2-249-34500.vs.sakura.ne.jp/2014/03/22/%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9e%e3%83%bc%e3%81%af%e4%bb%96%e4%ba%ba%e3%81%ae%e8%81%b7%e3%82%92%e5%a5%aa%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8%e3%81%ab%e7%bd%aa%e6%82%aa%e6%84%9f%e3%82%92/">Leave a comment<span class="screen-reader-text"> on プログラマーは他人の職を奪ったことに罪悪感を抱くべきか</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-68" class="post-68 post type-post status-publish format-standard hentry category-7 category-38">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/68" rel="bookmark">自炊本などのファイルサイズの大きなものをS3にアップロードする手順</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>外付けHDDに保存していた20GBちょいの自炊本のPDFファイルたちをS3にアップロードして、外出先でも読めるようにしてみました。</p>
+<p><a href="https://www.flickr.com/photos/peppermint2008/2338929690/" title="Books by pepp 2012, on Flickr"><img src="https://farm4.staticflickr.com/3289/2338929690_bcf68a1655_z.jpg" width="580" alt="Books" /></a></p>
+<p>
+<hr />
+<h4>大まかな手順</h4>
+<p>
+<div>
+<ol>
+<li>外付けHDDから Macintosh HD 上へフォルダごとコピーする</li>
+<li>フォルダ内のファイルをすべて bz2 で圧縮する</li>
+<li>S3上で Bucket を作成する</li>
+<li>3Hub を使ってファイルをアップロード</li>
+<li>ファイルがアップロードできているか web console で確認</li>
+</ol>
+</div>
+<p>
+<hr />では順を追って手順を説明していきます。</p>
+<p>まず、もろもろの処理を高速に行うために外付けHDDから Macintosh HD (Mac上の適当なフォルダ) へフォルダごとコピーします。</p>
+<p>そしてそのフォルダ (ここでは /path/to/Books とします) 下のファイルたちを下記のコマンドで bz2 圧縮します。</p>
+<p><kbd>$ find /path/to/Books -type f -not -name '*.bz2' -print0 | xargs -0 -L 1 -P 2 bzip2</kbd></p>
+<p>別に圧縮しなくてもいいのですがAWSは使用容量と通信量の両方に利用料が発生する料金体系なのでできるだけ圧縮はしたほうがいいでしょう。</p>
+<p>※ちなみに自炊本はファイルサイズが巨大なので圧縮なしでアップロードしようとするとタイムアウトエラーで失敗しまくりました。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X9RcOjqb1-U/UxsH5udL2UI/AAAAAAAAR-w/147o10762Ko/s1600/Screenshot_2014-03-08_21_05_44.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X9RcOjqb1-U/UxsH5udL2UI/AAAAAAAAR-w/147o10762Ko/s640/Screenshot_2014-03-08_21_05_44.png" width="580" /></a></p>
+<p>圧縮実行中のプロセスの様子。意図した通り並列処理できている模様。これでマルチコアも活かせているはず。</p>
+<p>ちなみに今回親フォルダごと tar で固めなかったのは書籍ごとにダウンロードできるようにしたかったためです。</p>
+<p>さて、ジョブが終了するまでしばらく待って、いよいよS3へアップロードしていきます。</p>
+<p><a href="https://console.aws.amazon.com/s3/home">https://console.aws.amazon.com/s3/home</a> で Bucket を作成しましょう。僕は技術書系とそれ以外2つの Bucket を作成しました。</p>
+<p>アップロードには Cyberduck を使ってもよかったのですが今回はS3専用のクライアント <a href="http://www.3hubapp.com/">3Hub</a> を使ってみました。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5aSAbYaM2ps/UxsekXq9ZbI/AAAAAAAAR_Y/EHXvMqDlG4M/s1600/Screenshot%2B2014-03-08%2B22.43.29.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5aSAbYaM2ps/UxsekXq9ZbI/AAAAAAAAR_Y/EHXvMqDlG4M/s640/Screenshot%2B2014-03-08%2B22.43.29.png" /></a></p>
+<p>concurrency を設定できるので2にあげてみたところ特に詰まることもなくアップロードできました。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jNuPKJu2H_s/UxseSknmrlI/AAAAAAAAR_Q/I-m13AQ4vas/s1600/Screenshot%2B2014-03-08%2B22.41.04.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jNuPKJu2H_s/UxseSknmrlI/AAAAAAAAR_Q/I-m13AQ4vas/s640/Screenshot%2B2014-03-08%2B22.41.04.png" width="580" /></a></p>
+<p>設定通りに並列アップロードできている様子。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z0BlFyIZFE4/UxsgLcEIP1I/AAAAAAAAR_k/DzRpOJ5XONY/s1600/%10books.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z0BlFyIZFE4/UxsgLcEIP1I/AAAAAAAAR_k/DzRpOJ5XONY/s640/%10books.png" width="580" /></a></p>
+<p>そして最後に <a href="https://console.aws.amazon.com/s3/home">https://console.aws.amazon.com/s3/home</a> からファイルがアップロードできていることを確認します。</p>
+<p>はい、作業完了です！</p>
+<p>自炊本のファイルサイズはとにかく巨大で、数百冊の量になると MacBook に置こうものならすぐに容量を使いきってしまっていてしかたなく外付けHDDに置いていて不便だったのですが、それがやっと解決しました。</p>
+<p>うぉおおおおおおおん！<br />やっと外出先からでも自由に本を取り出せるよー！</p>
+<p>Dropbox や Google Drive の有料枠よりも格安で利用できるのが嬉しい。</p>
+<p>最後に 3Hub だとURL一覧を簡単に取得できるので、今回を機に冊数を測ってみました。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-68Yuj8y5kok/Uxs9_h2mymI/AAAAAAAASAg/9QM6t7fz8Gg/s1600/Screenshot%2B2014-03-09%2B00.57.33.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-68Yuj8y5kok/Uxs9_h2mymI/AAAAAAAASAg/9QM6t7fz8Gg/s320/Screenshot%2B2014-03-09%2B00.57.33.png" /></a></p>
+<p>これで 2つの Backet の URLs をファイルにおいて <kbd>$ cat *.dat | wc -l</kbd> してみたところ213冊ありました。</p>
+<p>
+<hr />
+<h4>おまけコラム: 本のカテゴリ分けはシンプルに</h4>
+<p>本の量が多くなってくるとついつい細かなカテゴリ分けをしたくなってしまいますが、そこはグッとこらえてできるだけフラットな構成を心がけましょう。本の一覧性を確保するためです。</p>
+<p>人力では最低限のカテゴリ分けのみを行い、特定の本を探すときの絞り込みはコンピュータに仕事させるという思想です。</p>
+<p>
+<hr />
+<h4>参考にしたサイト</h4>
+<div>
+<ul>
+<li>
+<div><small><cite title="xargs を使ってカジュアルに並列処理"><a href="http://d.hatena.ne.jp/tagomoris/20110513/1305267021">tagomorisのメモ置き場</a></cite></small></div>
+</li>
+<li>
+<div><small><cite title="Amazon S3を使ってiPadの容量を仮想的に増やす"><a href="http://www.cyberarchitect.net/blog/archives/718">cyberarchitect</a></cite></small></div>
+</li>
+</ul>
+</div>
+<p>
+<div><adress> <a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/68" rel="bookmark"><time class="entry-date published" datetime="2014-03-08T14:54:00+00:00">2014-03-08</time><time class="updated" datetime="2016-03-11T15:02:22+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e9%9b%bb%e5%ad%90%e6%9b%b8%e7%b1%8d" rel="category tag">電子書籍</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/68#respond"><span class="dsq-postid" data-dsqidentifier="68 http://tk2-249-34500.vs.sakura.ne.jp/2014/03/08/%e8%87%aa%e7%82%8a%e6%9c%ac%e3%81%aa%e3%81%a9%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%aa%e3%82%82%e3%81%ae%e3%82%92s3%e3%81%ab%e3%82%a2/">Leave a comment<span class="screen-reader-text"> on 自炊本などのファイルサイズの大きなものをS3にアップロードする手順</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-69" class="post-69 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/69" rel="bookmark">朝食スムージーとジム通いが功を奏している</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>ここ最近朝食をとるようにしていてすこぶる調子がいい。</p>
+<p>手間をかけると続けられないので、フルーツをフードプロセッサーでつぶして飲んでいる。</p>
+<p>おいしいので、気分が高まる。</p>
+<p>今のところの最高レシピは、豆乳をベースにバナナ、イチゴ、ミニトマト、ヨーグルト、ヤクルト。</p>
+<p>飲み終わったら水で空運転させてサッと汚れを落とすと洗うのが楽。</p>
+<p>フードプロセッサーはブラウンのハンドブレンダーというのがすごく便利で、同僚にも勧めまくっている。5千円しないくらいなので誕生日にあげたりもした。</p>
+<p><a href="http://www.amazon.co.jp/gp/product/B00DU6BDRU/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00DU6BDRU&amp;linkCode=as2&amp;tag=m0b55-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B00DU6BDRU&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=m0b55-22" /></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=m0b55-22&amp;l=as2&amp;o=9&amp;a=B00DU6BDRU" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<p>フルーツは糖分が豊富なので、夕方ごろに頭の養分が足りなくなる現象がなくなる。</p>
+<p>体の調子がいいと心の調子もよくなる。だいたい心がすさんでくる木曜日の夕方ごろでも、休日の午前中のような精神状態。</p>
+<p>ジムは最近は筋トレだけやってさっと帰るようにしていて、成果が目に見えるので続けられている。</p>
+<p>しかし体重は微減。</p>
+<p>増量したいので体重が減るのはよくない。筋肉を増やした分だけ太るべきだったので反省している。</p>
+<p>朝食もジムも、継続することを1番大切にしていて、朝食は手軽においしく、ジムは効率を高めて時間を有効に使うようにしている。</p>
+<p>つらくなると挫折するので。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/69" rel="bookmark"><time class="entry-date published updated" datetime="2014-03-03T16:47:00+00:00">2014-03-03</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/69#respond"><span class="dsq-postid" data-dsqidentifier="69 http://tk2-249-34500.vs.sakura.ne.jp/2014/03/03/%e6%9c%9d%e9%a3%9f%e3%82%b9%e3%83%a0%e3%83%bc%e3%82%b8%e3%83%bc%e3%81%a8%e3%82%b8%e3%83%a0%e9%80%9a%e3%81%84%e3%81%8c%e5%8a%9f%e3%82%92%e5%a5%8f%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b/">Leave a comment<span class="screen-reader-text"> on 朝食スムージーとジム通いが功を奏している</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-70" class="post-70 post type-post status-publish format-standard hentry category-env category-osx category-shell">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/70" rel="bookmark">OSX移行後にシェルが即死する問題を解決するには /etc/passwd じゃなくてSystem Preferences から</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>OSXの「移行アシスタント」を使って移行したあとに iTerm でシェルを開こうとしたところ iTerm が即死しました。</p>
+<p>解決策は、「システム環境設定」→「ユーザーとグループ」で鍵ボタンをクリックして admin になる→アカウントを右クリック→「詳細オプション」でログインシェルを変更→再起動でした。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-q-2ccDMnUEg/UxGcv7FSndI/AAAAAAAAR4E/I0fLOdM4Cn8/s1600/Screenshot_2014-03-01_17_31_02.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-q-2ccDMnUEg/UxGcv7FSndI/AAAAAAAAR4E/I0fLOdM4Cn8/s400/Screenshot_2014-03-01_17_31_02.png" width="580" /></a></p>
+<p>設定画面のキャプチャ。うーん、いわれてみれば昔設定した覚えがあるような気がする。</p>
+<p>恐らく移行元の Mac で homebrew から入れた zsh などを使っていた人にこの問題が起こると思います。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-BRK6QPd9hBs/UxGeYeNy72I/AAAAAAAAR4Q/od3iFEuya0Q/s1600/Screenshot%2B2014-02-28%2B09.03.11.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-BRK6QPd9hBs/UxGeYeNy72I/AAAAAAAAR4Q/od3iFEuya0Q/s400/Screenshot%2B2014-02-28%2B09.03.11.png" width="580" /></a></p>
+<p>iTerm は即死する場合こういうプロンプトを出してから死んでくれます。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5vNoZ0iCt3Q/UxGeaff9rII/AAAAAAAAR4Y/zM5NMLueqrU/s1600/Screenshot%2B2014-02-28%2B09.03.53.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5vNoZ0iCt3Q/UxGeaff9rII/AAAAAAAAR4Y/zM5NMLueqrU/s400/Screenshot%2B2014-02-28%2B09.03.53.png" width="580" /></a></p>
+<p>そのときシェルは「zshが見つからないよぅ」とか弱音をはいていました。</p>
+<p>ちなみに当初は Linux からの連想で Finder から Sublime で /etc/passwd を編集して解決しようとしたのですがそれらしき箇所を見つけることができず、困って<span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;">ユーザごとのログインシェルの設定方法を検索すると今回の解決策にたどり着くことができました</span>。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fE7ZJwdBYbQ/UxGk8Ghw1FI/AAAAAAAAR4o/5ei_pRKuTkw/s1600/Screenshot%2B2014-03-01%2B18.13.30.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-fE7ZJwdBYbQ/UxGk8Ghw1FI/AAAAAAAAR4o/5ei_pRKuTkw/s320/Screenshot%2B2014-03-01%2B18.13.30.png" /></a></p>
+<p>そして最後に、今回の記事内容の環境は移行元移行先ともに OS X 10.9.2 を元に書きました。</p>
+<p>何かの参考になれば幸いです。</p>
+<p>
+<h4></h4>
+<h4>参考にしたサイト</h4>
+<div>
+<ul>
+<li>
+<div><small><cite title="MacのログインシェルをHomebrew等で入れたzshやbashに変更する方法"><a href="http://tukaikta.blog135.fc2.com/blog-entry-195.html">Macとかの雑記帳</a></cite></small></div>
+</li>
+</ul>
+</div>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/70" rel="bookmark"><time class="entry-date published" datetime="2014-03-01T09:03:00+00:00">2014-03-01</time><time class="updated" datetime="2016-03-11T15:02:26+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/env" rel="category tag">env</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/osx" rel="category tag">osx</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/shell" rel="category tag">shell</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/70#respond"><span class="dsq-postid" data-dsqidentifier="70 http://tk2-249-34500.vs.sakura.ne.jp/2014/03/01/osx%e7%a7%bb%e8%a1%8c%e5%be%8c%e3%81%ab%e3%82%b7%e3%82%a7%e3%83%ab%e3%81%8c%e5%8d%b3%e6%ad%bb%e3%81%99%e3%82%8b%e5%95%8f%e9%a1%8c%e3%82%92%e8%a7%a3%e6%b1%ba%e3%81%99%e3%82%8b%e3%81%ab%e3%81%af-etcpa/">Leave a comment<span class="screen-reader-text"> on OSX移行後にシェルが即死する問題を解決するには /etc/passwd じゃなくてSystem Preferences から</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-71" class="post-71 post type-post status-publish format-standard hentry category-uncategorized">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/71" rel="bookmark">サバゲーの持ち物</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div><span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;">[Cost]</span></div>
+<div>Play charge: ￥3,500</div>
+<div>Rental equipments (Gun, Clothes, Goggle Mask): ￥3,300</div>
+<div>Rental car and gas: N/A (￥2,500)</div>
+<div><span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;"><br /></span></div>
+<div><span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;"><br /></span></div>
+<div><span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;">[Bring your own (optional)]</span></div>
+<div>* cap or knit hat</div>
+<div>* glove</div>
+<div>* belt</div>
+<div>* boot or shoes</div>
+<div>* towl</div>
+<div>* extra clothes</div>
+<div>* enjoying spirit</div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/71" rel="bookmark"><time class="entry-date published updated" datetime="2014-02-22T12:51:00+00:00">2014-02-22</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/uncategorized" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/71#respond"><span class="dsq-postid" data-dsqidentifier="71 http://tk2-249-34500.vs.sakura.ne.jp/2014/02/22/%e3%82%b5%e3%83%90%e3%82%b2%e3%83%bc%e3%81%ae%e6%8c%81%e3%81%a1%e7%89%a9/">Leave a comment<span class="screen-reader-text"> on サバゲーの持ち物</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-72" class="post-72 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/72" rel="bookmark">「ハーバード卒の専業主婦」から学ぶこと</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>アメリカの「高学歴主婦」の仕事が紹介されているブログがありました。</p>
+<p>記事によると、彼女たちには3つの業務があります。</p>
+<div>
+<blockquote>
+<div>
+<ol>
+<li>肉体労働系のいわゆる「家事」はほとんどしていない</li>
+<li>メインの仕事は家庭・家計のマネージメントと長短期の教育戦略立案・実行</li>
+<li>家の外では実績と人脈獲得につながるボランテイア活動</li>
+</ol>
+</div>
+<div><small><cite title="ハーバード卒の専業主婦って何してるの？に答えてみた"><a href="http://www.suzukinoriko.com/2014/02/blog-post.html?m=1">suzukinoriko.com</a></cite></small></div>
+</blockquote>
+</div>
+<p>この記事を読んで、僕のなかでうまく見いだせていなかった理想の主婦 (主夫) 像がかなりはっきり見えました。</p>
+<p>メイン業務として紹介されている「家庭・家計のマネージメントと長短期の教育戦略立案・実行」が、個人としてだけでなく、社会の枠から見ても生産性が高い役割を果たしているのがポイントだと思います。</p>
+<p>優秀な子どもを育てるための教育はパートナーも希望することが多いだろうということは容易に想像がつきますが、同時に、優秀な子どもを育てるということは社会的な強い要請があることでもあります。</p>
+<p>そしてその「優秀な子育て」という、未定義で、予測困難で、しかし非常に強い需要はあるというフィールドにおいて、彼女たちは培った能力を活かしているということになります。</p>
+<p>彼女たちは自分にしかできないクオリティの高い業務を行うことで、高い付加価値を生み出しているのです。</p>
+<p>こうして「ハーバード卒の専業主婦」たちは生産性の高い業務を行うことで社会と主婦のあいだで win-win モデルをつくれているのだと理解しました。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/72" rel="bookmark"><time class="entry-date published updated" datetime="2014-02-16T08:44:00+00:00">2014-02-16</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/72#respond"><span class="dsq-postid" data-dsqidentifier="72 http://tk2-249-34500.vs.sakura.ne.jp/2014/02/16/%e3%80%8c%e3%83%8f%e3%83%bc%e3%83%90%e3%83%bc%e3%83%89%e5%8d%92%e3%81%ae%e5%b0%82%e6%a5%ad%e4%b8%bb%e5%a9%a6%e3%80%8d%e3%81%8b%e3%82%89%e5%ad%a6%e3%81%b6%e3%81%93%e3%81%a8/">Leave a comment<span class="screen-reader-text"> on 「ハーバード卒の専業主婦」から学ぶこと</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-73" class="post-73 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/73" rel="bookmark">理想の将来像とマクロな危機意識</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p style="margin: 0px; font-size: 12px; font-family: Helvetica;">不労所得で悠々自適の生活を送れるようになりたい。</p>
+<p style="margin: 0px; font-size: 12px; font-family: Helvetica;"></p>
+<p style="margin: 0px; font-size: 12px; font-family: Helvetica;">そして心置きなく数学の勉強したり、プログラミングの腕を磨いたり、オープンソースプロジェクトに貢献したり、便利なサービス作って運営したりしたい。そしてちょくちょく海外に逃避したい。</p>
+<p style="margin: 0px; font-size: 12px; font-family: Helvetica;"></p>
+<p style="margin: 0px; font-size: 12px; font-family: Helvetica;">日本から離れなければならない可能性 (国家のデフォルトや犯罪に巻き込まれるなど、可能性は低いが、起こったときの影響は大きい) もあるので、そのリスクマネジメントもしたい。</p>
+<p>
+<div style="clear: both;"><a href="https://lh4.googleusercontent.com/-yZiRviWjjh4/Uvpnmz7W8II/AAAAAAAAQ3A/ATyC7yOMjpY/s640/blogger-image-138675608.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://lh4.googleusercontent.com/-yZiRviWjjh4/Uvpnmz7W8II/AAAAAAAAQ3A/ATyC7yOMjpY/s640/blogger-image-138675608.jpg" /></a></div>
+<p>
+<div style="clear: both;">こうして文字に書き出してみると思考が整理されていい。</div>
+<div style="clear: both;"></div>
+<div style="clear: both;">悠々自適の生活を送れるようになっても、やりたいことは今でもできることじゃんっていうことが分かるけど、でも今みたいに必要に迫られて労働している状態はあまり好ましくないので脱した方がいい。</div>
+<p></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/73" rel="bookmark"><time class="entry-date published updated" datetime="2014-02-11T17:44:00+00:00">2014-02-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/73#respond"><span class="dsq-postid" data-dsqidentifier="73 http://tk2-249-34500.vs.sakura.ne.jp/2014/02/11/%e7%90%86%e6%83%b3%e3%81%ae%e5%b0%86%e6%9d%a5%e5%83%8f%e3%81%a8%e3%83%9e%e3%82%af%e3%83%ad%e3%81%aa%e5%8d%b1%e6%a9%9f%e6%84%8f%e8%ad%98/">Leave a comment<span class="screen-reader-text"> on 理想の将来像とマクロな危機意識</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-74" class="post-74 post type-post status-publish format-standard hentry category-dev category-php">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/74" rel="bookmark">var_dump に頼らないPHPデバッグとおすすめログフォーマット</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>IDEのブレークポイントや var_dump は強力ですがブラウザの画面やシェルの標準出力に出力した場合、後から確認することが困難になります。</p>
+<p>そんなときはファイルに書き出してそれを tail -f するなどして開発を進めるとよいです。</p>
+<p>PHPでは error_log (第三引数に3を渡す) と var_export (第二引数に true を渡す) の組み合わせが便利です。</p>
+<h4><b>PHPおすすめログフォーマット</b></h4>
+<p>さて、ここまではよくある話ですが、今回はおすすめのログフォーマットを紹介します。</p>
+<pre>// $foo に確認したい値が入っている<br /><br />error_log(sprintf("%sn%s %s %s %s (%d)n=====nn", var_export(<br />$foo<br />,1), uniqid(), date(DATE_RFC822), __FILE__, __METHOD__, __LINE__), 3, '/var/tmp/my_errors.log');<br /></pre>
+<p>このログフォーマットを使うと下記のような出力結果になります。</p>
+<pre>array (<br />  'one' => 1,<br />  'two' => 2,<br />)<br />53cf3c77a5f88 Sun, 09 Feb 14 01:13:10 +0900 /home/ymkjp/workspace/20140209_ErrorLog.php Foo::bar (10)<br />=====<br /></pre>
+<p>この方法の利点を5つあげてみます。</p>
+<div>
+<ul>
+<li>簡易的なフィンガープリントが付いているのであとから探すのが容易</li>
+<li>ログが書き出された日時が分かるのであとから確認するときに便利</li>
+<li>ログが書き出された箇所で設定されているPHPのタイムゾーンも分かる</li>
+<li>ログを仕込んだ箇所が分かる (ファイル名、クラスとメソッド、行数)</li>
+<li>ログが ===== で区切られて読みやすい</li>
+</ul>
+</div>
+<p>僕はこのスニペットを <a href="http://support.alfredapp.com/features:clipboard">Alfred Powerpack のクリップボード</a> や <a href="http://www.clipmenu.com/">ClipMenu</a> に登録して使っています。</p>
+<h4><b>var_export の限界に達することもわりとある</b></h4>
+<p>今回紹介した var_export によるデバッグは便利なものの注意点もあります。</p>
+<p>例えば &#8220;Fatal error: Nesting level too deep &#8211; recursive dependency?&#8221; というエラーが出ることがあります。</p>
+<p>その場合は var_dump を使ったり、値を <a href="http://www.php.net/manual/ja/language.oop5.serialization.php">serialize</a> してから出力してみるといいかもしれません。</p>
+<h4><b>使用例</b></h4>
+<p>ちなみに文中で例として使った出力結果を得るために書いたPHPコードはこちらです。</p>
+<p>※事前に /var/tmp/my_errors.log の作成と権限付与、および php.ini で timezone の設定を行う必要があります</p>
+<h4><b>ログの確認方法</b></h4>
+<p>
+<pre>$ tailf /var/tmp/my_errors.log<br /></pre>
+<p><a href="http://d.hatena.ne.jp/rx7/20090320/p1">tailf は tail -f に比べてどうやらディスクにやさしいコマンドである</a> だけでなく、約29%のタイプ数削減効果もあります。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/74" rel="bookmark"><time class="entry-date published updated" datetime="2014-02-08T17:01:00+00:00">2014-02-08</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/php" rel="category tag">php</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/74#respond"><span class="dsq-postid" data-dsqidentifier="74 http://tk2-249-34500.vs.sakura.ne.jp/2014/02/08/var_dump-%e3%81%ab%e9%a0%bc%e3%82%89%e3%81%aa%e3%81%84php%e3%83%87%e3%83%90%e3%83%83%e3%82%b0%e3%81%a8%e3%81%8a%e3%81%99%e3%81%99%e3%82%81%e3%83%ad%e3%82%b0%e3%83%95%e3%82%a9%e3%83%bc%e3%83%9e/">Leave a comment<span class="screen-reader-text"> on var_dump に頼らないPHPデバッグとおすすめログフォーマット</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-75" class="post-75 post type-post status-publish format-standard hentry category-hello_world category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/75" rel="bookmark">Quick commentary for 2014 Tokyo governor election</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>Hey guys, today I wanna describe what is happening in Tokyo.</p>
+<p>
+<h4>Abstract</h4>
+<div>
+<ul>
+<li>0. A governor of Tokyo INOSE was dislodged from his position of power.</li>
+<li>1. MASUZOE (LDP official candidate) gonna win this election.</li>
+</ul>
+</div>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-at1LMYS-4VM/UvXjo5jqNlI/AAAAAAAAQ0o/RdHUFi5yPUE/s1600/Bf61fSoCUAEi5CU.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-at1LMYS-4VM/UvXjo5jqNlI/AAAAAAAAQ0o/RdHUFi5yPUE/s640/Bf61fSoCUAEi5CU.png" width="580" /></a></p>
+<p>
+<h4>A Bad Point Behind These Stories</h4>
+<p>Japanese citizens should change their bad habits that they put off the leader chosen by themselves along his/her tenure path.</p>
+<p>There are 2 reasons for their bad habits:</p>
+<div>
+<ol>
+<li>Oligopolistic structure in the TV business. Thereby, public option formation is distorted.</li>
+<li>As a fundamental problem, Japanese citizens are indifferent and irresponsible for their politics.</li>
+</ol>
+</div>
+<h4>A Good Point Behind These Stories</h4>
+<p>Nil.</p>
+<p>
+<div><adress><a href="http://twitter.com/i05">@i05</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/75" rel="bookmark"><time class="entry-date published" datetime="2014-02-08T07:41:00+00:00">2014-02-08</time><time class="updated" datetime="2016-03-11T15:02:30+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/hello_world" rel="category tag">hello_world</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/75#respond"><span class="dsq-postid" data-dsqidentifier="75 http://tk2-249-34500.vs.sakura.ne.jp/2014/02/08/quick-commentary-for-2014-tokyo-governor-election/">Leave a comment<span class="screen-reader-text"> on Quick commentary for 2014 Tokyo governor election</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/8">Previous page</a>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/'><span class="meta-nav screen-reader-text">Page </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/8'><span class="meta-nav screen-reader-text">Page </span>8</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">Page </span>9</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/10'><span class="meta-nav screen-reader-text">Page </span>10</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/31'><span class="meta-nav screen-reader-text">Page </span>31</a>
+<a class="next page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/10">Next page</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2016/09">&laquo; Sep</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td id="today">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1IQBVxfQlw=","queueTime":0,"applicationTime":205,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

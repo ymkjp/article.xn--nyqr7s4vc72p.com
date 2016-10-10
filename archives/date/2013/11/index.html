@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>November, 2013 | It works!</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,447] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="robots" content="noindex,follow" />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/11" />
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="archive date hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></p>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">Month: November 2013</h1>			</header><!-- .page-header -->
+
+			
+<article id="post-110" class="post-110 post type-post status-publish format-standard hentry category-7 category-51">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/110" rel="bookmark">ハ会リターンズ 住宅業界の維新の現場に潜入レポート！</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>ハ会リターンズという住宅業界の勉強会に参加してきました。いやぁ、アツイ。こんなに充実した時間を過ごせたイベントははじめてです。本当に参加できてよかった。</p>
+<p>今回、僕は住宅業界の人間ではなく、趣味での参加だったのですが、このアツイ思いを僕と同じインターネット業界の人にも、そして、この記事を読み返す未来の自分にも分かってもらえるように、リポートしますね！</p>
+<h4>インターネット業界の勉強会とのちょっとした違い</h4>
+<p>
+<p>下記は当イベントの Facebook の紹介文です。</p>
+<p>
+<div>
+<blockquote>
+<p style="font-size: small;">さりげなくビッグなパネラーでお送りする今年のhakaiリターンズ。モデレーターはもちろん島原万丈。パネラーには清水千弘・長嶋　修・三浦　展のお三方に加え、新たなゲストとして建築家の吉村靖孝氏にも登壇いただき、みんなの「未来」について討論を行います。</p>
+<div><small><cite title="リノベーション住宅推進協議会 "><a href="https://www.facebook.com/events/394556757340076/">ハ会リターンズ「東京五輪2020と住宅維新」</a></cite></small></div>
+</blockquote>
+</div>
+<p>
+<p>要するに、不動産業界のビッグな人たちがビールを飲みながらパネルディスカッションを行うというものです。</p>
+<p>ビッグが話し、意欲ある聴衆がそこに参加するという構図としては、インターネット業界の「勉強会」(ある技術的トピックを切り口に、集まって発表をしたり、親交を深めたりするあれ) となんらかわりはないなと思い、僕はここで勉強会というワードを使いました。</p>
+<p>ということで、大まかな構図はインターネット業界の勉強会と変わりはないのですが、もちろん違いはありますので以下で折に触れて紹介していきます。</p>
+<h4>パネラーのバランスのよさ</h4>
+<p>
+<p>早速「この話は驚いた！」ということを書いていきたいのですが、その前にパネラーが豪華で、それでいてバランスもよかったという話をしておきます。</p>
+<p>パネラーは敬称略で下記の4名の方々でした。</p>
+<p>
+<div>
+<table>
+<thead>
+<tr>
+<th>氏名</th>
+<th>プロフィール (僕の理解の範囲で噛み砕いて説明)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b><a target="_blank" href="http://www.amazon.co.jp/%E6%B8%85%E6%B0%B4-%E5%8D%83%E5%BC%98/e/B004LURGJS/?_encoding=UTF8&amp;camp=247&amp;creative=7399&amp;linkCode=ur2&amp;qid=1383421970&amp;sr=1-2-ent&amp;tag=m0b55-22">清水千弘</a></b></td>
+<td>計量経済学者。不動産の市場指数を算出。シンガポールの大学の教授に就任。海外での評価が高く、カナダ、シンガポール、日本を行き来する。</td>
+</tr>
+<tr>
+<td><b><a target="_blank" href="http://www.amazon.co.jp/%E9%95%B7%E5%B6%8B-%E4%BF%AE/e/B004LULG1M/?_encoding=UTF8&amp;camp=247&amp;creative=7399&amp;linkCode=ur2&amp;qid=1383421888&amp;sr=1-2-ent&amp;tag=m0b55-22">長嶋修</a></b></td>
+<td>不動産コンサルタント。住宅の健康診断事業を行う事務所の会長。タブーを恐れず精力的に動く、不動産業界の切り込み隊長。</td>
+</tr>
+<tr>
+<td><b><a target="_blank" href="http://www.amazon.co.jp/%E4%B8%89%E6%B5%A6-%E5%B1%95/e/B001JOLRKI/?_encoding=UTF8&amp;camp=247&amp;creative=7399&amp;linkCode=ur2&amp;qid=1383421798&amp;sr=8-2-ent&amp;tag=m0b55-22">三浦展</a></b></td>
+<td>作家。市場リサーチャー。「下流社会」や「ファスト風土」などのキーワードを世に送り出した。</td>
+</tr>
+<tr>
+<td><b><a target="_blank" href="http://www.amazon.co.jp/s/?_encoding=UTF8&amp;camp=247&amp;creative=7399&amp;field-keywords=%E6%9D%91%E9%9D%96%E5%AD%9D&amp;linkCode=ur2&amp;tag=m0b55-22&amp;url=search-alias%3Daps">吉村靖孝</a></b></td>
+<td>建築家。オランダで都市計画を行った。空家を有効活用する新しい切り口の建築を設計し、奥さんが経営。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+<p>無知を忍ばずにいうと、今回のパネラーの方々のことは以前から Twitter でフォローしていた長嶋修さんを除いてこのイベントではじめて知りました。</p>
+<p>※日本国内で最も有名なのは三浦さんだと思いますが、僕はその三浦さんですら顔や名前だけではピンと来ませんでした</p>
+<p>
+<p>住宅業界の場合は、インターネット業界のソフトウェアエンジニアやプログラマの世界に比べ、より幅広い価値観が存在します。より簡単に言い換えると、ステークホルダーがたくさんいます。</p>
+<p>例えばディスカッションの聴衆は、作った建物を売る人や、その計画に携わっている人が多かったんだろうと思います。ファシリテータの方の話の振り方も、特に導入部分ではそういった聴衆が興味をもつであろう「住宅需要の予測」のような話に重点がおかれていたように思います。</p>
+<p>しかし、パネラーにはいわば「作る側」の建築家の吉村さんもいて、パネラー陣のバランスのよさもありました。住宅業界の奥深さ (というかハ会メンバーの守備範囲の広さと言ったほうが適切かもしれないですが) が垣間見えてとてもおもしろかったです。</p>
+<h4>IT 業界に欠けているのは大局観</h4>
+<p>
+<p>やっと「この話は驚いた！」ことについて書けます。イベント冒頭の清水教授のプレゼンテーションはとにかく驚きでした。</p>
+<p>※Web上に昨夜のスライドは公開されていないようですが、軽く探してみたところ <a href="http://www.cs.reitaku-u.ac.jp/sm/shimizu/Lecture/Lecture/130828ChihiroShimizu_Aging.pdf">130828ChihiroShimizu_Aging.pdf</a> が内容が共通して部分が多いので参考にしてみてください。</p>
+<p>冒頭のプレゼンに限らず、清水教授の発言は驚きの連続でした。いわく、東京の住宅価格は今後 N 年で3割になる、まちづくり3法のアレが再改正される見込み、などなど。</p>
+<p>しかしあれですね。不動産業界の指数は、年齢別人口予測などをもとに算出しますが、インターネット業界の人は人口予測を利用とかはあまりやらないですね。業界自体の歴史が浅く、発展が激しいということもあるのでしょうが、見るスパンが短くなってしまっていると反省しました。それとも、僕が下っ端だから知らないだけで、上場企業の経営者層とかはやっているのでしょうか。</p>
+<h4>情報のオープン化は進むのか</h4>
+<p>
+<p>今回の勉強会に参加して僕なりに住宅業界の課題だと思うことがはっきりしました。それは情報のオープン化です。</p>
+<p>長嶋さんのプレゼンテーションで国交省がレインズを統合して共通 DB を作成するロードマップがあるという話がありましたが、恐らくこれも業者間専用のものでしょう。</p>
+<p>なぜまだ住宅業界には Amazon がないのか。書籍には目録 DB があったが、不動産にはないからです (ピンとこなければジェフ・ベゾスの半生を書いた『<a href="http://www.amazon.co.jp/gp/product/B00EQ25AZS/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00EQ25AZS&amp;linkCode=as2&amp;tag=m0b55-22">ワンクリック</a>』をおすすめします)。</p>
+<p>今回のハ会リターンズのテーマは「住宅維新」でしたが、僕なりの住宅維新はまさに「住宅業界の情報のオープン化」です。</p>
+<p>不動産業界の切り込み隊長・長嶋さんは、「住宅維新は政府主導ではなく民間で、それこそハ会主導でやっていくくらいの気概でなければいけない」ということを話していました。</p>
+<p>まさにその通りです。業界の都合でも、ましてや政府の都合でもない、本当に居住者のためになる「住宅業界の情報のあり方」とは何なのか、僕なりに、粘り強く考えて行きたいです。</p>
+<h4>まとめ ― もっと「潜入」しよう！</h4>
+<p>
+<p>潜入レポートというかたちで書いてみましたが、いかがでしたか。</p>
+<p>インターネット業界の人は、もっと自分の興味のある他の業界のオープンな勉強に参加してみてもいいと思います。刺激がもらえて気分転換としてもとてもよいですし、何より業界内では自分の価値を見出しにくくとも、他の業界を見ることで自分の価値に気づけます。</p>
+<p>もし気になっている業界があるのなら、ぜひ足を運びましょう。こういったリアルのイベントは、いろいろ知ってみたいがどうにも取っ掛かりを得られていない段階で参加してみるとものすごく効果があります (まさに今回の僕がそうでした！)。</p>
+<p>もし興味のある業界がなければ不動産をおすすめします。なぜインターネット業界のひとに不動産をおすすめするのか、理由を列挙してみましょう。</p>
+<p>
+<div>
+<ol>
+<li>不動産業界は非効率のかたまり。ちょっと思い返してみてください。賃貸を契約するのにも消費者が何度も足を運ばされる。仲介業者の仕事も電話や FAX を使っている。不明瞭な報酬の慣習、などなど。こういった数多くの非効率さを目にすれば「どうにかしたい」という気持ちが自然と湧いてくるもの。僕自身が不動産業界に興味をもったきっかけでもあります。</li>
+<li>不動産業界はビジネス的にもおもしろい。なんせ 32.7兆円 (2012年) と市場が大きい。この辺りは当 blog 過去記事の <a href="http://ymkjp.blogspot.jp/2012/09/it.html">海外にスケールしなくてもアナログ斜陽産業にITで参入って面白いのではないかという話</a> が参考になるかと。</li>
+<li>不動産業界は転換期にある。今回のハ会のお題にもある「東京五輪2020」で、現在は確かに業界はプチバブル状態だそうですが、長期的には首都圏ですら人口減が見込まれ下降トレンド。生き残りをかけた決戦前夜といった雰囲気です。</li>
+<li>不動産が抱える「横断性」。不動産と「都市」は切っても切り離せない関係にありますが、もともと「都市」は学問的に横断する領域が多いテーマです。建築学、土木、環境工学、経済学、社会学、などなど。都市は「人の集まり」であるゆえに、本当にたくさんの切り口があり、あたらしい切り口が常に求められ続けるはずです。</li>
+<li>人材交流の多さ。なぜか建築学科出身のプログラマは多い。一説によると、構造的に設計するところなんかが似ているということですが、単に建築学科を出て設計事務所で働けるようになるのは一握りなので、人材需要の多いプログラマになっただけだとする話も聞いたことがあります。</li>
+<li>文化的遺伝子の交流の歴史。ソフトウェアの設計で「デザインパターン」という言葉がありますが、このソフトウェアデザインのパターン化の発想は建築家クリストファー・アレグザンダーの著作が元になっているのはプログラマ界ではそれなりに有名な話。</li>
+</ol>
+</div>
+<p>
+<p>このように、なぜか分かりませんが、不動産と IT は縁が深いわけです。</p>
+<p><a href="http://visualizing.info/cr/market-size-map/domestic/#m=0&amp;cv=0&amp;cn=13369344&amp;cx=52224&amp;cr=10&amp;l=0&amp;f=0" style=""><img border="0" height="267" src="http://2.bp.blogspot.com/-uGCQHvuhDjI/UFtlFkCe67I/AAAAAAAAMnQ/K3mN4-tCnv4/s400/%25E5%25B8%2582%25E5%25A0%25B4%25E8%25A6%258F%25E6%25A8%25A1%25E3%2583%259E%25E3%2583%2583%25E3%2583%2597%2B-%2B%25E3%2583%259E%25E3%2583%2583%25E3%2583%2597%25E5%2585%25A8%25E4%25BD%2593%252C%2B%25E5%25B8%2582%25E5%25A0%25B4%25E8%25A6%258F%25E6%25A8%25A1%25E9%25A0%2586.png" width="400" /></a>
+<p><i>市場規模マップ。不動産業界の大きさが見てとれる。</i></p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+<p></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/110" rel="bookmark"><time class="entry-date published updated" datetime="2013-11-03T17:08:00+00:00">2013-11-03</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e4%b8%8d%e5%8b%95%e7%94%a3" rel="category tag">不動産</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/110#respond"><span class="dsq-postid" data-dsqidentifier="110 http://tk2-249-34500.vs.sakura.ne.jp/2013/11/03/%e3%83%8f%e4%bc%9a%e3%83%aa%e3%82%bf%e3%83%bc%e3%83%b3%e3%82%ba-%e4%bd%8f%e5%ae%85%e6%a5%ad%e7%95%8c%e3%81%ae%e7%b6%ad%e6%96%b0%e3%81%ae%e7%8f%be%e5%a0%b4%e3%81%ab%e6%bd%9c%e5%85%a5%e3%83%ac%e3%83%9d/">Leave a comment<span class="screen-reader-text"> on ハ会リターンズ 住宅業界の維新の現場に潜入レポート！</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-111" class="post-111 post type-post status-publish format-standard hentry category-41 category-51">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/111" rel="bookmark">引っ越しついでに中古買取 目の付け所がシャープなサービスが登場</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>多くなってしまった荷物を整理をしたいが、その時間がない！ または、わざわざそのためにいろいろ作業をするのは面倒くさい！ という人は少なくはないだろう。そんな人たちにうってつけの「ワンストップサービス」が提供開始された模様。</p>
+<p>
+<div>
+<blockquote>
+<p style="font-size: small;">エイブルは11月1日、ブックオフグループと提携し、エイブルが仲介・管理する賃貸物件の入居者に対し、通常より10%上乗せして書籍や洋服などをブックオフグループが買い取るサービスを開始した。</p>
+<div><small><cite title="ブックオフと提携、入居者に10%上乗せ買取サービス開始　　エイブル - 住宅新報web | 賃貸・管理"><a href="http://www.jutaku-s.com/news/id/0000019222">住宅新報web</a></cite><br /></small></div>
+</blockquote>
+</div>
+<p>
+<p>要するに、「引っ越しの時についでに荷物の整理もできちゃうぜ〜！ しかもなんと10%上乗せで買ってもらえるラッキー！」というサービスである。</p>
+<p>まあ本当に通常の10%上乗せの買取額になっているかの検証はそれこそ面倒くさいので眉唾にしておくとして、こうやって賃貸を仲介・管理する業者が目の前の潜在顧客にアプローチできるというのはいい仕組みだ。</p>
+<p>「引っ越しのついでに荷物の整理もしよう」という発想に至っていなかった人も気付きをもらえるので、顧客ともども Win-Win になれる。</p>
+<p>こういう目の付け所のいいサービスが登場するのは、見ていて楽しいですね。これからもニュースウォッチを続けていきたいと思います。</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/111" rel="bookmark"><time class="entry-date published updated" datetime="2013-11-02T17:31:00+00:00">2013-11-02</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%b9" rel="category tag">ニュース</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e4%b8%8d%e5%8b%95%e7%94%a3" rel="category tag">不動産</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/111#respond"><span class="dsq-postid" data-dsqidentifier="111 http://tk2-249-34500.vs.sakura.ne.jp/2013/11/02/%e5%bc%95%e3%81%a3%e8%b6%8a%e3%81%97%e3%81%a4%e3%81%84%e3%81%a7%e3%81%ab%e4%b8%ad%e5%8f%a4%e8%b2%b7%e5%8f%96-%e7%9b%ae%e3%81%ae%e4%bb%98%e3%81%91%e6%89%80%e3%81%8c%e3%82%b7%e3%83%a3%e3%83%bc%e3%83%97/">Leave a comment<span class="screen-reader-text"> on 引っ越しついでに中古買取 目の付け所がシャープなサービスが登場</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-112" class="post-112 post type-post status-publish format-standard hentry category-dev category-shell">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/112" rel="bookmark">zsh に変えて便利になったこと (1) 複数リダイレクト</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>ファイルリダイレクトを連ねられる。</p>
+<pre>for i in {1..26} ; do ; echo "n" &gt;&gt; /var/log/php.log &gt;&gt; /var/tmp/my_errors.log ; done<br /></pre>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/112" rel="bookmark"><time class="entry-date published updated" datetime="2013-11-01T05:25:00+00:00">2013-11-01</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/shell" rel="category tag">shell</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/112#respond"><span class="dsq-postid" data-dsqidentifier="112 http://tk2-249-34500.vs.sakura.ne.jp/2013/11/01/zsh-%e3%81%ab%e5%a4%89%e3%81%88%e3%81%a6%e4%be%bf%e5%88%a9%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8-1-%e8%a4%87%e6%95%b0%e3%83%aa%e3%83%80%e3%82%a4%e3%83%ac%e3%82%af%e3%83%88/">Leave a comment<span class="screen-reader-text"> on zsh に変えて便利になったこと (1) 複数リダイレクト</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>November 2013</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/10">&laquo; Oct</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/12">Dec &raquo;</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="4" class="pad">&nbsp;</td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/11/01" aria-label="Posts published on November 1, 2013">1</a></td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/11/02" aria-label="Posts published on November 2, 2013">2</a></td><td><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2013/11/03" aria-label="Posts published on November 3, 2013">3</a></td>
+	</tr>
+	<tr>
+		<td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+	</tr>
+	<tr>
+		<td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+	</tr>
+	<tr>
+		<td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+	</tr>
+	<tr>
+		<td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+		<td class="pad" colspan="1">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1IQBVxfQlw=","queueTime":0,"applicationTime":117,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

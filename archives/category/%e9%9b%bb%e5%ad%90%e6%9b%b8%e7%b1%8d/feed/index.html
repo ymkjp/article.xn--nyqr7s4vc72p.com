@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>電子書籍 &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/%E9%9B%BB%E5%AD%90%E6%9B%B8%E7%B1%8D/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>電子書籍 &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>自炊本などのファイルサイズの大きなものをS3にアップロードする手順</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/68</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/68#respond</comments>
+		<pubDate>Sat, 08 Mar 2014 14:54:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[ベタ]]></category>
+		<category><![CDATA[電子書籍]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2014/03/08/%e8%87%aa%e7%82%8a%e6%9c%ac%e3%81%aa%e3%81%a9%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%b5%e3%82%a4%e3%82%ba%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%aa%e3%82%82%e3%81%ae%e3%82%92s3%e3%81%ab%e3%82%a2/</guid>
+		<description><![CDATA[外付けHDDに保存していた20GBちょいの自炊本のPDFファイルたちをS3にアップロードして、外出先でも読めるようにしてみました。 大まかな手順 外付けHDDから Macintosh HD 上へフォルダごとコピーする フォルダ内のファイルをすべて bz2 で圧縮する S3上で Bucket を作成する 3Hub を使ってファイルをアップロード ファイルがアップロードできているか web console で確認 では順を追って手順を説明していきます。 まず、もろもろの処理を高速に行うために外付けHDDから Macintosh HD (Mac上の適当なフォルダ) へフォルダごとコピーします。 そしてそのフォルダ (ここでは /path/to/Books とします) 下のファイルたちを下記のコマンドで bz2 圧縮します。 $ find /path/to/Books -type f -not -name '*.bz2' -print0 &#124; xargs -0 -L 1 -P 2 bzip2 別に圧縮しなくてもいいのですがAWSは使用容量と通信量の両方に利用料が発生する料金体系なのでできるだけ圧縮はしたほうがいいでしょう。 ※ちなみに自炊本はファイルサイズが巨大なので圧縮なしでアップロードしようとするとタイムアウトエラーで失敗しまくりました。 圧縮実行中のプロセスの様子。意図した通り並列処理できている模様。これでマルチコアも活かせているはず。 ちなみに今回親フォルダごと tar で固めなかったのは書籍ごとにダウンロードできるようにしたかったためです。 さて、ジョブが終了するまでしばらく待って、いよいよS3へアップロードしていきます。 &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/68" class="more-link">Continue reading<span class="screen-reader-text"> "自炊本などのファイルサイズの大きなものをS3にアップロードする手順"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>外付けHDDに保存していた20GBちょいの自炊本のPDFファイルたちをS3にアップロードして、外出先でも読めるようにしてみました。</p>
+<p><a href="https://www.flickr.com/photos/peppermint2008/2338929690/" title="Books by pepp 2012, on Flickr"><img src="https://farm4.staticflickr.com/3289/2338929690_bcf68a1655_z.jpg" width="580" alt="Books" /></a></p>
+<p>
+<hr />
+<h4>大まかな手順</h4>
+<p>
+<div>
+<ol>
+<li>外付けHDDから Macintosh HD 上へフォルダごとコピーする</li>
+<li>フォルダ内のファイルをすべて bz2 で圧縮する</li>
+<li>S3上で Bucket を作成する</li>
+<li>3Hub を使ってファイルをアップロード</li>
+<li>ファイルがアップロードできているか web console で確認</li>
+</ol>
+</div>
+<p>
+<hr />では順を追って手順を説明していきます。</p>
+<p>まず、もろもろの処理を高速に行うために外付けHDDから Macintosh HD (Mac上の適当なフォルダ) へフォルダごとコピーします。</p>
+<p>そしてそのフォルダ (ここでは /path/to/Books とします) 下のファイルたちを下記のコマンドで bz2 圧縮します。</p>
+<p><kbd>$ find /path/to/Books -type f -not -name '*.bz2' -print0 | xargs -0 -L 1 -P 2 bzip2</kbd></p>
+<p>別に圧縮しなくてもいいのですがAWSは使用容量と通信量の両方に利用料が発生する料金体系なのでできるだけ圧縮はしたほうがいいでしょう。</p>
+<p>※ちなみに自炊本はファイルサイズが巨大なので圧縮なしでアップロードしようとするとタイムアウトエラーで失敗しまくりました。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X9RcOjqb1-U/UxsH5udL2UI/AAAAAAAAR-w/147o10762Ko/s1600/Screenshot_2014-03-08_21_05_44.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-X9RcOjqb1-U/UxsH5udL2UI/AAAAAAAAR-w/147o10762Ko/s640/Screenshot_2014-03-08_21_05_44.png" width="580" /></a></p>
+<p>圧縮実行中のプロセスの様子。意図した通り並列処理できている模様。これでマルチコアも活かせているはず。</p>
+<p>ちなみに今回親フォルダごと tar で固めなかったのは書籍ごとにダウンロードできるようにしたかったためです。</p>
+<p>さて、ジョブが終了するまでしばらく待って、いよいよS3へアップロードしていきます。</p>
+<p><a href="https://console.aws.amazon.com/s3/home">https://console.aws.amazon.com/s3/home</a> で Bucket を作成しましょう。僕は技術書系とそれ以外2つの Bucket を作成しました。</p>
+<p>アップロードには Cyberduck を使ってもよかったのですが今回はS3専用のクライアント <a href="http://www.3hubapp.com/">3Hub</a> を使ってみました。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5aSAbYaM2ps/UxsekXq9ZbI/AAAAAAAAR_Y/EHXvMqDlG4M/s1600/Screenshot%2B2014-03-08%2B22.43.29.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-5aSAbYaM2ps/UxsekXq9ZbI/AAAAAAAAR_Y/EHXvMqDlG4M/s640/Screenshot%2B2014-03-08%2B22.43.29.png" /></a></p>
+<p>concurrency を設定できるので2にあげてみたところ特に詰まることもなくアップロードできました。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jNuPKJu2H_s/UxseSknmrlI/AAAAAAAAR_Q/I-m13AQ4vas/s1600/Screenshot%2B2014-03-08%2B22.41.04.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-jNuPKJu2H_s/UxseSknmrlI/AAAAAAAAR_Q/I-m13AQ4vas/s640/Screenshot%2B2014-03-08%2B22.41.04.png" width="580" /></a></p>
+<p>設定通りに並列アップロードできている様子。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z0BlFyIZFE4/UxsgLcEIP1I/AAAAAAAAR_k/DzRpOJ5XONY/s1600/%10books.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Z0BlFyIZFE4/UxsgLcEIP1I/AAAAAAAAR_k/DzRpOJ5XONY/s640/%10books.png" width="580" /></a></p>
+<p>そして最後に <a href="https://console.aws.amazon.com/s3/home">https://console.aws.amazon.com/s3/home</a> からファイルがアップロードできていることを確認します。</p>
+<p>はい、作業完了です！</p>
+<p>自炊本のファイルサイズはとにかく巨大で、数百冊の量になると MacBook に置こうものならすぐに容量を使いきってしまっていてしかたなく外付けHDDに置いていて不便だったのですが、それがやっと解決しました。</p>
+<p>うぉおおおおおおおん！<br />やっと外出先からでも自由に本を取り出せるよー！</p>
+<p>Dropbox や Google Drive の有料枠よりも格安で利用できるのが嬉しい。</p>
+<p>最後に 3Hub だとURL一覧を簡単に取得できるので、今回を機に冊数を測ってみました。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-68Yuj8y5kok/Uxs9_h2mymI/AAAAAAAASAg/9QM6t7fz8Gg/s1600/Screenshot%2B2014-03-09%2B00.57.33.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-68Yuj8y5kok/Uxs9_h2mymI/AAAAAAAASAg/9QM6t7fz8Gg/s320/Screenshot%2B2014-03-09%2B00.57.33.png" /></a></p>
+<p>これで 2つの Backet の URLs をファイルにおいて <kbd>$ cat *.dat | wc -l</kbd> してみたところ213冊ありました。</p>
+<p>
+<hr />
+<h4>おまけコラム: 本のカテゴリ分けはシンプルに</h4>
+<p>本の量が多くなってくるとついつい細かなカテゴリ分けをしたくなってしまいますが、そこはグッとこらえてできるだけフラットな構成を心がけましょう。本の一覧性を確保するためです。</p>
+<p>人力では最低限のカテゴリ分けのみを行い、特定の本を探すときの絞り込みはコンピュータに仕事させるという思想です。</p>
+<p>
+<hr />
+<h4>参考にしたサイト</h4>
+<div>
+<ul>
+<li>
+<div><small><cite title="xargs を使ってカジュアルに並列処理"><a href="http://d.hatena.ne.jp/tagomoris/20110513/1305267021">tagomorisのメモ置き場</a></cite></small></div>
+</li>
+<li>
+<div><small><cite title="Amazon S3を使ってiPadの容量を仮想的に増やす"><a href="http://www.cyberarchitect.net/blog/archives/718">cyberarchitect</a></cite></small></div>
+</li>
+</ul>
+</div>
+<p>
+<div><adress> <a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/68/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">68</post-id>	</item>
+		<item>
+		<title>Amazonが手にした「読了率」という新しい武器</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/193</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/193#respond</comments>
+		<pubDate>Fri, 25 Jan 2013 21:39:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[IT見聞録]]></category>
+		<category><![CDATA[電子書籍]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/01/25/amazon%e3%81%8c%e6%89%8b%e3%81%ab%e3%81%97%e3%81%9f%e3%80%8c%e8%aa%ad%e4%ba%86%e7%8e%87%e3%80%8d%e3%81%a8%e3%81%84%e3%81%86%e6%96%b0%e3%81%97%e3%81%84%e6%ad%a6%e5%99%a8/</guid>
+		<description><![CDATA[Amazon が新しい武器を手に入れたという話。 「読了率」という指標 上掲の画像からも分かるのですが Kindle では書籍の「読了率」が N% という形で分かるようになっていて、そしてこれは複数の端末間で共有することができます。 ということは、ユーザーの読了率のデータは Amazon がサーバ側で保持しているっぽいということがわかります。 つまり Amazon は Kindle ストアで取り扱われている本についてそれぞれ、平均 N% 読み進められたという分析が技術的には可能であるっぽくて、これは売り切り形態をとっていた従来の出版社であれば把握できない指標ですよねという話になってきます。 よく聞く話として「ベストセラーほど読まれない本はない」(話題になっているだけで「買ったけど読んでないんだよねぇ」という人が多い) という話がありますが、その感覚を Amazon であれば Kindle で販売された分についてはほぼ正確に把握できるということになります。 「読了率」の有用性 さて、この「読了率」という指標ですが、悪く言えば「売れさえすればいい」と考える出版社や著者にとってはこの指標はさほど有用ではなさそうですが、ユーザが購入時にそれを知ることができれば大いに参考になります。 むろんリファレンスとして使われることが多い本など読了率にそぐわない例外はあるとはいえ、その指標を参考にするかどうかは読者に委ねられます。 あるいはユーザーに公開されなくても、「読了率」が出版社や著者にフィードバックされ、それが次の本づくりに活かされるのであれば、それもまたユーザの利益にかなうに違いないです (そして Amazon はこのフィードバックを武器に出版社を獲得していくでしょう)。 この他、「読了率ランキング」が公表されればそれは書評などの人力にたよらずに隠れた良作を発見できるなど、活用方法はいろいろ思いつきます。 とりあえず、少なくとも「読了率」が Kindle によって利用可能なものになりつつあるということに間違いはなさそうです。 追記: レビューのリクエストが送られてきた！ なるほど、そういう手がありましたか。 先日ぼくが Kindle で読み終わった本のレビューを書いてみてよというメールが Amazon から来ました。 このメールによって、多くの「読了済みユーザー」がレビューを書くようになると思います。 現状、Amazonでは「購入済みユーザー」によるレビューがありますが、それより価値の高いレビューになりますね。 @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>Amazon が新しい武器を手に入れたという話。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-QeaFXOSrc9I/UQL6x8N5JwI/AAAAAAAAPQM/g3u1Ig4qYwY/s1600/screenshot_2013_01_25T21_28_09%252B0000.png" style=""><img border="0" height="320" width="520" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-QeaFXOSrc9I/UQL6x8N5JwI/AAAAAAAAPQM/g3u1Ig4qYwY/s320/screenshot_2013_01_25T21_28_09%252B0000.png" /></a></p>
+<h4><b>「読了率」という指標</b></h4>
+<p>上掲の画像からも分かるのですが Kindle では書籍の「読了率」が N% という形で分かるようになっていて、そしてこれは複数の端末間で共有することができます。</p>
+<p>ということは、ユーザーの読了率のデータは Amazon がサーバ側で保持しているっぽいということがわかります。</p>
+<p>つまり Amazon は Kindle ストアで取り扱われている本についてそれぞれ、平均 N% 読み進められたという分析が技術的には可能であるっぽくて、これは売り切り形態をとっていた従来の出版社であれば把握できない指標ですよねという話になってきます。</p>
+<p>よく聞く話として「ベストセラーほど読まれない本はない」(話題になっているだけで「買ったけど読んでないんだよねぇ」という人が多い) という話がありますが、その感覚を Amazon であれば Kindle で販売された分についてはほぼ正確に把握できるということになります。</p>
+<h4><b>「読了率」の有用性</b></h4>
+<p>さて、この「読了率」という指標ですが、悪く言えば「売れさえすればいい」と考える出版社や著者にとってはこの指標はさほど有用ではなさそうですが、ユーザが購入時にそれを知ることができれば大いに参考になります。</p>
+<p>むろんリファレンスとして使われることが多い本など読了率にそぐわない例外はあるとはいえ、その指標を参考にするかどうかは読者に委ねられます。</p>
+<p>あるいはユーザーに公開されなくても、「読了率」が出版社や著者にフィードバックされ、それが次の本づくりに活かされるのであれば、それもまたユーザの利益にかなうに違いないです (そして Amazon はこのフィードバックを武器に出版社を獲得していくでしょう)。</p>
+<p>この他、「読了率ランキング」が公表されればそれは書評などの人力にたよらずに隠れた良作を発見できるなど、活用方法はいろいろ思いつきます。</p>
+<p>とりあえず、少なくとも「読了率」が Kindle によって利用可能なものになりつつあるということに間違いはなさそうです。</p>
+<h4><b>追記: レビューのリクエストが送られてきた！</b></h4>
+<p><a href="http://gyazo.com/103e527cb85d09b8ad2a165710d5a702.png"><img border="0" src="http://gyazo.com/103e527cb85d09b8ad2a165710d5a702.png" /></a></p>
+<p>なるほど、そういう手がありましたか。</p>
+<p>先日ぼくが Kindle で読み終わった本のレビューを書いてみてよというメールが Amazon から来ました。</p>
+<p>このメールによって、多くの「読了済みユーザー」がレビューを書くようになると思います。</p>
+<p>現状、Amazonでは「購入済みユーザー」によるレビューがありますが、それより価値の高いレビューになりますね。</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/193/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">193</post-id>	</item>
+		<item>
+		<title>たとえDRMフリーでなくとも技術書は電子版を買うメリットが上回る</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/195</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/195#respond</comments>
+		<pubDate>Thu, 17 Jan 2013 12:58:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[電子書籍]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/01/17/%e3%81%9f%e3%81%a8%e3%81%88drm%e3%83%95%e3%83%aa%e3%83%bc%e3%81%a7%e3%81%aa%e3%81%8f%e3%81%a8%e3%82%82%e6%8a%80%e8%a1%93%e6%9b%b8%e3%81%af%e9%9b%bb%e5%ad%90%e7%89%88%e3%82%92%e8%b2%b7%e3%81%86/</guid>
+		<description><![CDATA[技術書は通常の本に比べて電子書籍で買うことのメリットが大きいジャンルですので、DRMフリーでなくとも電子書籍で販売されているのであればぜひ購入を検討したいところです。ここでは Google Paly と Kindle を想定して話を進めたいと思います。 まずその1つ目の理由は、 （Google Play や Kindle は母体の企業の規模が大きく世界的に見ても事実上のプラットフォームであり、「読めなくなってしまう」という可能性が比較的低いというのは最低限クリアしつつ）そもそも技術書は内容自体の「消費期限」が短い傾向にあり、「ずっと読める」ことにそこまで神経質になる必要もないというものです。そういう意味でDRMフリー以外のプラットフォームの利用も割とハードル低くさくっと買っちゃうのも悪くはないでしょう。 2つ目の理由は、技術書は分厚くて重いことが多いので、重さ0グラムの電子版は魅力が大きいという点です。特に技術書はリファレンスとして利用されることも多いため、「持ち歩きたい」という動機が強いジャンルです。そういう意味で例えDRMフリーでなくとも持ち運びが用意である電子書籍を選択するのも悪くはないでしょう。 3つめの理由は、デスクトップでも閲覧できるという点です。「読む」より「試す」という側面が強い技術書においては「デスクトップに表示しつつ作業することができる」という点は重要な条件です。その意味では Google Play と Kindle がマルチデバイスに対応しているというのは大きな利点です。 @ymkjp the bookish]]></description>
+				<content:encoded><![CDATA[<p>技術書は通常の本に比べて電子書籍で買うことのメリットが大きいジャンルですので、DRMフリーでなくとも電子書籍で販売されているのであればぜひ購入を検討したいところです。ここでは Google Paly と Kindle を想定して話を進めたいと思います。</p>
+<p>まずその1つ目の理由は、 （Google Play や Kindle は母体の企業の規模が大きく世界的に見ても事実上のプラットフォームであり、「読めなくなってしまう」という可能性が比較的低いというのは最低限クリアしつつ）そもそも技術書は内容自体の「消費期限」が短い傾向にあり、「ずっと読める」ことにそこまで神経質になる必要もないというものです。そういう意味でDRMフリー以外のプラットフォームの利用も割とハードル低くさくっと買っちゃうのも悪くはないでしょう。</p>
+<p>2つ目の理由は、技術書は分厚くて重いことが多いので、重さ0グラムの電子版は魅力が大きいという点です。特に技術書はリファレンスとして利用されることも多いため、「持ち歩きたい」という動機が強いジャンルです。そういう意味で例えDRMフリーでなくとも持ち運びが用意である電子書籍を選択するのも悪くはないでしょう。</p>
+<p>3つめの理由は、デスクトップでも閲覧できるという点です。「読む」より「試す」という側面が強い技術書においては「デスクトップに表示しつつ作業することができる」という点は重要な条件です。その意味では Google Play と Kindle がマルチデバイスに対応しているというのは大きな利点です。</p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp the bookish</a></rights></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/195/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">195</post-id>	</item>
+		<item>
+		<title>DRMフリーの技術書を扱っている出版社 ＋その他大手（2013年前期）</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/196</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/196#respond</comments>
+		<pubDate>Thu, 17 Jan 2013 12:51:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[電子書籍]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/01/17/drm%e3%83%95%e3%83%aa%e3%83%bc%e3%81%ae%e6%8a%80%e8%a1%93%e6%9b%b8%e3%82%92%e6%89%b1%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e5%87%ba%e7%89%88%e7%a4%be-%ef%bc%8b%e3%81%9d%e3%81%ae%e4%bb%96%e5%a4%a7/</guid>
+		<description><![CDATA[早い話が「書名 pdf」や「書名 電子書籍」で検索してチェックを済ませてからポチればいいだけなのですが、一度どういった出版社が電子版の技術書を扱っているのかのインデックスを脳内に貼っておいもよいでしょう。 DRMフリー PDF/EPUBなどDRMフリーなデータ形式で技術書を販売している主な出版社。仮に出版社が倒産しても買った書籍が読めなくなるという心配はない。 O&apos;Reilly Japan Ebook Store オーム社eStore(β) Gihyo Digital Publishing 達人出版会 ブックパブ（ソフトバンククリエイティブなど） 近代科学社ブックストア その他大手 シェアが大きな企業が提供している電子書籍サービス。 Amazon.co.jp: Kindleストア › Kindle本 Google Play の書籍 技術書は電子版を買うことのメリットが比較的大きいジャンルです。その理由を「たとえDRMフリーでなくとも技術書は電子版を買うメリットが大きいことを示す3つの理由」にまとめたので気になる方は読んでみて下さい。 それでは、『RailsによるアジャイルWebアプリケーション開発 第4版』と『Rails3レシピブック 190の技』が実はPDFでも入手可能だったということを知った時の僕と同じ落胆を味わう人が少しでも少なくなりますように。 @ymkjp the bookish]]></description>
+				<content:encoded><![CDATA[<p>早い話が「書名 pdf」や「書名 電子書籍」で検索してチェックを済ませてからポチればいいだけなのですが、一度どういった出版社が電子版の技術書を扱っているのかのインデックスを脳内に貼っておいもよいでしょう。</p>
+<h1>DRMフリー</h1>
+<p>PDF/EPUBなどDRMフリーなデータ形式で技術書を販売している主な出版社。仮に出版社が倒産しても買った書籍が読めなくなるという心配はない。</p>
+<ul>
+<li><a href="http://www.oreilly.co.jp/ebook/">O&apos;Reilly Japan Ebook Store</a></li>
+<li><a href="http://estore.ohmsha.co.jp/titles">オーム社eStore(β)</a></li>
+<li><a href="https://gihyo.jp/dp">Gihyo Digital Publishing</a></li>
+<li><a href="http://tatsu-zine.com/">達人出版会</a></li>
+<li><a href="http://bookpub.jp/books/category/9">ブックパブ（ソフトバンククリエイティブなど）</a>
+<li><a href="http://direct.ips.co.jp/book/kindai.cfm">近代科学社ブックストア</a></li>
+<p></ul>
+<h1>その他大手</h1>
+<p>シェアが大きな企業が提供している電子書籍サービス。 </p>
+<ul>
+<li><a href="http://www.amazon.co.jp/s/ref=sr_nr_n_0?rh=n%3A2250738051%2Cn%3A%212250739051%2Cn%3A2275256051&amp;bbn=2250739051&amp;ie=UTF8&amp;qid=1358422691&amp;rnid=2250739051">Amazon.co.jp: Kindleストア › Kindle本</a></li>
+<li><a href="https://play.google.com/store/books">Google Play の書籍</a></li>
+</ul>
+<p>技術書は電子版を買うことのメリットが比較的大きいジャンルです。その理由を「<a href="http://ymkjp.blogspot.jp/2013/01/drm3.html">たとえDRMフリーでなくとも技術書は電子版を買うメリットが大きいことを示す3つの理由</a>」にまとめたので気になる方は読んでみて下さい。</p>
+<p>それでは、『<a href="http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=978-4-274-06866-9">RailsによるアジャイルWebアプリケーション開発 第4版</a>』と『<a href="http://bookpub.jp/books/bp/198">Rails3レシピブック 190の技</a>』が実はPDFでも入手可能だったということを知った時の僕と同じ落胆を味わう人が少しでも少なくなりますように。</p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp the bookish</a></rights></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/196/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">196</post-id>	</item>
+		<item>
+		<title>★電子書籍のビジネスモデルを箇条書き</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/286</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/286#respond</comments>
+		<pubDate>Wed, 26 May 2010 15:21:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[電子書籍]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2010/05/26/%e2%98%85%e9%9b%bb%e5%ad%90%e6%9b%b8%e7%b1%8d%e3%81%ae%e3%83%93%e3%82%b8%e3%83%8d%e3%82%b9%e3%83%a2%e3%83%87%e3%83%ab%e3%82%92%e7%ae%87%e6%9d%a1%e6%9b%b8%e3%81%8d/</guid>
+		<description><![CDATA[最近はiPadの予約が開始されて、電子書籍について考えることが多い 僕はとある出版社の編集部でアルバイトをしている 電子書籍ビジネスモデルの思考整理をしたい いきなり結論を書くと、ひとことで言うと電子書籍になっても残る出版業界の部門をまとめてオンラインで提供しようというもの。 出版業界の今後も残る部門はズバリこの3つ！ 編集作業（校正）、レイアウト、表紙デザイン、版下作成 広告、プロモーション 流通、販売 1. 編集作業（校正）、レイアウト、表紙デザイン、版下作成 電子書籍になっても編集は絶対残ります 編集者は「他人に文章を読ませるプロ」です 著作者は知識だけ知っていても本は書けない 電子書籍になっても校正は必要 レイアウトとか流通させるための細かい心遣いとかも必要 2. 広告、プロモーション 現代は「消費が金の矢印(YouTube)」な世の中 そこで最も重要なのは広告およびプロモーションなどのプロの戦略 3.流通、販売 流通はトラックで書籍を運搬とかではない オンライン電子書籍販売サイトなりソフトの管理運営 大手にはすでにある程度の流通市場がある まとめ なにより重要なのが、オンライン請負！ しかもすべてまとめて（ワンストップで）！ つまり、著作者は原稿を出版社に送るだけ！ 校正から販売までオンラインで自動処理のような感じ この出版形態はベンチャーが入り込む余地はある しかし講談社などの大手にあるアドヴァンテージはこれ のような既存の市場 しかしアマゾンのような出版社横断的な流通市場はまだない！ チャンス！ 現状では講談社などはケータイコミックですでに大きな市場を築いている 大手出版社が大同団結していますがとして有効に機能しない可能性もある 「抜け駆けを許さない組織」大同団結となるかは、今後の見所 @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>
+<ul>
+<li>最近はiPadの予約が開始されて、電子書籍について考えることが多い</li>
+<li>僕はとある出版社の編集部でアルバイトをしている</li>
+<li>電子書籍ビジネスモデルの思考整理をしたい</li>
+</ul>
+<p>いきなり結論を書くと、ひとことで言うと電子書籍になっても残る出版業界の部門をまとめてオンラインで提供しようというもの。</p>
+<h4>出版業界の今後も残る部門はズバリこの3つ！</h4>
+<ol>
+<li>編集作業（校正）、レイアウト、表紙デザイン、版下作成 </li>
+<li>広告、プロモーション</li>
+<li>流通、販売</li>
+</ol>
+<p><a name='more'></a></p>
+<p>1. 編集作業（校正）、レイアウト、表紙デザイン、版下作成</p>
+<ul>
+<li>電子書籍になっても編集は絶対残ります</li>
+<li>編集者は「他人に文章を読ませるプロ」です</li>
+<li>著作者は知識だけ知っていても本は書けない</li>
+<li>電子書籍になっても校正は必要</li>
+<li>レイアウトとか流通させるための細かい心遣いとかも必要</li>
+</ul>
+<p>2. 広告、プロモーション</p>
+<ul>
+<li>現代は「<a href="http://www.youtube.com/watch?v=h0sVOpzbL98&amp;feature=related">消費が金の矢印(YouTube)</a>」な世の中</li>
+<li>そこで最も重要なのは広告およびプロモーションなどのプロの戦略</li>
+</ul>
+<p>3.流通、販売</p>
+<ul>
+<li>流通はトラックで書籍を運搬とかではない</li>
+<li>オンライン電子書籍販売サイトなりソフトの管理運営</li>
+<li>大手にはすでにある程度の流通市場がある</li>
+</ul>
+<h4>まとめ</h4>
+<ul>
+<li>なにより重要なのが、オンライン請負！</li>
+<li>しかもすべてまとめて（ワンストップで）！ </li>
+<li>つまり、著作者は原稿を出版社に送るだけ！</li>
+<li>校正から販売までオンラインで自動処理のような感じ</li>
+<li>この出版形態はベンチャーが入り込む余地はある</li>
+<li>しかし講談社などの大手にあるアドヴァンテージは<a href="http://www.dotbook.jp/kd_ondemand/buynet.html">これ</a> のような既存の市場</li>
+<li>しかしアマゾンのような出版社横断的な流通市場はまだない！</li>
+<li>チャンス！</li>
+<li>現状では講談社などは<a href="http://www.kodansha.co.jp/comic/">ケータイコミック</a>ですでに大きな市場を築いている</li>
+<li><a href="http://xn--v8jw72hqnbdxe2wd0w8cogkk2h/">大手出版社が大同団結</a>していますがとして有効に機能しない可能性もある</li>
+<li>「抜け駆けを許さない組織」大同団結となるかは、今後の見所</li>
+</ul>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/286/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">286</post-id>	</item>
+		<item>
+		<title>電子書籍のよく言われる６つのデメリット</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/287</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/287#respond</comments>
+		<pubDate>Fri, 14 May 2010 21:38:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[電子書籍]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2010/05/14/%e9%9b%bb%e5%ad%90%e6%9b%b8%e7%b1%8d%e3%81%ae%e3%82%88%e3%81%8f%e8%a8%80%e3%82%8f%e3%82%8c%e3%82%8b%ef%bc%96%e3%81%a4%e3%81%ae%e3%83%87%e3%83%a1%e3%83%aa%e3%83%83%e3%83%88/</guid>
+		<description><![CDATA[★電子書籍のよく言われる６つのデメリット 海賊版 圧倒的に数が少ない（そして販売チャネル） 書き込みができない 生理的に無理（やっぱり紙が良い！） データ管理が面倒 思わぬ発見がない 現状でも文庫本などは十分安い 1. 海賊版 反対派「電子書籍で出版されるとそれが不正コピーされ海賊版（ブートレグ）が出回る」 反対派「著作権違法を助長するからけしからん」 現状：電子書籍が普及していない現在でも実際に不正コピーされたものは出回っている 例１：集英社「週刊少年ジャンプ」の人気海賊マンガ 週刊誌発売前（コミックス発売前ではない！）にYouTubeにアップされる 例２：音楽ファイルと同様 特に人気のものほど海外へ不正コピーしたものが流出し取り締まれなくなる 根本的な問題を忘れている！ 海賊版の問題は前回のエントリーで書いた電子書籍の大きなメリットに及ばない つまり「いま、ここで、早く、読みたい」という人がいる パソコンで瞬時に見たいという需要があるから違法ダウンロード どうしてその人へ正当な手段で正当な書籍を提供しないのでしょうか？ 違法コピーは、なくなりません 音楽ファイルでもう、痛いほどわかっているはず それならば正当なものを供給してしまえ！ そうすることで「対価は払っても良い」と考えている人へ供給することができる 得るべき報酬をより多く得ることができる もちろん電子書籍で出版することによって不正コピーが一層容易になる 「対価は払っても良い」と考えている人からできる限り報酬を得るしかなさそう なぜなら電子書籍のメリットはあまりにも大きいから ※電子書籍によって不正コピーの可能性が高まるのが嫌な著作者は従来どおり紙媒体で出版すればいいのです。※もちろん不正コピーを承認しようなどとは一切考えていません、念のため。 2. 圧倒的に数が少ない（そして販売チャネル） 紙媒体で出版されてきた書籍に比べ、電子書籍の絶対量が少ない 今後出版される本が電子書籍になる 従来の書籍が電子化される その差は縮まってゆき、いずれ逆転する 販売チャンネルの問題 2010年5月現在の電子書籍が普及しないもっとも大きな理由のひとつ もはやアマゾンで実用に耐えないほど書籍の品揃えが悪いと考える人がいない いずれ現在のアマゾン並みの品揃えをもつ電子書籍のサイトがでてくる 時間の問題 3. 書き込みができない 本に線引いたり、書き込んだり、付箋貼ったりしたい！ これも時間の問題、というかすでにできます（わお！） &#160;※2010年1月にすでにサムスンが書き込み可能な端末を発売しています。☞ 韓国サムスン、電子書籍市場に参入 書き込み可能な端末発表。PDFに付箋も貼れます。されに今後も改善拡張されていくでしょう。 4. 生理的に無理（やっぱり紙が良い！） 産経ニュースに「【日本の議論】電子書籍は本当に便利か日本人は紙の本への愛着が深く」 人の感情の話ですので要するに慣れ そうとしか言い様がない しかし… &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/287" class="more-link">Continue reading<span class="screen-reader-text"> "電子書籍のよく言われる６つのデメリット"</span></a>]]></description>
+				<content:encoded><![CDATA[<div dir="ltr" style="text-align: left;"><a href="http://www.wylio.com/credits/flickr/3644097750" title="license: http://creativecommons.org/licenses/by-sa/2.0/ - click to view more info about 'Kali, Avatar of the eBook' or find free 'ebook' pictures via Wylio"><img alt="'Kali, Avatar of the eBook' photo (c) 2009, Javier Candeira - license: http://creativecommons.org/licenses/by-sa/2.0/" height="240" src="http://lh4.ggpht.com/-osXIB7djj7E/Tk4bsIadwZI/AAAAAAAACqM/KDfmp9S6mOU/Flickr-3644097750.jpg" width="175" /></a></div>
+<p>
+<h4><span>★電子書籍のよく言われる６つのデメリット</span></h4>
+<ol style="background-color: #f3f3f3;">
+<li><span style="font-size: small;">海賊版</span></li>
+<li><span style="font-size: small;">圧倒的に数が少ない（そして販売チャネル）</span></li>
+<li><span style="font-size: small;">書き込みができない</span></li>
+<li><span style="font-size: small;">生理的に無理（やっぱり紙が良い！）</span></li>
+<li><span style="font-size: small;">データ管理が面倒</span></li>
+<li><span style="font-size: small;"> 思わぬ発見がない</span></li>
+<li><span style="font-size: small;">現状でも文庫本などは十分安い </span></li>
+</ol>
+<h4><span>1. 海賊版</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>反対派「電子書籍で出版されるとそれが不正コピーされ海賊版（ブートレグ）が出回る」</li>
+<li>反対派「著作権違法を助長するからけしからん」 </li>
+<li><span style="font-size: small;">現状：電子書籍が普及していない現在でも実際に不正コピーされたものは出回っている</span></li>
+<li><span style="font-size: small;">例１：集英社「週刊少年ジャンプ」の人気海賊マンガ</span></li>
+<li><span style="font-size: small;">週刊誌発売前（コミックス発売前ではない！）にYouTubeにアップされる</span></li>
+<li><span style="font-size: small;">例２：音楽ファイルと同様</span></li>
+<li><span style="font-size: small;">特に人気のものほど海外へ不正コピーしたものが流出し取り締まれなくなる</span></li>
+<li><span style="font-size: small;">根本的な問題を忘れている！</span></li>
+<li><span style="font-size: small;">海賊版の問題は<a href="http://ymkjp.blogspot.com/2010/05/blog-post.html">前回のエントリーで書いた電子書籍の大きなメリット</a>に及ばない</span></li>
+<li><span style="font-size: small;">つまり「いま、ここで、早く、読みたい」という人がいる</span></li>
+<li><span style="font-size: small;">パソコンで瞬時に見たいという需要があるから違法ダウンロード </span></li>
+<li><span style="font-size: small;">どうしてその人へ正当な手段で正当な書籍を提供しないのでしょうか？</span></li>
+<li><span style="font-size: small;">違法コピーは、なくなりません</span></li>
+<li><span style="font-size: small;">音楽ファイルでもう、痛いほどわかっているはず</span></li>
+<li>それならば正当なものを供給してしまえ！</li>
+<li>そうすることで「対価は払っても良い」と考えている人へ供給することができる</li>
+<li>得るべき報酬をより多く得ることができる</li>
+<li><b>もちろん電子書籍で出版することによって不正コピーが一層容易になる</b></li>
+<li>「対価は払っても良い」と考えている人からできる限り報酬を得るしかなさそう</li>
+<li>なぜなら電子書籍のメリットはあまりにも大きいから</li>
+</ul>
+<p>※電子書籍によって不正コピーの可能性が高まるのが嫌な著作者は従来どおり紙媒体で出版すればいいのです。<br />※もちろん不正コピーを承認しようなどとは一切考えていません、念のため。 </p>
+<h4><span>2. 圧倒的に数が少ない（そして販売チャネル）</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>紙媒体で出版されてきた書籍に比べ、電子書籍の絶対量が少ない</li>
+<li>今後出版される本が電子書籍になる</li>
+<li>従来の書籍が電子化される</li>
+<li>その差は縮まってゆき、いずれ逆転する</li>
+<li>販売チャンネルの問題</li>
+<li>2010年5月現在の電子書籍が普及しないもっとも大きな理由のひとつ</li>
+<li>もはやアマゾンで実用に耐えないほど書籍の品揃えが悪いと考える人がいない</li>
+<li>いずれ現在のアマゾン並みの品揃えをもつ電子書籍のサイトがでてくる</li>
+<li><span style="font-size: small;">時間の問題</span></li>
+</ul>
+<h4><span>3. 書き込みができない</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>本に線引いたり、書き込んだり、付箋貼ったりしたい！</li>
+<li>これも時間の問題、というかすでにできます（わお！）</li>
+</ul>
+<p><span style="font-size: xx-small;">&nbsp;※2010年1月にすでにサムスンが書き込み可能な端末を発売しています。</span><br /><span style="font-size: xx-small;">☞ <a href="http://www.afpbb.com/article/environment-science-it/it/2680186/5131528">韓国サムスン、電子書籍市場に参入 書き込み可能な端末発表。</a>PDFに付箋も貼れます。されに今後も改善拡張されていくでしょう。 </span></p>
+<p>
+<h4><span>4. 生理的に無理（やっぱり紙が良い！）</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>産経ニュースに「<a href="http://sankei.jp.msn.com/economy/it/100509/its1005090701000-n1.htm">【日本の議論】電子書籍は本当に便利か日本人は紙の本への愛着が深く</a>」</li>
+<li><span style="font-size: small;">人の感情の話ですので要するに慣れ</span></li>
+<li><span style="font-size: small;">そうとしか言い様がない</span></li>
+<li><span style="font-size: small;">しかし… </span></li>
+<li><b>例えば、 ワープロが普及したとき</b></li>
+<li>当初は結構反発があった</li>
+<li>「日本語を横書きにすると、日本語がダメになるぞ！」と</li>
+<li>今、そんなことを言っているひとを見つけるのはすでにiPadを購入して誤って落としバキバキに壊れてしまった人を見つけるよりも困難</li>
+<li><b>例えば、レコードとCDを思い出す。</b></li>
+<li>レコードのアナログな音と、大きなジャケットの所有欲を支持する人は予想以上に多い</li>
+<li>DJなどクラブ文化に明るい若者にも支持者は多い（わたしの知り合いも）</li>
+<li>おそらく、書籍の装丁もレコードと同じようにそのものに価値を見出す人がいるであろう</li>
+<li>おそらく大部分の人がCDそして、オンライン音楽配信へ流れたのと同様な現象</li>
+</ul>
+<h4><span>5. データ管理が面倒</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>安心して</li>
+<li>あなたでも使えるテレビのような端末がでてくるから（キラッ）</li>
+<li>バックアップもクラウド化で低コストになる</li>
+</ul>
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cloud_computing.svg/500px-Cloud_computing.svg.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cloud_computing.svg/500px-Cloud_computing.svg.png" width="320" /></a></p>
+<p>
+<h4><span>6. 思わぬ発見がない</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>「<a href="http://www.mishimaga.com/hon-watashi/009.html">何か思わぬ発見を求めて 本屋さんに行きます</a>」（福岡伸一）<br />&nbsp;</li>
+<li>いいですね、わかりますその気持ち…</li>
+<li><b><span style="font-size: small;">その機能はウェブにもあります</span></b></li>
+<li><span style="font-size: small;">「思わぬ」というのはパソコンの得意分野</span></li>
+<li><span style="font-size: small;">パソコンはランダムに抽出するのが得意</span></li>
+<li><span style="font-size: small;">「それは違うよ、わかっていない」</span></li>
+<li><span style="font-size: small;">「書店のおすすめが見たいんだよ、という方」</span></li>
+<li><span style="font-size: small;">大丈夫</span></li>
+<li><span style="font-size: small;">ウェブ上でおすすめ書籍リストを見つけるのは、JR山手線のホームでiPhoneを使っている人を見つけるのより簡単です</span></li>
+</ul>
+<p>※さらに幸運なことに、あなたにあうおすすめをしてくれる人をウェブ上で発見する可能性は、三月書房のおすすめが自分にあっている可能性よりも大部分のひとにとって高いでしょう。<br />※ただ、ランダムに並ぶ書店の実用上の利用価値は相当期間残るでしょう</p>
+<h4><span>7. 現状でも文庫本などは十分安い</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>アメリカで電子書籍が爆発的にはやったのは、もともと本の値段が高いから</li>
+<li>対して文庫本が安く質も良い日本では電子書籍は普及しないといわれている</li>
+<li>これは重要な指摘</li>
+<li>もしかすると、残念ながら思った以上に時間がかかるかも</li>
+<li>しかし結局いずれは市場の原理とイノベーションの力によって電子書籍が普及していく</li>
+</ul>
+<p>※文庫本の平均価格（2006）：607円(出版科学研究所)&nbsp;<br />私はこの記事を書くために日本の文庫本の平均価格を調べた。607円というのは私たちのイメージともそう遠くない。しかし、あきらかに民間でできる仕事を行う文化庁管轄の公益法人出版科学研究所を見つけてしまった。ああ。電子書籍の普及阻害があるとすればこういう団体なのだろうか。</p>
+<p>
+<h4>★デメリットまとめ </h4>
+<ul style="background-color: #f3f3f3;">
+<li><span style="font-size: small;">電子書籍の日本での普及は遠くもないが近くもない</span></li>
+<li>iPadかキンドルかもしくはその他のデバイスかは重要ではない</li>
+<li>それらがより改良され、著作者サイドが読者に利便性を高めるようなものが作られれば、普及しないはずはない</li>
+<li>私は自分の孫にハリーポッターの新聞の魔法で動く写真というものを、実物を見せて説明できそう</li>
+</ul>
+<p>
+<div style="background-color: white; color: black;">See also: <a href="http://ymkjp.blogspot.com/2010/05/blog-post.html"><b><i>電子書籍の意外と気づかれていない６つのメリット</i></b></a></div>
+<p>
+<blockquote>
+<p>Kindle で買った本がいまいちだったが、中古本で売ることはできない。誰かにあげてしまうこともできない。</p>
+<p>&mdash; もしかして: 山本健太 (@ymkjp) <a href="https://twitter.com/ymkjp/status/279830057571205121" data-datetime="2012-12-15T06:07:39+00:00">December 15, 2012</a></p></blockquote>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/287/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">287</post-id>	</item>
+		<item>
+		<title>電子書籍の意外と気づかれていない６つのメリット</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/288</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/288#respond</comments>
+		<pubDate>Fri, 14 May 2010 19:48:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[電子書籍]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2010/05/14/%e9%9b%bb%e5%ad%90%e6%9b%b8%e7%b1%8d%e3%81%ae%e6%84%8f%e5%a4%96%e3%81%a8%e6%b0%97%e3%81%a5%e3%81%8b%e3%82%8c%e3%81%a6%e3%81%84%e3%81%aa%e3%81%84%ef%bc%96%e3%81%a4%e3%81%ae%e3%83%a1%e3%83%aa%e3%83%83/</guid>
+		<description><![CDATA[いよいよ「電子書籍の始まりの始まり」という感じ ※600億円のケータイコミックというガラパゴス市場は以前より存在 検索したところ電子書籍のメリットとデメリットについてあまり見かけない これを機に電子書籍のメリットとデメリットについておさらい ★電子書籍の意外と気づかれていない６つのメリット 買った瞬間に読める 本棚が必要なくなる(不動産に縛られなくなる) 目的の記述を発見しやすい 絶版本がかなり減る 書籍のアクセシビリティが高まる 環境にやさしい 1. 買った瞬間に読める すでに現在のアマゾンは「PCさえあればいつでも/どこでも」+「速攻購入」を達成 電子書籍は「アマゾン」+「ダウンロードした瞬間読める」！ 早さの求められる情報社会においては圧倒的なメリット！ 2.本棚が必要なくなる(不動産に縛られなくなる) 実は紙媒体の書籍の一番の問題点は不動産 ※小飼弾さんの「紙の本は90パーセント消えます」を読めばわかる 紙媒体の本では本が何百、何千と増えていけば、部屋では保管しきれなくなる →いずれ倉庫のようなものを借りる必要がでてくる 本好きが最終的にいたる問題は「不動産問題」である 持ち運びの際も「不動産」は例外ではない iPadで気軽に1000冊の本を持ち運ぶことはできる しかし素手で1000冊となれば容易ではない！ 3. 目的の記述を発見しやすい 電子書籍は複数の書籍を横断的にワードなどを検索することができる！ さまざまなソートにより検索が可能 「著作者」 「あなたが最後に読んだ日」 「あなたが購入した日」 あなたの指定したキーワード 本のタイトルがわかっているならその本の中から キーワードやだいたいのページで検索 早く目的の情報へたどり着く ※図書館で借りるにも、その本を特定しなければなりません。まず、持っていた本のタイトルを覚えていれば良いですが、とにかく(幸運なことにその図書館に該当の本があればですが)図書館でその本であっているかどうか確認する必要があります。これは図書館で借りなくとも、書店で購入する場合も同様です。ただし、再販制度に縛られてほとんど新刊しか置いていない一般書店ではより一層困難を極めるでしょう。また、お探しの本が絶版となっている場合は、探し出すことは事実上不可能になる場合もあるでしょう。 3. 絶版本がかなり減る 書籍の文字データは無限に増殖可能 印刷、在庫、流通においてコストがかからない 何かほかの理由で版元などが絶版にしない限り絶版はない ※ただし逆に、 アマゾンが『1984年』という書籍をキンドルから無断削除した問題[魚拓] など、不安定な部分がありますが、これは権利関係がしっかりと認知されれば無断削除などということは無くなっていくと思われます。※また、版元がしっかりしていない個人になる場合があります。書籍のウェブページ化ともいうべき現象ですが、おそらく書籍はよりウェブに近くなっていきます。しかし、データを複製しておけば、容易にバックアップ可能でしょう。 ※iPadとKindleについてはこちらの本をどうそ。 4. 書籍のアクセシビリティが高まる 電子書籍はすべての人のアクセシビリティ(利用容易度)を向上させる 社会的弱者だけではない 紙媒体の書籍より「安い」 すべての人への書籍へのアクセシビリティを高める 電子書籍は安いだけではない 例：最近横書き日本語の本が増えて困っている縦書き派の人 →購入したテキストデータは用意に縦書き表示にできる*1 &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/288" class="more-link">Continue reading<span class="screen-reader-text"> "電子書籍の意外と気づかれていない６つのメリット"</span></a>]]></description>
+				<content:encoded><![CDATA[<div dir="ltr" style="text-align: left;"><a href="http://www.wylio.com/credits/flickr/4230946242" title="license: http://creativecommons.org/licenses/by/2.0/ - click to view more info about 'eBook Reader' or find free 'ebook' pictures via Wylio"><img alt="'eBook Reader' photo (c) 2009, Aitor Calero - license: http://creativecommons.org/licenses/by/2.0/" height="192" src="http://lh6.ggpht.com/-GPTWIERU8SA/Tk4bXOwrLTI/AAAAAAAACqI/7xHqzYWV6XI/Flickr-4230946242.jpg" width="175" /></a>
+<ul style="background-color: #f3f3f3;">
+<li>いよいよ「電子書籍の始まりの始まり」という感じ</li>
+<li>※<a href="http://twitter.com/fukuyuki/status/13533815087">600億円のケータイコミックというガラパゴス市場</a>は以前より存在</li>
+<li>検索したところ電子書籍のメリットとデメリットについてあまり見かけない</li>
+<li>これを機に電子書籍のメリットと<a href="http://ymkjp.blogspot.com/2010/05/blog-post_15.html">デメリット</a>についておさらい</li>
+</ul>
+<h4><span>★電子書籍の意外と気づかれていない６つのメリット</span></h4>
+<ol style="background-color: #eeeeee;">
+<li>買った瞬間に読める</li>
+<li>本棚が必要なくなる(不動産に縛られなくなる)</li>
+<li>目的の記述を発見しやすい</li>
+<li>絶版本がかなり減る</li>
+<li>書籍のアクセシビリティが高まる</li>
+<li>環境にやさしい</li>
+</ol>
+<h4><span>1. 買った瞬間に読める</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>すでに現在のアマゾンは「PCさえあればいつでも/どこでも」+「速攻購入」を達成</li>
+<li>電子書籍は「アマゾン」+「ダウンロードした瞬間読める」！</li>
+<li>早さの求められる情報社会においては圧倒的なメリット！</li>
+</ul>
+<h4>2.<span>本棚が必要なくなる(不動産に縛られなくなる)</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>実は紙媒体の書籍の一番の問題点は不動産</li>
+<li>※<a href="http://zasshi.news.yahoo.co.jp/article?a=20100419-00000302-gtwo-ind">小飼弾さんの「紙の本は90パーセント消えます」</a>を読めばわかる</li>
+<li><span style="font-size: small;">紙媒体の本では本が何百、何千と増えていけば、部屋では保管しきれなくなる</span></li>
+<li><span style="font-size: small;">→いずれ倉庫のようなものを借りる必要がでてくる</span></li>
+<li><span style="font-size: small;">本好きが最終的にいたる問題は「不動産問題」である</span></li>
+<li><span style="font-size: small;">持ち運びの際も「不動産」は例外ではない</span></li>
+<li><span style="font-size: small;">iPadで気軽に1000冊の本を持ち運ぶことはできる</span></li>
+<li><span style="font-size: small;">しかし素手で1000冊となれば容易ではない！</span></li>
+</ul>
+<h4><span>3. 目的の記述を発見しやすい</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li><span style="font-size: small;">電子書籍は複数の書籍を横断的にワードなどを検索することができる！</span></li>
+<li><b><span style="font-size: small;">さまざまなソートにより検索が可能</span></b></li>
+<li><span style="font-size: small;">「著作者」</span></li>
+<li><span style="font-size: small;">「あなたが最後に読んだ日」</span></li>
+<li><span style="font-size: small;">「あなたが購入した日」</span></li>
+<li><span style="font-size: small;">あなたの指定したキーワード</span></li>
+<li><span style="font-size: small;">本のタイトルがわかっているならその本の中から</span></li>
+<li><span style="font-size: small;">キーワードやだいたいのページで検索</span></li>
+<li><span style="font-size: small;">早く目的の情報へたどり着く</span></li>
+</ul>
+<p><span style="font-size: x-small;">※図書館で借りるにも、その本を特定しなければなりません。まず、持っていた本のタイトルを覚えていれば良いですが、とにかく(幸運なことにその図書館に該当の本があればですが)図書館でその本であっているかどうか確認する必要があります。これは図書館で借りなくとも、書店で購入する場合も同様です。ただし、再販制度に縛られてほとんど新刊しか置いていない一般書店ではより一層困難を極めるでしょう。また、お探しの本が絶版となっている場合は、探し出すことは事実上不可能になる場合もあるでしょう。</span></p>
+<p>
+<h4><span>3. 絶版本がかなり減る</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li><b><span style="font-size: small;">書籍の文字データは無限に増殖可能</span></b></li>
+<li><b><span style="font-size: small;">印刷、在庫、流通においてコストがかからない</span></b></li>
+<li><span style="font-size: small;">何かほかの理由で版元などが絶版にしない限り絶版はない</span></li>
+</ul>
+<p><span style="font-size: x-small;">※ただし逆に、 <a href="http://megalodon.jp/2010-0515-0357-22/www.rue89japon.com/?p=2988">アマゾンが『1984年』という書籍をキンドルから無断削除した問題[魚拓]</a> など、不安定な部分がありますが、これは権利関係がしっかりと認知されれば無断削除などということは無くなっていくと思われます。</span><br /><span style="font-size: x-small;">※また、版元がしっかりしていない個人になる場合があります。書籍のウェブページ化ともいうべき現象ですが、おそらく書籍はよりウェブに近くなっていきます。しかし、データを複製しておけば、容易にバックアップ可能でしょう。 </span><br /><span style="font-size: x-small;">※iPadとKindleについては<a href="http://www.amazon.co.jp/gp/product/404726430X?ie=UTF8&amp;tag=m0b55-22&amp;linkCode=as2&amp;camp=247&amp;creative=7399&amp;creativeASIN=404726430X">こちらの本</a>をどうそ。</span> </p>
+<p>
+<h4><span>4. 書籍のアクセシビリティが高まる</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>電子書籍はすべての人のアクセシビリティ(利用容易度)を向上させる</li>
+<li>社会的弱者だけではない</li>
+<li><b>紙媒体の書籍より「安い」</b></li>
+<li>すべての人への書籍へのアクセシビリティを高める</li>
+<li>電子書籍は安いだけではない</li>
+<li>例：最近横書き日本語の本が増えて困っている縦書き派の人</li>
+<li>→購入したテキストデータは用意に縦書き表示にできる*1</li>
+<li>高齢者や障害者などいわゆる社会的弱者のひとにこそ利用されるべきもの</li>
+<li><b>電子書籍ならば視覚障害者は音声ソフトで読める</b></li>
+<li><b>遠視の高齢者は文字を拡大するだけ</b></li>
+<li><b>音訳ボランティアや大きな活字シリーズが必要でなくなるというわけではない</b></li>
+<li><b>電子書籍はすべての人の選択肢を増やす</b></li>
+<li>今までどおり音訳ボランティアの方が読んでくれたものの方が良い人はそちらを選択できる</li>
+</ul>
+<p><span style="font-size: x-small;">*1 もちろん、著作者がどうしても横書きで読んでほしい場合は、そのように注釈をつけることも可能でしょう。 </span><br /><span style="font-size: x-small;">※おそらく、どれほど音声読み上げソフトの質が上がろうと音訳ボランティアの需要は減ることは多少あってもなくなることはないと思います。 ボランティアの方とのふれあいを副次的に、もしくは第一義的に求める視覚障害の方はいらっしゃるでしょう。それに、音声読み上げソフトの声質がいつまでも機械的だと&#8221;感じる&#8221;人はきっといます</span><span style="font-size: x-small;">(そもそも「言語」という非論理的なものをソフトで完全に対応させることは困難を極めるでしょうが) </span><span style="font-size: x-small;">。どれだけソフトの質が上がろうと、データで表すことのできない感覚です。「音訳ボランティアの方が呼んでくれていることそのもの」に意味を見出す人は少なからずいるはずです。</span></p>
+<p>
+<h4><span>5. 環境にやさしい</span></h4>
+<ul style="background-color: #f3f3f3;">
+<li>電子書籍は流通など中間経路（コストも）を大幅にカット</li>
+<li>紙、印刷インク、書籍カバーは省ける</li>
+<li><span style="font-size: small;">流通はオンラインで済ませられますからトラックの燃料も必要ない</span></li>
+</ul>
+<p>
+<h4>メリットまとめ</h4>
+<ul style="background-color: #f3f3f3;">
+<li><span style="font-size: small;"><span>意外と気づかれていないようなメリットを５つだけあげた</span></span></li>
+<li><span style="font-size: small;"><span>他にも</span></span>店員とかかわらなくても済む(アダルト的な意味で利点？)などいろいろと<span style="font-size: small;"><span>ある</span></span></li>
+<li><span style="font-size: large;"><span style="font-size: small;">これらのメリットはデバイスやアプリ、著作者側のアイデアによって現状以上に拡張されていく</span></span></li>
+<li><span style="font-size: small;">電子書籍は、活版印刷以来の書籍のパラダイムシフトである </span></li>
+</ul>
+</div>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/288/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">288</post-id>	</item>
+	</channel>
+</rss>

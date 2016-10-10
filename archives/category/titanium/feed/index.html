@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Titanium &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/titanium/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>Titanium &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>Box2D(Titanium)サンプルコードを読み下してみよう 第3編 world.js</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/267</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/267#respond</comments>
+		<pubDate>Wed, 30 Nov 2011 22:20:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[Titanium]]></category>
+		<category><![CDATA[開発]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2011/11/30/box2dtitanium%e3%82%b5%e3%83%b3%e3%83%97%e3%83%ab%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e8%aa%ad%e3%81%bf%e4%b8%8b%e3%81%97%e3%81%a6%e3%81%bf%e3%82%88%e3%81%86-%e7%ac%ac3%e7%b7%a8-world-js/</guid>
+		<description><![CDATA[■ いざ、world.js いよいよ、最後です。★マークの部分で重要なことを書いていますので拾い読みしてください。Titanium向けBox2DのサンプルであるTiBallの3つめのファイルworld.jsのソースコードを読んでいきたいと思います。 1. world.jsでもui.jsと同じく、まず即時関数でapp.worldのオブジェクトを作ります。あとはここにボディなどを順次載せていきます。 2. ★ まずゲームの世界をつくります。ここではcreateWorldという（カッコイイ）関数だけを使います。引数にはゲーム本体を載せるViewであるgameBoardを、返り値にはworldをもたせます。このworldとは、box2d.createWorldとなっていることからも分かるように、box2dのモジュールの恩恵を受けることのできる重要な部分です。重力／摩擦／衝突などの物理計算をするための設定をしていきます。難しい計算はすべてBox2Dがやってくれます！ 3. ゲームの世界を作り込んでいきます。Box2Dらしい大切な要素としては、setGravityという重力を導入できるメソッドや、先述したボディの独特な生成の仕方などがあります。以下に列挙してみます。 ★ Ti.API.info(e); すれば分かりますが、”collision”イベントでは以下の通りの値が返ってきています。[INFO] {a = &#8220;[object TiBox2dBody]&#8221;;b = &#8220;[object TiBox2dBody]&#8221;;phase = begin;source = &#8220;[object TiBox2dWorld]&#8221;;type = collision;}つまり、if(e.phase == &#8220;begin&#8221;) {switch(e.a) { … }} で書けば、衝突のpaseが&#8221;begin&#8221;（始まった時）で、かつ、そのボディ（e.a）ごとに処理を記述できます。e.aとは、具体的には、TiBallのサンプルでは case app.world.hole : で、ゲームの画面底にボールが当たった時の処理が書かれています。 【ToDo】touchmoveイベントで動的なボディに衝突させまくっていると以下のエラーを吐いて落ちるAssertion failed: (m_world-&#62;IsLocked() == false), function SetTransform, file /Users/~/appcelerator-titanium_modules-4e7c145/box2d/mobile/ios/Box2D/Box2D/Dynamics/b2Body.cpp, line 398. 以上です。 Box2D(Titanium)サンプルコードを読み下してみよう 第1編 app.js Box2D(Titanium)サンプルコードを読み下してみよう 第2編 &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/267" class="more-link">Continue reading<span class="screen-reader-text"> "Box2D(Titanium)サンプルコードを読み下してみよう 第3編 world.js"</span></a>]]></description>
+				<content:encoded><![CDATA[<p><b>■ いざ、world.js</b></p>
+<p>いよいよ、最後です。<span style="background-color: black; color: yellow;">★</span>マークの部分で重要なことを書いていますので拾い読みしてください。<br />Titanium向けBox2DのサンプルであるTiBallの3つめのファイルworld.jsのソースコードを読んでいきたいと思います。</p>
+<p>1. world.jsでもui.jsと同じく、まず即時関数でapp.worldのオブジェクトを作ります。あとはここにボディなどを順次載せていきます。</p>
+<p>2. <span style="background-color: black; color: yellow;">★</span> まずゲームの世界をつくります。ここではcreateWorldという（カッコイイ）関数だけを使います。引数にはゲーム本体を載せるViewであるgameBoardを、返り値にはworldをもたせます。このworldとは、box2d.createWorldとなっていることからも分かるように、box2dのモジュールの恩恵を受けることのできる重要な部分です。重力／摩擦／衝突などの物理計算をするための設定をしていきます。難しい計算はすべてBox2Dがやってくれます！</p>
+<p>3. ゲームの世界を作り込んでいきます。Box2Dらしい大切な要素としては、setGravityという重力を導入できるメソッドや、先述したボディの独特な生成の仕方などがあります。以下に列挙してみます。</p>
+<p><span style="background-color: black; color: yellow;">★</span> Ti.API.info(e); すれば分かりますが、”collision”イベントでは以下の通りの値が返ってきています。<br />[INFO] {<br />a = &#8220;[object TiBox2dBody]&#8221;;<br />b = &#8220;[object TiBox2dBody]&#8221;;<br />phase = begin;<br />source = &#8220;[object TiBox2dWorld]&#8221;;<br />type = collision;<br />}<br />つまり、if(e.phase == &#8220;begin&#8221;) {switch(e.a) { … }} で書けば、衝突のpaseが&#8221;begin&#8221;（始まった時）で、かつ、そのボディ（e.a）ごとに処理を記述できます。e.aとは、具体的には、TiBallのサンプルでは case app.world.hole : で、ゲームの画面底にボールが当たった時の処理が書かれています。</p>
+<p>【ToDo】touchmoveイベントで動的なボディに衝突させまくっていると以下のエラーを吐いて落ちる<br />Assertion failed: (m_world-&gt;IsLocked() == false), function SetTransform, file /Users/~/appcelerator-titanium_modules-4e7c145/box2d/mobile/ios/Box2D/Box2D/Dynamics/b2Body.cpp, line 398.</p>
+<p>以上です。</p>
+<ul>
+<li><a href="http://ymkjp.blogspot.com/2011/11/box2dtitanium-1-appjs.html">Box2D(Titanium)サンプルコードを読み下してみよう 第1編 app.js</a></li>
+<li><a href="http://ymkjp.blogspot.com/2011/12/box2dtitanium-2-uijs.html">Box2D(Titanium)サンプルコードを読み下してみよう 第2編 ui.js</a></li>
+<li><a href="http://ymkjp.blogspot.com/2011/12/box2dtitanium-3-worldjs.html">Box2D(Titanium)サンプルコードを読み下してみよう 第3編 world.js</a></li>
+</ul>
+<p><a name='more'></a></p>
+<div style="display: none; left: 38px; position: absolute; top: 246px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=%E2%98%85&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 34px; position: absolute; top: 243px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=%E2%98%85&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 17px; position: absolute; top: 489px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=%E2%98%85&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 177px; position: absolute; top: 67px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=%E2%98%85&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 177px; position: absolute; top: 66px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=%E2%98%85&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/267/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">267</post-id>	</item>
+		<item>
+		<title>Box2D(Titanium)サンプルコードを読み下してみよう 第2編 ui.js</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/268</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/268#respond</comments>
+		<pubDate>Wed, 30 Nov 2011 22:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[Titanium]]></category>
+		<category><![CDATA[開発]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2011/11/30/box2dtitanium%e3%82%b5%e3%83%b3%e3%83%97%e3%83%ab%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e8%aa%ad%e3%81%bf%e4%b8%8b%e3%81%97%e3%81%a6%e3%81%bf%e3%82%88%e3%81%86-%e7%ac%ac2%e7%b7%a8-ui-js/</guid>
+		<description><![CDATA[■ 次にui.jsTitanium向けBox2DのサンプルであるTiBallの2つめのファイルui.jsのソースコードを読んでいきたいと思います。★マークの部分で重要なことを書いていますので拾い読みしてください。 大まかにいえば、ui.jsはメニュー画面やゲーム画面を載せるような大きなViewとそれを載せるWindowをつくるところです。 1. 即時関数でapp.uiのオブジェクトを作ります。あとはここに順次載せていく。 2. app.uiにoverlayというプロパティを持たせる。★ ここのoverlay重要。Box2Dのタップなどのイベントの制御は（生成されたボディそのものではなく）このoverlayに載せていくことになる。⇒つまり、動いているボディを制御するためには、（そのボディそのものにイベントリスナをつけることはできず）e.globalPoint.xなどの座標を指定するなどした、見えない新しいボディを生成して、その別のボディが”衝突”したように見せかけて制御する。イベントはTitaniumのものを使用する。※ボディとは、ゲームの世界で動くもの（ピンボールのボール）やゲームの世界で動かないもの（ピンボールの壁など）のこと。詳しくはworld.jsの項で後述。 3. メニュー画面やゲーム本体のWindowやViewの載せていきかたはソースコードを読めば分かる。Titaniumなどと一緒。 上記をまとめた感じでソースコードに落としこんでみます。 以上です。 Box2D(Titanium)サンプルコードを読み下してみよう 第1編 app.js Box2D(Titanium)サンプルコードを読み下してみよう 第2編 ui.js Box2D(Titanium)サンプルコードを読み下してみよう 第3編 world.js]]></description>
+				<content:encoded><![CDATA[<p><b>■ 次にui.js</b><br />Titanium向けBox2DのサンプルであるTiBallの2つめのファイルui.jsのソースコードを読んでいきたいと思います。<br /><span style="background-color: black; color: yellow;">★</span>マークの部分で重要なことを書いていますので拾い読みしてください。</p>
+<p>大まかにいえば、ui.jsはメニュー画面やゲーム画面を載せるような大きなViewとそれを載せるWindowをつくるところです。</p>
+<p>1. 即時関数でapp.uiのオブジェクトを作ります。あとはここに順次載せていく。</p>
+<p>2. app.uiにoverlayというプロパティを持たせる。<br /><span style="background-color: black; color: yellow;">★</span> ここのoverlay重要。Box2Dのタップなどのイベントの制御は（生成されたボディそのものではなく）このoverlayに載せていくことになる。<br />⇒つまり、動いているボディを制御するためには、（そのボディそのものにイベントリスナをつけることはできず）e.globalPoint.xなどの座標を指定するなどした、見えない新しいボディを生成して、その別のボディが”衝突”したように見せかけて制御する。イベントはTitaniumのものを使用する。<br />※ボディとは、ゲームの世界で動くもの（ピンボールのボール）やゲームの世界で動かないもの（ピンボールの壁など）のこと。詳しくはworld.jsの項で後述。</p>
+<p>3. メニュー画面やゲーム本体のWindowやViewの載せていきかたはソースコードを読めば分かる。Titaniumなどと一緒。</p>
+<p>上記をまとめた感じでソースコードに落としこんでみます。</p>
+<p>以上です。</p>
+<ul>
+<li><a href="http://ymkjp.blogspot.com/2011/11/box2dtitanium-1-appjs.html">Box2D(Titanium)サンプルコードを読み下してみよう 第1編 app.js</a></li>
+<li><a href="http://ymkjp.blogspot.com/2011/12/box2dtitanium-2-uijs.html">Box2D(Titanium)サンプルコードを読み下してみよう 第2編 ui.js</a></li>
+<li><a href="http://ymkjp.blogspot.com/2011/12/box2dtitanium-3-worldjs.html">Box2D(Titanium)サンプルコードを読み下してみよう 第3編 world.js</a></li>
+</ul>
+<p><a name='more'></a></p>
+<p>
+<div style="display: none; left: 13px; position: absolute; top: 292px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=%E2%98%85&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 328px; position: absolute; top: 330px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=%E2%98%85&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/268/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">268</post-id>	</item>
+		<item>
+		<title>Box2D(Titanium)サンプルコードを読み下してみよう 第1編 app.js</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/269</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/269#respond</comments>
+		<pubDate>Tue, 29 Nov 2011 06:05:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[Titanium]]></category>
+		<category><![CDATA[開発]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2011/11/29/box2dtitanium%e3%82%b5%e3%83%b3%e3%83%97%e3%83%ab%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e8%aa%ad%e3%81%bf%e4%b8%8b%e3%81%97%e3%81%a6%e3%81%bf%e3%82%88%e3%81%86-%e7%ac%ac1%e7%b7%a8-app-js/</guid>
+		<description><![CDATA[Titanium向けBox2DのサンプルであるTiBallの1つめのファイルapp.jsのソースコードを読んでいきたいと思います。 app.jsは短いですのでまるっと見ていきます。 以上です。]]></description>
+				<content:encoded><![CDATA[<p>Titanium向けBox2DのサンプルであるTiBallの1つめのファイルapp.jsのソースコードを読んでいきたいと思います。</p>
+<p>app.jsは短いですのでまるっと見ていきます。</p>
+<p>以上です。</p>
+<p><a name='more'></a></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/269/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">269</post-id>	</item>
+		<item>
+		<title>Box2D(Titanium)サンプルコードを読み下してみよう 第0編</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/270</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/270#respond</comments>
+		<pubDate>Tue, 29 Nov 2011 06:01:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[Titanium]]></category>
+		<category><![CDATA[開発]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2011/11/29/box2dtitanium%e3%82%b5%e3%83%b3%e3%83%97%e3%83%ab%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e8%aa%ad%e3%81%bf%e4%b8%8b%e3%81%97%e3%81%a6%e3%81%bf%e3%82%88%e3%81%86-%e7%ac%ac0%e7%b7%a8/</guid>
+		<description><![CDATA[■ TiBallを読む ■ Box2Dとは2D物理エンジンであり、この度、ゲームプログラミングに適していないといわれるTitanium Studioの救世主として降臨した。 ↑本家Box2Dはこんな感じ((o(´∀｀)o))ﾜｸﾜｸ 詳しくは公式の「ゲーミングがやって来るヤァ!ヤァ!ヤァ!」的エントリーである下記を参照いただくと幸甚である。 Gaming comes to Titanium, Introducing the Box2D module! « Appcelerator Developer Center ■ モジュールのビルドとサンプルを動かすまで基本的にはTitanium Studioへの導入は上記の公式エントリーに簡潔にまとまっている。しかし公式エントリー通り試してもうまくいかない僕のような迷える子羊ちゃんのために友人である松岡くんが&#160;Titanium MobileでBox2dをつかう &#124; 三粒備忘録&#160;というエントリーを書いてくれているのでぜひ参考にされたい。そして無事、モジュールの導入が終わり、サンプルであるTiballでひと通りピンボールに興じ、いざコーディングという私たちの前に立ちはだかるのは以下の2点の壁である。 Box2dのTitanium向けのリファレンスがない！ There&#8217;s no&#160;references&#160;about Box2D for Titanium studio! そう、Titaniumには英文のリファレンスすらないのである。ということで、僕のようなTitaniumでまともにプログラミングをはじめたような人にできることはサンプルであるTiBallのコードを読み下していくことである。一週間でiPhoneアプリがつくれると名高いTitaniumだからこそ、この初心者的なエントリーの需要の余地も許されているのではないだろうか。 ■ ファイルは3つさて、道草をはんでいる時間も惜しいのでさっそく。Titanium向けBox2DのサンプルであるTiBallは以下の3つのファイルからなっている。 app.js ui.js world.js それぞれの内容は、 app.jsはおまじない的+コンフィグ的役割 ui.jsは名前の通りUIの作成 そしてworld.jsはゲームの核となる動きの部分 を担っています。 それでは、Box2Dの扱い方を理解するべくそれぞれのソースコードを読み下していってみます。 Box2D(Titanium)サンプルコードを読み下してみよう 第1編 app.js Box2D(Titanium)サンプルコードを読み下してみよう 第2編 ui.js Box2D(Titanium)サンプルコードを読み下してみよう 第3編 world.js 以上です。]]></description>
+				<content:encoded><![CDATA[<p><span style="font-size: large;"><b>■ TiBallを読む</b></span>
+<div style="clear: both; text-align: center;"><a href="http://hidekun.info/wp-content/uploads/2011/11/TiBall.png"><img border="0" height="640" src="http://hidekun.info/wp-content/uploads/2011/11/TiBall.png" width="348" /></a></div>
+<p><b>■ Box2Dとは</b><br />2D物理エンジンであり、この度、ゲームプログラミングに適していないといわれるTitanium Studioの救世主として降臨した。</p>
+<p><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/Wq-XJMJEAnE" width="560"></iframe><br />↑本家Box2Dはこんな感じ((o(´∀｀)o))ﾜｸﾜｸ</p>
+<p>詳しくは公式の「ゲーミングがやって来るヤァ!ヤァ!ヤァ!」的エントリーである下記を参照いただくと幸甚である。</p>
+<div style="clear: both; text-align: center;"><img border="0" height="208" src="http://3.bp.blogspot.com/-KS0Wn0UfJT4/TtRxKD455zI/AAAAAAAACyw/bVBst0Zov3g/s400/Gaming+comes+to+Titanium%252C+Introducing+the+Box2D+module%2521+%25C2%25AB+Appcelerator+Developer+Center.png" width="400" /></div>
+<p><a href="http://developer.appcelerator.com/blog/2011/09/gaming-comes-to-titanium-introducing-the-box2d-module.html">Gaming comes to Titanium, Introducing the Box2D module! « Appcelerator Developer Center</a></p>
+<p><b>■ モジュールのビルドとサンプルを動かすまで</b><br />基本的にはTitanium Studioへの導入は上記の公式エントリーに簡潔にまとまっている。<br />しかし公式エントリー通り試してもうまくいかない僕のような迷える子羊ちゃんのために友人である松岡くんが&nbsp;<a href="http://hidekun.info/2011/11/19/327">Titanium MobileでBox2dをつかう | 三粒備忘録</a>&nbsp;というエントリーを書いてくれているのでぜひ参考にされたい。そして無事、モジュールの導入が終わり、サンプルであるTiballでひと通りピンボールに興じ、いざコーディングという私たちの前に立ちはだかるのは以下の2点の壁である。</p>
+<div>
+<ol>
+<li>Box2dのTitanium向けのリファレンスがない！</li>
+<li>There&#8217;s no&nbsp;references&nbsp;about Box2D for Titanium studio!</li>
+</ol>
+</div>
+<p>そう、Titaniumには英文のリファレンスすらないのである。ということで、僕のようなTitaniumでまともにプログラミングをはじめたような人にできることはサンプルであるTiBallのコードを読み下していくことである。一週間でiPhoneアプリがつくれると名高いTitaniumだからこそ、この初心者的なエントリーの需要の余地も許されているのではないだろうか。</p>
+<p><span style="font-size: large;"><b>■ ファイルは3つ</b></span><br />さて、道草をはんでいる時間も惜しいのでさっそく。<br />Titanium向けBox2DのサンプルであるTiBallは以下の3つのファイルからなっている。
+<ol>
+<li>app.js</li>
+<li>ui.js</li>
+<li>world.js</li>
+</ol>
+<div></div>
+<div>それぞれの内容は、</div>
+<ol>
+<li>app.jsはおまじない的+コンフィグ的役割</li>
+<li>ui.jsは名前の通りUIの作成</li>
+<li>そしてworld.jsはゲームの核となる動きの部分</li>
+</ol>
+<p>を担っています。</p>
+<p>それでは、Box2Dの扱い方を理解するべくそれぞれのソースコードを読み下していってみます。
+<ul>
+<li><a href="http://ymkjp.blogspot.com/2011/11/box2dtitanium-1-appjs.html">Box2D(Titanium)サンプルコードを読み下してみよう 第1編 app.js</a></li>
+<li><a href="http://ymkjp.blogspot.com/2011/12/box2dtitanium-2-uijs.html">Box2D(Titanium)サンプルコードを読み下してみよう 第2編 ui.js</a></li>
+<li><a href="http://ymkjp.blogspot.com/2011/12/box2dtitanium-3-worldjs.html">Box2D(Titanium)サンプルコードを読み下してみよう 第3編 world.js</a></li>
+</ul>
+<p>以上です。</p>
+<p><a name='more'></a></p>
+<div style="display: none; left: 9px; position: absolute; top: 772px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=app.jsui.js%0Aworld.js&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 263px; position: absolute; top: 1742px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=references&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 119px; position: absolute; top: 1749px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=thing&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 69px; position: absolute; top: 1159px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=OX&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 57px; position: absolute; top: 757px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=OX&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 110px; position: absolute; top: 2195px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=OX&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 283px; position: absolute; top: 1753px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=via&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+<div style="display: none; left: 56px; position: absolute; top: 2009px; z-index: 2147483647;"><iframe border="0" frameborder="0" height="60" name="weblioExtensionsFrame" scrolling="no" src="http://api.weblio.jp/act/quote/v_1_0/e/?q=app.js&amp;type=emicro&amp;opul=chrome-extension%3A%2F%2Foingodpdjohhkelnginmkagmkbplgema%2Foptions.html" width="320"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/270/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">270</post-id>	</item>
+	</channel>
+</rss>

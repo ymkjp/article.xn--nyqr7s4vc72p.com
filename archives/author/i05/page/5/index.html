@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>@i05 | It works! - Part 5</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,453] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="description"  content="A Tokyo based software developer, a grad student belongs to a security lab at JAIST, and a husband of my mrs." />
+<meta name="robots" content="noindex,follow" />
+<link rel='prev' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/4' />
+<link rel='next' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/6' />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/5" />
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Posts by @i05 Feed" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="archive paged author author-i05 author-1 paged-5 author-paged-5 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></p>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">Author: <span class="vcard">@i05</span></h1>			</header><!-- .page-header -->
+
+			
+<article id="post-26" class="post-26 post type-post status-publish format-standard hentry category-dev category-hello_world category-ruby">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/26" rel="bookmark">How to query against Global Brand Database&#8217;s internal API</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>I found a interesting question on Quora and <a href="http://www.quora.com/Intellectual-Property-1/Is-there-an-API-to-the-WIPO-Trademark-database/answer/Yamamoto-Kenta#comment8267990">tried to answer it</a>.</p>
+<p><a name='more'></a>
+<pre>require 'net/http'<br />require 'uri'<br />require 'json'<br />require 'pp'<br /> <br />url = URI.parse('http://www.wipo.int/branddb/jsp/select.jsp')<br />req = Net::HTTP::Post.new(url.path)<br />req.body = URI.encode_www_form [<br /> ['q' , 'BRAND:sushi'],<br /> ['fl' , 'BRAND,SOURCE,STATUS,score,OO,HOL,ID,AD,VCS,USC,NC,IMG,ID'],<br /> ['hl' , 'true'],<br /> ['hl.requireFieldMatch' , 'true'],<br /> ['hl.fragsize' , '5000'],<br /> ['type' , 'brand'],<br /> ['facet' , 'true'],<br /> ['qi' , '2285-1422386635681'],<br /> ['json.nl' , 'map'],<br /> ['wt' , 'json'],<br /> ['sort' , 'score desc,AD desc'],<br /> ['rows' , '30'],<br /> ['start' , '0'],<br /> ['f.SOURCE.facet.limit' , '50'],<br /> ['f.SOURCE.facet.mincount' , '1'],<br /> ['f.STATUS.facet.limit' , '20'],<br /> ['f.STATUS.facet.mincount' , '1'],<br /> ['f.OO.facet.mincount' , '1'],<br /> ['facet.field' , 'SOURCE'],<br /> ['facet.field' , 'STATUS'],<br /> ['facet.field' , 'OO'],<br /> ['facet.query' , 'ITY:VERBAL'],<br /> ['facet.query'  , 'ITY:NONVERBAL'],<br /> ['facet.query' , 'ITY:COMBINED'],<br /> ['facet.query' , 'ITY:UNKNOWN'],<br /> ['facet.query' , 'ED:[* TO NOW/DAY]'],<br /> ['facet.query' , 'ED:[NOW/DAY-1MONTH TO NOW/DAY]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO *]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO NOW/DAY+1MONTH]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO NOW/DAY+6MONTHS]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO NOW/DAY+1YEAR]'],<br />]<br />res = Net::HTTP.new(url.host, url.port).start {|http| http.request(req) }<br />case res<br />when Net::HTTPSuccess, Net::HTTPRedirection<br />  # OK<br />  pp JSON.parse(res.body)<br />else<br />  pp res.value<br />end</pre>
+<p><a href="https://gist.github.com/ymkjp/55aff114ef7c63cb14f3#file-wipo-rb">https://gist.github.com/ymkjp/55aff114ef7c63cb14f3#file-wipo-rb</a></p>
+<p><i>Feel free to ask about this article: <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/26" rel="bookmark"><time class="entry-date published updated" datetime="2015-01-26T23:17:00+00:00">2015-01-26</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/hello_world" rel="category tag">hello_world</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/ruby" rel="category tag">Ruby</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/26#respond"><span class="dsq-postid" data-dsqidentifier="26 http://tk2-249-34500.vs.sakura.ne.jp/2015/01/26/how-to-query-against-global-brand-databases-internal-api/">Leave a comment<span class="screen-reader-text"> on How to query against Global Brand Database&#8217;s internal API</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-27" class="post-27 post type-post status-publish format-standard hentry category-dev">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/27" rel="bookmark">ssh がサーバと接続できなくなったときに素早く諦めさせる</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<pre>$ tail -n4 ~/.ssh/config<br />Host example.com<br />  HostName example.com<br />  ServerAliveInterval 1<br />  ServerAliveCountMax 1<br /></pre>
+<p>これで物理LANケーブルを抜いて Wifi 接続に切り替わったときなどに &#8220;Timeout, server example.com not responding.&#8221; というメッセージと共に接続を切ってくれる。</p>
+<p>デフォルトだとTCPセッションが生きている限り接続を切れないので職場のように安定しているネットワーク環境でPCと共に離席することが多めだと便利。</p>
+<p>もし場面によって使い分けたければ ssh の -o オプションを利用するとよさそう。</p>
+<p><kbd>$ ssh -o 'ServerAliveInterval 1' -o 'ServerAliveCountMax 1' <a class="__cf_email__" href="https://article.xn--nyqr7s4vc72p.com/cdn-cgi/l/email-protection" data-cfemail="2b5e584e596b4e534a465b474e05484446">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></kbd></p>
+<p>ちなみに ServerAliveInterval はデフォルト無効で ServerAliveCountMax のデフォルト値は3です。</p>
+<p><i>この記事へのご意見・ご質問は <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> へどうぞ！</i> <a name='more'></a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/27" rel="bookmark"><time class="entry-date published updated" datetime="2014-09-12T09:00:00+00:00">2014-09-12</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/27#respond"><span class="dsq-postid" data-dsqidentifier="27 http://tk2-249-34500.vs.sakura.ne.jp/2014/09/12/ssh-%e3%81%8c%e3%82%b5%e3%83%bc%e3%83%90%e3%81%a8%e6%8e%a5%e7%b6%9a%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%8f%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ab%e7%b4%a0%e6%97%a9%e3%81%8f%e8%ab%a6/">Leave a comment<span class="screen-reader-text"> on ssh がサーバと接続できなくなったときに素早く諦めさせる</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-28" class="post-28 post type-post status-publish format-standard hentry category-21">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/28" rel="bookmark">金鯱 (Echinocactus grusonii) の育て方</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://www.flickr.com/photos/66622113@N08/14745268847" title="Echinocactus grusonii by i05, on Flickr"><img src="https://farm6.staticflickr.com/5590/14745268847_650a932d64.jpg" width="500" height="500" alt="Echinocactus grusonii" /></a></p>
+<p>
+<h4><b>タマサボテン キンシャチ (Echinocactus grusonii)</b></h4>
+<p>「サボテンの王様」、金鯱の育て方をまとめてみます。</p>
+<p>原産地はメキシコのケレタロ。</p>
+<p>育て方には関係ないため詳しくは割愛しますが、金鯱の自生地はダムに沈んでしまったため絶滅危惧IB類に指定されています</p>
+<p><a href="http://shabomaniac.blog13.fc2.com/blog-entry-82.html"><i>※参照: 金鯱の旅。 &#8211; Shabomaniac!</i></a></p>
+<p>春秋生育型で4～6月頃に最も生長します。<br />生育期は土の表面が乾いたら鉢底から出るくらい水をたっぷりあげます。</p>
+<p>夏場は生育が鈍るため春場に比べて辛め、半分の回数にしましょう。</p>
+<p>また、耐寒性が低いため冬場はおおよそ休眠時期です。室内で5℃以上が維持できる場合には月に1回軽めに水を与えるくらいで良く、それ以下の0℃近くの温度でしたら、水を切って乾かしてしまたほうがよいでしょう。</p>
+<p>植え替えは花をつけるような大きな株になるまでは毎年行います。</p>
+<p>
+<blockquote style="font-size: small;"><b>（１）サボテンの植替え</b><br />サボテンの植替えは毎年３月中旬に行います。できたら毎年植替えをおこなって下さい。植替えの用土はできるだけ水はけの良いものを選びます。</p>
+<p><b>（２）水やり</b><br />サボテンは乾燥した土地に自生していますので水の与え過ぎは禁物です。基本的には用土の表面が乾いてから２～3日して水を与えます。サボテンの多くは春と秋に成長しますので目安として、春秋ー１回/週、夏ー１回/隔週、冬ー１回/３週位が良いでしょう。また水を与えるときは鉢底から水が流れ出す位たっぷりと与えて下さい。</p>
+<p><b>（３）置き場所</b>　 <br />サボテンは日がガンガン当たり、雨にぬれない場所が必要です。屋外に置く場合はビニールで簡易的な温室を作りできるだけ長時間日が当たる場所に置くと良いでしょう。夏はふたを開け風通しをよくし、冬はふたを閉めて寒さを防げる物が良いと思います。また室内では窓辺の日が良く当たる場所に置いて下さい。</p>
+<div><small><cite title="サボテンの育て方（育て方いろいろ）"><a href="http://www.geocities.jp/fukuyokazu/sabo1.html">福ちゃん和ちゃん</a></cite></small></div>
+</blockquote>
+<p><a name='more'></a> </p>
+<p>ご意見ご質問は <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> へどうぞ！</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/28" rel="bookmark"><time class="entry-date published updated" datetime="2014-08-10T04:50:00+00:00">2014-08-10</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%82%b5%e3%83%9c%e3%83%86%e3%83%b3" rel="category tag">サボテン</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/28#respond"><span class="dsq-postid" data-dsqidentifier="28 http://tk2-249-34500.vs.sakura.ne.jp/2014/08/10/%e9%87%91%e9%af%b1-echinocactus-grusonii-%e3%81%ae%e8%82%b2%e3%81%a6%e6%96%b9/">Leave a comment<span class="screen-reader-text"> on 金鯱 (Echinocactus grusonii) の育て方</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-29" class="post-29 post type-post status-publish format-standard hentry category-22">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/29" rel="bookmark">十二の巻 (Haworthia fasciata) の育て方</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://www.flickr.com/photos/66622113@N08/14862871734" title="Haworthia fasciata by i05, on Flickr"><img src="https://farm4.staticflickr.com/3902/14862871734_512b6313f7.jpg" width="500" height="500" alt="Haworthia fasciata" /></a></p>
+<p>
+<h4><b>ハルオチア ジュウニノマキ (Haworthia fasciata)</b></h4>
+<p>
+<blockquote style="font-size: small;">ポイント<br />・春～秋は直射日光を避ける<br />・夏は風通しの良い場所、冬は寒さが避けられる場所へ<br />・水は土が乾いてから、冬は乾かし気味に
+<div><small><cite title="ジュウニノマキ (十二の巻：ハウォルチア) の育て方"><a href="http://www.yasashi.info/shi_00043.html">ヤサシイエンゲイ</a><br /></cite></small></div>
+</blockquote>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/29" rel="bookmark"><time class="entry-date published updated" datetime="2014-08-09T18:03:00+00:00">2014-08-09</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%a4%9a%e8%82%89" rel="category tag">多肉</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/29#respond"><span class="dsq-postid" data-dsqidentifier="29 http://tk2-249-34500.vs.sakura.ne.jp/2014/08/09/%e5%8d%81%e4%ba%8c%e3%81%ae%e5%b7%bb-haworthia-fasciata-%e3%81%ae%e8%82%b2%e3%81%a6%e6%96%b9/">Leave a comment<span class="screen-reader-text"> on 十二の巻 (Haworthia fasciata) の育て方</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-30" class="post-30 post type-post status-publish format-standard hentry category-21">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/30" rel="bookmark">紫太陽 (Echinocereus rigidissimus) の育て方</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://www.flickr.com/photos/66622113@N08/14885426543" title="Echinocereus rigidissimus by i05, on Flickr"><img src="https://farm4.staticflickr.com/3896/14885426543_e2e4c7951c.jpg" width="500" height="500" alt="Echinocereus rigidissimus" /></a></p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14885425323" title="Echinocereus rigidissimus by i05, on Flickr"><img src="https://farm4.staticflickr.com/3864/14885425323_ab0c1f97ab.jpg" width="500" height="500" alt="Echinocereus rigidissimus" /></a></p>
+<p>
+<h4><b>エキノケレウス ルビスピヌス &#8220;紫太陽&#8221; (Echinocereus rigidissimus)</b></h4>
+<p><a href="http://nara-taniku.net/">奈良多肉植物研究会</a>が出品しているヤフオクで落札したものが届いたので育て方を調べました。</p>
+<p>ちなみに3号鉢サイズで1100円でした。</p>
+<p>個人的には縦に伸ばしたくないので、あまり肥料や水は与えずにおこうと思っていましたが、小型の種であるためそれほど大きくはならないそうです。</p>
+<p>きれいに紫色を出すために日にはよく当てます。</p>
+<p>
+<blockquote style="font-size: small;">メキシコ &#8211; チワワ州の大部分を占める乾燥地帯、チワワ砂漠(Desierto de Chihuahua)が原産です。<br />チワワ砂漠の中でも、石灰岩の乏しい酸性土壌の砂礫地帯に自生しています。<br />&#8216;Echinocereus rigidissimus&#8217;（太陽）の変種とされている小型のサボテンで、成長しても高さ30cmほどの大きさにしかなりません。<br />やや頭頂部が太くなった円筒形をしており、ある程度の大きさに成長すると株元から仔株を吹いてきます。</p>
+<p><b>【置き場所】</b><br />年間を通して日光のよくあたる場所で管理します。<br />エキノセレウス・ルブリスピヌスは遮蔽物のない砂漠地帯に自生しているため、日光には十分当てましょう。<br />日光が不足した場合、細長く徒長したり、エキノセレウス・ルブリスピヌスの特徴である赤紫のトゲの色が薄くなります。</p>
+<p>ただし真夏の西日や長期間の断水期間中は日光が強すぎると株にダメージを与えることがあるため、寒冷紗などで適度に遮光して管理しましょう。</p>
+<p><b>【水やり】</b><br />春から秋にかけての気温の高い季節に成長します。</p>
+<p>成長期は用土が乾いて数日たってから水やりします。<br />成長期も用土が長時間湿った状態にするよりも、潅水と乾燥のメリハリをつけて水やりするようにします。</p>
+<p>あまり頻繁に水やりすると徒長したり根腐れを起こすので、気をつけましょう。</p>
+<p>また、寒さが厳しくなる秋から冬にかけては断水気味に管理します。<br />休眠中の冬に水やりする際は天気の良い暖かい午前中にごく少量だけ水やりしましょう。</p>
+<p><b>【肥料】</b><br />成長期に数度、ごく薄めた液肥を与えます。<br />用土によく醗酵した有機質肥料や、マグァンプKなどの緩効性肥料をごく少量混ぜ込んでおいても良いと思います。</p>
+<p><b>【適温】</b><br />エキノセレウス・ルブリスピヌスは断水管理した場合はかなりの寒さに耐えることができますが、厳冬期は暖かい場所で管理した方が安全に冬越しできます。<br />蒸し暑さに弱いので、夏は涼し過ごせるようにしましょう。
+<div><small><cite title="Echinocereus rigidissimus var. rubrispinus - 紫太陽"><a href="http://isladelpescado.com/item/succulents/cactus/echinocereus_rigidissimus_var_rubrispinus.html">isla del pescado</a></cite></small></div>
+</blockquote>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/30" rel="bookmark"><time class="entry-date published updated" datetime="2014-08-09T13:40:00+00:00">2014-08-09</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%82%b5%e3%83%9c%e3%83%86%e3%83%b3" rel="category tag">サボテン</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/30#respond"><span class="dsq-postid" data-dsqidentifier="30 http://tk2-249-34500.vs.sakura.ne.jp/2014/08/09/%e7%b4%ab%e5%a4%aa%e9%99%bd-echinocereus-rigidissimus-%e3%81%ae%e8%82%b2%e3%81%a6%e6%96%b9/">Leave a comment<span class="screen-reader-text"> on 紫太陽 (Echinocereus rigidissimus) の育て方</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-31" class="post-31 post type-post status-publish format-standard hentry category-22">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/31" rel="bookmark">亀甲竜 (Dioscorea elephantipes) の育て方</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://www.flickr.com/photos/66622113@N08/14862480271" title="Dioscorea elephantipes by i05, on Flickr"><img src="https://farm4.staticflickr.com/3850/14862480271_1ee7ee8ac1.jpg" width="375" height="500" alt="Dioscorea elephantipes" /></a></p>
+<p>
+<h4><b>ヤマノイモ属 キッコウリュウ (Dioscorea elephantipes)</b></h4>
+<p>塊根植物 (コーデックス) の代表種ですね。</p>
+<p><a href="http://nara-taniku.net/">奈良多肉植物研究会</a>にて購入した株が届いたので育て方をまとめてみました。</p>
+<p>ちなみに4号鉢サイズで2000円でした。</p>
+<p>
+<blockquote style="font-size: small;">南アフリカ原産。<br />耐えることのできる最も低い温度は10℃。日向を好み、土壌は水捌けの良いところを好む。
+<div><small><cite title="キッコウリュウ"><a href="http://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%83%E3%82%B3%E3%82%A6%E3%83%AA%E3%83%A5%E3%82%A6#cite_note-encyclopedia-1">Wikipedia</a></cite></small></div>
+</blockquote>
+<p>
+<blockquote style="font-size: small;">成長期は、秋から春で、夏はツルを枯らして休眠する。<br />雌雄異株で、♂と♀の比率は 30:1 といわれる。<br />亀甲竜は、成長期は根が発達するので、肥沃な用土、かなりの潅水と多肥を要求する。ところが、休眠期には十分に乾燥させることが必要なので、初めから大鉢や重い用土を用いると用土が乾燥しにくく、障害を起こすことがある。
+<div><small><cite title="メキシコ亀甲竜　Dioscorea macrostachya"><a href="http://www.mirai.ne.jp/~panther/cactus/niku20.html">ぱんさのサボテンランド</a></cite></small></div>
+</blockquote>
+<p>
+<blockquote style="font-size: small;"><b>【置き場所】</b><br />夏は少し遮光をして、風通しの良い場所で管理します。<br />成長期である秋から春にかけては、直射日光のあたる明るい場所で管理します。<br />亀甲竜は成長期に日光が不足するとツルがだらしなく間延びしてしまいます。<br />こんもりと勢い良く葉を茂らせるためにも成長期は日光によく当てましょう。</p>
+<p>寒い季節は雪が常に降り積もっているような厳冬地を除いて、屋外でも管理可能ですが、その際は雨や雪が直接かからない場所で管理しましょう。<br />また冷たい風が常に当たる場所だと、いくら冬型とはいえ葉が枯れ込んだり落ちる場合がありますので注意しましょう。</p>
+<p><b>【水やり】</b><br />春から初夏にかけて葉が落ち始めたころから徐々に水を控え、夏は完全に断水します。<br />亀甲竜は涼しくなってくると徐々にツルが芽吹きだしてきますので、その頃から少しづつ水やりを開始します。</p>
+<p>その際もいきなりたくさん水をあげると腐りやすいので注意しましょう。</p>
+<p><b>【肥料】</b><br />成長期の初秋や春に数度、微量元素が不足しない程度に薄めた液肥を与えます。<br />用土によく醗酵した有機質や、マグァンプKなどの緩効性肥料を少量混ぜ込んでおいても良いと思います。</p>
+<p><b>【適温】</b><br />亀甲竜は涼しい季節に成長する植物のため、寒さには強いほうです。<br />夏の蒸し暑さに気をつけ、暑い季節は涼しい場所で管理しましょう。
+<div><small><cite title="Dioscorea elephantipes - 亀甲竜"><a href="http://isladelpescado.com/item/succulents/caudex/dioscorea_elephantipes.html">isla del pescado</a></cite></small></div>
+</blockquote>
+<p>
+<blockquote style="font-size: small;"><b>夏と冬に違う管理をして下さい！</b><br />特徴でも説明しましたが、夏に葉を落とし、冬に葉を茂らせます。<br />出荷は秋から冬の時期ですから、春までは葉を楽しみます。<br />４月頃（環境によって違う）に、葉が一斉に茶色になって枯れてしまったようになります。<br />これは休眠への準備で、決して枯れてしまった訳ではありません。<br />枯れたと思って捨ててしまわないように注意して下さい。<br />なおこれからの説明は、冬と夏の２通りの説明をします。</p>
+<p><b>日なたか半日陰の場所に置いて下さい</b><br />冬：半日陰でも大丈夫ですが、日なたの方が成長します。<br />屋内か軒下が良いでしょう。<br />夏：葉が無いため、日当たりは気にする必要がありません。<br />ただし雨の当たらない場所に置いて下さい。</p>
+<p><b>温度管理について</b><br />冬：５℃以上になる場所に置いて下さい。<br />夏：なるべく涼しい場所に置いて下さい。</p>
+<p><b>水やりについて気を付けること</b><br />冬：鉢土が乾いた次の日くらいに、たっぷりと水を与えて下さい。<br />極端に与えすぎると、イモが腐ってしまうことがあります。<br />夏：１ヶ月に１回程度与えるくらいで、ほとんど与えません。<br />茎を切り落とした後からです。</p>
+<p><b>肥料の与え方</b><br />冬：２ヶ月に１回、市販の化成肥料を少な目に与えて下さい。<br />夏：与える必要はありません。</p>
+<p><b>伸びすぎた枝は</b><br />冬：蔓性の植物ですから、枝はどんどん伸びます。放っておくと<br />近くの物に絡みつきますので、１週間に１回程度中に巻き付けるように<br />して下さい。１月頃から伸びも収まります。<br />夏：枝はありません。</p>
+<p><b>春の作業と秋の新芽について</b><br />４月頃には葉が茶色になります。１週間しても状態が変わらないようなら、茎を根元から切り取ってください。<br />地上部はイモだけになるようにしても、株は痛みません。このまま夏越しします。<br />９月頃（環境による）には、新しい芽が生えてきます。<br />１０ｃｍ程伸びたところから、水やりを始めます。ついでに肥料も与えましょう。生育がより早くなります。</p>
+<p><b>植え替えの時期と方法</b><br />イモの成長はゆっくりですが、それでも年々大きくなってきます。イモがちょっと窮屈になったら、大きな鉢に植え替えてください。<br />植え替えの時期は９月頃の新芽が出てきた時です。<br />夏の間に外側の根は死んでいますので、植え替える鉢の大きさによって、少しは根を切っても構いません。<br />用土はほとんどどんなものでも構いませんが、水はけの良い土をお勧めします。
+<div><small><cite title="キッコウリュウ"><a href="http://www.oz-plants.jp/FBData/Dioscorea.html#%E8%82%B2%E3%81%A6%E6%96%B9%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88">OZ-Plants</a></cite></small></div>
+</blockquote>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/31" rel="bookmark"><time class="entry-date published updated" datetime="2014-08-09T13:07:00+00:00">2014-08-09</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%a4%9a%e8%82%89" rel="category tag">多肉</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/31#respond"><span class="dsq-postid" data-dsqidentifier="31 http://tk2-249-34500.vs.sakura.ne.jp/2014/08/09/%e4%ba%80%e7%94%b2%e7%ab%9c-dioscorea-elephantipes-%e3%81%ae%e8%82%b2%e3%81%a6%e6%96%b9/">Leave a comment<span class="screen-reader-text"> on 亀甲竜 (Dioscorea elephantipes) の育て方</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-32" class="post-32 post type-post status-publish format-standard hentry category-21">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/32" rel="bookmark">玉翁 (Mammillaria hahniana) の育て方</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://www.flickr.com/photos/66622113@N08/14745227888" title="Mammillaria hahniana by i05, on Flickr"><img src="https://farm6.staticflickr.com/5559/14745227888_2f458cb868.jpg" width="500" height="500" alt="Mammillaria hahniana" /></a></p>
+<p>
+<h4><b>マミラリア ハーニアナ &#8220;玉翁&#8221; (Mammillaria hahniana)</b></h4>
+<p>有名種ですね。</p>
+<p>英名では Old lady cactus と呼ばれるようです。</p>
+<p>ヤフオクで750円で落札して第四種郵便の送料込みで960円でした。</p>
+<p>
+<blockquote style="font-size: small;">耐寒性も高いので、水やり直後の数日間を除いて、防風対策だけして終日屋外で管理しています。ただし5cm以下の小さな苗は耐寒性がありませんので、マイナス予報の時は夜間室内に取り込みます。またなるべく朝早い時間から陽が当たる場所で、かつ長い日照時間を確保できれば申し分ありません！玉翁に限ったことではありませんが、冬の日照はとにかくまず朝日を重視しましょう！<br />水やりですが、花芽を上げ、次々に開花していると培養土の乾きも早くなると思いますが、春から秋にかけて十分に育っていれば、それほど多くの水は必要ないでしょう。<br />水やりの仕方は、腰水で鉢の下1/3ほどを水に2、3秒間浸して引き上げる方法で行っています。我が家の玉翁のように、表土がほとんど見えなくなっている状態で、たっぷり水やりすると、いつまで経っても上半分が乾かないので、このような方法で水やりしています。水やりのタイミングは鉢底を見て、鉢底石が十分い乾いていること、鉢を持って軽いこと、そして数日間は天気の良い日が続き、最低気温のマイナス予報が出ていない時でしょうか？！マイナス予報が出ていても良い天気が続くのであれば、夜間室内に取り込むことで十分対応できます。
+<div><small><cite title="マミラリア属 玉翁"><a href="http://lovecomet2010.blog48.fc2.com/blog-entry-2065.html">Cometのサボテン栽培日記</a></cite></small></div>
+</blockquote>
+<blockquote style="font-size: small;"><p><b>花の特徴</b><br />開花期間：2月下旬から5月下旬（栽培環境や植え替え時期などで変わります）<br />備考：強い日差しがないと全開しない</p>
+<p><b>性状（特徴）</b><br />・原産地はメキシコのオアハカ州、ベラクルス州、モレロス州、プエブラ州に分布しており、標高1500m-2000mほどあります。<br />・耐寒性、耐暑性に優れ、鍛えればマイナス5.9度から42.2度以上になる我が家のベランダでも大丈夫です。<br />・強光線にも強く、というよりは強光線で育てた方がよ く、1年中直射日光で育てます。<br />・水やりはマミラリアに共通しますが、やや少なめがいいみたいです。水やりが多いと徒長し地肌が良く見えるようになります。冬場は30～50日に一回ぐらいで十分です。
+<div><small><cite title="サボテン科マミラリア属 内裏玉（だいりぎょく）の栽培暦と育て方"><a href="http://lovecomet.web.fc2.com/mammillaria/dairigyoku.html">Cometの趣味の園芸</a></cite></small></div>
+</blockquote>
+<p>先達のありがたい情報を鑑みるに、玉翁は日光をよく当て、水は少なめにしたほうがよさそうです。</p>
+<p>成長期は春と秋で、真夏の直射日光などが長時間あたると株が弱ることもあるので寒冷紗などで遮光して調整も必要とのこと。</p>
+<p>メキシコの高地が原産のため性質が強いようです。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/32" rel="bookmark"><time class="entry-date published updated" datetime="2014-08-09T12:35:00+00:00">2014-08-09</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%82%b5%e3%83%9c%e3%83%86%e3%83%b3" rel="category tag">サボテン</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/32#respond"><span class="dsq-postid" data-dsqidentifier="32 http://tk2-249-34500.vs.sakura.ne.jp/2014/08/09/%e7%8e%89%e7%bf%81-mammillaria-hahniana-%e3%81%ae%e8%82%b2%e3%81%a6%e6%96%b9/">Leave a comment<span class="screen-reader-text"> on 玉翁 (Mammillaria hahniana) の育て方</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-33" class="post-33 post type-post status-publish format-standard hentry category-21">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/33" rel="bookmark">姫春星 (Mammillaria humboldtii) の育て方</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://www.flickr.com/photos/66622113@N08/14679031107" title="Mammillaria humboldtii by i05, on Flickr"><img src="https://farm4.staticflickr.com/3879/14679031107_73def4d3b0.jpg" width="500" height="500" alt="Mammillaria humboldtii" /></a></p>
+<p>
+<h4><b>マミラリア ハンボルデティ &#8220;姫春星&#8221; (Mammillaria humboldtii)</b></h4>
+<p>マミラリアで群生といえばこの姫春星。</p>
+<p><a href="http://nara-taniku.net/">奈良多肉植物研究会</a>が出品しているヤフオクで1000円にて落札しました。</p>
+<p>奈良研は初めてでしたが、植えかたが綺麗なので観賞価値があがりますね。</p>
+<p>さて姫春星ですが、小型で球形、子吹きして群生します。</p>
+<p>他のマミラリア同様、多湿に弱いため通気には気をつけ、日光にはよく当て、水は少なめでよさそうです。</p>
+<p>調べてみましたが情報が少なく生育期が分かっていません。</p>
+<p>もしお分かりのかたがいらっしゃれば <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> までお知らせいただければ幸いです。</p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14678943028" title="Mammillaria humboldtii by i05, on Flickr"><img src="https://farm6.staticflickr.com/5565/14678943028_e8b0cae907.jpg" width="500" height="500" alt="Mammillaria humboldtii" /></a></p>
+<p>群生の様子が胞子のようなのでナウシカの地下室を思い出します (笑)</p>
+<p>
+<h4><b>追記: 開花 (2015-05-21)</b></h4>
+<p><a href="https://www.flickr.com/photos/66622113@N08/17085525264" title="image by i05, on Flickr"><img src="https://c1.staticflickr.com/9/8737/17085525264_ec7586c31f.jpg" width="500" height="375" alt="image" /></a></p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/17520229418" title="image by i05, on Flickr"><img src="https://c1.staticflickr.com/9/8740/17520229418_b335ce2294.jpg" width="500" height="375" alt="image" /></a></p>
+<p>鮮やかな濃いピンクの花が咲きました。</p>
+<p>基本的に放置で、1〜2か月に1回程度水やりをしています。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/33" rel="bookmark"><time class="entry-date published updated" datetime="2014-08-09T12:08:00+00:00">2014-08-09</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%82%b5%e3%83%9c%e3%83%86%e3%83%b3" rel="category tag">サボテン</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/33#respond"><span class="dsq-postid" data-dsqidentifier="33 http://tk2-249-34500.vs.sakura.ne.jp/2014/08/09/%e5%a7%ab%e6%98%a5%e6%98%9f-mammillaria-humboldtii-%e3%81%ae%e8%82%b2%e3%81%a6%e6%96%b9/">Leave a comment<span class="screen-reader-text"> on 姫春星 (Mammillaria humboldtii) の育て方</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-34" class="post-34 post type-post status-publish format-standard hentry category-21">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/34" rel="bookmark">白星 (Mammillaria plumosa) の育て方</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://www.flickr.com/photos/66622113@N08/14865221412" title="Mammillaria plumosa by i05, on Flickr"><img src="https://farm4.staticflickr.com/3859/14865221412_91f119a1e1.jpg" width="500" height="500" alt="Mammillaria plumosa" /></a></p>
+<p>
+<h4><b>マミラリア プルモーサ &#8220;白星&#8221; (Mammillaria plumosa)</b></h4>
+<p><a href="http://nara-taniku.net/">奈良多肉植物研究会</a>で3株ほど購入したところおまけでいただきました。</p>
+<p>仔吹き群生する種のようだが、まだ1株だけでまるっとしているように見えます。</p>
+<p>メキシコ原産の春秋生育型とのこと。</p>
+<p>
+<blockquote style="font-size: small;">ちょっと気難しいところもあり、他のサボテンと違ってあまり根を張らない。<br />何回も腐らせている
+<div><small><cite title="マミラリア　Mammillaria"><a href="http://stewartia.net/engei/cactus_succulent/Saboten1/Mamiraria.htm">園芸手帳</a></cite></small></div>
+</blockquote>
+<p>多湿に弱く、先達の方も腐らせてしまっているようなので換気には注意が必要です。</p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14865222782" title="Mammillaria plumosa by i05, on Flickr"><img src="https://farm6.staticflickr.com/5553/14865222782_4c0fb08e84.jpg" width="500" height="500" alt="Mammillaria plumosa" /></a></p>
+<p>羽毛のような針はずっと触っていたいくらい気持ちいいです (笑)</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/34" rel="bookmark"><time class="entry-date published updated" datetime="2014-08-09T11:35:00+00:00">2014-08-09</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%82%b5%e3%83%9c%e3%83%86%e3%83%b3" rel="category tag">サボテン</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/34#respond"><span class="dsq-postid" data-dsqidentifier="34 http://tk2-249-34500.vs.sakura.ne.jp/2014/08/09/%e7%99%bd%e6%98%9f-mammillaria-plumosa-%e3%81%ae%e8%82%b2%e3%81%a6%e6%96%b9/">Leave a comment<span class="screen-reader-text"> on 白星 (Mammillaria plumosa) の育て方</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-35" class="post-35 post type-post status-publish format-standard hentry category-22">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/35" rel="bookmark">硬葉系ハオルチアの植え替え 株分け〜植え付け</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>硬葉系ハオルチア十二の巻の植え替えを行いました。</p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14842352176" title="Haworthia fasciata by i05, on Flickr"><img src="https://farm4.staticflickr.com/3912/14842352176_f83fc12a74.jpg" width="500" height="500" alt="Haworthia fasciata" /></p>
+<p><i>ハルオチア属 十二の巻 (Haworthia fasciata)</i></a></p>
+<p>元の持ち主の方によると「40年前からの生き残り」だそうです。</p>
+<p><a href="http://ymkjp.blogspot.jp/2014/08/1.html">金鯱</a>のおまけにいただきました。</p>
+<p>さっそく植え替えていきます。</p>
+<h4><b>1. ノックして鉢から取り出す</b></h4>
+<p>すでに土は乾燥しているようでしたので鉢をノックするようによく叩いて十二の巻を取り出しました。</p>
+<p>さすがの「40年前からの生き残り」、すごい根詰まり！ ほとんど根です (笑)</p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14678803627" title="Haworthia fasciata by i05, on Flickr"><img src="https://farm6.staticflickr.com/5555/14678803627_eb0e8cc91a.jpg" width="500" height="500" alt="Haworthia fasciata" /></a></p>
+<p>
+<h4><b>2. ひたすら土をほぐす</b></h4>
+<p>土をほぐし根だけにしました。</p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14862874924" title="Haworthia fasciata by i05, on Flickr"><img src="https://farm6.staticflickr.com/5595/14862874924_7d4862cd33.jpg" width="500" height="500" alt="Haworthia fasciata" /></a></p>
+<p>
+<h4><b>3. カッターナイフで株分け</b></h4>
+<p>ライターの火で殺菌したカッターナイフで子株を切り分け、土を落としながら細い根を取り除いていきました。</p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14678806177" title="Haworthia fasciata by i05, on Flickr"><img src="https://farm4.staticflickr.com/3855/14678806177_079f00cf7f.jpg" width="500" height="375" alt="Haworthia fasciata" /></a></p>
+<p>
+<h4><b>4. 根を切り詰める</b></h4>
+<p>最後にカッターナイフで根を切り詰めました。</p>
+<p>たくさんあった太い根も切り詰めたのでカットした部分から新根がでてくるはずです。</p>
+<ul>
+<li><a href="http://www.cactusnishi.com/HPP/SaibaiKanri01.htm"><i>参考: カクタスニシ Cactus and Succulent</i></a></li>
+<li><a href="http://blog.livedoor.jp/cactusnishi/archives/52062581.html"><i>参考: カクタス・ニシの業務日誌Vol.2</i></a></li>
+</ul>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14862266661" title="Haworthia fasciata by i05, on Flickr"><img src="https://farm6.staticflickr.com/5559/14862266661_a429aa2ae3.jpg" width="500" height="500" alt="Haworthia fasciata" /></a></p>
+<p>
+<h4><b>4. 乾燥させる</b></h4>
+<p>屋内で乾燥させます。</p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14865325675" title="Haworthia fasciata by i05, on Flickr"><img src="https://farm4.staticflickr.com/3841/14865325675_c44ef81b23.jpg" width="500" height="500" alt="Haworthia fasciata" /></a></p>
+<p>
+<h4><b>4. 1週間後、植え付け</b></h4>
+<p>1日乾かしたら植え付けようかと思っていましたが、雨が降っていたので1週間後まで順延しました (笑)</p>
+<p>半日置いて、水やりをしました。</p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14745280727" title="Haworthia fasciata by i05, on Flickr"><img src="https://farm6.staticflickr.com/5594/14745280727_7802aae592.jpg" width="500" height="500" alt="Haworthia fasciata" /></a></p>
+<p><a href="https://www.flickr.com/photos/66622113@N08/14931477502" title="Haworthia fasciata by i05, on Flickr"><img src="https://farm4.staticflickr.com/3913/14931477502_31554b42f0.jpg" width="500" height="500" alt="Haworthia fasciata" /></a></p>
+<p>
+<h4><b>植え替えの道具</b></h4>
+<p>
+<ul>
+<li><a href="http://www.amazon.co.jp/gp/product/B001GLRI4I/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B001GLRI4I&amp;linkCode=as2&amp;tag=m0b55-22">硬質ポリ鉢3号　9cm　A黒</a></li>
+<li><a href="http://www.amazon.co.jp/gp/product/B000IABQM8/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B000IABQM8&amp;linkCode=as2&amp;tag=m0b55-22">花ごころ さぼてん多肉植物の土 2l</a></li>
+<li><a href="http://www.amazon.co.jp/gp/product/B000FXE4V8/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B000FXE4V8&amp;linkCode=as2&amp;tag=m0b55-22">プロトリーフ かる~い鉢底石 2L</a></li>
+<li><a href="http://www.amazon.co.jp/gp/product/B000I0OI00/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B000I0OI00&amp;linkCode=as2&amp;tag=m0b55-22">園芸用鉢底ネット ロール 30×50cm</a></li>
+<li><a href="http://www.amazon.co.jp/gp/product/B00CSH0AGC/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00CSH0AGC&amp;linkCode=as2&amp;tag=m0b55-22">PC 土入れ 3ツ組 グリーン</a></li>
+</ul>
+<p>以上、植え替えの参考になればさいわいです。</p>
+<p>ご意見ご質問は <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> へどうぞ！</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/35" rel="bookmark"><time class="entry-date published updated" datetime="2014-08-09T09:28:00+00:00">2014-08-09</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%a4%9a%e8%82%89" rel="category tag">多肉</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/35#respond"><span class="dsq-postid" data-dsqidentifier="35 http://tk2-249-34500.vs.sakura.ne.jp/2014/08/09/%e7%a1%ac%e8%91%89%e7%b3%bb%e3%83%8f%e3%82%aa%e3%83%ab%e3%83%81%e3%82%a2%e3%81%ae%e6%a4%8d%e3%81%88%e6%9b%bf%e3%81%88-%e6%a0%aa%e5%88%86%e3%81%91%e3%80%9c%e6%a4%8d%e3%81%88%e4%bb%98%e3%81%91/">Leave a comment<span class="screen-reader-text"> on 硬葉系ハオルチアの植え替え 株分け〜植え付け</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/4">Previous page</a>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/'><span class="meta-nav screen-reader-text">Page </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/4'><span class="meta-nav screen-reader-text">Page </span>4</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">Page </span>5</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/6'><span class="meta-nav screen-reader-text">Page </span>6</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/31'><span class="meta-nav screen-reader-text">Page </span>31</a>
+<a class="next page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/6">Next page</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2016/09">&laquo; Sep</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td id="today">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1IQBVxfQlw=","queueTime":0,"applicationTime":200,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

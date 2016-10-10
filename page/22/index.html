@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>It works! | A techie blog - Part 22</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,463] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="google-site-verification" content="_WbViALvGIP70e8bStl6bmcL7ZbTMO8QnyoXJKDc9s4" />
+<link rel='prev' href='https://article.xn--nyqr7s4vc72p.com/page/21' />
+<link rel='next' href='https://article.xn--nyqr7s4vc72p.com/page/23' />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/page/22" />
+<meta property="og:title" content="It works! | A techie blog - Part 22" />
+<meta property="og:url" content="https://article.xn--nyqr7s4vc72p.com/page/22" />
+<meta property="og:image" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/09/226546_116651205083093_100002146431496_137147_46399_n.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="It works!" />
+<meta property="fb:admins" content="1740535458" />
+<meta property="fb:app_id" content="253362208055003" />
+<meta property="og:description" content="@ymkjp" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@ymkjp" />
+<meta name="twitter:title" content="It works! | A techie blog - Part 22" />
+<meta name="twitter:description" content="@ymkjp" />
+<meta name="twitter:image" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/09/226546_116651205083093_100002146431496_137147_46399_n.jpg" />
+<meta itemprop="image" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/09/226546_116651205083093_100002146431496_137147_46399_n.jpg" />
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Person",
+  "name" : "",
+  "url" : "https://article.xn--nyqr7s4vc72p.com",
+  "sameAs" : ["https://plus.google.com/u/0/+KentaYAMAMOTOymkjp","https://twitter.com/ymkjp"] 
+}
+</script>
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel='shortlink' href='https://wp.me/7kkrD' />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="home blog paged paged-22 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<h1 class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></h1>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+			
+<article id="post-197" class="post-197 post type-post status-publish format-standard hentry category-uncategorized">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/197" rel="bookmark">それだけは絶対に嫌だ</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="http://tiqav.com/33H" target="_blank"><img alt="33h" src="http://tiqav.com/33H.jpg" /></a></p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/197" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-16T10:23:00+00:00">2013-01-16</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/uncategorized" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/197#respond"><span class="dsq-postid" data-dsqidentifier="197 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/16/%e3%81%9d%e3%82%8c%e3%81%a0%e3%81%91%e3%81%af%e7%b5%b6%e5%af%be%e3%81%ab%e5%ab%8c%e3%81%a0/">Leave a comment<span class="screen-reader-text"> on それだけは絶対に嫌だ</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-198" class="post-198 post type-post status-publish format-standard hentry category-45 category-8">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/198" rel="bookmark">新しい書評スタイル「摘読」について</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>「積読」 (stock and read) ではない。「摘読」(pick and read) である。</p>
+<p>つくづく思うのだが、本にはその一冊ごとに「白眉」がある。人文書、自然科学、技術書、あるいは文学。人は実に多くのジャンルの本を読むが、例外なく言えるのは名著と呼ばれるような本には決定的に「これぞ」という箇所があるということだ。それとのめぐりあいこそが本読みの冥利というものだろうが、私はそれを、その部分を共有したい。</p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/198" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-15T15:20:00+00:00">2013-01-15</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%a1%e3%82%bf" rel="category tag">メタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e6%9b%b8%e8%a9%95" rel="category tag">書評</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/198#respond"><span class="dsq-postid" data-dsqidentifier="198 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/15/%e6%96%b0%e3%81%97%e3%81%84%e6%9b%b8%e8%a9%95%e3%82%b9%e3%82%bf%e3%82%a4%e3%83%ab%e3%80%8c%e6%91%98%e8%aa%ad%e3%80%8d%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">Leave a comment<span class="screen-reader-text"> on 新しい書評スタイル「摘読」について</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-199" class="post-199 post type-post status-publish format-standard hentry category-12">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/199" rel="bookmark">Paperwhite と iPad の役割分担の話</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>最近手持ちのタブレットデバイスの得意な本のジャンルがつかめてきた。</p>
+<p>※この entry が参考になるのは、結構読書が好きなひとで、ジャンルも雑食な人で、かつガジェット好きという非常に限られた人になるかもしなません（該当しない人は最新の iPad mini 一択だと思います）。</p>
+<p><a href="https://pbs.twimg.com/media/BAO4DOPCEAE_6zD.jpg:large" style=""><img border="0" height="260" width="512" src="https://pbs.twimg.com/media/BAO4DOPCEAE_6zD.jpg:large" alt="" title="筆者の最近半年間くらいで買って BOOKSCAN 送りになっていない本たち（カバーを外して読むので散らかっています）" /></a></p>
+<p>現在、 Kindle Paperwhite と iPad 2 には下記のようにジャンルごとに分担してもらっています。
+<ul>
+<li>Paperwhite: 漫画・新書（特にKindle 版）</li>
+<li>iPad 2: それ以外</li>
+</ul>
+<p>つまり、 Paperwhite はページの行き来をしないライトな本を読む用の端末になっています。これは別に Paperwhite が処理速度も容量もスペック不足だからというネガティブな理由だけではなく、電車内など出先の隙間時間にさっと取り出してバババーッと読むスタイルに Paperwhite が適しているからというポジティブな理由からもこのような役割分担になっています。</p>
+<p>そして何よりも Paperwhite は Amazon で売られている Kindle 版の本を読むのがいい。自炊本も最適化すれば Kindle 版と変わらないスピードで読み進められるのですが、自炊本だと容量を食うので貧弱な Paperwhite のストレージには酷なのです。つまり、別に Paperwhite でも自炊本は読めないことはないんだけど、それならば手軽に、しかも買って速攻読める Kindle 版専用の端末にしてしまおうという気持ちになるのです。</p>
+<p>ちなみに技術書（の電子版）は「読むものではなく試すもの」だと捉えているので、タブレットデバイスではなく Mac 上に表示して「試す」ことが多いですね。</p>
+<p>以上、まとめていてふとどうしようかと迷ったのは、漫画と新書以外のぶ厚めの本で Kindle 版が提供されていたらという話。この点に関しては結論はでていません ;) というのも Paperwhite のページ移動機能は一枚一枚めくっていく以外にはページ数を指定したジャンピングしかできない貧弱っぷりなので該当箇所を探すのが実用上不可能なレベルなのです、特に自炊本の場合（書籍に印字されているページ番号とデータの実体が食い違っていることも多いので）。Kindle 版であれば見出しごとに目次へのリンクが貼り付けられているので、それを頼りに探せます。いずれにせよ、この話題は先送りでよさそうです。Paperwhite のページ移動貧弱問題も、ソフトウェアのレイヤーの話なので改善される可能性はありますしね。</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/199" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-10T08:16:00+00:00">2013-01-10</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%93%81%e8%a9%95" rel="category tag">品評</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/199#respond"><span class="dsq-postid" data-dsqidentifier="199 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/10/paperwhite-%e3%81%a8-ipad-%e3%81%ae%e5%bd%b9%e5%89%b2%e5%88%86%e6%8b%85%e3%81%ae%e8%a9%b1/">Leave a comment<span class="screen-reader-text"> on Paperwhite と iPad の役割分担の話</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-200" class="post-200 post type-post status-publish format-standard hentry category-70">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/200" rel="bookmark">Keyconfig (Chrome Extension) の設定</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-P_KODAcK8HU/UOxO6B2nX-I/AAAAAAAAPPY/-Y180QHtr7M/s1600/Screen%2BShot%2B2013-01-09%2Bat%2B1.50.10%2BAM.png" style=""><img border="0" height="247" width="400" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-P_KODAcK8HU/UOxO6B2nX-I/AAAAAAAAPPY/-Y180QHtr7M/s400/Screen%2BShot%2B2013-01-09%2Bat%2B1.50.10%2BAM.png" /></a>
+<p><a href="https://chrome.google.com/webstore/detail/keyconfig/okneonigbfnolfkmfgjmaeniipdjkgkl">Chrome ウェブストア &#8211; Keyconfig</a></p>
+<p>ショートカットキーでブラウザを操作できる Chrome Extension である Keyconfig を導入しました。 Vim のようにモードの切り替えがあるのが気に入りました。テキスト入力時に衝突するのがいやなので基本的に Esc して limited mode に入ってから操作するようにバインドしてあります（僕の環境では KeyRemap4Macbook で Esc を「 command 右 + command 左」に割り当てているので操作は楽です）。</p>
+<p>&#8220;Actions for limited mode custom tag&#8221; の 4a に割り当てているのは「はなてブックマーク付きのリンク」で、下記の通りです。</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">One of the Vim user @ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/200" rel="bookmark"><time class="entry-date published" datetime="2013-01-08T16:57:00+00:00">2013-01-08</time><time class="updated" datetime="2016-03-11T15:04:10+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%84%e3%83%bc%e3%83%ab" rel="category tag">ツール</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/200#respond"><span class="dsq-postid" data-dsqidentifier="200 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/08/keyconfig-chrome-extension-%e3%81%ae%e8%a8%ad%e5%ae%9a/">Leave a comment<span class="screen-reader-text"> on Keyconfig (Chrome Extension) の設定</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-201" class="post-201 post type-post status-publish format-standard hentry category-14">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/201" rel="bookmark">自己分析のうた -r</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>自分なんて　ないさ<br />自分なんて　うそさ<br />ねぼけたひとが<br />みまちがえたのさ<br />だけどちょっと　だけどちょっと<br />ゴーストが　ささやく</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">The recursive ghost @ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/201" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-07T22:52:00+00:00">2013-01-07</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8d%e3%82%bf" rel="category tag">ネタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/201#respond"><span class="dsq-postid" data-dsqidentifier="201 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/07/%e8%87%aa%e5%b7%b1%e5%88%86%e6%9e%90%e3%81%ae%e3%81%86%e3%81%9f-r/">Leave a comment<span class="screen-reader-text"> on 自己分析のうた -r</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-202" class="post-202 post type-post status-publish format-standard hentry category-7 category-68">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/202" rel="bookmark">情報疲れを防止するために必要な考え方</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>情報の海に溺れそうなときは、push型の情報とpull型の情報に分類して、push型は優先度と緊急度の高いものだけに絞り、pull型で幅広い情報を得るようにしよう。</p>
+<p>push型とはメールやテレビなど自分が受動的に得る情報のことで、pull型とはTwitterやRSSリーダーなど自分が能動的に取得しにいく情報のこと。この二者を分ける事で、精神的負担が見違えるように減る。</p>
+<p>docomoなどのキャリアメールは情報をフィルタリングできないから、プライベートなやり取りだけに使う。就活や業務上のメールはGmailで受け取るようにする。すでに登録して届いているメールは地道に解約するかGmailアドレスに振り替える。GmailというのはGoogleが提供しているメールのことで、フィルタリングの機能が充実している。ちなみに僕はプライベートなやり取りもすべてGmailを使っていて個人的には大きな問題は感じていない（しかしそれには個人差もあるだろう）。</p>
+<p>Gmailメールに限った話ではないけど、メールを受信するたびに頭を切り替えなければならならいのは非常に精神的負担が大きい。だから優先度と緊急度の高いもの以外は、通知せずに「あとで読む」のようなフォルダ分けを自動でしてくれる設定をするか、RSSなどのpull型メディアで代替することを検討しよう。</p>
+<p>pull型メディアと言えば、皆さんご存知のTwitterがある。しかし、Twitterに限らず、pull型メディアでもユーザーに利用してもらおうとメールを配信してきたり、スマートフォンで通知してくる。これはうるさくて気が散るので通知を切る設定をしよう。</p>
+<p>つまりまとめると、push型にしても、pull型にしても、通知を少なくするのが一番大事だ。その分、情報はストックしておいて、自分に時間ができて、欲しくなった時にだけ取りに行けばいい。通知を切る設定は面倒臭いだろうが、実はそれほど難しくない。だいたいは設定っぽいボタンを押して画面に行けば通知する・しないの選択ができるようになっている。情報社会を渡り歩くためのテクニックとして覚えておいたほうがいいのでぜひ挑戦してみよう。</p>
+<p><a href="http://www.flickr.com/photos/dullhunk/3541653049/" title="Feed the World (with Atom and RSS) by dullhunk, on Flickr"><img src="http://farm4.staticflickr.com/3365/3541653049_a3e8534a8e_o.jpg" width="138" height="139" alt="Feed the World (with Atom and RSS)" /></a></p>
+<p>余談だが、RSSリーダーは、使ったことがなければぜひ使用を検討するべきツールだ。<br />普段、新しい記事が増えていないか確認しているサイトがあれば、そのサイトのRSSをRSSリーダーに登録しておけばRSSリーダーで自動的に循環しておいてくれるのでRSSリーダーを見るだけで普段巡回しているサイトの更新情報が一目で分かる。上の画像がRSSマーク。見覚えがあるかもしれないが、実は多くのサイトがこの機能を提供している。このブログにもその機能がある（右側のサイドバーの下の方を探してみよう）。<br />RSSリーダーはGoogleが提供している <a href="http://www.google.co.jp/reader/">Googleリーダー</a> が比較的簡単に使えるのでおすすめ。 </p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+<p><a name='more'></a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/202" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-06T13:59:00+00:00">2013-01-06</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%bc%9f" rel="category tag">弟</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/202#respond"><span class="dsq-postid" data-dsqidentifier="202 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/06/%e6%83%85%e5%a0%b1%e7%96%b2%e3%82%8c%e3%82%92%e9%98%b2%e6%ad%a2%e3%81%99%e3%82%8b%e3%81%9f%e3%82%81%e3%81%ab%e5%bf%85%e8%a6%81%e3%81%aa%e8%80%83%e3%81%88%e6%96%b9/">Leave a comment<span class="screen-reader-text"> on 情報疲れを防止するために必要な考え方</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-203" class="post-203 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/203" rel="bookmark">空港施設使用料の目安（メモ）</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>成田空港施設使用料 2,540円（子供1,520円，幼児無料）<br />羽田空港施設使用料 2,100円 （子供1,100円，幼児無料）<br />※米国空港税 5,000～6,600円（予約発券時のレートで変動あり）</p>
+<p>いわゆる空港施設使用料とは「旅客サービス施設使用料（PSFC）」と「旅客保安サービス料（PSSC）」を合算した金額がそれに相当する。ソースは下記の成田国際空港の情報。</p>
+<h1>支払方法</h1>
+<blockquote><p>お客様の航空券が発券される際に航空運賃と併せてお支払いいただきます。</p>
+<p><a href="http://www.narita-airport.jp/jp/travel/faq_ask/asklist.html#psfc">トラベルサポート お問い合わせ先のご案内 | 成田国際空港公式WEBサイト</a></p>
+</blockquote>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+<p><a name='more'></a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/203" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-06T11:09:00+00:00">2013-01-06</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/203#respond"><span class="dsq-postid" data-dsqidentifier="203 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/06/%e7%a9%ba%e6%b8%af%e6%96%bd%e8%a8%ad%e4%bd%bf%e7%94%a8%e6%96%99%e3%81%ae%e7%9b%ae%e5%ae%89%ef%bc%88%e3%83%a1%e3%83%a2%ef%bc%89/">Leave a comment<span class="screen-reader-text"> on 空港施設使用料の目安（メモ）</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-204" class="post-204 post type-post status-publish format-standard hentry category-it category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/204" rel="bookmark">ベンチャー企業の人材確保の指南書</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<h1>「ICTベンチャー人材確保ガイドライン」</h1>
+<p>ベンチャー企業の人材確保に関する優良な日本語資料があったのでメモ。<br />記述内容が具体的なので実践の手引きになるのがポイントですね。先駆者の経験が言語化されてまとめられています。採用を受ける側にとっても参考になる資料だと思われます。</p>
+<p>
+<blockquote>
+<h2>営業統括責任者もしくはその候補は、まずは社内に適任者がいないかどうか考え、どうしてもいない場合は外部から採用する。外部から採用する場合は、小規模な事業ユニットの中で営業を任された経験を持つ人材が最適である</h2>
+<p><b>– 新規事業立上げやベンチャー企業などで、ゼロから事業/業務プロセスを作りあげる経験を積んだ人材は適性が高い</b></p>
+<p>• 単なる営業だけではなく、顧客、市場、競合を見据えたマーケティング的活動も求められるため、新規事業の経験は極めて有効となる<br />• また、大企業出身であっても、商社や、システム・インテグレータ会社のプロジェクトマネジャー、自己完結型の小さな組織を経営管理の単位にしている（セル生産方式など）一部メーカーの管理職経験者、TV局のプロデューサーなど、15-40名くらいの規模で、かつある程度短期間（1年以内）の事業を統括した経験がある人材は、活躍の可能性が高い<br />• ただし、即戦力が必要なベンチャー企業にとって、営業についてゼロからのスタートでは無駄が多いため、一定期間（最低2年間程度）の営業経験を求める</p>
+<p><b>– 大企業で豊富なリソースや顧客基盤を活用して実績を挙げた人材には慎重を期す</b></p>
+<p>• ベンチャー企業では、10億円を20億円に増やした経験よりも、ゼロから5億円を創り上げた経験を重視する<br />• 大企業では、仕組みや組織体制が整備され、十分なリソースがある環境であり、数字を伸ばすことは比較的容易と言える。逆にリソースが十分に与えられなければ、その力を発揮できないケースも多い<br />• ベンチャー企業では、商材も売り方も日々変化するため、新しい市場をどのように開拓していくかが求められる</p>
+<hr />
+<h2>採用にあたっては、入社時点で役員とする必要はなく、業務実績を確認した上で登用を検討する<br /></h2>
+<p><b>– いかに優秀であろうと成果が出るまでは一定期間を要する。拙速な役員登用が他の役員や社員からの失望を招く懸念もある</b></p>
+<p>• 経営参画が入社の条件として求められた場合は、入社3ヶ月後～半年後に期待する成果目標を明示し、目標達成を条件に役員登用を約束する。入社当初の肩書きは、例えば「経営企画室長」「アドバイザー」などがよい<br />• 採用時点で役員に登用してしまうと、短期的成果が出せない場合に、「鳴り物入りで経営参画してきたが、この程度か」といった認識が根付いてしまい、社内に“しらけムード”が漂ってしまう</p>
+<p><b>– 営業パーソンは一般にコミュニケーション能力が高いが、社長と意気投合した結果、即役員に登用してしまうようなことには注意する</b></p>
+<p>• 役員の採用を失敗した場合、財務的にも社内の動機付け的にもマイナス要素が大きいため、必ず観察期間を設ける<br />– 役員としての入社の場合も、そうでない場合も、重要なポジションとしての入社であることには変わりがない。採用した人材に対して、即戦力として活躍できるように早期に社内に馴染む環境整備をすることも、社長としての極めて重要な仕事である<br />• 社内慣習に不慣れなために実績が出せないということがないようにする<br />• そのために、まずは小さな成功を達成できるよう経営者が後押しをし、社内認知を早期に醸成することが必要となる</p>
+<p><a href="https://docs.google.com/viewer?url=http%3A%2F%2Fwww.soumu.go.jp%2Fmain_sosiki%2Fjoho_tsusin%2Fpolicyreports%2Fchousa%2Fict_venture%2Fpdf%2F070213_2.pdf">ICTベンチャー人材確保ガイドライン.pdf</a></p>
+</blockquote>
+<p>
+<p>ざっと読んでみて「なるほど知らなかった」と思った箇所を抜粋してみました。汎用的な内容なので事業特性などに応じて活用しやすくていいですね。また、「面接で相手の言っていることが信じられない場合の対処法」も書かれています。実はこの対処法、このガイドライン作成の協力会社でもある某社の面接で「実践された側の経験」が僕にはあります。そう、新卒採用にもこの手法を使っているのです。つまり就活生にも役に立つ内容になっています。就活生に限らず、採用されたい人は、面接を受ける企業がどのステージにあって、それに応じて自分は何を求められているかをこの資料を通して知ることができます。ここまで踏まえていれば互いにミスマッチが起きることは防げますね。</p>
+<p>
+<blockquote>
+<p>グリー創業期に最も参考にしていたのは、プロノバ岡島悦子さんが監修された「ICTベンチャー人材確保ガイドライン」<a href="http://t.co/4hwTASOs" title="http://www.soumu.go.jp/main_sosiki/joho_tsusin/policyreports/chousa/ict_venture/pdf/070213_2.pdf">soumu.go.jp/main_sosiki/jo…</a></p>
+<p>&mdash; Naoki Aoyagi (@naoki) <a href="https://twitter.com/naoki/status/287423652947963904" data-datetime="2013-01-05T05:01:53+00:00">January 5, 2013</a></p></blockquote>
+<p>ちなみに本資料は CEO of GREE International (US) の Naoki Aoyagi さんのツイートで知りました。</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">（社会|会社）の仕組みを知るのって面白いですね！@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/204" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-05T09:04:00+00:00">2013-01-05</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/it%e8%a6%8b%e8%81%9e%e9%8c%b2" rel="category tag">IT見聞録</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/204#respond"><span class="dsq-postid" data-dsqidentifier="204 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/05/%e3%83%99%e3%83%b3%e3%83%81%e3%83%a3%e3%83%bc%e4%bc%81%e6%a5%ad%e3%81%ae%e4%ba%ba%e6%9d%90%e7%a2%ba%e4%bf%9d%e3%81%ae%e6%8c%87%e5%8d%97%e6%9b%b8/">Leave a comment<span class="screen-reader-text"> on ベンチャー企業の人材確保の指南書</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-205" class="post-205 post type-post status-publish format-standard hentry category-7 category-68 category-8 category-73">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/205" rel="bookmark">コンピュータサイエンス科1年生の弟に贈る技術書3冊</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>帰省して実家からコンピュータサイエンス科に通っている弟と1年ぶりに会って来ました。現在プログラミングの授業（C言語）が週に2回あるそうで、理解度を尋ねると「ポインタも分かったよ」とさくっと言っていて驚いたのですが、僕が実家で『たのしいRuby』の練習問題を解いていたところ弟が顔をのぞかせて &#8220;Hello world&#8221; が一行で、しかもコンパイルせずに実行できてしまうことなどに感激していました。そこで深夜に2人してドットインストールの <a href="http://dotinstall.com/lessons/basic_ruby">Rubyの基礎</a> を一緒に鑑賞するなどして過ごしました。</p>
+<p>帰りぎわに弟に Ruby 本はいるかと尋ねたところ、（動画を見る前は「まだCを習得していないから浮気するわけにはいかない」と言っていたのですが）少し逡巡して「うん」と言っていたので、『たのしいRuby』を Amazon ギフトで送る次第となりました。そこでどうせならと思いあと2冊くらい追加しておこうと思い立って送りつけました。以下がその目録になります。</p>
+<p>
+<ol>
+<li>『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797328355/m0b55-22/ref=nosim/" name="amazletlink" target="_blank">ふつうのLinuxプログラミング</a>』</li>
+<li>『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839941068/m0b55-22/ref=nosim/" name="amazletlink" target="_blank">プログラミングコンテストチャレンジブック 第2版</a>』</li>
+<li>『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797357401/m0b55-22/ref=nosim/" name="amazletlink" target="_blank">たのしいRuby 第3版</a>』</li>
+</ol>
+<p>
+<p>なぜこの3冊なのかと言うと、まず1冊目の『ふつうのLinuxプログラミング』は弟が学習中のC言語で作られているソフトウェアのうち最も使用されているのが Linux なので、プログラミング自体の可能性を意識しやすいという点を評価して選定しました。</p>
+<p>次に2冊目の『プログラミングコンテストチャレンジブック』は、弟が数学が得意な理論派だったのでアルゴリズムの本で強みを磨いて欲しいので選定しました（理論よりは成果物に興味関心が強い僕とは対称的なので一緒に組んで何かやれるといいなと勝手に思っています）。</p>
+<p>そして3冊目の『たのしいRuby』は約束したからこの本にしたわけですが、あえて言えば、手軽で強力なスクリプト言語の入門書という位置づけで選定しました。C言語のみやっている人にとっては、私のように JavaScript からプログラミングを始めたような人間とは大きく異なった魅力を Ruby や Python といった Lightweight Language に感じるのでしょう。</p>
+<p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797328355/m0b55-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41KHt9YEIyL._SL160_.jpg" alt="ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道" style="border: none;" /></a> <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839941068/m0b55-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41bHxtpurqL._SL160_.jpg" alt="プログラミングコンテストチャレンジブック [第2版]　～問題解決のアルゴリズム活用力とコーディングテクニックを鍛える～" style="border: none;" /></a> <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797357401/m0b55-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41t7GQ3peRL._SL160_.jpg" alt="たのしいRuby 第3版" style="border: none;" /></a></p>
+<p>他にもいろいろと選定候補がありました。特に悩んだのが、『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4822283119/m0b55-22/ref=nosim/" name="amazletlink" target="_blank">ネットワークはなぜつながるのか</a>』とか『 <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774142042/m0b55-22/ref=nosim/" name="amazletlink" target="_blank">Webを支える技術</a>』とかの「ネットの話」です。このあたりの話題はビジネスでは必須ですが（弟に「Web関連の技術は絶対必要」と言ったところ、それをひと通り受け入れつつも「安易に絶対っていう言葉を使う文系乙」みたいな反応をされてしまいましたが）、大学に入ってコンピュータサイエンスの学習を始めた人にはまず OS それ自体や馴染みがあって魅力的なスクリプト言語の話のほうが動機になるのではないかと思い、とりあえず「ネットの話」は除外しておきました。とは言え、『ふつうのLinuxプログラミング』は「HTTPサーバを作る」「HTTPサーバを実用化する」という絶妙な実習を用意してくれていて、この3冊のラインナップから全くネットの話題に触れないかと言えばそうでもないです。『たのしいRuby』にも「HTMLやRSSの解析」「HTTPサーバのアクセスログ解析」といったツールを手習いする章も設けられています。ネットには直接関係ない話題でももはやネットに触れないわけにはいかず、良書であればそのあたりを押さえてきているのでしょうね。</p>
+<p>本年も宜しくお願い申しあげます。</p>
+<div><rights><a href="http://twitter.com/ymkjp">巳 @ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/205" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-03T10:34:00+00:00">2013-01-03</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%bc%9f" rel="category tag">弟</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e6%9b%b8%e8%a9%95" rel="category tag">書評</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e9%96%8b%e7%99%ba" rel="category tag">開発</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/205#respond"><span class="dsq-postid" data-dsqidentifier="205 http://tk2-249-34500.vs.sakura.ne.jp/2013/01/03/%e3%82%b3%e3%83%b3%e3%83%94%e3%83%a5%e3%83%bc%e3%82%bf%e3%82%b5%e3%82%a4%e3%82%a8%e3%83%b3%e3%82%b9%e7%a7%911%e5%b9%b4%e7%94%9f%e3%81%ae%e5%bc%9f%e3%81%ab%e8%b4%88%e3%82%8b%e6%8a%80%e8%a1%93%e6%9b%b83/">Leave a comment<span class="screen-reader-text"> on コンピュータサイエンス科1年生の弟に贈る技術書3冊</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-206" class="post-206 post type-post status-publish format-standard hentry category-7 category-68">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/206" rel="bookmark">弟に教えたい就活生としてのたった1つの心得</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>弟はまだ大学1年生ですが、就活に備えて動き出すのに早いにことはないので書いておきます。</p>
+<h1>弟へ</h1>
+<p>まず &#8220;Did you know?&#8221; という動画を観たことがなければ観てほしい。</p>
+<p><iframe width="480" height="360" src="http://www.youtube.com/embed/kj9pR_b3u4E" frameborder="0" allowfullscreen></iframe></p>
+<p>この動画は「前提」だ。この動画を前提にして、僕たちはこれからの仕事を考えていかなくちゃいけない。</p>
+<p>働いて会社からお金をもらうということは会社に誰かがお金を払っているということだ。だから僕たちは誰かに「お金を払ってもいい」と思えるような価値を提供できるサービスや製品をつくれるようにならなくちゃいけない。あなたは今、そんなサービスや製品をつくれる？ つくれるならそれを実現して、いち早くその商品を消費者に届けたほうがいい。でもつくれないなら、それを身につけられる場所に行って学ぶしかない。それが「就職」だ。</p>
+<p>消費者にお金を払ってもらえるような商品をつくるためにはいろいな能力が必要だ。しかも、実際に商品を作る人、商品を作るために必要なお金を調達してくる人、消費者に商品を買ってもらうために営業する人、そしてそういった人々を支える人。それぞれの役割ごとにいろんな能力が必要なんだ。しかもその能力はどんどん改善されて刻一刻と変化していっている。だからそのすべてを身につけることはできない。</p>
+<p>でも確かなことが1つだけある。それは、「仕事の能力は仕事をしないと身につかない」ということだ。これが「たった1つの心得」だ。</p>
+<p>仕事の能力は仕事をしないと身につかない。当たり前だろって思ったかい？ でも教えてあげよう。成長していない企業に入ると、「仕事」をさせてもらえないことがある。成長していない企業というといわゆる「大企業」といわれる企業のことだ。こういった会社は新しいサービスや商品は現状よりも増えることが少ないから、新しい仕事を開発するんじゃなくて、いまある仕事を運用する仕事の割合が高くなる。すると若手に仕事が回ってくるのは、定年退職で上から人が抜けていった時だけだ。それを待っていていていいんだろうか。そのスピード感って今の「前提」と釣り合ってる？ （ちなみにそういった大企業で新人がやる仕事は、会議の資料をコピーしたり、上司が書類の作り方を気の遠くなるような細かな点までチェックしたのを何度もやり直ししたり（お客さんとはすごく遠い社内のことばかり。しかも大部分はその企業でしか通じない細かな点について）。</p>
+<p>逆に成長している企業ならば若手にもチャンスはある。どんどん新しい商品を開発しているからだ。</p>
+<p>おいおい、「まあまだ時間はあるし」って思ってないか？ もしかしていきなり企業の人と会ってその会社が良い会社かどうか見抜ける自信があるのか？ 学生のうちに経験を積んでおけるインターンシップっていう魅力的な制度があるのに利用しておかなくていいの？ 就活を考えだすころにやろうと思っても十分な時間はないんだよ？ 早いうちにやったほうが方向転換も効きやすいから早めにインターンシップに行け。</p>
+<p>
+<blockquote>
+<p>参考<a href="http://ymkjp.blogspot.jp/2012/04/blog-post_9661.html">低学歴でも、頭悪くても、顔が不細工でも、内定もらいたい人がインターンシップをしなければならない理由</a></p>
+</blockquote>
+<p>
+<p>※最初の動画 &#8220;Did you know?&#8221; はもう3年前の動画</p>
+<p>
+<div><rights><a href="http://twitter.com/ymkjp">@ymkjp</a></rights></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/206" rel="bookmark"><time class="entry-date published updated" datetime="2012-12-22T11:57:00+00:00">2012-12-22</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%bc%9f" rel="category tag">弟</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/206#respond"><span class="dsq-postid" data-dsqidentifier="206 http://tk2-249-34500.vs.sakura.ne.jp/2012/12/22/%e5%bc%9f%e3%81%ab%e6%95%99%e3%81%88%e3%81%9f%e3%81%84%e5%b0%b1%e6%b4%bb%e7%94%9f%e3%81%a8%e3%81%97%e3%81%a6%e3%81%ae%e3%81%9f%e3%81%a3%e3%81%9f1%e3%81%a4%e3%81%ae%e5%bf%83%e5%be%97/">Leave a comment<span class="screen-reader-text"> on 弟に教えたい就活生としてのたった1つの心得</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://article.xn--nyqr7s4vc72p.com/page/21">Previous page</a>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/'><span class="meta-nav screen-reader-text">Page </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/page/21'><span class="meta-nav screen-reader-text">Page </span>21</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">Page </span>22</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/page/23'><span class="meta-nav screen-reader-text">Page </span>23</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/page/31'><span class="meta-nav screen-reader-text">Page </span>31</a>
+<a class="next page-numbers" href="https://article.xn--nyqr7s4vc72p.com/page/23">Next page</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2016/09">&laquo; Sep</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td id="today">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1oMAlFO","queueTime":0,"applicationTime":329,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

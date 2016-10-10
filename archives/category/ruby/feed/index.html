@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Ruby &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/ruby/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>Ruby &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>Multiline editing instead of painful sed or awk</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/22</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/22#respond</comments>
+		<pubDate>Thu, 28 May 2015 08:09:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[Note that this is just a memo for my friend. Author: @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>Note that this is just a memo for my friend.</p>
+<p><i>Author: <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/22/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">22</post-id>	</item>
+		<item>
+		<title>How to query against Global Brand Database&#8217;s internal API</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/26</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/26#respond</comments>
+		<pubDate>Mon, 26 Jan 2015 23:17:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[hello_world]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2015/01/26/how-to-query-against-global-brand-databases-internal-api/</guid>
+		<description><![CDATA[I found a interesting question on Quora and tried to answer it. require 'net/http'require 'uri'require 'json'require 'pp' url = URI.parse('http://www.wipo.int/branddb/jsp/select.jsp')req = Net::HTTP::Post.new(url.path)req.body = URI.encode_www_form [ ['q' , 'BRAND:sushi'], ['fl' , 'BRAND,SOURCE,STATUS,score,OO,HOL,ID,AD,VCS,USC,NC,IMG,ID'], ['hl' , 'true'], ['hl.requireFieldMatch' , 'true'], ['hl.fragsize' , '5000'], ['type' , 'brand'], ['facet' , 'true'], ['qi' , '2285-1422386635681'], ['json.nl' , 'map'], ['wt' , 'json'], &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/26" class="more-link">Continue reading<span class="screen-reader-text"> "How to query against Global Brand Database&#8217;s internal API"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I found a interesting question on Quora and <a href="http://www.quora.com/Intellectual-Property-1/Is-there-an-API-to-the-WIPO-Trademark-database/answer/Yamamoto-Kenta#comment8267990">tried to answer it</a>.</p>
+<p><a name='more'></a>
+<pre>require 'net/http'<br />require 'uri'<br />require 'json'<br />require 'pp'<br /> <br />url = URI.parse('http://www.wipo.int/branddb/jsp/select.jsp')<br />req = Net::HTTP::Post.new(url.path)<br />req.body = URI.encode_www_form [<br /> ['q' , 'BRAND:sushi'],<br /> ['fl' , 'BRAND,SOURCE,STATUS,score,OO,HOL,ID,AD,VCS,USC,NC,IMG,ID'],<br /> ['hl' , 'true'],<br /> ['hl.requireFieldMatch' , 'true'],<br /> ['hl.fragsize' , '5000'],<br /> ['type' , 'brand'],<br /> ['facet' , 'true'],<br /> ['qi' , '2285-1422386635681'],<br /> ['json.nl' , 'map'],<br /> ['wt' , 'json'],<br /> ['sort' , 'score desc,AD desc'],<br /> ['rows' , '30'],<br /> ['start' , '0'],<br /> ['f.SOURCE.facet.limit' , '50'],<br /> ['f.SOURCE.facet.mincount' , '1'],<br /> ['f.STATUS.facet.limit' , '20'],<br /> ['f.STATUS.facet.mincount' , '1'],<br /> ['f.OO.facet.mincount' , '1'],<br /> ['facet.field' , 'SOURCE'],<br /> ['facet.field' , 'STATUS'],<br /> ['facet.field' , 'OO'],<br /> ['facet.query' , 'ITY:VERBAL'],<br /> ['facet.query'  , 'ITY:NONVERBAL'],<br /> ['facet.query' , 'ITY:COMBINED'],<br /> ['facet.query' , 'ITY:UNKNOWN'],<br /> ['facet.query' , 'ED:[* TO NOW/DAY]'],<br /> ['facet.query' , 'ED:[NOW/DAY-1MONTH TO NOW/DAY]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO *]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO NOW/DAY+1MONTH]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO NOW/DAY+6MONTHS]'],<br /> ['facet.query' , 'ED:[NOW/DAY+1DAY TO NOW/DAY+1YEAR]'],<br />]<br />res = Net::HTTP.new(url.host, url.port).start {|http| http.request(req) }<br />case res<br />when Net::HTTPSuccess, Net::HTTPRedirection<br />  # OK<br />  pp JSON.parse(res.body)<br />else<br />  pp res.value<br />end</pre>
+<p><a href="https://gist.github.com/ymkjp/55aff114ef7c63cb14f3#file-wipo-rb">https://gist.github.com/ymkjp/55aff114ef7c63cb14f3#file-wipo-rb</a></p>
+<p><i>Feel free to ask about this article: <adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></i></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/26/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">26</post-id>	</item>
+		<item>
+		<title>Alfredでワンライナーをいい感じに実行できるようにした</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/50</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/50#respond</comments>
+		<pubDate>Thu, 10 Jul 2014 19:39:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[alfred]]></category>
+		<category><![CDATA[dev]]></category>
+		<category><![CDATA[env]]></category>
+		<category><![CDATA[osx]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2014/07/10/alfred%e3%81%a7%e3%83%af%e3%83%b3%e3%83%a9%e3%82%a4%e3%83%8a%e3%83%bc%e3%82%92%e3%81%84%e3%81%84%e6%84%9f%e3%81%98%e3%81%ab%e5%ae%9f%e8%a1%8c%e3%81%a7%e3%81%8d%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab/</guid>
+		<description><![CDATA[Powerpacker 限定のお手軽ワンライナー実行環境です！ PHP版とRuby版があります。 https://github.com/ymkjp/alfredphp.alfredworkflow https://github.com/ymkjp/aruby.alfredworkflow 書いた後でAlfredプロンプトからシェルコマンド実行できるじゃんって気づきましたが、コンソール画面を立ち上げずにワンライナーを入力してクリップボードに出力結果を得られるので全くの特徴がないわけではない！ と自分を励ましつつそっと MacBookAir を閉じました。 http://support.alfredapp.com/features:terminal @ymkjp]]></description>
+				<content:encoded><![CDATA[<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-IyQBedwP6k4/U77n8V8NpmI/AAAAAAAASVU/2q6e-S7lZVE/s1600/Screenshot%2B2014-07-11%2B03.08.53.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-IyQBedwP6k4/U77n8V8NpmI/AAAAAAAASVU/2q6e-S7lZVE/s400/Screenshot%2B2014-07-11%2B03.08.53.png" /></a><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-zWlc94N3eCk/U77n_At3zAI/AAAAAAAASVc/Hgutz1PYa_E/s1600/Screenshot%2B2014-07-11%2B03.08.57.png"><img border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-zWlc94N3eCk/U77n_At3zAI/AAAAAAAASVc/Hgutz1PYa_E/s400/Screenshot%2B2014-07-11%2B03.08.57.png" /></a></p>
+<p>Powerpacker 限定のお手軽ワンライナー実行環境です！
+<div></div>
+<div>PHP版とRuby版があります。</p>
+<pre><a href="https://github.com/ymkjp/alfredphp.alfredworkflow">https://github.com/ymkjp/alfredphp.alfredworkflow</a></pre>
+<pre><a href="https://github.com/ymkjp/aruby.alfredworkflow">https://github.com/ymkjp/aruby.alfredworkflow</a></pre>
+<div></div>
+<p>書いた後でAlfredプロンプトからシェルコマンド実行できるじゃんって気づきましたが、コンソール画面を立ち上げずにワンライナーを入力してクリップボードに出力結果を得られるので全くの特徴がないわけではない！ と自分を励ましつつそっと MacBookAir を閉じました。</p></div>
+<div></div>
+<div><a href="http://support.alfredapp.com/features:terminal">http://support.alfredapp.com/features:terminal</a></div>
+<div>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+</div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/50/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">50</post-id>	</item>
+		<item>
+		<title>【初心者向け】最速で Rails 開発環境構築</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/51</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/51#respond</comments>
+		<pubDate>Sat, 21 Jun 2014 09:29:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[osx]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2014/06/21/%e3%80%90%e5%88%9d%e5%bf%83%e8%80%85%e5%90%91%e3%81%91%e3%80%91%e6%9c%80%e9%80%9f%e3%81%a7-rails-%e9%96%8b%e7%99%ba%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/</guid>
+		<description><![CDATA[Rails 開発をはじめるにあったっていちばん大変なのは環境構築です。 最近発売された『パーフェクト Ruby on Rails』は良書ですが、本書で紹介されているよりももっと簡単に環境構築はできます。 環境構築の大変さでつまずいてしまうともったいないので、簡単に最速で開発環境を構築できる方法を紹介します。 本記事の対象 Mac OSX ユーザー ※Windows ユーザーの方: 『パーフェクト Ruby on Rails』の巻末の付録は Windows 向けに Ubuntu 環境構築の方法が丁寧に紹介されています。 最速で環境構築 1. ターミナルを立ち上げ homebrew で git を入れる。 $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"$ brew install git 2. virtualbox と vagrant をインストールする。 ※難易度: Chrome をインストールするのと同等 https://www.virtualbox.org/ http://www.vagrantup.com/ 3. Rails 本家で用意されている開発環境 rails-dev-box をもらってくる。 $ git clone &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/51" class="more-link">Continue reading<span class="screen-reader-text"> "【初心者向け】最速で Rails 開発環境構築"</span></a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.amazon.co.jp/gp/product/4774165166/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4774165166&amp;linkCode=as2&amp;tag=m0b55-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4774165166&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=m0b55-22" /></a></p>
+<p>Rails 開発をはじめるにあったっていちばん大変なのは環境構築です。</p>
+<p>最近発売された『<a href="http://www.amazon.co.jp/gp/product/4774165166/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4774165166&amp;linkCode=as2&amp;tag=m0b55-22">パーフェクト Ruby on Rails</a>』は良書ですが、本書で紹介されているよりももっと簡単に環境構築はできます。</p>
+<p>環境構築の大変さでつまずいてしまうともったいないので、簡単に最速で開発環境を構築できる方法を紹介します。</p>
+<h4><b>本記事の対象</b></h4>
+<p>Mac OSX ユーザー</p>
+<p>※Windows ユーザーの方: 『パーフェクト Ruby on Rails』の巻末の付録は Windows 向けに Ubuntu 環境構築の方法が丁寧に紹介されています。</p>
+<h4><b>最速で環境構築</b></h4>
+<p>1. ターミナルを立ち上げ <a href="http://brew.sh/">homebrew</a> で git を入れる。</p>
+<pre>$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"<br />$ brew install git<br /></pre>
+<p>2. virtualbox と vagrant をインストールする。</p>
+<p>※難易度: Chrome をインストールするのと同等</p>
+<ul>
+<li><a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></li>
+<li><a href="http://www.vagrantup.com/">http://www.vagrantup.com/</a></li>
+</ul>
+<p>3. Rails 本家で用意されている開発環境 <a href="https://github.com/rails/rails-dev-box">rails-dev-box</a> をもらってくる。</p>
+<pre>$ git clone git@github.com:rails/rails-dev-box.git<br />$ cd rails-dev-box<br />$ vagrant up<br /></pre>
+<p>4. vagrant 環境に『パーフェクトRails』で指定されているバージョンの Rails を入れる。</p>
+<pre>$ vagrant ssh<br />$ gem install rails -v 4.1.1 --no-rdoc --no-ri<br /></pre>
+<p>5. Rails アプリをつくってアクセスしてみる。</p>
+<pre>$ cd /vagrant<br />$ rails new myapp<br />$ rails s<br /></pre>
+<p>ブラウザーで <a href="http://localhost:3000/">http://localhost:3000</a> にアクセスするとアプリケーションが見えます。</p>
+<h4><b>Next Step</b></h4>
+<p>↓のチュートリアルをやってみましょう。</p>
+<p><a href="http://railstutorial.jp/"><b>Ruby on Rails チュートリアル: 実例を使って Rails を学ぼう</b></a></p>
+<p>『パーフェクト Ruby on Rails』の3章目以降はこのチュートリアルをやったあとに読んだほうが効率がいいと思います。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/51/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">51</post-id>	</item>
+		<item>
+		<title>PHPとRubyのアクセス修飾子の違い</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/54</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/54#respond</comments>
+		<pubDate>Sun, 15 Jun 2014 05:33:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2014/06/15/php%e3%81%a8ruby%e3%81%ae%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e4%bf%ae%e9%a3%be%e5%ad%90%e3%81%ae%e9%81%95%e3%81%84/</guid>
+		<description><![CDATA[PHP* public どこからでもアクセス可* protected 自クラス、子クラスからアクセス可* private 自クラスからのみアクセス可 Ruby* public どこからでもアクセス可* protected 自クラス、子クラスからアクセス可* private 自クラス、子クラスからのみ、かつ、同一インスタンスでのみアクセス可 @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>PHP<br />* public どこからでもアクセス可<br />* protected 自クラス、子クラスからアクセス可<br />* private 自クラスからのみアクセス可</p>
+<p>Ruby<br />* public どこからでもアクセス可<br />* protected 自クラス、子クラスからアクセス可<br />* private 自クラス、子クラスからのみ、かつ、同一インスタンスでのみアクセス可</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/54/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">54</post-id>	</item>
+		<item>
+		<title>nokogiri 1.6 の gem install で libxslt あたりのエラーが出て困ったら GREP_OPTIONS を疑ってみましょう</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/105</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/105#respond</comments>
+		<pubDate>Mon, 09 Dec 2013 16:36:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[env]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/12/09/nokogiri-1-6-%e3%81%ae-gem-install-%e3%81%a7-libxslt-%e3%81%82%e3%81%9f%e3%82%8a%e3%81%ae%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8c%e5%87%ba%e3%81%a6%e5%9b%b0%e3%81%a3%e3%81%9f%e3%82%89-grep_options/</guid>
+		<description><![CDATA[久しぶりに環境構築系のつらみをあじわいました。nokogiri を新しい ruby に gem install しようとしたところ、失敗しました。 解決策の要約としては GREP_OPTIONS で &#8211;color などを設定しているあたりをコメントアウトしたら上手くいきました。 configure 時の grep 関連の失敗は今回に限らず割とあるらしいですね。その発見があっただけでもよしとしたいところです。いやぁ、地雷は一度は踏み抜いてみるものですなぁ。 ※ちなみにここでいう grep コマンドは GNU 版の grep で OSX に標準で入っているBSD 版の grep とは少し異なります。この差異で失敗することもあるようです。 $ /usr/bin/grep --versiongrep (BSD grep) 2.5.1-FreeBSD $ /usr/local/bin/ggrep --version/usr/local/bin/ggrep (GNU grep) 2.14.56-1e3d $ brew tap homebrew/dupes &#038;& brew install grep --default-names 今回の grep は↑で入る grep です。 もう少し詳しく触れておくと、まず &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/105" class="more-link">Continue reading<span class="screen-reader-text"> "nokogiri 1.6 の gem install で libxslt あたりのエラーが出て困ったら GREP_OPTIONS を疑ってみましょう"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>久しぶりに環境構築系のつらみをあじわいました。<br />nokogiri を新しい ruby に gem install しようとしたところ、失敗しました。</p>
+<p>解決策の要約としては GREP_OPTIONS で &#8211;color などを設定しているあたりをコメントアウトしたら上手くいきました。</p>
+<p>configure 時の grep 関連の失敗は今回に限らず割とあるらしいですね。その発見があっただけでもよしとしたいところです。いやぁ、地雷は一度は踏み抜いてみるものですなぁ。</p>
+<p>※ちなみにここでいう grep コマンドは GNU 版の grep で OSX に標準で入っているBSD 版の grep とは少し異なります。この差異で失敗することもあるようです。</p>
+<pre>$ /usr/bin/grep --version<br />grep (BSD grep) 2.5.1-FreeBSD</pre>
+<p>
+<pre>$ /usr/local/bin/ggrep --version<br />/usr/local/bin/ggrep (GNU grep) 2.14.56-1e3d</pre>
+<p>
+<pre>$ brew tap homebrew/dupes && brew install grep --default-names</pre>
+<p>今回の grep は↑で入る grep です。</p>
+<p>もう少し詳しく触れておくと、まず gem install nokogiri が吐いていたエラーは下記の通りです。</p>
+<pre>$ gem install nokogiri<br />Building native extensions.  This could take a while...<br />ERROR:  Error installing nokogiri:<br />        ERROR: Failed to build gem native extension.<br /><br />    /usr/local/var/rbenv/versions/2.0.0-p353/bin/ruby extconf.rb<br />Extracting libxml2-2.8.0.tar.gz into tmp/x86_64-apple-darwin13.0.0/ports/libxml2/2.8.0... OK<br />Running 'configure' for libxml2 2.8.0... OK<br />Running 'compile' for libxml2 2.8.0... OK<br />Running 'install' for libxml2 2.8.0... OK<br />Activating libxml2 2.8.0 (from /usr/local/var/rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/noko<br />giri-1.6.0/ports/x86_64-apple-darwin13.0.0/libxml2/2.8.0)...<br />Extracting libxslt-1.1.26.tar.gz into tmp/x86_64-apple-darwin13.0.0/ports/libxslt/1.1.26... OK<br />Running 'configure' for libxslt 1.1.26... ERROR, review 'tmp/x86_64-apple-darwin13.0.0/ports/libxslt/<br />1.1.26/configure.log' to see what happened.<br />*** extconf.rb failed ***<br />Could not create Makefile due to some reason, probably lack of necessary<br />libraries and/or headers.  Check the mkmf.log file for more details.  You may<br />need configuration options.<br /><br />Provided configuration options:<br />        --with-opt-dir<br />        --without-opt-dir<br />        --with-opt-include<br />        --without-opt-include=${opt-dir}/include<br />        --with-opt-lib<br />        --without-opt-lib=${opt-dir}/lib<br />        --with-make-prog<br />        --without-make-prog<br />        --srcdir=.<br />        --curdir<br />        --ruby=/usr/local/var/rbenv/versions/2.0.0-p353/bin/ruby<br />/usr/local/var/rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/mini_portile-0.5.2/lib/mini_portile<br />.rb:265:in `block in execute': Failed to complete configure task (RuntimeError)<br />        from /usr/local/var/rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/mini_portile-0.5.2/lib<br />/mini_portile.rb:257:in `chdir'<br />        from /usr/local/var/rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/mini_portile-0.5.2/lib<br />/mini_portile.rb:257:in `execute'<br />        from /usr/local/var/rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/mini_portile-0.5.2/lib<br />/mini_portile.rb:65:in `configure'<br />        from /usr/local/var/rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/mini_portile-0.5.2/lib<br />/mini_portile.rb:108:in `cook'<br />        from extconf.rb:101:in `block in <main>'<br />        from extconf.rb:131:in `call'<br />        from extconf.rb:131:in `block in <main>'<br />        from extconf.rb:122:in `tap'<br />        from extconf.rb:122:in `<main>'<br /><br /><br />Gem files will remain installed in /usr/local/var/rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/<br />nokogiri-1.6.0 for inspection.<br />Results logged to /usr/local/var/rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/nokogiri-1.6.0/ex<br />t/nokogiri/gem_make.out<br /></pre>
+<p>そして気になる原因ですが、下記で引用してる nokogiri#issues では &#8211;color=auto ならだいじょうぶみたいに書かれていました。</p>
+<p>ただ、僕の場合は auto でも失敗していました。</p>
+<div>
+<blockquote>
+<p style="font-size: small;">
+<pre>export GREP_OPTIONS="--color=auto"<br /></pre>
+</p>
+<div><small><cite title="sparklemotion"><a href="https://github.com/sparklemotion/nokogiri/issues/935">Install failure on OSX: No acceptable grep?? · Issue #935 · sparklemotion/nokogiri</a></cite></small></div>
+</blockquote>
+</div>
+<p>なぜでしょうか。今回失敗していた時点の僕の GREP_OPTIONS は下記の通りです。</p>
+<p>
+<pre>$ echo $GREP_OPTIONS<br />--color=auto --exclude-dir=.libs --exclude-dir=.deps --exclude-dir=.git --exclude-dir=.svn --exclude=*.tmp --directories=recurse --binary-files=without-match<br /></pre>
+<p>こうして見てみると *.tmp 無視しちゃってるのとか、かなり怪しいですね。<br />中途半端ですが原因究明はここまでです。</p>
+<p>ということで、上記の issue も盛り上がっていたので blog にしてみました。</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/105/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">105</post-id>	</item>
+		<item>
+		<title>年の瀬ということもありプログラマ修行をしようと思い立ったのでまずは TODO リストにしてみた</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/107</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/107#respond</comments>
+		<pubDate>Sat, 07 Dec 2013 11:27:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[C]]></category>
+		<category><![CDATA[dev]]></category>
+		<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[todo]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/12/07/%e5%b9%b4%e3%81%ae%e7%80%ac%e3%81%a8%e3%81%84%e3%81%86%e3%81%93%e3%81%a8%e3%82%82%e3%81%82%e3%82%8a%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9e%e4%bf%ae%e8%a1%8c%e3%82%92%e3%81%97%e3%82%88%e3%81%86/</guid>
+		<description><![CDATA[こんにちは、みなさま進捗はいかがでしょうか。 この度、自身のプログラマとしての能力を向上させたく、下記の通り修行の TODO リストを作成しましたので回覧いたします。 プログラマ修行 TODO リスト (優先度順) アルゴリズムとデータ構造の本 のコード例を Ruby 2.0 Haskell で書き直す デザパタ本 のコード例を Ruby 2.0 で書き直す 『OS自作入門』でOS自作を完遂する それぞれのタスクのねらいは後述しますが、ざっくりした現状の課題としては、日常の業務でプロダクトの開発・運用を行っている際に自分の能力不足を痛感することも多いため、もっと地力をつけたいなぁというものです。 コンピュータサイエンスとは言わないまでも、より汎用的な能力を身につけて、周りの人をより幸せにできるプログラムを書けるようになることを目指します。 各タスクの紹介と成果物の管理方法・期日 各タスクはそれぞれ1冊づつ本をベースにして進める計画を立てています。 プログラミングの宝箱 アルゴリズムとデータ構造 第2版 まず1つめは書名にある通り「アルゴリズムとデータ構造」を習得することを目的としています。 Amazonの書影からはうかがい知れませんが、本の帯に書かれていることがとても僕に訴求してきたので引用してみます。 全プログラマー必読!!どんなに時代やテクノロジーが進化してもそれを理解し、活用するための武器を手に入れよう 『プログラミングの宝箱 アルゴリズムとデータ構造 第2版』 帯より 「これぞ！」といった感があります。これぞ、僕が求めていたものだ、と。 今は途中まで読んでいますが内容もよく、第2版まで出ているのも納得させられます。 今回はこの本についている C/C++ や Java のコード例を Ruby 2.0 Haskell で書きなおして、成果物は github に push していきます。 期日は 2014-03-31 2014-05-31 です。 ymkjp/Algorithms-and-Data-Structures ↑こちらの写真から目にする者に若干の狂気を感じ取らせる表紙カバーの挿絵と、本の帯の名文句をご堪能ください。 &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/107" class="more-link">Continue reading<span class="screen-reader-text"> "年の瀬ということもありプログラマ修行をしようと思い立ったのでまずは TODO リストにしてみた"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>こんにちは、みなさま進捗はいかがでしょうか。</p>
+<p>この度、自身のプログラマとしての能力を向上させたく、下記の通り修行の TODO リストを作成しましたので回覧いたします。</p>
+<p><a href="https://pbs.twimg.com/media/BXlXigICYAAuo0p.jpg"><img border="0" height="490" src="https://pbs.twimg.com/media/BXlXigICYAAuo0p.jpg" width="580" /></a></p>
+<p>
+<h4>プログラマ修行 TODO リスト (優先度順)</h4>
+<p>
+<div>
+<ol>
+<li><a href="http://www.amazon.co.jp/gp/product/4797363282/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4797363282&amp;linkCode=as2&amp;tag=m0b55-22">アルゴリズムとデータ構造の本</a> のコード例を <strike>Ruby 2.0</strike> Haskell で書き直す</li>
+<li><a href="http://www.amazon.co.jp/gp/product/4894712857/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4894712857&amp;linkCode=as2&amp;tag=m0b55-22">デザパタ本</a> のコード例を Ruby 2.0 で書き直す</li>
+<li>『<a href="http://www.amazon.co.jp/gp/product/4839919844/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4839919844&amp;linkCode=as2&amp;tag=m0b55-22">OS自作入門</a>』でOS自作を完遂する</li>
+</ol>
+</div>
+<p>それぞれのタスクのねらいは後述しますが、ざっくりした現状の課題としては、日常の業務でプロダクトの開発・運用を行っている際に自分の能力不足を痛感することも多いため、もっと地力をつけたいなぁというものです。</p>
+<p>コンピュータサイエンスとは言わないまでも、より汎用的な能力を身につけて、周りの人をより幸せにできるプログラムを書けるようになることを目指します。</p>
+<h4>各タスクの紹介と成果物の管理方法・期日</h4>
+<p>各タスクはそれぞれ1冊づつ本をベースにして進める計画を立てています。</p>
+<div style="margin-bottom: 5px;"><a href="http://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E5%AE%9D%E7%AE%B1-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%A8%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0-%E7%AC%AC2%E7%89%88-%E7%B4%80%E5%B9%B3-%E6%8B%93%E7%94%B7/dp/4797363282%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4797363282" target="_blank" title="プログラミングの宝箱 アルゴリズムとデータ構造 第2版"><img alt="プログラミングの宝箱 アルゴリズムとデータ構造 第2版" height="150" src="http://ecx.images-amazon.com/images/I/51YG0cm9UCL._SL160_.jpg" style="border-radius: 0; border: 0;" width="106" /></a></div>
+<p><a href="http://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E5%AE%9D%E7%AE%B1-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%A8%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0-%E7%AC%AC2%E7%89%88-%E7%B4%80%E5%B9%B3-%E6%8B%93%E7%94%B7/dp/4797363282%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4797363282" target="_blank">プログラミングの宝箱 アルゴリズムとデータ構造 第2版</a></p>
+<p>まず1つめは書名にある通り「アルゴリズムとデータ構造」を習得することを目的としています。</p>
+<p>Amazonの書影からはうかがい知れませんが、本の帯に書かれていることがとても僕に訴求してきたので引用してみます。</p>
+<div>
+<blockquote>
+<div style="font-size: small;">全プログラマー必読!!<br />どんなに時代やテクノロジーが進化してもそれを理解し、活用するための武器を手に入れよう</div>
+<div><small><cite title="amazon"><a href="http://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E5%AE%9D%E7%AE%B1-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%A8%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0-%E7%AC%AC2%E7%89%88-%E7%B4%80%E5%B9%B3-%E6%8B%93%E7%94%B7/dp/4797363282%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4797363282" target="_blank" title="プログラミングの宝箱 アルゴリズムとデータ構造 第2版">『プログラミングの宝箱 アルゴリズムとデータ構造 第2版</a>』 帯より</cite></small></div>
+</blockquote>
+</div>
+<p>「これぞ！」といった感があります。これぞ、僕が求めていたものだ、と。</p>
+<p>今は途中まで読んでいますが内容もよく、第2版まで出ているのも納得させられます。</p>
+<p>今回はこの本についている C/C++ や Java のコード例を <strike>Ruby 2.0</strike> Haskell で書きなおして、成果物は <a href="https://github.com/ymkjp/Algorithms-and-Data-Structures">github</a> に push していきます。</p>
+<p>期日は <strike>2014-03-31</strike> 2014-05-31 です。</p>
+<pre><a href="https://github.com/ymkjp/Algorithms-and-Data-Structures">ymkjp/Algorithms-and-Data-Structures</a></pre>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Fktg_R4t-Og/UqL4eilHfWI/AAAAAAAAQpA/qYmt89HA7Vg/s1600/%25E5%2586%2599%25E7%259C%259F%2B2013-12-07%2B19%2B25%2B39.jpg"><img alt="本の帯の写真" border="0" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Fktg_R4t-Og/UqL4eilHfWI/AAAAAAAAQpA/qYmt89HA7Vg/s400/%25E5%2586%2599%25E7%259C%259F%2B2013-12-07%2B19%2B25%2B39.jpg" /></a></p>
+<p>↑こちらの写真から目にする者に若干の狂気を感じ取らせる表紙カバーの挿絵と、本の帯の名文句をご堪能ください。</p>
+<p>
+<div style="margin-bottom: 5px;"><a href="http://www.amazon.co.jp/Ruby%E3%81%AB%E3%82%88%E3%82%8B%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3-Russ-Olsen/dp/4894712857%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4894712857" target="_blank" title="Rubyによるデザインパターン"><img alt="Rubyによるデザインパターン" height="150" src="http://ecx.images-amazon.com/images/I/41PNvUxHtgL._SL160_.jpg" style="border-radius: 0; border: 0;" width="119" /></a></div>
+<p><a href="http://www.amazon.co.jp/Ruby%E3%81%AB%E3%82%88%E3%82%8B%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3-Russ-Olsen/dp/4894712857%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4894712857" target="_blank">Rubyによるデザインパターン</a></p>
+<p>つづいて2つめは先月くらいからちょこちょこ進めています。</p>
+<p>デザインパターンを習得することを目的としていて、こちらも Ruby 2.0 化したコードを <a href="https://github.com/ymkjp/Ruby_Design_Patterns">github</a> に置いていきます。</p>
+<p>期日は <strike>2014-03-31</strike> 2014-05-31 です。</p>
+<pre><a href="https://github.com/ymkjp/Ruby_Design_Patterns">ymkjp/Ruby_Design_Patterns</a></pre>
+<div style="margin-bottom: 5px;"><a href="http://www.amazon.co.jp/30%E6%97%A5%E3%81%A7%E3%81%A7%E3%81%8D%E3%82%8B-OS%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80-%E5%B7%9D%E5%90%88-%E7%A7%80%E5%AE%9F/dp/4839919844%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4839919844" target="_blank" title="30日でできる! OS自作入門"><img alt="30日でできる! OS自作入門" height="150" src="http://ecx.images-amazon.com/images/I/41Q4Q20S5PL._SL160_.jpg" style="border-radius: 0; border: 0;" width="116" /></a></div>
+<p><a href="http://www.amazon.co.jp/30%E6%97%A5%E3%81%A7%E3%81%A7%E3%81%8D%E3%82%8B-OS%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80-%E5%B7%9D%E5%90%88-%E7%A7%80%E5%AE%9F/dp/4839919844%3FSubscriptionId%3D0AVSM5SVKRWTFMG7ZR82%26tag%3Dm0b55-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4839919844" target="_blank">30日でできる! OS自作入門</a></p>
+<p>最後に3つめは『OS自作入門』を参考にOS自作の完遂を目指します。</p>
+<p>こちらの書籍は前提としての知識はそれほど求められていないようですが、そもそも僕のOS開発に対する理解が<br />現状ではとぼしすぎてはっきりとしたゴールは示せません。</p>
+<p>書籍自体は Wndows 向けに書かれていてDOS機での開発経験のない僕は軽く絶望しましたが、有志による Debian GNU/Linux 版や OSX 版の開発ツールが <a href="http://hrb.osask.jp/">サポートページ</a> で紹介されていたので、そちらを参考にしつつ進めていきます。</p>
+<p>期日は <strike>2013-08-31</strike> 2014-08-31 です。</p>
+<p><a href="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Jpm7zYW8mzs/UqLq1zZb8KI/AAAAAAAAQos/GcMmO9H8YDw/s1600/%E5%86%99%E7%9C%9F%2B2013-12-07%2B18%2B19%2B07.jpg"><img border="0" height="400" src="http://xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-Jpm7zYW8mzs/UqLq1zZb8KI/AAAAAAAAQos/GcMmO9H8YDw/s400/%E5%86%99%E7%9C%9F%2B2013-12-07%2B18%2B19%2B07.jpg" width="300" /></a></p>
+<p>↑正直に言ってこちらの写真の通り書籍も分厚く、このタスクの難易度は高そうですが、現状との落差が大きいだけに完遂できたときに得るものも大きいのではないかという予感はしています。</p>
+<p>以上、修行 TODO リストでした。</p>
+<p>特に最後のOS自作は心が折れる可能性が高いので、この blog を読んでくださったみなさまの温かい「進捗どうですか？」をお待ちしております。</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/107/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">107</post-id>	</item>
+		<item>
+		<title>改行 (n) で置換するなら sed じゃなくて tr を使う</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/118</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/118#respond</comments>
+		<pubDate>Sun, 27 Oct 2013 05:38:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[Ruby]]></category>
+		<category><![CDATA[shell]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/10/27/%e6%94%b9%e8%a1%8c-n-%e3%81%a7%e7%bd%ae%e6%8f%9b%e3%81%99%e3%82%8b%e3%81%aa%e3%82%89-sed-%e3%81%98%e3%82%83%e3%81%aa%e3%81%8f%e3%81%a6-tr-%e3%82%92%e4%bd%bf%e3%81%86/</guid>
+		<description><![CDATA[結論としては sed で n (改行) を扱うのはやっかいなので tr を使いましょう。 今日、ついに bash から zsh に乗り換えようとしていて、日曜を .zshrc の整備に費やしていました。 そこで homebrew に brew doctor という PATH などをチェックしてくれるいいコマンドがあるのでそれを基準に整備していたのですが、どうにも PATH が二重三重に読み込まれている模様。 それをスクリプトで確認しようとおもむろに sed でワンライナーを書き始めたのですが、: を n に置換する方法が分からない。 やりたいこととしては、 /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin ↑こういうのを、 /usr/bin/bin/usr/sbin/sbin/usr/local/bin ↑こうしたかった。 そこで初めは挫折して ruby で書きました。もちろんうまく動いてくれます。 echo $PATH &#124; ruby -pe '$_.gsub!(/:/,"n")' しかしやはり気になったのでシェルのコマンドでどうやって書くのか調べてみました。その結果がこちら。 echo $PATH &#124; tr ':' 'n' ちなみに、うまく動いてくれなかったコマンドはこいつです。 echo $PATH &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/118" class="more-link">Continue reading<span class="screen-reader-text"> "改行 (n) で置換するなら sed じゃなくて tr を使う"</span></a>]]></description>
+				<content:encoded><![CDATA[<p>結論としては sed で n (改行) を扱うのはやっかいなので tr を使いましょう。</p>
+<p>今日、ついに bash から zsh に乗り換えようとしていて、日曜を .zshrc の整備に費やしていました。</p>
+<p>そこで homebrew に brew doctor という PATH などをチェックしてくれるいいコマンドがあるのでそれを基準に整備していたのですが、どうにも PATH が二重三重に読み込まれている模様。</p>
+<p>それをスクリプトで確認しようとおもむろに sed でワンライナーを書き始めたのですが、: を n に置換する方法が分からない。</p>
+<p>
+<p>やりたいこととしては、</p>
+<pre>/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin</pre>
+<p>↑こういうのを、</p>
+<pre>/usr/bin<br />/bin<br />/usr/sbin<br />/sbin<br />/usr/local/bin</pre>
+<p>↑こうしたかった。</p>
+<p>
+<p>そこで初めは挫折して ruby で書きました。もちろんうまく動いてくれます。</p>
+<pre>echo $PATH | ruby -pe '$_.gsub!(/:/,"n")'</pre>
+<p>
+<p>しかしやはり気になったのでシェルのコマンドでどうやって書くのか調べてみました。その結果がこちら。</p>
+<pre>echo $PATH | tr ':' 'n'</pre>
+<p>ちなみに、うまく動いてくれなかったコマンドはこいつです。</p>
+<pre>echo $PATH | sed -e "s/:/\n/g"  # Doesn't work as intended</pre>
+<p>
+<p>なるほど tr って使い所よく分からないなぁと思っていたがこうやって使うのか。</p>
+<p>sed でうまく行かなかった原因は、よくわかっていません。改行は GNU バージョンならすんなりいくそうですが手元の Mac デフォルトのやつが BSD バージョンだったのでうまくいかなかったのかもしれません。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/118/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">118</post-id>	</item>
+		<item>
+		<title>CodeIQ × はてな エンジニア夏祭り2013 第1夜 に参加した</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/149</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/149#respond</comments>
+		<pubDate>Mon, 22 Jul 2013 17:30:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/07/22/codeiq-x-%e3%81%af%e3%81%a6%e3%81%aa-%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e5%a4%8f%e7%a5%ad%e3%82%8a2013-%e7%ac%ac1%e5%a4%9c-%e3%81%ab%e5%8f%82%e5%8a%a0%e3%81%97%e3%81%9f/</guid>
+		<description><![CDATA[CodeIQ × はてな エンジニア夏祭り2013 第1夜 はてなの挑戦状 に参加した。「ワンライナーで書けるっしょ！」と思って pry 立ち上げて粘ったものの、全然そんなことない回答に仕上がりました。 設問は次の通りでした。 ■ 課題以下のようにスパゲティ（spagetti）という文字 50 個分をバラバラにしてランダムに配置した文字列があります。この中に前から順番に「n」「e」「a」「p」「o」「l」「i」「t」「a」「n」という順番でナポリタン（neapolitan）という文字が隠れています。その該当文字を抜き出し、前後に [ ] を付け加えてください。-------gtgtsgipgttptinggipsppaigsesgpetgstpatetisiesagaeaigttetepitiatsegssieeeeatepaaiagtpieataatppiitgiapsteitatiiatpetetetttgpetpaasipttssstpeeeggtiagtttegtiipestsasgpsepaasapttgattgiatppegitiatpasgatgepttggapesaeetaeissttggieietgspagesiipestipggstttpateptitiaetottissgggtttaipappgstsptttgtpispattgegstltiappseisapgistaiagteeiptptpisaieisagstapeteietgteiisgtiptstgtstasspeatspptitttatteastsgtptgtasggpniaaeteaisett-------例として、以下の様な状態に文字列を変換できれば正解です。-------gtgtsgipgttpti[n]ggipsppaigs[e]sgpetgstpatetisiesagaeaigttetepitiatsegssieeeeatepaaiagtpieata[a]tppiitgia[p]steitatiiatpetetetttgpetpaasipttssstpeeeggtiagtttegtiipestsasgpsepaasapttgattgiatppegitiatpasgatgepttggapesaeetaeissttggieietgspagesiipestipggstttpateptitiaet[o]ttissgggtttaipappgstsptttgtpispattgegst[l]tiappse[i]sapgis[t]aiagteeiptptpisaieisagstapeteietgteiisgtiptstgtst[a]sspeatspptitttatteastsgtptgtasggp[n]iaaeteaisett-------■ 注意事項- 必ず文字の先頭から [n][e][a][p][o][l][i][t][a][n] という並びになるようにしてください- 例えば「i」など複数回出現するような文字の場合は [l] と [t] の間にあれば、どの i に [] がついても問題ありません※ 解答は作成したプログラムのソースコードをtxtファイルに貼り付けていただき、そのファイルのみをアップロードしてください。 噴飯コードですね、はい。特に each_with_index がだめだと反省しています。設問には想定時間10分って書いてありますが、全然10分で終わっていません。優秀な解答がブログで示されるようなので楽しみにしています。 【追記】 PHP でも書いたので貼っておきます。そもそも正規表現にする必要なかった^^; @ymkjp]]></description>
+				<content:encoded><![CDATA[<p><a href="http://partner.hatena.ne.jp/codeiq_matsuri2013">CodeIQ × はてな エンジニア夏祭り2013 第1夜 はてなの挑戦状</a> に参加した。「ワンライナーで書けるっしょ！」と思って pry 立ち上げて粘ったものの、全然そんなことない回答に仕上がりました。</p>
+<p>
+<p>設問は次の通りでした。</p>
+<pre>■ 課題<br /><br />以下のようにスパゲティ（spagetti）という文字 50 個分をバラバラにしてランダムに配置した文字列があります。この中に前から順番に「n」「e」「a」「p」「o」「l」「i」「t」「a」「n」という順番でナポリタン（neapolitan）という文字が隠れています。その該当文字を抜き出し、前後に [ ] を付け加えてください。<br /><br />-------<br />gtgtsgipgttptinggipsppaigsesgpetgstpatetisiesagaeaigttetepitiatsegssieeeeatepaaiagtpieataatppiitgiapsteitatiiatpetetetttgpetpaasipttssstpeeeggtiagtttegtiipestsasgpsepaasapttgattgiatppegitiatpasgatgepttggapesaeetaeissttggieietgspagesiipestipggstttpateptitiaetottissgggtttaipappgstsptttgtpispattgegstltiappseisapgistaiagteeiptptpisaieisagstapeteietgteiisgtiptstgtstasspeatspptitttatteastsgtptgtasggpniaaeteaisett<br />-------<br /><br />例として、以下の様な状態に文字列を変換できれば正解です。<br /><br />-------<br />gtgtsgipgttpti[n]ggipsppaigs[e]sgpetgstpatetisiesagaeaigttetepitiatsegssieeeeatepaaiagtpieata[a]tppiitgia[p]steitatiiatpetetetttgpetpaasipttssstpeeeggtiagtttegtiipestsasgpsepaasapttgattgiatppegitiatpasgatgepttggapesaeetaeissttggieietgspagesiipestipggstttpateptitiaet[o]ttissgggtttaipappgstsptttgtpispattgegst[l]tiappse[i]sapgis[t]aiagteeiptptpisaieisagstapeteietgteiisgtiptstgtst[a]sspeatspptitttatteastsgtptgtasggp[n]iaaeteaisett<br />-------<br /><br /><br />■ 注意事項<br />- 必ず文字の先頭から [n][e][a][p][o][l][i][t][a][n] という並びになるようにしてください<br />- 例えば「i」など複数回出現するような文字の場合は [l] と [t] の間にあれば、どの i に [] がついても問題ありません<br /><br /><br /><br />※ 解答は作成したプログラムのソースコードをtxtファイルに貼り付けていただき、そのファイルのみをアップロードしてください。</pre>
+<p>
+<p>噴飯コードですね、はい。特に each_with_index がだめだと反省しています。設問には想定時間10分って書いてありますが、全然10分で終わっていません。優秀な解答がブログで示されるようなので楽しみにしています。</p>
+<p>【追記】</p>
+<p>PHP でも書いたので貼っておきます。そもそも正規表現にする必要なかった^^;</p>
+<p><iframe frameborder="0" scrolling="no" style="height:440px;width:162px;" src="https://codeiq.jp/blogparts.php?name_en=kansai_takako"></iframe></p>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/149/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">149</post-id>	</item>
+		<item>
+		<title>How to change Rails app into UTF-8</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/158</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/158#respond</comments>
+		<pubDate>Fri, 14 Jun 2013 06:37:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[Ruby]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/06/14/how-to-change-rails-app-into-utf-8/</guid>
+		<description><![CDATA[Not only on Rails, we sometimes encounter following error message of MySQL. Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation &#8216;=&#8217;. So following commands may helps you. NOTE: These commands&#8217; paths are based on Debian GNU/Linux. Especially on Rails, `rake:reset` is the key point. Without this you cannot reset the tables. Good luck. @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>Not only on Rails, we sometimes encounter following error message of MySQL.</p>
+<p><i>Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation &#8216;=&#8217;.</i></p>
+<p>So following commands may helps you.</p>
+<p>
+<p>NOTE: These commands&#8217; paths are based on Debian GNU/Linux.</p>
+<p>
+<p>Especially on Rails, `rake:reset` is the key point. Without this you cannot reset the tables.</p>
+<p>
+<p>Good luck.</p>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> <br /><a name='more'></a><br /><!-- Share with Google -->         <!-- Place this tag where you want the +1 button to render. -->
+<div></div>
+<p><!-- Place this tag after the last +1 button tag. --></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/158/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">158</post-id>	</item>
+	</channel>
+</rss>

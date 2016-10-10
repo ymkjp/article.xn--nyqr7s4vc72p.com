@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Let&#8217;s Encrypt &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/lets-encrypt/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>Let&#8217;s Encrypt &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>A cron job to (re-)issue server certificate of Let&#8217;s Encrypt and update ELB&#8217;s certificate on Amazon Linux</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/6</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/6#respond</comments>
+		<pubDate>Fri, 22 Jan 2016 06:42:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[AWS]]></category>
+		<category><![CDATA[dev]]></category>
+		<category><![CDATA[hello_world]]></category>
+		<category><![CDATA[Let's Encrypt]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[See ymkjp/elb_update_cert if you prefer source code but not messy human document :p Updated at 2016-01-23: Amazon launched AWS Certificate Manager. It should be the easiest way to use certificate on ELB. See more detail at New – AWS Certificate Manager – Deploy SSL/TLS-Based Apps on AWS &#124; AWS Official Blog. Step 0: Create AWS &#8230; <a href="https://xn--nyqr7s4vc72p.com/archives/6" class="more-link">Continue reading<span class="screen-reader-text"> "A cron job to (re-)issue server certificate of Let&#8217;s Encrypt and update ELB&#8217;s certificate on Amazon Linux"</span></a>]]></description>
+				<content:encoded><![CDATA[<div>See <a href="https://github.com/ymkjp/elb_update_cert"><b>ymkjp/elb_update_cert</b></a> if you prefer source code but not messy human document :p</p>
+<p><b><i>Updated at 2016-01-23</i></b>: Amazon launched AWS Certificate Manager. It should be the easiest way to use certificate on ELB. See more detail at <a href="https://aws.amazon.com/jp/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/">New – AWS Certificate Manager – Deploy SSL/TLS-Based Apps on AWS | AWS Official Blog</a>.</div>
+<p>
+<h4><b>Step 0: Create AWS environment</b></h4>
+<p>Omitting description to set up VPC, EC2, ELB&#8230;</p>
+<p>
+<h4><b>Step 1: Create new policy for the batch script</b></h4>
+<p>Firstly, go to <a href="https://console.aws.amazon.com/iam/home"><b>https://console.aws.amazon.com/iam/home</b></a>.</p>
+<p>Select <b>Policies > Create Policy > Create Your Own Policy > Set Permissions</b>.</p>
+<p>Let&#8217;s name the policy whatever you want, for example <code>letsencrypt-aws</code>, and fill following JSON to <b>&#8220;Policy Document&#8221;</b>:</p>
+<pre>{<br />    "Version": "2016-01-20",<br />    "Statement": [<br />        {<br />            "Sid": "",<br />            "Effect": "Allow",<br />            "Action": [<br />                "elasticloadbalancing:DescribeLoadBalancers",<br />                "elasticloadbalancing:SetLoadBalancerListenerSSLCertificate"<br />            ],<br />            "Resource": [<br />                "*"<br />            ]<br />        },<br />        {<br />            "Sid": "",<br />            "Effect": "Allow",<br />            "Action": [<br />                "iam:ListServerCertificates",<br />                "iam:UploadServerCertificate",<br />                "iam:DeleteServerCertificate"<br />            ],<br />            "Resource": [<br />                "*"<br />            ]<br />        }<br />    ]<br />}<br /></pre>
+<h4><b>Step 2: Create new user to execute script</b></h4>
+<p>Create new user at <b>Users > Create New Users</b>.</p>
+<p>Do not forget to download the user&#8217;s credentials.</p>
+<p>Then attach the policy <code>letsencrypt-aws</code> which you just created at step #1 to the user.</p>
+<p>Can&#8217;t find the policy? Try filtering policies by &#8220;<b>Filter: Customer Managed Policies</b>&#8220;.</p>
+<p><img src="" alt="IAM Users letsencrypt-aws" /></p>
+<p>
+<h4><b>Step 3: Install packages</b></h4>
+<p>Login to the host, and install required packages.</p>
+<pre>sudo yum update<br />sudo yum install -y git nginx libffi-devel puppet libffi-devel puppet httpd24 jq<br />sudo /etc/init.d/nginx start<br />sudo chkconfig nginx on<br /></pre>
+<h4><b>Step 4: Set up Nginx</b></h4>
+<p>Edit nginx.conf to add a location directive for Let&#8217;s Encrypt.</p>
+<p><kbd>vi /etc/nginx/nginx.conf</kbd></p>
+<pre>server {<br />    listen       80;<br />    server_name  localhost;<br />    root         /usr/share/nginx/html;<br /><br />    # ...<br /><br />    # For Let's Encrypt<br />    location ^~ /.well-known/acme-challenge {<br />        root /var/www/letsencrypt;<br />        access_log /var/log/nginx/access_letsencrypt.log;<br />        error_log /var/log/nginx/error_letsencrypt.log;<br />    }<br />}<br /></pre>
+<p>Restart Nginx proceess to apply the new configuration.</p>
+<p><kbd>sudo service nginx restart</kbd></p>
+<p>
+<h4><b>Step 5: Let&#8217;s try executing</b></h4>
+<p>Execute commands below:</p>
+<pre>cd /home/ec2-user/<br />git clone https://github.com/ymkjp/elb_update_cert.git<br />git clone https://github.com/letsencrypt/letsencrypt<br />vi /home/ec2-user/elb_update_cert/elb_update_cert.sh  # Edit as yours<br />sudo aws configure --profile elb_update_cert  # Add the user you set up<br />sudo bash elb_update_cert.sh<br /></pre>
+<p>Working well?<br />Move on to the next step.</p>
+<p>
+<h4><b>Step 6: Add cron job</b></h4>
+<p>Congrats. This is the final step!</p>
+<p><kbd>sudo cp /home/ec2-user/elb_update_cert/etc/cron.d/elb_update_cert /etc/cron.d</kbd></p>
+<p>All done!<br />This cron job is going to refresh your domain&#8217;s certificate on ELB every month.</p>
+<p>High five!</p>
+<p>
+<h4><b>Any questions?</b></h4>
+<p>Comment to this article, or create <b>&#8220;New issue&#8221;</b> at <a href="https://github.com/ymkjp/elb_update_cert/issues"><b>https://github.com/ymkjp/elb_update_cert/issues</b></a>.</p>
+<p>
+<h4><b>Further work</b></h4>
+<p>
+<ul>
+<li>Create Docker image for step #3 to #6</li>
+<li>Create template by AWS CloudFormation</li>
+</ul>
+<p>Hope this helps you.</p>
+<p>Cheers!</p>
+<p><i>Author: <adress><a href="http://twitter.com/ymkjp/">@ymkjp</a></adress></i></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/6/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">6</post-id>	</item>
+	</channel>
+</rss>

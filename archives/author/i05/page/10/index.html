@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>@i05 | It works! - Part 10</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,454] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="description"  content="A Tokyo based software developer, a grad student belongs to a security lab at JAIST, and a husband of my mrs." />
+<meta name="robots" content="noindex,follow" />
+<link rel='prev' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/9' />
+<link rel='next' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/11' />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/10" />
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Posts by @i05 Feed" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="archive paged author author-i05 author-1 paged-10 author-paged-10 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></p>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">Author: <span class="vcard">@i05</span></h1>			</header><!-- .page-header -->
+
+			
+<article id="post-76" class="post-76 post type-post status-publish format-standard hentry category-dev category-php">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/76" rel="bookmark">PHP ビット演算子のメモ</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-JGrOj9fskz4/UvIgONpkdlI/AAAAAAAAQyo/zFPDUnHdTFk/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2014-02-05%2B17.53.24.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-JGrOj9fskz4/UvIgONpkdlI/AAAAAAAAQyo/zFPDUnHdTFk/s320/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2014-02-05%2B17.53.24.png" /></a></p>
+<p>いつも php.net の日本語で混乱するので自分の日本語で表現しなおしてみた。</p>
+<div>
+<table>
+<caption></caption>
+<thead>
+<tr>
+<th>演算子</th>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>&#038;</b></td>
+<td>ビット積</td>
+<td>共通して立っているフラグのみ立てる。共通していない場合は折る。</td>
+</tr>
+<tr>
+<td><b>|</b></td>
+<td>ビット和</td>
+<td>どちらかのフラグが立っていれば立てる。どちらも立っていなければ立てないまま。</td>
+</tr>
+<tr>
+<td><b>^</b></td>
+<td>排他的論理和</td>
+<td>片方だけ立っているフラグを立てる。共通して立っているフラグは折る。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>ふと思い立って英語版 php.net を見てみると、英語のほうがわかりやすかった。</p>
+<div>
+<blockquote>
+<table>
+<caption><strong>Bitwise Operators</strong></caption>
+<thead>
+<tr>
+<th>Example</th>
+<th>Name</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>$a &amp; $b</code></strong></td>
+<td>And</td>
+<td>Bits that are set in both <var><var>$a</var></var> and <var><var>$b</var></var> are set.</td>
+</tr>
+<tr>
+<td><strong><code>$a | $b</code></strong></td>
+<td>Or (inclusive or)</td>
+<td>Bits that are set in either <var><var>$a</var></var> or <var><var>$b</var></var> are set.</td>
+</tr>
+<tr>
+<td><strong><code>$a ^ $b</code></strong></td>
+<td>Xor (exclusive or)</td>
+<td>Bits that are set in <var><var>$a</var></var> or <var><var>$b</var></var> but not both are set.</td>
+</tr>
+<tr>
+<td><strong><code>~ $a</code></strong></td>
+<td>Not</td>
+<td>Bits that are set in <var><var>$a</var></var> are not set, and vice versa.</td>
+</tr>
+<tr>
+<td><strong><code>$a &lt;&lt; $b</code></strong></td>
+<td>Shift left</td>
+<td>Shift the bits of <var><var>$a</var></var> <var><var>$b</var></var> steps to the left (each step means<br />&quot;multiply by two&quot;)</td>
+</tr>
+<tr>
+<td><strong><code>$a &gt;&gt; $b</code></strong></td>
+<td>Shift right</td>
+<td>Shift the bits of <var><var>$a</var></var> <var><var>$b</var></var> steps to the right (each step means<br />&quot;divide by two&quot;)</td>
+</tr>
+</tbody>
+</table>
+<div><small><cite title="SOURCE"><a href="http://www.php.net/manual/en/language.operators.bitwise.php">PHP: Bitwise Operators &#8211; Manual</a></cite><br /></small></div>
+</blockquote>
+</div>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/76" rel="bookmark"><time class="entry-date published" datetime="2014-02-05T11:38:00+00:00">2014-02-05</time><time class="updated" datetime="2016-03-11T15:02:30+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/php" rel="category tag">php</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/76#respond"><span class="dsq-postid" data-dsqidentifier="76 http://tk2-249-34500.vs.sakura.ne.jp/2014/02/05/php-%e3%83%93%e3%83%83%e3%83%88%e6%bc%94%e7%ae%97%e5%ad%90%e3%81%ae%e3%83%a1%e3%83%a2/">Leave a comment<span class="screen-reader-text"> on PHP ビット演算子のメモ</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-77" class="post-77 post type-post status-publish format-standard hentry category-uncategorized">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/77" rel="bookmark">ユーザー認証はこれからどうなるのか</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div>JICS2014セキュリティトラックを聞いてユーザー認証についていろいろ考えさせられた。</div>
+<div></div>
+<p><span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;">ディスカッションでは Adobe の1億5千件におよぶ情報漏洩を</span>ひとつの大きな転換として業界内での横のつながりが必要だと認識されつつある段階なのだという話題があり、ユーザー・事業者・プラットフォームで責任分界を決めるべきであるという発言があった。
+<div></div>
+<div>今後は、どうあるべきかということと、実際どうなっていくかということには微妙に食い違いながら進展していくと思うが、ゆくゆくはこうなるだろうという<span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;">本命はプラットフォームが提供する認証手段を各サービスが利用する形態だと思う。</span></div>
+<div></div>
+<div>そこでプラットフォームについて思いをはせてみたいのだが、よくよく考えてみれば、例えばiPhoneを使っているとすると手元の端末のロック解除して使ってるんだからその時点で本人確認は一度終わっているので、Webだろうと何だろうとそれ以降の認証手続きは省略されるっていうのはありかもなぁ、そうなると楽だなぁ、と思う。</div>
+<div></div>
+<div>全体的な方向性としても、そういう楽な方向に流れ着いていきそうな気がしている。</div>
+<div></div>
+<div>Googleなどのプラットフォームを提供する事業者は匿名モードを提供することもできるので、どこの認証を透過的に扱うかなどはユーザーがサービスごとに設定できればよさそうだ。</div>
+<div></div>
+<div>…などとディスカッションを聞いた帰りの電車でぼんやりと考えていた。</div>
+<div></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/77" rel="bookmark"><time class="entry-date published updated" datetime="2014-01-15T04:06:00+00:00">2014-01-15</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/uncategorized" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/77#respond"><span class="dsq-postid" data-dsqidentifier="77 http://tk2-249-34500.vs.sakura.ne.jp/2014/01/15/%e3%83%a6%e3%83%bc%e3%82%b6%e3%83%bc%e8%aa%8d%e8%a8%bc%e3%81%af%e3%81%93%e3%82%8c%e3%81%8b%e3%82%89%e3%81%a9%e3%81%86%e3%81%aa%e3%82%8b%e3%81%ae%e3%81%8b/">Leave a comment<span class="screen-reader-text"> on ユーザー認証はこれからどうなるのか</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-78" class="post-78 post type-post status-publish format-standard hentry category-41 category-40">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/78" rel="bookmark">外国人入国者が過去最多の1000万人に</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>2013年の外国人入国者数が過去最多となった。</p>
+<div>
+<blockquote>
+<div>法務省入国管理局は９日、昨年の外国人入国者数は約１１２５万人だったと発表した。統計を取り始めた１９５０年以降で最も多く、初めて１０００万人を超えた。</div>
+<p><a href="http://gyazo.com/af0afd9c1d6faf69a2d3829f1b3523d8.png"><img border="0" src="http://gyazo.com/af0afd9c1d6faf69a2d3829f1b3523d8.png" /></a></p>
+<div><small><cite title="外国人入国者:初の１０００万人突破　円安やビザ緩和で"><a href="http://mainichi.jp/select/news/20140109k0000e040125000c.html">毎日新聞</a></cite></small></div>
+</blockquote>
+</div>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/78" rel="bookmark"><time class="entry-date published updated" datetime="2014-01-12T19:06:00+00:00">2014-01-12</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%b9" rel="category tag">ニュース</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e7%a7%bb%e6%b0%91" rel="category tag">移民</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/78#respond"><span class="dsq-postid" data-dsqidentifier="78 http://tk2-249-34500.vs.sakura.ne.jp/2014/01/12/%e5%a4%96%e5%9b%bd%e4%ba%ba%e5%85%a5%e5%9b%bd%e8%80%85%e3%81%8c%e9%81%8e%e5%8e%bb%e6%9c%80%e5%a4%9a%e3%81%ae1000%e4%b8%87%e4%ba%ba%e3%81%ab/">Leave a comment<span class="screen-reader-text"> on 外国人入国者が過去最多の1000万人に</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-79" class="post-79 post type-post status-publish format-standard hentry category-dev category-it">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/79" rel="bookmark">Hotels.com には「評価する」というリンクではなく「良かった」「悪かった」で聞いてきてほしかったという話</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>突然だが届いたメールに「こうなっていたほうがいいな」と思ったのでそれを書き留めておく。今回のネタは Hotels.com の HTML メールから。</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-eUnmcA7Xngc/UtFcUfrphPI/AAAAAAAAQuk/LwSvgwUZnEY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2014-01-11-11.44.40-PM.png"><img border="0" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-eUnmcA7Xngc/UtFcUfrphPI/AAAAAAAAQuk/LwSvgwUZnEY/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2014-01-11-11.44.40-PM.png" /></a></p>
+<p>まず Hotels.com はホテル予約サイトなのでユーザーのレビューはできるだけたくさん欲しいはずなので、できるだけホテルを利用したユーザーにレビューを投稿してほしい。</p>
+<p>そのためには「評価する」というリンクよりもっと良いリンクを用意できるはずだ。</p>
+<p><b>「評価する」リンクの改善案</b>
+<div>
+<ul>
+<li>「良かった」「悪かった」など実際にユーザーが感じた評価に近い表現を選択肢に用意する。感想などは遷移先のページでオプションで添える形にする。</li>
+<li>★☆☆☆☆ みたいに、5つ星を用意する。ユーザーが直感的に5段階の評価をできる利点は大きい。</li>
+</ul>
+</div>
+<p>なぜこの改善案にすべきかという理由と検証結果まで添えられればプロフェッショナルなんだろうけど、このあたりのツメが甘いのはご勘弁いただきたい。</p>
+<p>ちなみに、ここで利用者に評価のインセンティブがないとか、そういうのは別によくて、むしろそういうノイズがないほうがユーザーの利用ししやすさをシンプルに考察できるのでそのあたりのことは考えないことにした。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/79" rel="bookmark"><time class="entry-date published" datetime="2014-01-11T15:15:00+00:00">2014-01-11</time><time class="updated" datetime="2016-05-18T16:26:05+00:00">2016-05-18</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/it%e8%a6%8b%e8%81%9e%e9%8c%b2" rel="category tag">IT見聞録</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/79#respond"><span class="dsq-postid" data-dsqidentifier="79 http://tk2-249-34500.vs.sakura.ne.jp/2014/01/11/%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9%e8%80%83-hotels-com-%e3%81%ae%e4%ba%8b%e4%be%8b%e3%81%8b%e3%82%89-%e3%80%8c%e8%a9%95%e4%be%a1%e3%81%99%e3%82%8b%e3%80%8d%e3%81%a8%e3%81%84%e3%81%86%e3%83%aa/">Leave a comment<span class="screen-reader-text"> on Hotels.com には「評価する」というリンクではなく「良かった」「悪かった」で聞いてきてほしかったという話</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-80" class="post-80 post type-post status-publish format-standard hentry category-41 category-40">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/80" rel="bookmark">政府が外国人技能実習制度の滞在期間延長を検討、単純労働者も視野に</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>まだ「慎重に検討する」という段階の話ですが。</p>
+<div>
+<blockquote>
+<div>政府の産業競争力会議は昨年１２月２６日、「雇用・人材分科会」の中間整理で、技能労働者を受け入れる外国人技能実習制度の滞在期間を現在の３年から延長するよう、法務省の懇談会で議論し、２０１４年央までに結論を得ると盛り込んだ。</p>
+<p>これに先立ち政府が設置した農林水産業・地域の活力創造本部がまとめた答申でも、実習制度の３年から５年への延長が盛り込まれ、法務省の懇談会で１４年内に結論を得ることとなっていた。</div>
+<div><small><cite title="アングル：政府が外国人労働者の拡大検討、単純労働者受け入れも"><a href="http://jp.reuters.com/article/topNews/idJPTJEA0700G20140108">Reuters</a></cite></small></div>
+</blockquote>
+</div>
+<p>移民の受け入れは中長期的には避けられないというのが僕の認識ですが、こういうとき政治屋さんは &#8220;2020年の東京オリンピック開催や震災からの復興の中で「建設に関する人材不足や資材不足といった問題があることは承知している」&#8221; という短期的な事象を言い分にするのですね。</p>
+<p>突破口となるのであれば歓迎なのですが、興味深いレトリックだと感じました。</p>
+<p>今回の話題には単純労働者も含まれているということで、そもそも高度人材を区別しようだなんておこがましいという気はしつつも、まあそれも21世紀初頭の国際社会の潮流ではありますしよしとしましょう。</p>
+<p>いずれにせよ移民の受け入れは波乱万丈を巻き起こすこととなるため清濁併せ呑む覚悟は必要だと思います。</p>
+<p>そのあたりの度量と高齢化は逆相関にありそうな気もしなくもなく心配ではありますが、せめてまず僕ひとりは、その変化を楽しむくらいの気概でいたいものです。</p>
+<p>
+<h4>続報</h4>
+<p>方向が決まったようです。</p>
+<div>
+<blockquote>政府は優秀な外国人の研究者や技術者の受け入れを促すため、職歴や年収などをポイントで評価し、一定の点数を満たした人には５年間の滞在で日本での「永住許可」を認めるなど、優遇措置を与える制度をおととしから導入しています。<br />しかし、利用が思うように進んでいないことから、政府は要件を緩和するなど制度の見直しを進め、１１日の閣議で、出入国管理法の改正案を決定しました。<br />それによりますと、入国する際、高度な能力や資質を持ち、高度人材に認定された外国人には、まず「高度専門職第１号」という在留資格を付与し、日本で３年間活動した人を対象に「高度専門職第２号」という新たな在留資格を与えるとしています。<br />「第２号」の資格では、日本での在留期間を無期限とするほか、生活しやすい環境を整えるため親や家事使用人の同行を認めるなど、優遇措置を拡充するとしています。
+<div><small><cite title="海外の優秀な人材確保へ入管法改正案"><a href="http://www3.nhk.or.jp/news/html/20140311/k10015879241000.html">NHKニュース</a></cite></small></div>
+</blockquote>
+</div>
+<p>今国会での成立を目指しているとのこと。
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/80" rel="bookmark"><time class="entry-date published updated" datetime="2014-01-08T19:12:00+00:00">2014-01-08</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%b9" rel="category tag">ニュース</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e7%a7%bb%e6%b0%91" rel="category tag">移民</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/80#respond"><span class="dsq-postid" data-dsqidentifier="80 http://tk2-249-34500.vs.sakura.ne.jp/2014/01/08/%e6%94%bf%e5%ba%9c%e3%81%8c%e5%a4%96%e5%9b%bd%e4%ba%ba%e6%8a%80%e8%83%bd%e5%ae%9f%e7%bf%92%e5%88%b6%e5%ba%a6%e3%81%ae%e6%bb%9e%e5%9c%a8%e6%9c%9f%e9%96%93%e5%bb%b6%e9%95%b7%e3%82%92%e6%a4%9c%e8%a8%8e/">Leave a comment<span class="screen-reader-text"> on 政府が外国人技能実習制度の滞在期間延長を検討、単純労働者も視野に</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-81" class="post-81 post type-post status-publish format-standard hentry category-7 category-40">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/81" rel="bookmark">外国人が7割、横浜のとある公立小の紹介記事について</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>大学の学士論文では移民とその子どもたちの市民権と教育について書いた僕としては、ぜひ紹介しておきたい記事があります。</p>
+<p>日経ビジネスオンラインに掲載された「外国人が7割、驚愕の公立小が横浜にあった 日本なのに日本人がマイノリティー」という記事です。</p>
+<p>
+<div>
+<blockquote>東京・新宿から電車で約1時間。<i>《中略》</i><br />数々のアジア食品や中華食材の店、中国人をあえて募集する自動車学校の看板、街を闊歩する外国人――。ここが横浜市泉区と大和市にまたがる、神奈川県営いちょう団地。合計79棟、約3600戸の戸数のうち約2割が外国人とされている、知る人ぞ知る日本の超国際タウンだ。</p>
+<p><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph02.jpg"><img border="0" src="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph02.jpg" title="神奈川県営いちょう団地" alt="神奈川県営いちょう団地" /></a></p>
+<div><small><cite title="外国人が7割、驚愕の公立小が横浜にあった 日本なのに日本人がマイノリティー: 2013年12月25日（水）"><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/">日経ビジネスオンライン</a></cite>《かっこ》は引用者</small></div>
+</blockquote>
+</div>
+<p>この記事の副題である「日本なのに日本人がマイノリティー」はきたる日本の未来でしょう。本文中で紹介されているいちょう小の菊池教諭はそれを「数多くの国籍出身者が通うこの小学校は、未来の日本、将来の日本企業の縮図かもしれません」と述べています。</p>
+<p>まずこの記事で紹介されているいちょう小の現状を引用してみます。</p>
+<p>
+<div>
+<blockquote>
+<div>現在のいちょう小には10カ国の国籍の児童が通い、全児童の7割超が外国籍か外国をルーツとする（日本に帰化）児童なのだという。日本の公立小学校にも関わらず、ここでは日本人が全児童の3割弱でマイノリティーというのが衝撃だ。</p>
+<p><i>《中略》</i></p>
+<p>7割超が外国系であり、児童の国籍や日本語能力もバラバラ。こうした特殊な事情により、公立小とはいえ、いちょう小は独自の授業形態を構築している。</p>
+<p>重要科目である算数と国語は、日本語レベルに合わせた少人数教育を徹底しているのだ。各学年の担任のほかに、算数と国語には補助教師が付き、国語については、国際教室担当の教師も加わる。15～20人程度のクラスは、科目により最大4グループに分けられ、教室も別にして日本語レベルと理解度に合わせた少人数教育が行われる。</p>
+<p>「<b>クラス当たりの児童数が少ないとはいえ、日本語レベルの差が大きい児童が集うこの学校では、一元的な授業で全員を理解させるのは到底無理。数年前から、個別学習体制を整えた</b>」（菊池教諭）という。取材した日は、入学して日が浅く日本語がまだ不自由なベトナム人児童2人に対し、菊池教諭が熱心に日本語を個別指導していた。</p>
+<p><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph12.jpg"><img border="0" src="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph12.jpg" /></a></p>
+</div>
+<div><small><cite title="外国人が7割、驚愕の公立小が横浜にあった 日本なのに日本人がマイノリティー: 2013年12月25日（水）"><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/">日経ビジネスオンライン</a></cite>《かっこ》は引用者</small></div>
+</blockquote>
+</div>
+<p>まず、この小学校は公立校であるというのが驚きです。「先進的」な取り組みは大学の教育学部付属などの国立や、教育課程にしばられない私立の学校であるというのが一般的な理解かもしませんが、いちょう小は横浜市立です。</p>
+<p>これは自動車や電機メーカーなどの工場に集まった出稼ぎ労働者が住みやすいのが神奈川県の公営団地であるいちょう団地であり、その子どもたちが通える小学校がいちょう小だったということでしょう。</p>
+<p>こういった事情から少人数教育などの取り組みが進められてきたというのはリアルさがあります。</p>
+<p>そしてこの小学校が地域で果たした役割がまた素晴らしいのです。</p>
+<p>
+<div>
+<blockquote>
+<div>　いちょう小での、この手厚い教育の効果は、外国人児童たちの学力や日本語力の向上だけにとどまらない。日本の教育を受けた子供たちを通じて、外国人の親たちが日本の文化やルールを学ぶことにつながっている。このため、いちょう小の存在は、団地内における日本人と外国人居住者の軋轢を減らし、平和的共存の礎となってきた。</p>
+<p>「まず外国人の子供に日本の教育を受けさせると、日本の常識を身に付ける。すると家の中で子供が親に、ゴミの分別や夜間に騒がないなど、細かい日本のルールを守るように呼びかけるようになる」と、菊池教諭は話す。</p>
+<p>いちょう団地連合自治会の栗原正行会長もこう証言する。「いちょう団地で日本人と外国人とのトラブルが減った大きな要因の一つは、いちょう小での教育のおかげ。深夜のカラオケや麻雀パイの音、田んぼでのたき火パーティーなど、昔はいろいろ問題が起こった。<b>我々が直接苦情を言っても聞く耳を持たない人でも、子供が親に『お父さん、ここは日本なんだ。恥ずかしいからやめてよ』と言ってくれると、大人も日本のルールを守るようになっていった</b>」。</p>
+</div>
+<div><small><cite title="外国人が7割、驚愕の公立小が横浜にあった 日本なのに日本人がマイノリティー: 2013年12月25日（水）"><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/">日経ビジネスオンライン</a></cite></small></div>
+</blockquote>
+</div>
+<p>子どもたちが親に日本の文化をフィードバックするという事例が紹介されています。「子はかすがい」とはよくいったものです。子どもたちは地域と移民とのかすがいにもなったのです。</p>
+<p>実は社会学の研究では移民に限らず小学校が地域において果たす役割の大きさは従来より指摘されてきていました。そしていちょう小も、その例外ではなかったのです。</p>
+<p>さらに、いちょう小が地域において果たしている役割が決して小さくないことがうかがい知れる事例が紹介されています。</p>
+<p>
+<div>
+<blockquote>
+<div>　小学校やいちょう団地を取材しているうちに、時間は夜になっていた。すると、いちょう小は、また違った“顔”を見せ始める。児童の帰宅後、今度は外国人の大人や中高生が、小学校内のコミュニティーハウスに続々と集まり始めたからだ。</p>
+<p>これから始まるのが「夜の日本語教室」。この日本語教室は、毎週水曜と土曜の19時～20時40分まで、いちょう小のコミュニティーハウスで開催されている。</p>
+<p>その日は、総勢50人程度の外国人が集まっていた。日本語の習得レベルや国籍ごとに少人数のグループに分けられ、各グループに日本語講師がつく。日本語の講師役を務めるのは、みなボランティア。大学生から、会社を引退した高齢者まで、講師陣の顔ぶれも多様だ。中でも高齢者の日本語講師が、孫のように年が離れたアジアの若者に、生き生きと日本語を教えている姿が印象的だった。</p>
+<p><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph20.jpg"><img border="0" src="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph20.jpg" /></a></p>
+<p><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph21.jpg"><img border="0" src="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph21.jpg" /></a></p>
+<p><b>夜の日本語教室に通う、中国・ハルピン出身の中国人男性は取材に対して、こうコメントした。「無料で日本語を教えてもらえて、外国人や日本人の友達もできる。この勉強会は非常にありがたい」。この男性は、昼は近隣のメーカー工場で溶接工として勤務し、水曜と土曜の夜はこの教室に参加し、日本語と日本文化の理解に努める。</b></p>
+<p>この日本語教室は、いちょう団地の外国人住人を支援する団体「多文化まちづくり工房」が主催する。「合理的な社会システムが発達した日本では、まずは日本語さえ出来れば何とか暮らしていける。日本や近隣地域になじむには日本語を使えるようにするのが、最も手っ取り早い」（多文化まちづくり工房の早川秀樹代表）。こうした考えに基づき、同氏は2000年に団体を設立する前から、ボランティアの日本語教室や、小中学校生を対象にした補習授業を、この地で草の根的に提供し続けてきた。ただ、運営はラクではない。「日本語教室は盛況で手が足りない。日本語講師をしてくれるボランティアを、随時募集している状況」と早川代表は話す。</p>
+</div>
+<div><small><cite title="外国人が7割、驚愕の公立小が横浜にあった 日本なのに日本人がマイノリティー: 2013年12月25日（水）"><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/">日経ビジネスオンライン</a></cite></small></div>
+</blockquote>
+</div>
+<p>日本語と日本文化を学ぼうとする意欲のある外国人を受け入れる場がある地域というのはどれほどあるのでしょうか。</p>
+<p>しかしそんな児童や教員・地域住民ら関係者の努力の結晶ともいえるいちょう小は、統合によりなくなってしまうそうです。</p>
+<p>
+<div>
+<blockquote>
+<div>　いちょう団地の平和的共存の要となってきたいちょう小は2014年4月、学区が隣接する飯田北小学校へ統合されるのだという。</p>
+<p>飯田北小も外国人比率が2割程度とされ、通常の小学校より外国人が多い。が、「現在のいちょう小で実施しているような、手厚いグループ指導などは難しくなるかもしれない」（いちょう小の菊池教諭）。というのも、昔はマンモス校だったいちょう小は、多数の空き教室を持つ。児童数の減少で教室数に余裕があるため、日本語レベルに応じた少人数教育を教室を分けて実施できるわけだ。</p>
+<p>しかし「<b>飯田北小の教室数は、いちょう小の3分の2程度であるため、同じ指導体制にするには教室が足りない可能性がある</b>」（菊池教諭）。いちょう小には、その国の文化芸能を学ぶ目的で、各国の郷土品を集めた教室などもあり、やはり多文化教育や個別指導の面で、充実しているのは間違いない。</p>
+<p><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph17.jpg"><img border="0" src="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/ph17.jpg" /></a></p>
+<p>教室数が多いいちょう小を存続校にして2つの小学校を統合すれば良いのではないかと思えるが、地元住民の配慮など数々の事情が絡み、そう単純にはいかないのだという。</p>
+<p>いちょう団地の外国人住人が日本社会になじむため、重要な役割を果たしてきたいちょう小。「この場所に小学校がなくなることで、団地や周辺地域全体にどのような影響が出てくるのか、多少の不安はある」と、団地の日本人居住者の一人は打ち明ける。</p>
+<p>いちょう団地は、日本だけでなく世界的に見ても珍しい、多民族が平和的に共存できている貴重な事例。人口減少が続く日本が、仮に、移民を多く受け入れる政策を採用することにでもなれば、参考にすべき先進地域だと考えられるだけに、いちょう小が統合でなくなるのは残念に思える。これまでうまく回ってきた地域の歯車がギクシャクしてくるようであれば、大きな損失となる。</p>
+</div>
+<div><small><cite title="外国人が7割、驚愕の公立小が横浜にあった 日本なのに日本人がマイノリティー: 2013年12月25日（水）"><a href="http://business.nikkeibp.co.jp/article/opinion/20131224/257450/">日経ビジネスオンライン</a></cite></small></div>
+</blockquote>
+</div>
+<p>なんということでしょうか。地域の「かすがい」となり欠くべからざる存在であった小学校が廃校になるというのです。</p>
+<p>文科省主導でモデル地域が設定される取り組みは全国に数多くありますが、これほどリアリティと実績を有する「モデル」はないはずなのではないかと反感を抱いてしまいます。</p>
+<p>いちょう小の廃校が、貴重な多民族の共存を壊したモデルならないことを祈るばかりです。</p>
+<p>
+<h4>参考になるリンク</h4>
+<div>
+<ul>
+<li><a href="http://www.edu.city.yokohama.jp/sch/es/icho/">横浜市立いちょう小学校</a></li>
+<li><a href="http://www.edu.city.yokohama.jp/sch/es/icho/syuttpann/hyousi.pdf">『多文化共生の学校づくり』(山脇, 2005, 明石書店) の紹介文 (PDF)</a></li>
+</ul>
+</div>
+<p>最後に、この地区を見出し取材を行ってくださった宗像誠之記者に謝意を表します。</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/81" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-30T16:24:00+00:00">2013-12-30</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e7%a7%bb%e6%b0%91" rel="category tag">移民</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/81#respond"><span class="dsq-postid" data-dsqidentifier="81 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/30/%e5%a4%96%e5%9b%bd%e4%ba%ba%e3%81%8c7%e5%89%b2%e3%80%81%e6%a8%aa%e6%b5%9c%e3%81%ae%e3%81%a8%e3%81%82%e3%82%8b%e5%85%ac%e7%ab%8b%e5%b0%8f%e3%81%ae%e7%b4%b9%e4%bb%8b%e8%a8%98%e4%ba%8b%e3%81%ab%e3%81%a4/">Leave a comment<span class="screen-reader-text"> on 外国人が7割、横浜のとある公立小の紹介記事について</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-82" class="post-82 post type-post status-publish format-standard hentry category-dev category-home-made-os">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/82" rel="bookmark">OS自作で楽しいこと フロッピーディスクの構造を知れる</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div>
+<blockquote><a href="http://gyazo.com/bccac3b49a46b9ad8735dc433138112a.png"><img border="0" src="http://gyazo.com/bccac3b49a46b9ad8735dc433138112a.png" width="480" /></a>
+<div><small><cite title="OS自作入門"><a href="http://www.amazon.co.jp/gp/product/4839919844/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4839919844&amp;linkCode=as2&amp;tag=m0b55-22">『30日でできる! OS自作入門』</a></cite></small></div>
+</blockquote>
+</div>
+<p>OSのプログラムはフロッピーに載るくらいのサイズで、フロッピーをブートデバイスとして使うのでフロッピーの構造を意識してコードを書く場面もあります。</p>
+<p>「へぇー、フロッピーって両面書き込みなんだ！」みたいな新鮮 (?!) な驚きがあります。</p>
+<p>生産性なんて忘れて好き勝手やっていい趣味プログラミングならではの楽しみ方ですね。</p>
+<p>とはいえ仮想OSとして動かすので実際のフロッピーディスクに書き込むわけではないのですが。</p>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/82" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-30T09:36:00+00:00">2013-12-30</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/home-made-os" rel="category tag">home-made-OS</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/82#respond"><span class="dsq-postid" data-dsqidentifier="82 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/30/os%e8%87%aa%e4%bd%9c%e3%81%a7%e6%a5%bd%e3%81%97%e3%81%84%e3%81%93%e3%81%a8-%e3%83%95%e3%83%ad%e3%83%83%e3%83%94%e3%83%bc%e3%83%87%e3%82%a3%e3%82%b9%e3%82%af%e3%81%ae%e6%a7%8b%e9%80%a0%e3%82%92/">Leave a comment<span class="screen-reader-text"> on OS自作で楽しいこと フロッピーディスクの構造を知れる</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-83" class="post-83 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/83" rel="bookmark">世界の人口分布を緯度と経度でグラフにする発想</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div></div>
+<p>
+<div data-href="https://www.facebook.com/photo.php?fbid=509926922446640&amp;set=a.257936400979028.47096.255199444586057&amp;type=1" data-width="466">
+<div><a href="https://www.facebook.com/photo.php?fbid=509926922446640&amp;set=a.257936400979028.47096.255199444586057&amp;type=1">Post</a> by <a href="https://www.facebook.com/ys347">Follow the accident. Fear the set plan.</a></div>
+</div>
+<p>
+<div>
+<blockquote><a href="http://gyazo.com/2535ef18c03a13cb55542853821ed724.png"><img border="0" src="http://gyazo.com/2535ef18c03a13cb55542853821ed724.png" width="0" /></a>
+<div><small><cite title="radicalcartography"><a href="http://radicalcartography.net/"> radicalcartography.net </a></cite></small></div>
+</blockquote>
+</div>
+<p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/83" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-30T06:02:00+00:00">2013-12-30</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/83#respond"><span class="dsq-postid" data-dsqidentifier="83 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/30/%e4%b8%96%e7%95%8c%e3%81%ae%e4%ba%ba%e5%8f%a3%e5%88%86%e5%b8%83%e3%82%92%e7%b7%af%e5%ba%a6%e3%81%a8%e7%b5%8c%e5%ba%a6%e3%81%a7%e3%82%b0%e3%83%a9%e3%83%95%e3%81%ab%e3%81%99%e3%82%8b%e7%99%ba%e6%83%b3/">Leave a comment<span class="screen-reader-text"> on 世界の人口分布を緯度と経度でグラフにする発想</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-84" class="post-84 post type-post status-publish format-standard hentry category-45 category-23">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/84" rel="bookmark">今年のブログ統計振り返り 来年は月間1万PVも視野に</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><a href="http://gyazo.com/fbc6c844d76a840c6f6267370e0861d1.png"><img border="0" src="http://gyazo.com/fbc6c844d76a840c6f6267370e0861d1.png" width="580" /></a></p>
+<p>ブログの月間ページビュー数がYahoo砲を食らった時 (2011年10月) の水準に追いつきつつあって、来年は月間1万ページビューも視野に入ってきそうです。</p>
+<p>ただ、ページビュー数のためにブログを書いているわけではないので淡々と今までどおりブログを書きつづけていく所存です。</p>
+<p>僕はブログを「オープンな備忘録」と位置づけて残しているのですが、未来の自分や他人が読みやすくなるようには工夫しているつもりです。</p>
+<p>「明日の自分は他人だと思って書け」とプログラムを書く際の心構えにあるように、ブログでもできるかぎり前提知識に依存しない疎結合な記事を書くようにしてきましたので、この姿勢は継続していきたいです。</p>
+<p>ただ、今年書いた記事をもう少し細かく振り返ってみると、2013年に書いた記事で累計ページビューがトップ5入りしたのはテンガのレポート記事だけという哀しい事態が発覚しました。</p>
+<p>割と技術ネタも書いていたのに(泣)</p>
+<p>技術ネタは閲覧者の母数が少ないのでページビューが伸びにくいことは推測できますが、来年は有意義な記事を書くことで技術ネタを累計ページビュートップ5にランクインさせたいです。</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+<p></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/84" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-30T05:00:00+00:00">2013-12-30</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%a1%e3%82%bf" rel="category tag">メタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%82%99%e5%bf%98%e9%8c%b2" rel="category tag">備忘録</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/84#respond"><span class="dsq-postid" data-dsqidentifier="84 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/30/%e4%bb%8a%e5%b9%b4%e3%81%ae%e3%83%96%e3%83%ad%e3%82%b0%e7%b5%b1%e8%a8%88%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a-%e6%9d%a5%e5%b9%b4%e3%81%af%e6%9c%88%e9%96%931%e4%b8%87pv%e3%82%82%e8%a6%96%e9%87%8e/">Leave a comment<span class="screen-reader-text"> on 今年のブログ統計振り返り 来年は月間1万PVも視野に</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-85" class="post-85 post type-post status-publish format-standard hentry category-7 category-12">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/85" rel="bookmark">母+ロリ+ショタ 日本人のつぼをおさえまくり、子育てという日本人の問題点を浮き彫りにしまくった非凡な良作 おおかみこどもの雨と雪</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>先日 <a href="http://www.amazon.co.jp/gp/product/B00AHSQRBQ/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00AHSQRBQ&amp;linkCode=as2&amp;tag=m0b55-22">おおかみこどもの雨と雪</a> をみました。いやぁ、良作。ちょっとあふれる思いをぶちまけさせてください。</p>
+<p>ジブリ意識は露骨に強まっていましたね。細田守の作品のヒロインといえば今までは女子高校生でしたが、今作では「母+ロリ+ショタ」。</p>
+<p>強い女とロリというのは宮崎アニメの骨格といっていいほどの素材なので、それが今作では大胆に導入されていました。</p>
+<p>ショタの方はサマーウオーズでのショタ人気を受けてのことなのでしょうが、はい、そうですね継続投入ですねということになります。マーケティングうまいですね。</p>
+<p>登場人物の笑い方、泣き方、はしゃぎ方、これらはどれを取っても宮崎アニメ独特の雰囲気が感じ取れました。</p>
+<p>あれであの焼き鳥を食べるシーンや少年がソーダ水を飲むシーンがもっとおいしそうに見えれば完全に宮崎アニメでしたね。</p>
+<p>そして賛否両論の多い「子育て」について。おおかみこどもを見た人たちがてんでかってに花を dis りまくっていることを見れば、もう本当に現代日本社会の弱点を浮き彫りにしています。</p>
+<p>なんて子育てのしにくい国なことか！</p>
+<p>もうこの一言につきます。That&#8217;s it.</p>
+<p>子育てって、うまくいかないものじゃないですか。それなのにどうしてそんなに子育てをする母親を責めるのでしょうか。どうして応援しないのでしょうか。</p>
+<p>もう子育てを応援するつもりなんて、みんな毛頭ないんですね。このベースとなる姿勢が、選挙を通じて政治にも反映されているのでしょう。</p>
+<p>あぁ、なんて子育てのしにくい国なことか！</p>
+<p>そして、ネットの特性ですね。ネットは子ども文化が強い場なので、どうしても子ども目線の意見が多数派になります。</p>
+<p>例えば携帯電話のルールがとりあげられらば、そこへの反応は「親にルールを押し付けられた子ども」の目線の意見が多数派になります。「子どものITリテラシーを教育しつつも、心や体が傷つくことから守ってやりたい」という親心は少数派です。</p>
+<p>この「子ども目線」と「親への厳しさ」が合わさったのが、おおかみこどもへのネット上の反応の大半を占めています。</p>
+<p>だからこそ、細田守監督が「子育て」をテーマにしたことはとても勇気のあるチャレンジです。</p>
+<p>このように賛否両論になるのはもう細田守監督にもあらかじめ予測できていたことでしょう。それでも、分かっていてもやるべきだろうと思って作ったのでしょう。</p>
+<p>もう、それを思うと嬉しくて。そんな細田監督のチャレンジ精神とマーケティング的な器用さとが、バランスよく調和されたのが僕にとってのおおかみこどもでした。</p>
+<p>いやはや、良作。</p>
+<div><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/85" rel="bookmark"><time class="entry-date published updated" datetime="2013-12-25T18:16:00+00:00">2013-12-25</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%93%81%e8%a9%95" rel="category tag">品評</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/85#respond"><span class="dsq-postid" data-dsqidentifier="85 http://tk2-249-34500.vs.sakura.ne.jp/2013/12/25/%e6%af%8d%e3%83%ad%e3%83%aa%e3%82%b7%e3%83%a7%e3%82%bf-%e6%97%a5%e6%9c%ac%e4%ba%ba%e3%81%ae%e3%81%a4%e3%81%bc%e3%82%92%e3%81%8a%e3%81%95%e3%81%88%e3%81%be%e3%81%8f%e3%82%8a%e3%80%81%e5%ad%90/">Leave a comment<span class="screen-reader-text"> on 母+ロリ+ショタ 日本人のつぼをおさえまくり、子育てという日本人の問題点を浮き彫りにしまくった非凡な良作 おおかみこどもの雨と雪</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/9">Previous page</a>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/'><span class="meta-nav screen-reader-text">Page </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/9'><span class="meta-nav screen-reader-text">Page </span>9</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">Page </span>10</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/11'><span class="meta-nav screen-reader-text">Page </span>11</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/31'><span class="meta-nav screen-reader-text">Page </span>31</a>
+<a class="next page-numbers" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05/page/11">Next page</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2016/09">&laquo; Sep</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td id="today">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1IQBVxfQlw=","queueTime":0,"applicationTime":187,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

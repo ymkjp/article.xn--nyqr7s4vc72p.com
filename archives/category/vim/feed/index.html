@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>vim &#8211; It works!</title>
+	<atom:link href="https://xn--nyqr7s4vc72p.com/archives/category/vim/feed" rel="self" type="application/rss+xml" />
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<description>A techie blog</description>
+	<lastBuildDate>Wed, 07 Sep 2016 17:42:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+
+<image>
+	<url>https://xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png</url>
+	<title>vim &#8211; It works!</title>
+	<link>https://xn--nyqr7s4vc72p.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">108279505</site>	<item>
+		<title>同僚と vim は vim として使うからいいのであって vim ライクだとつらいとい
+う話をした</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/87</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/87#respond</comments>
+		<pubDate>Wed, 25 Dec 2013 17:16:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[vim]]></category>
+		<category><![CDATA[ネタ]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/12/25/%e5%90%8c%e5%83%9a%e3%81%a8-vim-%e3%81%af-vim-%e3%81%a8%e3%81%97%e3%81%a6%e4%bd%bf%e3%81%86%e3%81%8b%e3%82%89%e3%81%84%e3%81%84%e3%81%ae%e3%81%a7%e3%81%82%e3%81%a3%e3%81%a6-vim-%e3%83%a9%e3%82%a4/</guid>
+		<description><![CDATA[IDE の vim plugin とか、zsh の vi mode とかはいまいちという趣旨。その点 emacs 風のキーバインドは汎用性高いと思う。 僕は keyremap4macbook を使って&#160;Control+H の Delete, Control+J の Enter とかを&#160;osx 自体にバインドして常用してる。Delete と Enter はキーがホームポジションから遠いので重宝している。 まあ Command_L + hjkl は割と使うので、vi, emacs どっちがどっちという話ではないか。 酒を飲んだ勢いのエントリなのでネタだと捉えてやって下さい。]]></description>
+				<content:encoded><![CDATA[<p>IDE の vim plugin とか、zsh の vi mode とかはいまいちという趣旨。その点 emacs 風のキーバインドは汎用性高いと思う。</p>
+<p><a href="http://gyazo.com/db4d6e1344b3f1f4da222c02f3ee7e17.png"><img border="0" src="http://gyazo.com/db4d6e1344b3f1f4da222c02f3ee7e17.png" width="580" /></a></p>
+<p>僕は keyremap4macbook を使って&nbsp;<span style="font-family: 'Helvetica Neue Light', HelveticaNeue-Light, helvetica, arial, sans-serif;">Control+H の Delete, Control+J の Enter とかを</span>&nbsp;osx 自体にバインドして常用してる。Delete と Enter はキーがホームポジションから遠いので重宝している。</p>
+<p>まあ Command_L + hjkl は割と使うので、vi, emacs どっちがどっちという話ではないか。</p>
+<p>酒を飲んだ勢いのエントリなのでネタだと捉えてやって下さい。</p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/87/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">87</post-id>	</item>
+		<item>
+		<title>Vim でハードタブの軍門に下る方法</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/152</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/152#respond</comments>
+		<pubDate>Wed, 17 Jul 2013 10:20:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[vim]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/07/17/vim-%e3%81%a7%e3%83%8f%e3%83%bc%e3%83%89%e3%82%bf%e3%83%96%e3%81%ae%e8%bb%8d%e9%96%80%e3%81%ab%e4%b8%8b%e3%82%8b%e6%96%b9%e6%b3%95/</guid>
+		<description><![CDATA[Vim でソフトタブからハードタブに変更する方法。 :set noexpandtab:retab! @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>Vim でソフトタブからハードタブに変更する方法。</p>
+<p>
+<pre>:set noexpandtab<br />:retab!<br /></pre>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress> </p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/152/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">152</post-id>	</item>
+		<item>
+		<title>Vim の文字コードを確認する</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/153</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/153#respond</comments>
+		<pubDate>Wed, 17 Jul 2013 09:31:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[vim]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/07/17/vim-%e3%81%ae%e6%96%87%e5%ad%97%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b/</guid>
+		<description><![CDATA[各種文字コードの確認は :set enc? fenc? fencs? でできる。 設定は :set fileencoding=euc-jp とか :set fileencoding=utf-8 とかでできる。 fileencoding : この文字コードでファイルが保存される fileencodings ： この文字コードでファイルを開こうとする．開けなかったらfileencodingで設定した文字コードで開こうとする encoding ： vim自身の文字コード．ここいじると編集中の表示されてる文章の日本語はもちろんvimのコマンドラインの日本語バグる encoding, fileencoding, fileencodings の本当のところ @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>各種文字コードの確認は <kbd>:set enc? fenc? fencs?</kbd> でできる。</p>
+<p>設定は <kbd>:set fileencoding=euc-jp</kbd> とか <kbd>:set fileencoding=utf-8</kbd> とかでできる。</p>
+<p>
+<blockquote>
+<ul>
+<li>fileencoding : この文字コードでファイルが保存される</li>
+<li>fileencodings ： この文字コードでファイルを開こうとする．開けなかったらfileencodingで設定した文字コードで開こうとする</li>
+<li>encoding ： vim自身の文字コード．ここいじると編集中の表示されてる文章の日本語はもちろんvimのコマンドラインの日本語バグる</li>
+</ul>
+<p><a href="http://d.hatena.ne.jp/over80/20080907/1220794834">encoding, fileencoding, fileencodings の本当のところ</a></p></blockquote>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/153/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">153</post-id>	</item>
+		<item>
+		<title>dotfiles いろいろ整備したので備忘録を</title>
+		<link>https://xn--nyqr7s4vc72p.com/archives/180</link>
+		<comments>https://xn--nyqr7s4vc72p.com/archives/180#respond</comments>
+		<pubDate>Sun, 24 Feb 2013 02:37:00 +0000</pubDate>
+		<dc:creator><![CDATA[@i05]]></dc:creator>
+				<category><![CDATA[dev]]></category>
+		<category><![CDATA[vim]]></category>
+
+		<guid isPermaLink="false">http://tk2-249-34500.vs.sakura.ne.jp/2013/02/24/dotfiles-%e3%81%84%e3%82%8d%e3%81%84%e3%82%8d%e6%95%b4%e5%82%99%e3%81%97%e3%81%9f%e3%81%ae%e3%81%a7%e5%82%99%e5%bf%98%e9%8c%b2%e3%82%92/</guid>
+		<description><![CDATA[ホームディレクトリに .gitignore を書いて、 .bashrc, .vimrc, .gitconfg などなど、Githubにプッシュしました。 ymkjp/dotfiles · GitHub @ymkjp]]></description>
+				<content:encoded><![CDATA[<p>
+<p>ホームディレクトリに <a href="https://github.com/ymkjp/dotfiles/blob/master/.gitignore"><i><b>.gitignore</b></i></a> を書いて、 .bashrc, .vimrc, .gitconfg などなど、Githubにプッシュしました。</p>
+<p><i><a href="https://github.com/ymkjp/dotfiles/"><b>ymkjp/dotfiles · GitHub</b></a></i></p>
+<p><adress><a href="http://twitter.com/ymkjp">@ymkjp</a></adress></p>
+]]></content:encoded>
+			<wfw:commentRss>https://xn--nyqr7s4vc72p.com/archives/180/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">180</post-id>	</item>
+	</channel>
+</rss>

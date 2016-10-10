@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	itemscope	itemtype="http://schema.org/WebSite" 
+	prefix="og: http://ogp.me/ns#"  class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQBVVNaDhABVlRVAAgGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!p){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function l(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:l,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a};return g}function i(){return new r}function a(){p=!0,u=l.backlog={}}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o(),p=!1;l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-995.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>It works! | A techie blog - Part 24</title>
+<!-- Jetpack Site Verification Tags -->
+
+
+<!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[409,463] -->
+<link rel="author" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp" />
+<meta name="google-site-verification" content="_WbViALvGIP70e8bStl6bmcL7ZbTMO8QnyoXJKDc9s4" />
+<link rel='prev' href='https://article.xn--nyqr7s4vc72p.com/page/23' />
+<link rel='next' href='https://article.xn--nyqr7s4vc72p.com/page/25' />
+
+<link rel="canonical" href="https://article.xn--nyqr7s4vc72p.com/page/24" />
+<meta property="og:title" content="It works! | A techie blog - Part 24" />
+<meta property="og:url" content="https://article.xn--nyqr7s4vc72p.com/page/24" />
+<meta property="og:image" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/09/226546_116651205083093_100002146431496_137147_46399_n.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="It works!" />
+<meta property="fb:admins" content="1740535458" />
+<meta property="fb:app_id" content="253362208055003" />
+<meta property="og:description" content="優れたビデオゲームに共通する不変の法則 from Yamamoto Kenta @ymkjpぴーこんとは" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@ymkjp" />
+<meta name="twitter:title" content="It works! | A techie blog - Part 24" />
+<meta name="twitter:description" content="優れたビデオゲームに共通する不変の法則 from Yamamoto Kenta @ymkjpぴーこんとは" />
+<meta name="twitter:image" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/09/226546_116651205083093_100002146431496_137147_46399_n.jpg" />
+<meta itemprop="image" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/09/226546_116651205083093_100002146431496_137147_46399_n.jpg" />
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Person",
+  "name" : "",
+  "url" : "https://article.xn--nyqr7s4vc72p.com",
+  "sameAs" : ["https://plus.google.com/u/0/+KentaYAMAMOTOymkjp","https://twitter.com/ymkjp"] 
+}
+</script>
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17878381-11', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='https://article.xn--nyqr7s4vc72p.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Feed" href="https://article.xn--nyqr7s4vc72p.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="It works! &raquo; Comments Feed" href="https://article.xn--nyqr7s4vc72p.com/comments/feed" />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-jetpack-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/modules/theme-tools/compat/twentysixteen.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/style.css?ver=4.6.1' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://article.xn--nyqr7s4vc72p.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://article.xn--nyqr7s4vc72p.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://article.xn--nyqr7s4vc72p.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel='shortlink' href='https://wp.me/7kkrD' />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="32x32" />
+<link rel="icon" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+<meta name="msapplication-TileImage" content="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/2016/03/identicon.png" />
+
+<style id="custom-css-css">@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4{font-weight:bolder}.entry-content h3:before,.entry-content h4:before{content:"\f04d  ";font-family:FontAwesome}.entry-title,.entry-content h1,.entry-content h2{border-bottom:solid .1rem lightgray}.entry-content blockquote,.entry-content cite{font-size:.8rem}</style>
+</head>
+
+<body class="home blog paged paged-24 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<h1 class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></h1>
+											<p class="site-description">A techie blog</p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+			
+<article id="post-217" class="post-217 post type-post status-publish format-standard hentry category-50">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/217" rel="bookmark">優れたビデオゲームに共通する不変の法則</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><iframe src="http://www.slideshare.net/slideshow/embed_code/8849156" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+<div style="margin-bottom:5px"><strong> <a href="http://www.slideshare.net/ykenta/game-ui" title="優れたビデオゲームに共通する不変の法則" target="_blank">優れたビデオゲームに共通する不変の法則</a> </strong> from <strong><a href="http://www.slideshare.net/ykenta" target="_blank">Yamamoto Kenta</a></strong> </div>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+<p><a name='more'></a></p>
+<p><a href="http://web.p-corn.com/">ぴーこん</a>とは</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/217" rel="bookmark"><time class="entry-date published updated" datetime="2012-11-30T16:05:00+00:00">2012-11-30</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%97%e3%83%ac%e3%82%bc%e3%83%b3" rel="category tag">プレゼン</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/217#respond"><span class="dsq-postid" data-dsqidentifier="217 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/30/%e5%84%aa%e3%82%8c%e3%81%9f%e3%83%93%e3%83%87%e3%82%aa%e3%82%b2%e3%83%bc%e3%83%a0%e3%81%ab%e5%85%b1%e9%80%9a%e3%81%99%e3%82%8b%e4%b8%8d%e5%a4%89%e3%81%ae%e6%b3%95%e5%89%87/">Leave a comment<span class="screen-reader-text"> on 優れたビデオゲームに共通する不変の法則</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-218" class="post-218 post type-post status-publish format-standard hentry category-50 category-73">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/218" rel="bookmark">どうやって良いURLの設計をするかという話</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<h2>■ URLって何だったんだっけ</h2>
+<p>URLは情報リソースを表す大切な言葉。「三丁目の/角の家の/下から2番目の/息子さん」と一緒。よく「住所」と例えられるけど、ちょっと分かりにくいよね。確かに該当するファイルやフィールドを指してはいるので例で示したように現実世界で言うところの住所もそれには該当するのだけれど、「個を特定する要素（たち）」と言えばいいのか。</p>
+<p>とにもかくにも今日の Web にははずせない技術となった URL ですが、その命名法で気をつけるべきことを数点ほど挙げてみました。</p>
+<p><iframe src="http://www.slideshare.net/slideshow/embed_code/15428672" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+<div style="margin-bottom:5px"><strong> <a href="http://www.slideshare.net/ykenta/url-15428672" title="良いUrlを設計する" target="_blank">良いUrlを設計する</a> </strong> from <strong><a href="http://www.slideshare.net/ykenta" target="_blank">Yamamoto Kenta</a></strong> </div>
+<h2>■ 答え</h2>
+<p>スライド中に吹き出しで質問を加えてみたので、その僕なりの答えは下記の通り。</p>
+<ol>
+<li><b>URL が変わらなくて何が嬉しい?</b>: 例えば 404 not found にならない、など。</li>
+<li><b>実装依存な URL を生成するフレームワークの場合は?</b>: mod_rewrite などを使ってユーザに見せる URI と内部的な URI を分ける。</li>
+<li><b>クエリストリングは?</b>: クエリストリングも隠蔽すべき。確かに &#8220;?address=3chome&#8221; と書かれていれば 3chome が何を意味するのか分かりやすいですが、キーが丸見えで実装を晒してしまっています。これは攻撃者に予測する材料を与えてしまっている悪い URL の設計です。</li>
+<li>N = 2038</li>
+</ol>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/218" rel="bookmark"><time class="entry-date published updated" datetime="2012-11-30T15:51:00+00:00">2012-11-30</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%97%e3%83%ac%e3%82%bc%e3%83%b3" rel="category tag">プレゼン</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e9%96%8b%e7%99%ba" rel="category tag">開発</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/218#respond"><span class="dsq-postid" data-dsqidentifier="218 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/30/%e3%81%a9%e3%81%86%e3%82%84%e3%81%a3%e3%81%a6%e8%89%af%e3%81%84url%e3%81%ae%e8%a8%ad%e8%a8%88%e3%82%92%e3%81%99%e3%82%8b%e3%81%8b%e3%81%a8%e3%81%84%e3%81%86%e8%a9%b1/">Leave a comment<span class="screen-reader-text"> on どうやって良いURLの設計をするかという話</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-219" class="post-219 post type-post status-publish format-standard hentry category-14">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/219" rel="bookmark">整理整頓の標語（プログラマ編）</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<ul>
+<li>レガシー私物のリファクタリングを！</li>
+<li>私物も疎結合でお願いします</li>
+<li>邪悪！ グローバル私物！</li>
+<li>リーダブルリビング</li>
+<li>部屋のデバグも忘れずに</li>
+<li>参照透明の部屋を守ろう</li>
+<li>家族の気遣いの負荷分散も考えよう</li>
+<li>GMD (GoMiDashi) ラウンドロビン</li>
+<li>サルでもわかる部屋の片づけ方</li>
+</ul>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/219" rel="bookmark"><time class="entry-date published updated" datetime="2012-11-30T15:00:00+00:00">2012-11-30</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8d%e3%82%bf" rel="category tag">ネタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/219#respond"><span class="dsq-postid" data-dsqidentifier="219 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/30/%e6%95%b4%e7%90%86%e6%95%b4%e9%a0%93%e3%81%ae%e6%a8%99%e8%aa%9e%ef%bc%88%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9e%e7%b7%a8%ef%bc%89/">Leave a comment<span class="screen-reader-text"> on 整理整頓の標語（プログラマ編）</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-220" class="post-220 post type-post status-publish format-standard hentry category-50 category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/220" rel="bookmark">私たちは何を Web っぽいと感じているのか</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<h2>■ RESTful とは</h2>
+<p>「Webっぽい」って何でしょう。その質問に対しては「Webっぽい= RESTful だよ」という解答を聞くかもしれません。では「RESTful」って（よく聞くけど）何でしょう。<br />この疑問を解き明かすため REST について調べました。</p>
+<p><iframe src="http://www.slideshare.net/slideshow/embed_code/15423901" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+<div style="margin-bottom:5px"><strong> <a href="http://www.slideshare.net/ykenta/web-20121126kentakyyamamoto" title="私たちは何を Web っぽいと感じているのか " target="_blank">私たちは何を Web っぽいと感じているのか </a> </strong> from <strong><a href="http://www.slideshare.net/ykenta" target="_blank">Yamamoto Kenta</a></strong> </div>
+<p>つまり REST とは思想だったのです。その思想は下記のような6つの教義を持っています。</p>
+<h2>■ ULCODC$SS に気をつければ RESTful になる</h2>
+<p>ULCODC$SS とは &#8220;Uniform Layered Code on Demand Client Cache Stateless Server&#8221; の略記法で、日本語で意訳すると、「使用出来る機能に制限のある、機能を提供するまでの経路が独立して役割分担された機能を担っている、クライアント側でも制御可能な、情報リソースの使い回し機能を持った、ユーザーの状態を把握しない、クライアントとサーバに分かれた（システム）」ということになります。</p>
+<ol>
+<li>クライアント／サーバ</li>
+<li>ステートレス</li>
+<li>キャッシュ</li>
+<li>統一インターフェース</li>
+<li>階層化システム</li>
+<li>コードオンデマンド</li>
+</ol>
+<p>
+<h2>■ 質疑応答</h2>
+<p><b>1. え、そして私たちは ULCODC$SS を知ってどうすればいいの？</b><br />まず、私たちの眼の前にある HTTPサーバ (Apache HTTP server, nginx) や Web ブラウザ (Firefox, Chrome), ロードバランサ (LVS, mod_proxy_balancer, DNSラウンドロビン機能) などの実装がこれらの原則に基いているということを理解できたはずなので、その思想に基いてそれらを利用します。すると新しいシステムやサービスでも、破綻しにくいシステムの設計と実装ができるようになります。<br />また、「Webって何じゃ？」と困っている人に、この6つの特性を抑えつつ解説ができるようになったはずなので、彼／彼女を導いて下さい。</p>
+<p><b>2. 「階層化」が分からない</b><br />階層化は Layered の部分ですが、私が意訳した部分では「機能を提供するまでの経路が独立して役割分担された機能を担っている」に当たります。重要なのは「役割分担」です。Aという機能はBという機能は担わず、単独の機能のみをこなします。これはプログラミングで言うところの「疎結合」の教義と同一線上にあると考えれば分かりやすいでしょうか。<br />おそらく、なぜ分かりにくいのかと言えば、現実に私達が目にする実装はパッケージ化されているからです。例えば Apache は HTTP サーバの役割のみをこなしているわけではなく、プロキシを利用した負荷分散なども担っています。これは「階層化」に反すると捉えるのではなく、むしろ私たちが利用しやすいようにパッケージ化されているに過ぎないということを理解すべきです。そもそも Apache のモジュールを利用できている事自体、それは「階層化」（を含む REST の思想）の恩恵の賜物なのですから。</p>
+<p><b>3. どうしてキャッシュが $ なの？</b><br />英語の cache が「お金」を表すためダラー記号が使われているようです。</p>
+<h2>■ 参考文献</h2>
+<p><a href="http://www.amazon.co.jp/gp/product/4774142042/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4774142042&amp;linkCode=as2&amp;tag=m0b55-22">山本陽平『Webを支える技術』(技術評論社 (2010/4/8)) </a><img src="http://www.assoc-amazon.jp/e/ir?t=m0b55-22&amp;l=as2&amp;o=9&amp;a=4774142042" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/220" rel="bookmark"><time class="entry-date published updated" datetime="2012-11-30T10:39:00+00:00">2012-11-30</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%97%e3%83%ac%e3%82%bc%e3%83%b3" rel="category tag">プレゼン</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/220#respond"><span class="dsq-postid" data-dsqidentifier="220 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/30/%e7%a7%81%e3%81%9f%e3%81%a1%e3%81%af%e4%bd%95%e3%82%92-web-%e3%81%a3%e3%81%bd%e3%81%84%e3%81%a8%e6%84%9f%e3%81%98%e3%81%a6%e3%81%84%e3%82%8b%e3%81%ae%e3%81%8b/">Leave a comment<span class="screen-reader-text"> on 私たちは何を Web っぽいと感じているのか</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-221" class="post-221 post type-post status-publish format-standard hentry category-7 category-48">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/221" rel="bookmark">海外旅行好きが楽天プレミアムカードを使うべき理由</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>楽天カードをプレミアムに切り替えたのでその時に考えたことをまとめておきます。これで海外旅行をより楽しく過ごすことができるようになるので検討する価値はあるかと思います。</p>
+<p><a href="http://www.flickr.com/photos/cubagallery/5041321050/" title="Travel / Italy / Summer / Sea by ►CubaGallery, on Flickr"><img src="http://farm5.staticflickr.com/4107/5041321050_1e165a2952.jpg" width="500" height="500" alt="Travel / Italy / Summer / Sea" /></a></p>
+<p>
+<h2><b>■ 1年に1回以上海外に行くひとにはおすすめ</b></h2>
+<p>1年に1回は海外旅行に行くというそこのあなた、<a href="http://hb.afl.rakuten.co.jp/hsc/105c1fe5.1ced5f8c.105c1fe3.e6229ff5/" target="_blank">楽天プレミアムカード</a>を作りましょう。</p>
+<p>前回「<a href="http://ymkjp.blogspot.jp/2012/11/blog-post_21.html">クレジットカードとか給与口座の話</a>」をしたときにゴールドカードっていらないよねって話をしましたが、楽天では海外旅行向けの特典が強力であるため、楽天で買い物しない人ですらお得になる可能性が高いです。</p>
+<h2><b>■ 世界600のラウンジ使い放題！ プライオリティパスの話</b></h2>
+<p>20年も前からあるサービスなのでご存知の方もいらっしゃると思いますが、楽天プレミアムカードに無料で付帯させることができる<a href="http://www.prioritypass.jp/JP/">プライオリティパス</a>は、世界600か所の空港ラウンジを利用できるサービスです。日本の会社が出しているゴールドカードについているラウンジはほぼ国内でしか使えませんが、プライオリティパスであれば大概の場所でラウンジを使うことができます。</p>
+<p>ちなみに、プライオリティパスはアメリカンエキスプレス系のカードに付帯してくることが多いのですが、<a href="http://www.saisoncard.co.jp/amextop/platinumbusiness/index.html">セゾンプラチナ・ビジネス</a>や <a href="http://www.af-mark.jp/ufj-mufg-amex/index.html?cid=01022679999">MUFG Card</a> は年会費21,000円するので、楽天の場合は半額で同じサービスを利用できているということになります。</p>
+<h2><b>■ 手荷物宅配サービス</b></h2>
+<p>さらに、1年に2回までですがクロネコヤマトが<a href="http://card.rakuten.co.jp/premium/privilege/#course_b">手荷物を空港まで宅配してくれる特典</a>があります。<br />1回の旅行で往復使うもよし、疲れた帰りだけ送るの利用法を2回使うもよし、これは病みつきになるサービスです。</p>
+<p><a href="http://hb.afl.rakuten.co.jp/hsc/105c1f87.abc996be.105c1f7f.2bb23dec/" target="_blank"><img src="http://hbb.afl.rakuten.co.jp/hsb/105c1f87.abc996be.105c1f7f.2bb23dec/389072/" border="0" /></a><br />↑楽天プレミアムカードを使いたいと思った人は紹介者IDに「SMAS3ZA6」と記入し申し込みましょう（筆者に1500円分・申込者に2000円分のポイントがプラスされます）。</p>
+<h2><b>■ 空港での時間節約には限界がある</b></h2>
+<p>どれほどインターネットが普及してボーダレスになったとは言っても、僕たちが国境を越えて移動するにはたくさんのお金と時間がかかってしまいます。</p>
+<p>その空港での時間をストレスなく過ごすために、楽天プレミアムカードは役に立ってくれています。</p>
+<p><a name='more'></a></p>
+<p><a href="http://www.flickr.com/photos/peopea/4458007751/" title="* new york  * by peo pea, on Flickr"><img src="http://farm3.staticflickr.com/2687/4458007751_1ced946b2c.jpg" width="416" height="500" alt="* new york  *" /></a></p>
+<p>今年の冬はニューヨークに行ってきます⊂（＾ω＾）⊃ﾌﾞｰﾝ<br />「NYでプライオリティパスを使った話」という blog できればと思っています。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/221" rel="bookmark"><time class="entry-date published updated" datetime="2012-11-21T08:46:00+00:00">2012-11-21</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e8%b3%87%e7%94%a3" rel="category tag">資産</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/221#respond"><span class="dsq-postid" data-dsqidentifier="221 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/21/%e6%b5%b7%e5%a4%96%e6%97%85%e8%a1%8c%e5%a5%bd%e3%81%8d%e3%81%8c%e6%a5%bd%e5%a4%a9%e3%83%97%e3%83%ac%e3%83%9f%e3%82%a2%e3%83%a0%e3%82%ab%e3%83%bc%e3%83%89%e3%82%92%e4%bd%bf%e3%81%86%e3%81%b9%e3%81%8d/">Leave a comment<span class="screen-reader-text"> on 海外旅行好きが楽天プレミアムカードを使うべき理由</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-222" class="post-222 post type-post status-publish format-standard hentry category-7 category-48">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/222" rel="bookmark">社会人なら知っておきたい クレジットカードと給与口座の話</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>最近クレジットカードと給与口座の見直しをしたのでその時に考えたことをまとめておきます。実は「人生の三大出費」とも言われる保険にも関わってくる話ですから一度真剣に見直してみる価値はあります。</p>
+<p><a href="http://www.flickr.com/photos/brettlider/214336918/" title="Hand-painted credit card by Brett L., on Flickr"><img src="http://farm1.staticflickr.com/73/214336918_cba0ee4557.jpg" width="500" height="375" alt="Hand-painted credit card" /></a></p>
+<p></p>
+<h2><b>■ クレジットカードは持つべき</b></h2>
+<p>まずそもそも持っておいたほうがいいのかどうかという話になりますが、僕は下記の3つの理由で持っておいたほうがいいと考えています。</p>
+<ol>
+<li>現金を持ち歩く必要がなくなる</li>
+<li>ログが残る</li>
+<li>実際お得（ポイント・付帯保険・料金後払い）</li>
+</ol>
+<p>1. 現金を持ち運んでいて落とした時のリスクや小銭計算の煩わしさから解放されます。釣り銭の受け渡しの作業を消費のたびに行うのは時間を浪費です。</p>
+<p>2. ログが残ることで、毎月の金銭に対するPDCAサイクルを回せます。この鍛錬により「今月これくらい使ったかな」という金銭感覚を身につけることができます。「クレジットカードは使いすぎが怖い」というよく聞くセリフは金銭感覚の訓練を放棄を意味しています。</p>
+<p>3. 実際お得。ポイントが貯まらないカードを探すほうが難しいくらいです。また、クレジットカード会社によりますが、国内外の旅行の保険が付いているのが大きいでしょう。他には細かな話ですが、すべてのお金には金利がつくため後払いになればなるほどファイナンスとして有利になります。</p>
+<h2><b>■ 万人向けのクレジットカードなんてない</b></h2>
+<p>僕自身は基本的に食事と服以外の消費はすべてインターネット経由で買うので<a href="http://hb.afl.rakuten.co.jp/hsc/105c206f.fa8f208f.105c206e.6fc2e89a/" target="_blank">楽天カード</a>を使っています。理由はそもそもインターネット経由で物を買うにはクレジットカードが必須なのと、だいたい買いたいものは Amazon か楽天で最安のものが見つかってしまうからです。つまり僕にとって楽天で貯まるポイントはほぼ現金と同じ価値があります。</p>
+<p>でも楽天を使わない人にとっては全く意味がありません。それを避けるために「自分の欲しい物と交換できるポイント」が付くカードを選ぶようにしましょう。そういう意味で、僕が楽天を気に入っているのは扱っている商品の幅広さです。「ポイントで交換できる商品が幅広い=自分の欲しい物と交換できる可能性が高いポイント」ということです。</p>
+<h2><b>■ あなたは今まで貯めたすべてのポイントを覚えているか？</b></h2>
+<p>『<a href="http://www.amazon.co.jp/gp/product/4022733713/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4022733713&amp;linkCode=as2&amp;tag=m0b55-22">レシートを捨てるバカ、ポイントを貯めるアホ (朝日新書)</a><img src="http://www.assoc-amazon.jp/e/ir?t=m0b55-22&amp;l=as2&amp;o=9&amp;a=4022733713" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />』という本がありますが、この本は「ポイント貯めずに好きな店でクレジットカード使え」ということを言っていると思って下さい。</p>
+<p>どういうことかと言うと、例えば飲食店などで付いてくるポイントというのは何度もその店にこさせるための餌でしかありません。これはもう明白にそうで、ポイント目的で同じ店にばかり行くのは販売店の思う壺です。あなたはTポイントを貯めたくてファミリーマートを探してしまっていませんか? コンビニは近くにあることに価値のあるサービスです。お忘れなきよう。</p>
+<p>その点、クレジットカードのポイントであればクレジットカードで支払いのできる店であればどこでも好きな店でポイントを貯められます。Good job!</p>
+<h2><b>■ クレジットカード2回払いの話</b></h2>
+<p>手数料なしで2回払いできるクレジットカードを選ぶとファイナンス上有利になるので参考にしてください（例えば僕の持っている楽天カードはOK, イオンカードは1万円以上の支払いでOK となっています）。2回払いができる店は結構あるので使用するときに店員さんに聞いてみましょう。<br />ちなみにこれは割賦販売法という法律で「2ヶ月以上の期間にわたり、かつ3回以上に分割して支払う方法」と定められていたことの名残りで分割払いでも2回払いだけは手数料が付かなくなっているようです。</p>
+<p>あと、ボーナス払いも後払いで相当有利なはずですが僕はあまり好きではありません。最大の理由は、「自分の理解できない物・把握しきれない物には手を出さない」という投資業界の大原則に反するからです。どういうことかと言うと、ボーナス払いには、「それまでいくら使ったのかが覚えにくい」、そして「ボーナスというのは業績などに応じて支払われる額が上下するため予測できない」という2つの特性があるためです。このように入り口も出口も把握しにくいためボーナス払いは極力使わないようにしています。</p>
+<h2><b>■ ゴールドカードはいらない</b></h2>
+<p>ゴールドカードって実際どうなんですかね。今日日、無料のカードにも保険はいろいろ付いているのでよっぽど使いたい特典でもない限り必要ありません。支払う年会費よりも恩恵が多い人なんて、クレジットカード限度額も低くなってしまっていることが多い若い社会人にはそれほどいないのでないでしょうか。</p>
+<p>しかし、そう言っておきながら僕自身は最近、<a href="http://hb.afl.rakuten.co.jp/hsc/105c1fe5.1ced5f8c.105c1fe3.e6229ff5/" target="_blank">楽天プレミアムカード</a>を申し込みました。理由は海外旅行好きの人にしか関係ない話題なので別途説明します。</p>
+<p>【こちら】<a href="http://ymkjp.blogspot.jp/2012/11/blog-post_3341.html">海外旅行好きが楽天プレミアムカードを作らない理由はない | Did you mean: Kenta YAMAMOTO</a></p>
+<h2><b>■ Visa or Maser?</b></h2>
+<p>国際ブランドって有名どころだと Visa と MasterCard ってあるじゃないですか。あれってどっちがいいんですかねっていう疑問はあると思いますが、どっちでもOKです。どちらも日本に限らず世界中で使えます。</p>
+<p>メインとサブでクレジットカードを2枚持ちする場合は Visa と MasterCard 両方になるようにすればいいと思います。</p>
+<h2><b>■ 給与口座をネット銀行に</b></h2>
+<p>勤務先の会社が対応していたため<a href="https://www.netbk.co.jp/wpl/NBGate/i010002CT">住信SBIネット銀行</a>を給与口座にしました。公共料金やクレジットカードの振替は対応しているので問題ありませんでした。もし振替に対応していない場合があっても、月に3回まで振込手数料が無料なので自動振込機能を使ってメガバンクに振り込むようにすれば解決できます。</p>
+<h2><b>■ おまけ: 電子マネーのチャージの呪縛からの解放</b></h2>
+<p>前述の通り釣り銭に時間を浪費したくなかった僕は電子マネーを使うようにしていました。主に使っていたのは「シャリーン」でお馴染みの Edy ですが、こいつが困ったことに楽天カードと一体型のくせにオートチャージに対応していなかったのです（分かっています、おサイフケータイでは可能でしたよね（でもガラケー使ってないからな！））。</p>
+<p>そこで本日届いたのが電子マネーの大本命が一体型となった<a href="http://www.aeoncredit.co.jp/aeonsuica/index3.html">イオンSuicaカード</a>です。こちらは残高が少なくなるとチャージしてくれる機能が付いているためチャージする時間の削減にも成功しました。さらに Suica は Edy よりも普及が進んでいるため自動販売機ですらチャージが必要なくなりました。</p>
+<h2><b>■ 最後に: 社会人の金融リテラシ</b></h2>
+<p>下記は普段から金融リテラシ関連で参考にしているブログ記事からの引用です。</p>
+<blockquote><p>(1) 給与口座は新生銀行かみずほ銀行 <br />(2) 財形貯蓄を活用してほったらかし貯蓄<br />(3) 勉強のための1万円インデックスファンド<br />(4) 生命保険はできるだけ入らない<br />(5) 社内恋愛は控えめに
+<div><small><cite title="新入社員の皆さんへ"><a href="http://randomwalker.blog19.fc2.com/blog-entry-1995.html">梅屋敷商店街のランダム・ウォーカー</a></cite></small></div>
+</blockquote>
+<p>あれ、アドバイスと僕のやっていることとで給与口座が違うじゃんっていう話になりますが、こういう大事な話は鵜呑みにせず自分で咀嚼して対応するものですよね。でも他の項目は内定先に財形貯蓄がないことを除いて、すでに実践済みです。</p>
+<p>インデックスファンドは大学に入学したころに2万円分ほど勉強のために運用を始めていて、生命保険にも子どもができるまでは入るつもりもありません。社内恋愛はリスクも承知していますがそもそも周りは男ばかりなので全く心配無用です^^;</p>
+<p><a href="https://hb.afl.rakuten.co.jp/hsc/105c1fb8.86b23f62.105c1fb5.d4b74875/" target="_blank"><img src="https://hbb.afl.rakuten.co.jp/hsb/105c1fb8.86b23f62.105c1fb5.d4b74875/166766/" border="0" /></a><br />↑楽天カードを使いたいと思った人は紹介者IDに「SMAS3ZA6」と記入して申し込んで下さい（僕に1500円分・あなたに2000円分の「ポイント」が余分に付いてきます）。</p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/222" rel="bookmark"><time class="entry-date published" datetime="2012-11-21T07:19:00+00:00">2012-11-21</time><time class="updated" datetime="2016-09-03T04:22:22+00:00">2016-09-03</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%99%e3%82%bf" rel="category tag">ベタ</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e8%b3%87%e7%94%a3" rel="category tag">資産</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/222#respond"><span class="dsq-postid" data-dsqidentifier="222 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/21/%e7%a4%be%e4%bc%9a%e4%ba%ba%e3%81%aa%e3%82%89%e7%9f%a5%e3%81%a3%e3%81%a6%e3%81%8a%e3%81%8d%e3%81%9f%e3%81%84-%e3%82%af%e3%83%ac%e3%82%b8%e3%83%83%e3%83%88%e3%82%ab%e3%83%bc%e3%83%89%e3%81%a8%e7%b5%a6/">Leave a comment<span class="screen-reader-text"> on 社会人なら知っておきたい クレジットカードと給与口座の話</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-223" class="post-223 post type-post status-publish format-standard hentry category-it category-45">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/223" rel="bookmark">ブログに gist でコードを貼り付ける際に気をつける点</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>今までこのブログでは様々なツールを使ってコードを貼っつけていたのですが、これからは gist で載っけていこうかと思います。</p>
+<p>↓こんな感じで表示されます。いいですね。</p>
+<h2>■ 気をつける点</h2>
+<p>script src=&#8221;&#8221; として持ってきているので、SEOには気をつけたほうがいいですね。情報を探している人がブログに到達できるようにキーワードは本文に記すようにしておきたいところです。加えて、記事が書けたら当該 gist に URL をコメントしておくといいかもしれません。</p>
+<h2>■ 分かりやすくするために</h2>
+<p>あと、Gist だとファイルを分割した時に相互の関係がぱっとは分かりにくいですね。<br />上の例だと分かりやすさ優先で一緒のファイルに書いています(body に script を埋め込んだのも分かりやすさ優先のつもりです)。</p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+<p><a name='more'></a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/223" rel="bookmark"><time class="entry-date published updated" datetime="2012-11-20T16:49:00+00:00">2012-11-20</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/it%e8%a6%8b%e8%81%9e%e9%8c%b2" rel="category tag">IT見聞録</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%a1%e3%82%bf" rel="category tag">メタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/223#respond"><span class="dsq-postid" data-dsqidentifier="223 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/20/%e3%83%96%e3%83%ad%e3%82%b0%e3%81%ab-gist-%e3%81%a7%e3%82%b3%e3%83%bc%e3%83%89%e3%82%92%e8%b2%bc%e3%82%8a%e4%bb%98%e3%81%91%e3%82%8b%e9%9a%9b%e3%81%ab%e6%b0%97%e3%82%92%e3%81%a4%e3%81%91%e3%82%8b/">Leave a comment<span class="screen-reader-text"> on ブログに gist でコードを貼り付ける際に気をつける点</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-224" class="post-224 post type-post status-publish format-standard hentry category-12">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/224" rel="bookmark">Kindle Paperwhite の良い点と悪い点 こいつとなら読書できます（1st インプレッション）</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div dir="ltr" style="text-align: left;">これだよ！ これ！ 僕が求めていた読書端末は<a href="http://www.amazon.co.jp/gp/product/B007OZO03M/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B007OZO03M&amp;linkCode=as2&amp;tag=m0b55-22">これ</a>だったんだ！<br />俺は今猛烈に感動している！</p>
+<blockquote><p>Kindle Paperwhite, こいつはすごい。もう電子書籍で我慢する必要はない。この端末があれば、進んで電子書籍版を買える。ついに「本物の本」に取って代わる「本物の本」が現れたという衝撃を今感じている。<br />— もしかして: 山本健太 (@ymkjp) <a data-datetime="2012-11-19T11:18:56+00:00" href="https://twitter.com/ymkjp/status/270486312212119553">November 19, 2012</a></p></blockquote>
+<p>そう、保証しよう。<br />電子書籍なら間違いなくこの端末が正解だ！<br />まずは百聞は一見にしかず、まずは見てくれ、この視野角を！</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-yKSs3SVAaiM/UKodcp5s6TI/AAAAAAAAOw0/qgxgT-Im1c8/s1600/IMG_0050.JPG"><img border="0" height="480" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-yKSs3SVAaiM/UKodcp5s6TI/AAAAAAAAOw0/qgxgT-Im1c8/s640/IMG_0050.JPG" width="640" /></a></p>
+<p>読書の片手間での撮影だったためピントがあっていない（そう, Paperwhite の軽さであれば本当の片手間が可能！）。にもかかわらず、この文字の見やすさ。こんなに傾けても文字が読める端末なんて今まであっただろうか！ iPhone も Galaxy Nexus も及ばない。iPad は重すぎてこういう角度に持つことすら気が引けてしまう。</p>
+<p>
+<h2>■ Eink にしかできないこと</h2>
+<p>詳しくない人にも分かるように言うと、Paperwhite の最大の特徴は iPhone や iPad とは画面に文字などを表示する方式が違うという点だ。イメージしやすく言うと、iPhone などは「画面が光っている方式」で、Paperwhite は「画面にインクが印刷されている方式」と言える。もちろん印刷されているからと言って画面が動かないというわけではなく, Elink という電子インクが画面の中で超高速で印刷されは消され、印刷されは消されという繰り返しをしているのだ。<br />まだちょっと分かりにくいと思う。そこで。直感的に理解しやすい面白い写真がある↓</p>
+<p><a href="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-tff9E9y9UTI/UKokOLhfgxI/AAAAAAAAOxM/-zcgFgYSnEY/s1600/Untitled.png" style=""><img border="0" height="400" width="344" src="https://article.xn--nyqr7s4vc72p.com/wp-content/uploads/blogger/-tff9E9y9UTI/UKokOLhfgxI/AAAAAAAAOxM/-zcgFgYSnEY/s400/Untitled.png" /></a></p>
+<p>驚く無かれ、これは Paperwhite のスリープ画面。画面にインクを乗せっぱなしにしている状態だ。見て分かる通り本物の紙に近い。</p>
+<p>まあそれで Paperwhite が「画面にインクが印刷されている方式」で何が嬉しいのかと言うと, iPad を持っている人なら経験があるかもしれないが、屋外で読書をしようとしてディスプレイが反射してしまって全く読めないということが結構あるのだが（別に太陽にかぎらず、部屋の蛍光灯が画面に映り込んでしまって目障りなのだ）, Paperwhite 方式ならばその心配がないということだ。</p>
+<p>物理的に物（インク）がある状態だから、太陽のような強い光のもとでも読みやすい。さらに Paperwhite はディスプレイの表面も iPhone や iPad のようにツルツルはしていない。ちょっとザラザラしている。これも反射を防ぐための工夫で、本物の紙が光を反射しないのと同じように Paperwhite も反射しにくくなっている。つまりつまり明るい場所でも読みやすいというのが Paperwhite の最大の特徴だ。</p>
+<p>そしてそして、この Paperwhite, 今までの「画面にインクで印刷されている方式」の端末のなかでもとりわけ優れているのが、画面も光っちゃうよという点。「画面にインクで印刷されている方式」が苦手としていた薄暗い場所での読書もしやすくなっているのだ。日本での Kindle 発売は米国に比べてかなり遅かったが、遅かった分「インクで印刷されている方式」の弱点が克服されているのだ。これはすごいことだ。暗い場所でも読めるのだから元祖である本物の紙を超えちゃった感さえある。このように, Paperwhite を持っていれば読書の場所は選ばなくてよくなる。</p>
+<p>ちなみに嬉しいことに「画面にインクが印刷されている方式」の場合は iPhone などの方式に比べてバッテリーも長持ちしやすいというメリットもある。残りの充電量を来にしながら読書する必要はなくなる。どこでも好きなように読める。やっと紙ならできていたことが、電子端末でもできるようになってきたということだ。</p>
+<p>
+<h2>■ 悪いことは言わないから重さだけには気をつけろ</h2>
+<p>これは僕が iPad 2 で得た反省点だ。iPad 2 は重いので気軽に読書ができなくなってしまった。その悩みを抱えていただけに Paperwhite の箱を開けて手に持った途端にやりとしてしまった。こいつは軽い。体感重量が軽い。実際に端末を手で持って見ると軽く感じる。電子端末において軽さはかなり重要で、なぜかというと重い端末だとしっかり手でホールドしたいのに、誤って画面を触ってしまうと勝手にページがめくられてしまってストレスになるからだ。僕は iPad 2 で、端末が重いのに画面はがっつり持つことはできないというジレンマに苦しんだ。しかし！ Paperwhite ならその心配はなさそうだ！</p>
+<p>
+<h2>■ 直感的な操作は苦手</h2>
+<p>じゃあ Paperwhite 最高だねっ！ っていう話になるかもしれないが, Paperwhite にも苦手なことはあって、直感的な操作や映画や音楽の再生を目的にするとがっかりすることになる。別に読書に困るほど操作性がひどいというわけではない。そんなら読書端末なんだからそれでいいじゃんって思うかもしれないが、…そう思って正解だろう。同じ「タブレット」として iPad と比べられるし、僕もさっきから比べているが、そもそも iPad は読書端末ではないのだからおかしな話なのだ。ガジェットオタクなら口をそろえて皆そう言うだろうが, iPad は読書端末ではなく、総合的なエンターテインメント端末だ。</p>
+<p>とは言え, Paperwhite にもがんばってほしいことが無いわけではない。特に一気にページをめくることができないのは読書端末としての大きな課題だ。これはソフトウェアの問題であるから、きっといずれかのアップデートでクリアされることを期待している。</p>
+<p>
+<h2>■ カバーは不要？</h2>
+<p>その風貌から風呂蓋と呼ばれた iPad 2 の正規品のカバーで大満足した僕は迷わず Kindle のレザーカバーも買うことにした（￥ 3,499 円）。結論から言うとこんなもの買っちゃダメだ。<br />せっかくの Paperwhite の軽快さが台無しになるだけでない。このカバーは相当外しにくいのだ。これは画面の傷（ノングレアなのでそれほど気にならないかもしれないが）をつきにくくする目的で、読書の際に外したい人にもおすすめできない。この点 iPad 2 以降の風呂蓋は優秀だった。カバーが欲しい人は評判の良い3rd商品がでればそれを買えばいいんじゃないですかね。</p>
+<p><a href="http://www.amazon.co.jp/gp/product/B008BQH1NO/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B008BQH1NO&amp;linkCode=as2&amp;tag=m0b55-22"><img border="0" src="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&amp;ASIN=B008BQH1NO&amp;Format=_SL110_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=m0b55-22" /></a><img alt="" border="0" height="1" src="http://www.assoc-amazon.jp/e/ir?t=m0b55-22&amp;l=as2&amp;o=9&amp;a=B008BQH1NO" style="border: none !important; margin: 0px !important;" width="1" /></p>
+<p>
+<h2>■ 最後に</h2>
+<p>数日前に iPhone 5 を買った時は Andorid というか Galaxy Nexus と比較した部分的な感動だったが, Paperwhite を触ったときは恍惚とした。<br />いやあ、こんな満足感のある買い物は久しぶりだ。何が嬉しいかって iPad と違って「使い倒す」ことができそうな点。片手で読書できてしまう手乗り端末として。自炊した本、既存のPDF本、EPUB、いろいろ試してみたい。まだまだ黎明期感が拭えない電子書籍界隈ではありますが、こいつとならうまく世渡りできそう。<br />これだけの実用性が詰まった端末が 7980円。迷っているなら買ってしまっていいでしょう（自宅に Wifi がない人は 3G モデルを買ったほうがいいです）。</p>
+<p><a href="http://www.amazon.co.jp/gp/product/B007OZO03M/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B007OZO03M&amp;linkCode=as2&amp;tag=m0b55-22"><img border="0" src="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&amp;ASIN=B007OZO03M&amp;Format=_SL110_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=m0b55-22" /></a><img alt="" border="0" height="1" src="http://www.assoc-amazon.jp/e/ir?t=m0b55-22&amp;l=as2&amp;o=9&amp;a=B007OZO03M" style="border: none !important; margin: 0px !important;" width="1" /><br /><a href="http://www.amazon.co.jp/gp/product/B007OZO03M/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B007OZO03M&amp;linkCode=as2&amp;tag=m0b55-22">Kindle Paperwhite</a><img alt="" border="0" height="1" src="http://www.assoc-amazon.jp/e/ir?t=m0b55-22&amp;l=as2&amp;o=9&amp;a=B007OZO03M" style="border: none !important; margin: 0px !important;" width="1" /></p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+<p><a name='more'></a></div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/224" rel="bookmark"><time class="entry-date published" datetime="2012-11-19T13:47:00+00:00">2012-11-19</time><time class="updated" datetime="2016-03-11T15:04:35+00:00">2016-03-11</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e5%93%81%e8%a9%95" rel="category tag">品評</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/224#respond"><span class="dsq-postid" data-dsqidentifier="224 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/19/kindle-paperwhite-%e3%81%ae%e8%89%af%e3%81%84%e7%82%b9%e3%81%a8%e6%82%aa%e3%81%84%e7%82%b9-%e3%81%93%e3%81%84%e3%81%a4%e3%81%a8%e3%81%aa%e3%82%89%e8%aa%ad%e6%9b%b8%e3%81%a7%e3%81%8d%e3%81%be%e3%81%99/">Leave a comment<span class="screen-reader-text"> on Kindle Paperwhite の良い点と悪い点 こいつとなら読書できます（1st インプレッション）</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-225" class="post-225 post type-post status-publish format-standard hentry category-14">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/225" rel="bookmark">じゅるり(^q^) 食の大家・魯山人先生による唾液が止まらないタイトルベスト25</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>めっちゃうまそう(^q^)ｗ<br />唾液腺崩壊ｗ</p>
+<h2>食の大家・魯山人大先生による唾液が止まらないタイトルベスト25</h2>
+<ol>
+<li>河豚（ふぐ）食わぬ非常識</li>
+<li>京都のごりの茶漬け</li>
+<li>塩昆布の茶漬け</li>
+<li>デンマークのビール</li>
+<li>鱧・穴子・鰻の茶漬け</li>
+<li>鮪を食う話</li>
+<li>美味い豆腐の話</li>
+<li>鍋料理の話</li>
+<li>高野豆腐</li>
+<li>胡瓜</li>
+<li>一癖あるどじょう</li>
+<li>鮪の茶漬け</li>
+<li>雑煮</li>
+<li>鰻の話</li>
+<li>アメリカの牛豚</li>
+<li>鮎の名所</li>
+<li>鮎の食い方</li>
+<li>若鮎の塩焼き</li>
+<li>鮟鱇（あんこう）一夕話</li>
+<li>お米の話</li>
+<li>車蝦（くるまえび）の茶漬け</li>
+<li>甘鯛の姿焼き</li>
+<li>いなせな縞の初鰹</li>
+<li>残肴の処理</li>
+<li>夜寒に火を囲んで懐しい雑炊</li>
+</ol>
+<p>とりあえずお茶漬けと魚と豆腐が好きな事は分かったｗ</p>
+<p>随筆もたくさん残していらっしゃいました。
+<ol>
+<li>美食七十年の体験</li>
+<li>美味放談</li>
+<li>衰えてきた日本料理は救わねばならぬ</li>
+</ol>
+<p>すべてパブリックドメインになっているので Kindle 版で読めるので気になった著作があれば読んでみてはいかがでしょうか。他の膨大な著作も発見できます。<br /><a target="_blank" href="http://www.amazon.co.jp/s/?_encoding=UTF8&amp;camp=247&amp;creative=7399&amp;field-author=%E5%8C%97%E5%A4%A7%E8%B7%AF%20%E9%AD%AF%E5%B1%B1%E4%BA%BA&amp;linkCode=ur2&amp;search-alias=digital-text&amp;tag=m0b55-22">Amazon.co.jp: 北大路 魯山人: Kindleストア</a><img src="https://www.assoc-amazon.jp/e/ir?t=m0b55-22&amp;l=ur2&amp;o=9" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/xhksMmNz_DA" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://twitter.com/ymkjp">@ymkjp</a></p>
+<p><a name='more'></a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/225" rel="bookmark"><time class="entry-date published updated" datetime="2012-11-18T04:19:00+00:00">2012-11-18</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/%e3%83%8d%e3%82%bf" rel="category tag">ネタ</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/225#respond"><span class="dsq-postid" data-dsqidentifier="225 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/18/%e3%81%98%e3%82%85%e3%82%8b%e3%82%8aq-%e9%a3%9f%e3%81%ae%e5%a4%a7%e5%ae%b6%e3%83%bb%e9%ad%af%e5%b1%b1%e4%ba%ba%e5%85%88%e7%94%9f%e3%81%ab%e3%82%88%e3%82%8b%e5%94%be%e6%b6%b2%e3%81%8c%e6%ad%a2/">Leave a comment<span class="screen-reader-text"> on じゅるり(^q^) 食の大家・魯山人先生による唾液が止まらないタイトルベスト25</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-226" class="post-226 post type-post status-publish format-standard hentry category-dev category-javascript">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="https://article.xn--nyqr7s4vc72p.com/archives/226" rel="bookmark">自動で「Kindle化リクエスト」を送ってくれる Chrome Extension KindlizeIt</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><img src="https://i.gyazo.com/86ea33db83c24666043a55ffcb77e62d.png" alt="KindlizeIt - Chrome Extension" /></p>
+<p><a href="https://chrome.google.com/webstore/detail/kindlize-it/lmeeghblnndbojbcdahjgoakgclnpfcl"><strong>Chrome ウェブストア &#8211; KindlizeIt</strong></a></p>
+<p><a href="//amazon.co.jp">amazon.co.jp</a> で書籍ページを開くだけで自動的に「Kindle化リクエスト」を送ってくれます。</p>
+<p>ソースコードは公開しています。<br />
+<a href="https://github.com/ymkjp/kindlize-it/tree/v2.0.0">ymkjp/kindlize&#45;it at v2&#46;0&#46;0</a></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://article.xn--nyqr7s4vc72p.com/archives/author/i05">@i05</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/226" rel="bookmark"><time class="entry-date published" datetime="2012-11-16T14:30:00+00:00">2012-11-16</time><time class="updated" datetime="2016-08-06T10:29:01+00:00">2016-08-06</time></a></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://article.xn--nyqr7s4vc72p.com/archives/category/dev" rel="category tag">dev</a>, <a href="https://article.xn--nyqr7s4vc72p.com/archives/category/javascript" rel="category tag">javascript</a></span><span class="comments-link"><a href="https://article.xn--nyqr7s4vc72p.com/archives/226#respond"><span class="dsq-postid" data-dsqidentifier="226 http://tk2-249-34500.vs.sakura.ne.jp/2012/11/16/kindlize-it-chrome-extension/">Leave a comment<span class="screen-reader-text"> on 自動で「Kindle化リクエスト」を送ってくれる Chrome Extension KindlizeIt</span></span></a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://article.xn--nyqr7s4vc72p.com/page/23">Previous page</a>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/'><span class="meta-nav screen-reader-text">Page </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/page/23'><span class="meta-nav screen-reader-text">Page </span>23</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">Page </span>24</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/page/25'><span class="meta-nav screen-reader-text">Page </span>25</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://article.xn--nyqr7s4vc72p.com/page/31'><span class="meta-nav screen-reader-text">Page </span>31</a>
+<a class="next page-numbers" href="https://article.xn--nyqr7s4vc72p.com/page/25">Next page</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://article.xn--nyqr7s4vc72p.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1116">WordPress&#8217;s AMP with CloundFlare</a>
+							<span class="post-date">2016-09-07</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1102">Font Awesome on WordPress</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1047">クレカを使わずに損しているのは誰か</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/1023">保険商品の運営費20％弱から30％強って恐ろしいですね</a>
+							<span class="post-date">2016-09-03</span>
+						</li>
+					<li>
+				<a href="https://article.xn--nyqr7s4vc72p.com/archives/878">新卒エンジニアの転職</a>
+							<span class="post-date">2016-08-29</span>
+						</li>
+				</ul>
+		</section>		<section id="calendar-2" class="widget widget_calendar"><h2 class="widget-title">Archives</h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://article.xn--nyqr7s4vc72p.com/archives/date/2016/09">&laquo; Sep</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td id="today">10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="wpcom_social_media_icons_widget-2" class="widget widget_wpcom_social_media_icons_widget"><h2 class="widget-title">Social</h2><ul><li><a title="View i05&#8217;s profile on Twitter" href="https://twitter.com/i05/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View i05&#8217;s profile on Twitter</span></a></li><li><a title="View ymkjp&#8217;s profile on GitHub" href="https://github.com/ymkjp/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View ymkjp&#8217;s profile on GitHub</span></a></li><li><a title="View KentaYAMAMOTOymkjp&#8217;s profile on Google+" href="https://plus.google.com/u/0/+KentaYAMAMOTOymkjp/" class="genericon genericon-googleplus" target="_blank"><span class="screen-reader-text">View KentaYAMAMOTOymkjp&#8217;s profile on Google+</span></a></li></ul></section><section id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Links</h2><p><a target="_self" href="https://article.xn--nyqr7s4vc72p.com/feed" title="Subscribe to Posts"><img src="https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/jetpack/images/rss/silver-small.png" alt="RSS Feed" /></a></p>
+</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://article.xn--nyqr7s4vc72p.com/" rel="home">It works!</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css?ver=0.5.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js?ver=0.5.15'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"i05"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://article.xn--nyqr7s4vc72p.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.6.1'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d6f29fd9bc","applicationID":"12577917","transactionName":"YVFbZxBWVkNRUBYPW1gbeFAWXldeH1oMAlFO","queueTime":0,"applicationTime":249,"atts":"TRZYEVhMRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
